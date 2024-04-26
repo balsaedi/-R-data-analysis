@@ -1,0 +1,9 @@
+--- 
+title: "Comprehensive R Course"
+author: "Basim Alsaedi"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+---
+
+# Table of Content
+
