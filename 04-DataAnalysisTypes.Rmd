@@ -3,13 +3,13 @@ title: "Chapter 4"
 output: html_document
 ---
 
-## Working with Different Types of Data (Light Focus)
+# Working with Different Types of Data (Light Focus)
 
-### Overview of Qualitative and Quantitative Data
+## Overview of Qualitative and Quantitative Data
 
 Understanding the distinction between qualitative and quantitative data is fundamental in data analysis, as it informs the appropriate methods for processing and analyzing data. This section provides a detailed explanation and demonstrations of these two major types of data.
 
-#### Defining Qualitative vs Quantitative Data
+### Defining Qualitative vs Quantitative Data
 
 **Qualitative Data**  
 Qualitative data, also known as categorical data, represents attributes, labels, or non-numeric entries. It describes qualities or characteristics that are observed and recorded. This type of data is often textual but may also include images or objects.
@@ -49,7 +49,7 @@ sales_data <- data.frame(
 print(sales_data)
 ```
 
-#### Sampling Strategies and Data Collection Methods
+### Sampling Strategies and Data Collection Methods
 
 When working with either qualitative or quantitative data, choosing the right sampling strategy and data collection method is crucial for obtaining reliable and representative data.
 
@@ -72,7 +72,7 @@ sampled_data <- do.call(rbind, lapply(split(data, data$category), function(subda
 print(sampled_data)
 ```
 
-#### Structuring Data Sets for Analysis
+### Structuring Data Sets for Analysis
 
 Properly structuring data sets is essential for analysis, particularly when dealing with mixed data types. Structured data ensures consistency and ease of access during analysis.
 
@@ -95,7 +95,7 @@ print(structured_data)
 This section has introduced the foundational concepts of qualitative and quantitative data, illustrated with R examples. Understanding these distinctions and how to work with different data types prepares you for more effective data analysis and interpretation.
 
 
-### Code Exercises 1
+## Code Exercises 1
 
 **Exercise 1: Identify Data Types**
 Task: Given a data frame, identify which columns contain qualitative data and which contain quantitative data. Provide a brief explanation for each identification.
@@ -182,15 +182,15 @@ print(person_df)
 # TODO: Insert Exercise chunk with error messages and solutions.
 ```
 
-## Best Practices in Data Collection and Cleaning
+# Best Practices in Data Collection and Cleaning
 
 Effective data collection and cleaning are crucial for ensuring the accuracy and reliability of data analysis. This section covers essential practices for identifying and handling missing data, performing data type conversions and formatting, and detecting and dealing with outliers.
 
-### Identifying and Handling Missing Data
+## Identifying and Handling Missing Data
 
 Missing data can significantly impact the results of your analysis. Properly identifying and handling missing entries is a critical step in data cleaning.
 
-#### Identifying Missing Data
+### Identifying Missing Data
 
 You can identify missing data in R using functions like `is.na()` which returns a logical vector indicating which elements are NA.
 
@@ -206,7 +206,7 @@ missing_data <- is.na(data)
 print(missing_data)
 ```
 
-#### Handling Missing Data
+### Handling Missing Data
 
 Once identified, you can handle missing data by either removing it or imputing it based on the context of your analysis.
 
@@ -223,11 +223,11 @@ data$scores[is.na(data$scores)] <- mean(data$scores, na.rm = TRUE)
 print(data)
 ```
 
-### Data Type Conversions and Formatting
+## Data Type Conversions and Formatting
 
 Data often comes in formats that are not suitable for analysis. Converting data into the correct type is essential for further processing.
 
-#### Data Type Conversion
+### Data Type Conversion
 
 Use functions like `as.numeric()`, `as.factor()`, etc., to convert data types in R.
 
@@ -238,7 +238,7 @@ data$ages <- as.numeric(data$ages)
 print(data$ages)
 ```
 
-#### Formatting Data
+### Formatting Data
 
 Formatting data for readability and consistency (e.g., date formats) ensures that your datasets are easy to understand and analyze.
 
@@ -249,11 +249,11 @@ data$dates <- as.Date(data$dates, format = "%d-%m-%Y")
 print(data$dates)
 ```
 
-### Detecting and Dealing with Outliers
+## Detecting and Dealing with Outliers
 
 Outliers can skew the results of your data analysis, making it important to detect and appropriately handle them.
 
-#### Detecting Outliers
+### Detecting Outliers
 
 A common method to detect outliers is to use statistical thresholds like the interquartile range (IQR).
 
@@ -267,7 +267,7 @@ outliers <- scores < (Q1 - 1.5 * IQR) | scores > (Q3 + 1.5 * IQR)
 print(scores[outliers])
 ```
 
-#### Handling Outliers
+### Handling Outliers
 
 Handling outliers depends on their cause and the amount of impact they have on your analysis.
 
@@ -287,7 +287,7 @@ print(scores)
 
 
 
-### Code Exercises 2
+## Code Exercises 2
 
 **Exercise 1: Identify and Handle Missing Data**
 Task: Given a data frame with missing values, identify the missing values and then fill these missing values with the column mean.

@@ -3,13 +3,13 @@ title: "Chapter 3"
 output: html_document
 ---
 
-## Data Visualization in R (Light Focus)
+# Data Visualization in R (Light Focus)
 
-### Introduction to ggplot2 and Basic Plotting
+## Introduction to ggplot2 and Basic Plotting
 
 Effective data visualization is key to interpreting data and communicating results clearly. In R, `ggplot2` is one of the most powerful tools for creating a wide variety of static, aesthetic, and informative plots. This section introduces `ggplot2`, its syntax, and basic plotting techniques.
 
-#### ggplot2 Syntax and Layering System
+### ggplot2 Syntax and Layering System
 
 `ggplot2` is based on the grammar of graphics, a system that allows you to create graphs layer by layer. You start with data, add `aes` (aesthetics) to indicate which variables to plot, and then add `geoms` (geometric objects) to decide the type of plot.
 
@@ -23,11 +23,11 @@ ggplot(data = mtcars, aes(x = wt, y = mpg)) +
 
 In this example, `mtcars` is the dataset, `wt` (car weight) and `mpg` (miles per gallon) are the variables, and `geom_point()` creates a scatter plot.
 
-#### Creating Histograms, Bar Plots, and Scatter Plots
+### Creating Histograms, Bar Plots, and Scatter Plots
 
 Histograms, bar plots, and scatter plots are fundamental for exploring data distributions and relationships between variables.
 
-##### Histograms
+#### Histograms
 
 Histograms are used to visualize the distribution of a single continuous variable by dividing the data into bins and counting the number of observations in each bin.
 
@@ -37,7 +37,7 @@ ggplot(mtcars, aes(x = wt)) +
   geom_histogram(binwidth = 0.5, fill = "blue", color = "black")
 ```
 
-##### Bar Plots
+#### Bar Plots
 
 Bar plots are useful for comparing quantities corresponding to different groups.
 
@@ -50,7 +50,7 @@ ggplot(mtcars, aes(x = cyl)) +
   geom_bar(fill = "tomato", color = "black")
 ```
 
-##### Scatter Plots
+#### Scatter Plots
 
 Scatter plots are ideal for examining the relationship between two continuous variables.
 
@@ -60,7 +60,7 @@ ggplot(mtcars, aes(x = wt, y = mpg)) +
   geom_point(size = 3, color = "dodgerblue")
 ```
 
-#### Aesthetics and Themes
+### Aesthetics and Themes
 
 `ggplot2` allows extensive customization of plots through aesthetics and themes, enabling you to make plots more informative and appealing.
 
@@ -78,7 +78,7 @@ ggplot(mtcars, aes(x = wt, y = mpg, color = cyl)) +  # Color points by cylinder 
 These examples demonstrate basic `ggplot2` usage for creating various types of plots, setting the stage for more advanced visualization techniques. Each type of plot serves different purposes and can be tailored extensively using `ggplot2`'s powerful customization options.
 
 
-### Code Exercises 1
+## Code Exercises 1
 
 **Exercise 1: Create a Histogram**
 Task: Use the `ggplot2` package to create a histogram of the `hp` (horsepower) variable from the `mtcars` dataset. Customize the bin width to 20 and set the fill color to green.
@@ -155,15 +155,15 @@ ggplot(mtcars, aes(x = disp, y = mpg, color = factor(cyl))) +
 These exercises encourage students to apply their knowledge of ggplot2 for creating, customizing, and enhancing visual representations of data. By completing these tasks, students will gain hands-on experience in effectively communicating data insights through visualizations.
 
 
-## Customizing Graphs for Data Presentation
+# Customizing Graphs for Data Presentation
 
 Visualizing data effectively involves more than just creating basic plots; it requires customization to enhance clarity and impact. This section of the course will teach you how to customize axes, legends, and labels, fine-tune scales and coordinates, and add annotations and custom geometries using ggplot2 in R.
 
-### Customizing Axes, Legends, and Labels
+## Customizing Axes, Legends, and Labels
 
 Customizing the textual components of your plots helps in making them more readable and informative. `ggplot2` allows for detailed adjustments to these elements.
 
-#### Customizing Axes
+### Customizing Axes
 
 You can modify the text of axis labels and adjust the axis limits to focus on specific areas of the data.
 
@@ -178,7 +178,7 @@ ggplot(mtcars, aes(x = wt, y = mpg)) +
   labs(title = "Car Weight vs. Fuel Efficiency")
 ```
 
-#### Customizing Legends
+### Customizing Legends
 
 Adjusting the legend involves changing its title, text, and position to improve the overall aesthetics and readability.
 
@@ -190,7 +190,7 @@ ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
   theme(legend.position = "bottom")
 ```
 
-#### Customizing Labels
+### Customizing Labels
 
 Labels for the entire plot, axes, and legends can be styled to enhance clarity or to align with publication standards or personal preferences.
 
@@ -206,11 +206,11 @@ ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
   )
 ```
 
-### Fine-tuning Scales and Coordinates
+## Fine-tuning Scales and Coordinates
 
 Manipulating scales and coordinates can help in presenting data more effectively by adjusting the visual representation to better fit the dataset's story.
 
-#### Scales
+### Scales
 
 Scales adjust how data is mapped to aesthetics. You can set the scale for each aesthetic (like color, size, or shape) to control the visual properties of the plot.
 
@@ -221,7 +221,7 @@ ggplot(mtcars, aes(x = wt, y = mpg, color = hp)) +
   scale_color_gradient(low = "blue", high = "red")
 ```
 
-#### Coordinates
+### Coordinates
 
 Using coordinate functions, you can adjust the plotting area, aspect ratios, or flip axes which is useful for certain types of data or specific visual effects.
 
@@ -232,11 +232,11 @@ ggplot(mtcars, aes(x = wt, y = mpg)) +
   coord_flip()
 ```
 
-### Adding Annotations and Custom Geometries
+## Adding Annotations and Custom Geometries
 
 Annotations and custom geometries enhance plots by adding text annotations, lines, or other shapes to highlight specific features or data points.
 
-#### Annotations
+### Annotations
 
 Adding text annotations to highlight specific points or areas on the plot.
 
@@ -247,7 +247,7 @@ ggplot(mtcars, aes(x = wt, y = mpg)) +
   annotate("text", x = 5, y = 30, label = "Outlier", color = "red")
 ```
 
-#### Custom Geometries
+### Custom Geometries
 
 You can draw shapes or lines to highlight trends or important areas.
 
@@ -260,7 +260,7 @@ ggplot(mtcars, aes(x = wt, y = mpg)) +
 
 These customization techniques in ggplot2 enable you to tailor your visualizations precisely to your data’s narrative, improving not only the aesthetics but also the effectiveness of your data presentations.
 
-### Code Exercises 2
+## Code Exercises 2
 
 **Exercise 1: Customize Axis Labels and Limits**
 Task: Create a scatter plot of `disp` (displacement) vs `mpg` (miles per gallon) from the `mtcars` dataset. Customize the axis labels to be more descriptive and set appropriate limits for better data focus.

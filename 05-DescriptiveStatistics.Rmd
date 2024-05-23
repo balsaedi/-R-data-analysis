@@ -3,13 +3,13 @@ title: "Chapter 5"
 output: html_document
 ---
 
-## Descriptive Statistics
+# Descriptive Statistics
 
-### Measures of Central Tendency, Variability, and Standard Scores
+## Measures of Central Tendency, Variability, and Standard Scores
 
 Understanding the central tendency and variability of data is crucial in descriptive statistics. These measures give us insights into the general pattern of the data, its central position, and its spread. Additionally, standard scores allow us to understand how individual data points relate to the distribution. Here's a breakdown of how to calculate these statistics and their importance.
 
-#### Calculating Mean, Median, and Mode
+### Calculating Mean, Median, and Mode
 
 The mean, median, and mode are measures of central tendency that describe the center of a data set.
 
@@ -39,7 +39,7 @@ mode_value <- get_mode(data)
 print(paste("Mode:", mode_value))
 ```
 
-#### Variance, Standard Deviation, and Range
+### Variance, Standard Deviation, and Range
 
 These are measures of variability that indicate the spread of data points.
 
@@ -62,7 +62,7 @@ range_value <- max(data) - min(data)
 print(paste("Range:", range_value))
 ```
 
-#### Normalization and Standardization of Scores
+### Normalization and Standardization of Scores
 
 Normalization and standardization are techniques to adjust the scale of data, which is crucial for many statistical techniques and data visualization.
 
@@ -88,7 +88,7 @@ print("Standardized Data:")
 print(standardized_data)
 ```
 
-#### Graphical Representations
+### Graphical Representations
 
 Visual tools like histograms and box plots are invaluable for understanding data distributions.
 
@@ -107,12 +107,12 @@ ggplot(data.frame(data), aes(y=data)) +
   ggtitle("Box Plot of Data")
 ```
 
-#### Real-World Applications
+### Real-World Applications
 
 In business, statistics guide decision-making processes; in science, they validate research findings.
 
 
-### Code Exercises 1
+## Code Exercises 1
 
 **Exercise 1: Compute and Visualize Descriptive Statistics**  
 Task: Given a dataset of daily temperatures, calculate the mean, median, mode, variance, and standard deviation. Additionally, create a histogram and a box plot to visualize the data distribution.
@@ -196,15 +196,15 @@ print(underperforming)
 # TODO: Insert Exercise chunk with error messages and solutions.
 ```
 
-## More on Visualizing Distributions and Relationships
+# More on Visualizing Distributions and Relationships
 
 Enhancing data visualization skills is crucial for analyzing and interpreting complex datasets. This section covers advanced visualization techniques like box plots, violin plots, density plots, scatter plots, correlograms, and introduces multidimensional scaling (MDS) and principal component analysis (PCA).
 
-### Box Plots, Violin Plots, and Density Plots
+## Box Plots, Violin Plots, and Density Plots
 
 These plots are essential for visualizing the distribution of data and identifying outliers.
 
-#### Box Plots
+### Box Plots
 Box plots provide a graphical representation of the central tendency and variability of data, highlighting medians and quartiles.
 
 ```r
@@ -217,7 +217,7 @@ ggplot(mtcars, aes(x = factor(0), y = data)) +
   labs(title = "Box Plot of Miles Per Gallon", x = "", y = "Miles Per Gallon")
 ```
 
-#### Violin Plots
+### Violin Plots
 Violin plots combine box plots and density plots, providing a deeper understanding of the density distribution.
 
 ```r
@@ -227,7 +227,7 @@ ggplot(mtcars, aes(x = factor(cyl), y = mpg)) +
   labs(title = "Violin Plot of Miles Per Gallon by Cylinder Count", x = "Number of Cylinders", y = "Miles Per Gallon")
 ```
 
-#### Density Plots
+### Density Plots
 Density plots are smoothed, continuous versions of histograms that estimate the probability density function of a variable.
 
 ```r
@@ -237,11 +237,11 @@ ggplot(mtcars, aes(x = mpg)) +
   labs(title = "Density Plot of Miles Per Gallon", x = "Miles Per Gallon", y = "Density")
 ```
 
-### Pairwise Relationships with Scatter Plots and Correlograms
+## Pairwise Relationships with Scatter Plots and Correlograms
 
 Understanding the relationships between multiple variables is crucial for many analytical tasks.
 
-#### Scatter Plots
+### Scatter Plots
 Scatter plots allow for the visualization of relationships between two numeric variables.
 
 ```r
@@ -251,7 +251,7 @@ ggplot(mtcars, aes(x = wt, y = mpg)) +
   labs(title = "Scatter Plot of Weight vs Miles Per Gallon", x = "Weight (1000 lbs)", y = "Miles Per Gallon")
 ```
 
-#### Correlograms
+### Correlograms
 Correlograms show the correlation coefficients between pairs of variables across an entire dataset, useful for feature selection.
 
 ```r
@@ -260,11 +260,11 @@ library(PerformanceAnalytics)
 chart.Correlation(mtcars[,1:7], histogram = TRUE, pch = 19)
 ```
 
-### Introduction to Multidimensional Scaling and PCA
+## Introduction to Multidimensional Scaling and PCA
 
 These techniques are used for dimensionality reduction, allowing for the visualization of complex, high-dimensional data in a lower-dimensional space.
 
-#### Multidimensional Scaling (MDS)
+### Multidimensional Scaling (MDS)
 MDS projects high-dimensional data into a lower-dimensional space while preserving the distances among data points.
 
 ```r
@@ -274,7 +274,7 @@ mds_model <- cmdscale(distances)  # Classical MDS
 plot(mds_model[,1], mds_model[,2], xlab = "MDS1", ylab = "MDS2", main = "MDS Plot of mtcars")
 ```
 
-#### Principal Component Analysis (PCA)
+### Principal Component Analysis (PCA)
 PCA reduces dimensionality by transforming variables into a new set of variables (principal components), which are linear combinations of the original variables.
 
 ```r
@@ -283,7 +283,7 @@ pca_result <- prcomp(mtcars[, c("mpg", "disp", "hp", "drat")], scale. = TRUE)
 plot(pca_result$x[,1:2], xlab = "PC1", ylab = "PC2", main = "PCA of Selected mtcars Variables")
 ```
 
-### Exercise for Visualizing Distributions and Relationships
+## Exercise for Visualizing Distributions and Relationships
 
 **Exercise: Apply Visualization Techniques**
 Given the `iris` dataset, create box plots for each species' petal length, a correlogram for the dataset, and perform PCA to visualize the first two principal components.

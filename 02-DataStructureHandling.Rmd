@@ -3,13 +3,13 @@ title: "Chapter 3"
 output: html_document
 ---
 
-## Data Structures and Data Handling in R (Light Focus)
+# Data Structures and Data Handling in R (Light Focus)
 
-### Overview of Vectors, Matrices, Lists, and Data Frames
+## Overview of Vectors, Matrices, Lists, and Data Frames
 
 Understanding and effectively manipulating basic data structures in R is foundational for all subsequent data manipulation and analysis tasks. This section will guide you through creating and working with vectors, matrices, lists, and data frames.
 
-#### Creating and Manipulating Vectors
+## Creating and Manipulating Vectors
 
 Vectors are the simplest and most common data structure in R. They store an ordered collection of elements of the same type. Understanding vectors is crucial as they form the building blocks for more complex data structures.
 
@@ -29,7 +29,7 @@ temperature_f <- temperature_c * 9 / 5 + 32  # Convert to Fahrenheit
 print(temperature_f)
 ```
 
-#### Operations with Matrices and Arrays
+## Operations with Matrices and Arrays
 
 Matrices are vectors with a dimension attribute. They are useful for handling two-dimensional data. Arrays extend this concept to multiple dimensions.
 
@@ -49,7 +49,7 @@ print(matrix_data)
 print(transposed)
 ```
 
-#### Understanding Lists and Their Uses
+## Understanding Lists and Their Uses
 
 Lists in R are a generic vector capable of holding elements of different types. This makes them extremely versatile for datasets that require a mix of numeric, character, and logical types.
 
@@ -66,7 +66,7 @@ my_list$address <- "123 Elm St"
 print(my_list)
 ```
 
-#### Data Frames for Tabular Data
+## Data Frames for Tabular Data
 
 Data frames are used extensively in R for storing tabular data. They resemble a table in a relational database or an Excel spreadsheet, with each column potentially holding a different type of data.
 
@@ -86,7 +86,7 @@ students$grade <- ifelse(students$score > 90, "A", "B")
 print(students)
 ```
 
-### Code Exercises
+## Code Exercises
 
 **Exercise 1:** Create a numeric vector representing the temperatures of the days of the week and convert them to Fahrenheit. Print the results.
 
@@ -139,15 +139,15 @@ print(students_df)
 These exercises are designed to build your confidence in working with R’s fundamental data structures, allowing you to effectively manage and analyze data. This hands-on approach helps cement the concepts by applying them in practical scenarios.
 
 
-## Data Handling Techniques with dplyr
+# Data Handling Techniques with dplyr
 
 The `dplyr` package in R is a powerful tool for data manipulation, providing a coherent set of verbs that help you solve the most common data manipulation challenges. This section will cover how to use these verbs to select, filter, arrange, mutate, summarize, join, and group your data.
 
-### Selecting, Filtering, and Arranging Data
+## Selecting, Filtering, and Arranging Data
 
 `dplyr` makes it easy to select specific columns of data, filter rows based on conditions, and arrange data in ascending or descending order.
 
-#### Selecting Data
+## Selecting Data
 
 Use `select()` to choose a subset of columns to keep.
 
@@ -166,7 +166,7 @@ selected_data <- select(data, name, age)
 print(selected_data)
 ```
 
-#### Filtering Data
+## Filtering Data
 
 `filter()` is used to retrieve rows that meet certain conditions.
 
@@ -176,7 +176,7 @@ filtered_data <- filter(data, age > 25)
 print(filtered_data)
 ```
 
-#### Arranging Data
+## Arranging Data
 
 `arrange()` is used to reorder rows of a data frame.
 
@@ -186,11 +186,11 @@ arranged_data <- arrange(data, age)
 print(arranged_data)
 ```
 
-### Mutating and Summarizing Data Sets
+## Mutating and Summarizing Data Sets
 
 `mutate()` adds new variables that are functions of existing variables, and `summarise()` reduces multiple values down to a single summary.
 
-#### Mutating Data
+## Mutating Data
 
 ```r
 # Adding a new column that calculates yearly savings potential
@@ -198,7 +198,7 @@ mutated_data <- mutate(data, savings = salary * 0.1)
 print(mutated_data)
 ```
 
-#### Summarizing Data
+## Summarizing Data
 
 ```r
 # Summarizing to find the average salary
@@ -206,7 +206,7 @@ summary_data <- summarise(data, average_salary = mean(salary))
 print(summary_data)
 ```
 
-### Joins and Data Merging Techniques
+## Joins and Data Merging Techniques
 
 `dplyr` provides several functions to merge data frames together, such as `left_join()`, `right_join()`, `inner_join()`, and `full_join()`.
 
@@ -222,7 +222,7 @@ joined_data <- left_join(data, department_data, by = "name")
 print(joined_data)
 ```
 
-### Group Operations with `group_by` and `summarise`
+## Group Operations with `group_by` and `summarise`
 
 Grouping data makes it possible to compute summaries over groups of data.
 
@@ -240,7 +240,7 @@ This demonstration of `dplyr`'s capabilities shows how straightforward it is to 
 
 Certainly! Let’s craft some practical exercises for this section on data handling techniques using `dplyr`. These exercises will reinforce the skills students need to manipulate and analyze data effectively with R.
 
-### Code Exercises for Data Handling Techniques with `dplyr`
+## Code Exercises for Data Handling Techniques with `dplyr`
 
 **Exercise 1: Select and Filter Data**  
 Create a data frame and use `dplyr` to select specific columns and filter rows based on conditions.

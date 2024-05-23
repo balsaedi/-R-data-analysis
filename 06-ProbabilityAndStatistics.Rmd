@@ -7,14 +7,14 @@ Certainly! Let's refine the content to make it more engaging for students by foc
 
 ---
 
-## Probability Distributions and Statistical Concepts
+# Probability Distributions and Statistical Concepts
 
-### Overview
+## Overview
 This section delves into the fundamental concepts and applications of probability distributions, key statistical theorems, and methods for analyzing random variables. We aim to build a foundational understanding, enriched by practical examples and real-world applications.
 
-### Understanding and Applying Common Probability Distributions
+## Understanding and Applying Common Probability Distributions
 
-#### Objective
+### Objective
 Explore different types of probability distributions and their applications to effectively model and analyze data in various scenarios.
 
 1. **Binomial, Poisson, and Normal Distributions**
@@ -62,12 +62,12 @@ Explore different types of probability distributions and their applications to e
    ```
 
 
-## Exploring Random Variables and Expected Values
+# Exploring Random Variables and Expected Values
 
-### Objective
+## Objective
 The goal of this section is to delve into the statistical fundamentals of random variables and expected values, elaborating on their theoretical underpinnings, methods of calculation, and practical implications in data analysis.
 
-### Subsections
+## Subsections
 
 1. **Defining and Calculating Expected Values**
    - **Definition**: The expected value of a random variable gives a measure of the center of the distribution of the variable. Essentially, it is the long-term average value of the variable when the experiment it represents is repeated infinitely many times.
@@ -113,15 +113,15 @@ The goal of this section is to delve into the statistical fundamentals of random
      ```
 
 
-## Practical Applications and Demonstrations of Statistical Concepts
+# Practical Applications and Demonstrations of Statistical Concepts
 
-### Introduction
+## Introduction
 
 This section is designed to transition from theoretical understanding to practical application, allowing students to apply statistical concepts to real-world data. Through hands-on activities, we aim to deepen comprehension and enhance analytical skills, preparing students for real-world challenges.
 
-### Engaging with Simulations: Understanding Through Action
+## Engaging with Simulations: Understanding Through Action
 
-#### Simulating Statistical Distributions
+### Simulating Statistical Distributions
 - **Objective**: Experience firsthand the properties and behaviors of different statistical distributions.
 - **Activity**:
   - Generate data samples from binomial, Poisson, and normal distributions.
@@ -139,15 +139,15 @@ This section is designed to transition from theoretical understanding to practic
     labs(title = "Visualization of a Normal Distribution", x = "Values", y = "Frequency")
   ```
 
-#### Visual Insights: Plotting Distributions
+### Visual Insights: Plotting Distributions
 - **Objective**: Cultivate the ability to visually interpret statistical data through plotting.
 - **Activity**:
   - Use R to create dynamic visualizations (histograms, density plots) that illustrate the distribution of data.
   - Discuss how visualization aids in understanding data distributions and identifying outliers or patterns.
 
-### Analyzing Data: From Theory to Practice
+## Analyzing Data: From Theory to Practice
 
-#### Data-Driven Decision Making
+### Data-Driven Decision Making
 - **Objective**: Apply statistical analysis to derive meaningful insights and make informed decisions.
 - **Activity**:
   - Conduct a detailed analysis of a dataset by calculating descriptive statistics, applying probability distributions, and testing hypotheses.
@@ -176,18 +176,18 @@ This section is designed to transition from theoretical understanding to practic
   print(summary_stats)
   ```
 
-### Summary
+## Summary
 
 This section not only reinforces statistical concepts through practical applications but also cultivates skills in data visualization and analysis. By engaging with real datasets and simulations, students enhance their ability to interpret and analyze data effectively, preparing them for professional roles that demand strong analytical capabilities.
 
 
-## Exercises for Deepening Understanding
+# Exercises for Deepening Understanding
 
 To solidify the concepts discussed in this module, the following exercises are designed to challenge students to apply theoretical knowledge in practical settings, ensuring a thorough understanding of key statistical principles.
 
-### Exercise Details
+## Exercise Details
 
-#### Exercise 1: Decision-Making Using Probability Distributions
+### Exercise 1: Decision-Making Using Probability Distributions
 - **Objective**: Apply different probability distributions to make informed decisions in hypothetical business scenarios.
 - **Task**: Assume you're a manager at a retail company. Use the binomial distribution to determine the likelihood of at least 7 out of 10 customers purchasing a new product if the chance of one customer buying it is 30%. Discuss how this probability would influence a decision to increase product stock.
   
@@ -201,7 +201,7 @@ To solidify the concepts discussed in this module, the following exercises are d
 # TODO: Insert Exercise chunk with error messages and solutions.
 ```
 
-#### Exercise 2: Demonstrating the Central Limit Theorem
+### Exercise 2: Demonstrating the Central Limit Theorem
 - **Objective**: Visualize and understand the Central Limit Theorem through simulation.
 - **Task**: Simulate rolling a six-sided die 1000 times. Calculate the mean for each set of 50 rolls, and plot the distribution of these means. Analyze how the distribution changes with the number of rolls and discuss the implications of the CLT.
   
@@ -219,7 +219,7 @@ To solidify the concepts discussed in this module, the following exercises are d
 # TODO: Insert Exercise chunk with error messages and solutions.
 ```
 
-#### Exercise 3: Calculating Expected Values, Variance, and Applying the Law of Large Numbers
+### Exercise 3: Calculating Expected Values, Variance, and Applying the Law of Large Numbers
 - **Objective**: Calculate expected values and variance, and observe the Law of Large Numbers in action.
 - **Task**: Calculate the expected value and variance for the number of heads in 100 flips of a fair coin. Then simulate flipping the coin 1000 times and observe how the average number of heads stabilizes around the expected value.
   
@@ -241,13 +241,13 @@ To solidify the concepts discussed in this module, the following exercises are d
 # TODO: Insert Exercise chunk with error messages and solutions.
 ```
 
-### Summary
+## Summary
 
-#### Recap of Key Points
+### Recap of Key Points
 - We've explored how probability distributions can inform decision-making, demonstrated the Central Limit Theorem through simulations, and applied the Law of Large Numbers to observe the stability of averages over time.
 - These exercises are integral in showing how theoretical statistical concepts apply in practical, real-world contexts.
 
-#### Further Reading and Resources
+### Further Reading and Resources
 - **Books**: "Probability and Statistics" by Morris H. DeGroot and Mark J. Schervish offers comprehensive insights into the theories discussed.
 - **Online Courses**: Platforms like Coursera and Khan Academy provide courses on statistics that further explore these topics.
 - **Articles**: Research articles on the application of statistical methods in business and science can provide deeper insights into advanced topics.

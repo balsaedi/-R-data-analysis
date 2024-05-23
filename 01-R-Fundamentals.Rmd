@@ -3,13 +3,13 @@ title: "Chapter 1"
 output: html_document
 ---
 
-## R Programming Fundamentals (Light Focus)
+# R Programming Fundamentals (Light Focus)
 
-### Basics of R Syntax and Functions
+## Basics of R Syntax and Functions
 
 Understanding the basics of R syntax and how functions work is essential for any aspiring data analyst. Here’s a breakdown to help you get started.
 
-### Variables and Data Types
+## Variables and Data Types
 In R, variables are used to store data which can be of various types: numeric, integer, character (string), and logical (boolean). Setting up variables correctly is crucial for managing and manipulating your data effectively.
 
 ```r
@@ -20,7 +20,7 @@ c <- "Hello, world!"  # Character
 d <- TRUE  # Logical
 ```
 
-### Control Structures: Loops and Conditional Statements
+## Control Structures: Loops and Conditional Statements
 Control structures in R, such as loops and conditional statements, control the flow of execution of the script. `if-else` statements make decisions, while loops (`for`, `while`) repeat actions, which is very useful for automating repetitive tasks.
 
 ```r
@@ -40,7 +40,7 @@ for(i in 1:5) {
 # TODO: Demonstration
 ```
 
-### Writing and Using Functions
+## Writing and Using Functions
 Functions are blocks of code that you can reuse. They are defined using the `function()` keyword and can return a value using the `return()` function, although it's optional as R automatically returns the last expression evaluated.
 
 ```r
@@ -56,7 +56,7 @@ my_sum(5, 3)
 ```r
 # TODO: Demonstration
 ```
-### Debugging and Error Handling
+## Debugging and Error Handling
 Debugging is an essential skill in programming. R provides several tools for debugging, such as `browser()`, `traceback()`, and `debug()`. Error handling can be performed using `try()`, `tryCatch()`, and `stop()` functions to manage exceptions and maintain the flow of execution.
 
 ```r
@@ -72,7 +72,7 @@ if(inherits(result, "try-error")) {
 # TODO: Demonstration
 ```
 
-### Code Exercise 1
+## Code Exercise 1
 
 **Exercise 1:** Create variables of each type and print them.
 ```r
@@ -98,11 +98,11 @@ if(inherits(result, "try-error")) {
 These exercises are designed to solidify your understanding of R's fundamental programming concepts and get you hands-on experience writing and debugging R code. They serve as a practical way to apply what you've learned and prepare you for more complex data analysis tasks.
 
 
-## Efficient Programming Practices
+# Efficient Programming Practices
 
 Adopting efficient programming practices is essential for writing clean, fast, and reliable R code. This section covers key aspects that every R programmer should know to enhance their coding efficiency.
 
-### Code Organization and Readability
+## Code Organization and Readability
 Organizing your code properly and ensuring it is easy to read are fundamental for both solo and collaborative projects. This involves:
 
 - **Commenting generously**: Write comments that explain the "why" behind the code, not just the "what".
@@ -121,7 +121,7 @@ calculate_mean <- function(numbers) {
 }
 ```
 
-### Introduction to R's Vectorized Operations
+## Introduction to R's Vectorized Operations
 Vectorized operations are one of the most powerful features of R, allowing you to operate on entire vectors of data without the need for explicit loops. This not only makes the code cleaner but also significantly faster.
 
 - **Use vectorized functions**: Functions like `sum()`, `mean()`, `min()`, and `max()` are inherently vectorized.
@@ -142,7 +142,7 @@ for(i in seq_along(numbers)) {
 squares_vectorized <- numbers^2
 ```
 
-### Best Practices for Speed and Performance
+## Best Practices for Speed and Performance
 Improving the speed and performance of your R scripts can be crucial, especially when dealing with large datasets.
 
 - **Pre-allocate vectors**: Growing a vector inside a loop can be costly. Pre-allocate the vector to its full required length before the loop starts.
@@ -157,7 +157,7 @@ for(i in 1:100) {
 }
 ```
 
-### Using R Profiler for Code Optimization
+## Using R Profiler for Code Optimization
 R provides profiling tools to help identify bottlenecks in your code. `Rprof()` starts the profiler, and `summaryRprof()` helps analyze the profiler's output.
 
 - **Identify slow functions**: Use the profiler to see which functions are taking up most of the execution time.
@@ -171,7 +171,7 @@ Rprof(NULL)
 summaryRprof()
 ```
 
-### Code Exercises 2
+## Code Exercises 2
 
 **Exercise 1: Refactor a provided piece of poorly organized R code to improve its readability and structure.**
 ```r

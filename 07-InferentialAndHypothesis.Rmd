@@ -3,13 +3,13 @@ title: "Chapter 7"
 output: html_document
 ---
 
-### Inferential Statistics and Hypothesis Testing
+# Inferential Statistics and Hypothesis Testing
 
 ## Theoretical Basis for Hypothesis Testing and Significance
 
 Inferential statistics allow researchers to make inferences about a population based on data collected from a sample. A core component of inferential statistics is hypothesis testing, which is a systematic method used to evaluate data and make decisions about a population parameter based on sample analysis.
 
-### Null and Alternative Hypotheses
+## Null and Alternative Hypotheses
 
 **Concepts**:
 - **Null Hypothesis (H0)**: This hypothesis states that there is no significant difference or effect, and any observed difference is due to sampling or experimental error. It represents a statement of "no effect" or "no difference."
@@ -20,7 +20,7 @@ Suppose a school claims their students' average test score is 75. To challenge t
 - **H0**: The average score is 75 (µ = 75).
 - **H1**: The average score is not 75 (µ ≠ 75).
 
-### Type I and Type II Errors
+## Type I and Type II Errors
 
 **Definitions**:
 - **Type I Error (α)**: Occurs when the null hypothesis is true, but we incorrectly reject it. It's often called a "false positive." The significance level (α), commonly set at 0.05, defines the probability of this error.
@@ -29,7 +29,7 @@ Suppose a school claims their students' average test score is 75. To challenge t
 **Example in Practice**:
 Using the school example, a Type I error would mean concluding that the average score is not 75 when it actually is 75. A Type II error would mean failing to reject the claim that the average is 75 when it is actually different.
 
-### p-Values and Confidence Intervals
+## p-Values and Confidence Intervals
 
 **Understanding p-Values**:
 - A p-value is the probability of obtaining results at least as extreme as the observed results of a statistical hypothesis test, assuming that the null hypothesis is correct.
@@ -58,11 +58,11 @@ print(paste("95% Confidence Interval:", paste(test_results$conf.int[1], test_res
 This section provides a foundational understanding of hypothesis testing, equipping students with the knowledge to apply these concepts effectively in their own research and analysis. Through practical examples and demonstrations, students are encouraged to explore these statistical tools and understand their implications in real-world scenarios.
 
 
-### Chi-Square, t-tests, z-tests, and Non-Parametric Tests
+## Chi-Square, t-tests, z-tests, and Non-Parametric Tests
 
 This section of the curriculum focuses on specific statistical tests used for hypothesis testing, each appropriate for different types of data and research questions. Understanding when and how to apply these tests is crucial for proper data analysis.
 
-#### Conducting and Interpreting Chi-Square Tests
+### Conducting and Interpreting Chi-Square Tests
 
 **Purpose and Application**:
 - The Chi-Square test is primarily used to determine whether there is a significant association between two categorical variables. It's often applied in market research, opinion polls, and educational research, among other fields.
@@ -83,7 +83,7 @@ chi_test <- chisq.test(diet_data)
 print(chi_test)
 ```
 
-#### One-sample and Two-sample t-tests
+### One-sample and Two-sample t-tests
 
 **Purpose and Application**:
 - **One-sample t-test**: Tests whether the mean of a single group differs from a specified mean.
@@ -108,7 +108,7 @@ print(t_test_one)
 print(t_test_two)
 ```
 
-#### Non-Parametric Alternatives to Parametric Tests
+### Non-Parametric Alternatives to Parametric Tests
 
 **Purpose and Application**:
 - Non-parametric tests do not assume a specific distribution in the data and are useful when the assumptions for parametric tests (like normal distribution) are not met. These include tests like the Mann-Whitney U test, Wilcoxon Signed-Rank test, and Kruskal-Wallis test.
@@ -128,11 +128,11 @@ mann_whitney_test <- wilcox.test(scores_class1, scores_class2)
 print(mann_whitney_test)
 ```
 
-### Exercises for Inferential Statistics and Hypothesis Testing
+## Exercises for Inferential Statistics and Hypothesis Testing
 
 To consolidate the concepts learned in this chapter, the following exercises are designed to engage students in practical applications of inferential statistics methods. These activities will help students gain hands-on experience in hypothesis testing, understanding test assumptions, and interpreting results.
 
-#### Exercise 1: Conducting a Chi-Square Test
+### Exercise 1: Conducting a Chi-Square Test
 - **Objective**: Assess whether there is a significant relationship between two categorical variables.
 - **Scenario**: A local library wants to determine if there is an association between gender and preference for fiction vs. non-fiction books. You are provided with the following data collected from a survey:
   - Males: 40 like fiction, 60 like non-fiction.
@@ -153,7 +153,7 @@ To consolidate the concepts learned in this chapter, the following exercises are
   print(chi_results)
   ```
 
-#### Exercise 2: One-sample t-test
+### Exercise 2: One-sample t-test
 - **Objective**: Test if the average measurement from a sample differs significantly from a known or hypothesized population mean.
 - **Scenario**: An educational researcher claims that students on average spend 3.5 hours per day studying. You have data from a random sample of 25 students.
 - **Task**: Perform a one-sample t-test to see if there is a significant difference from the national average.
@@ -173,7 +173,7 @@ To consolidate the concepts learned in this chapter, the following exercises are
 # TODO: Insert Exercise chunk with error messages and solutions.
 ```
 
-#### Exercise 3: Exploring Non-Parametric Tests
+### Exercise 3: Exploring Non-Parametric Tests
 - **Objective**: Use non-parametric methods to test hypotheses when data do not meet the assumptions required for parametric tests.
 - **Scenario**: You suspect that two groups of plants have different growth rates, but the data are not normally distributed.
 - **Task**: Apply the Mann-Whitney U test to compare the growth rates of the two groups.
