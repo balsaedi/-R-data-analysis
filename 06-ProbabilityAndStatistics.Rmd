@@ -1,12 +1,3 @@
----
-title: "Chapter 6"
-output: html_document
----
-
-Certainly! Let's refine the content to make it more engaging for students by focusing on narrative flow and integrating demonstrations seamlessly into the text without explicit subheadings.
-
----
-
 # Probability Distributions and Statistical Concepts
 
 ## Overview
