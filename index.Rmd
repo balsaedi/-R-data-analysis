@@ -84,6 +84,7 @@ install.packages("tidyverse")
 library(tidyverse)
 ```
 
+![alt text](image.png)
 
 ## Importance of Data Analysis with R
 
