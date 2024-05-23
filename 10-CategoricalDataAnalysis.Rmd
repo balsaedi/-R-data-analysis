@@ -1,0 +1,120 @@
+# Categorical Data Analysis
+
+## Introduction to Logistic Regression
+
+Logistic regression is used when the dependent variable is binary (i.e., it has two possible outcomes). It models the probability of the occurrence of an event by fitting data to a logistic curve.
+
+### Odds Ratios and Logit Function
+- **Odds Ratios**: The odds ratio is a measure of association between an exposure and an outcome. It represents the odds that an event will occur given a particular exposure, compared to the odds of the event occurring without that exposure.
+- **Logit Function**: The logit function is the natural logarithm of the odds of the dependent event. Logistic regression uses this function to model the relationship between the independent variables and the probability of the dependent event occurring.
+
+### Model Fitting and Interpretation
+- **Model Fitting**: Logistic regression models are fitted using maximum likelihood estimation. The coefficients obtained from the model represent the change in the log odds of the dependent variable for a one-unit change in the independent variable.
+- **Interpretation**: The exponentiated coefficients (exp(coef)) can be interpreted as odds ratios. A coefficient of 0 means no effect, positive coefficients increase the odds, and negative coefficients decrease the odds.
+
+**Example and Demonstration**:
+
+```r
+# Example data
+set.seed(123)
+x1 <- rnorm(100)
+x2 <- rnorm(100)
+y <- rbinom(100, 1, prob = 1 / (1 + exp(-(0.5 + 1.5 * x1 - 1 * x2))))
+
+data <- data.frame(y, x1, x2)
+
+# Fit Logistic Regression
+model_logit <- glm(y ~ x1 + x2, data = data, family = binomial)
+summary(model_logit)
+
+# Interpretation of coefficients
+exp(coef(model_logit))
+```
+
+### Assessing Model Goodness of Fit
+- **Goodness of Fit**: The goodness of fit of a logistic regression model can be assessed using various methods such as the Hosmer-Lemeshow test, Akaike Information Criterion (AIC), and analysis of residuals.
+- **Example**: Use the Hosmer-Lemeshow test to assess the model fit.
+
+```r
+# Assessing model goodness of fit
+library(ResourceSelection)
+hoslem.test(data$y, fitted(model_logit))
+```
+
+## Modeling and Interpretation of Binary Outcomes
+
+### Predictive Modeling with Binary Data
+Logistic regression is commonly used for predictive modeling with binary outcomes. The model predicts the probability that a given input belongs to one of the two outcome categories.
+
+### Evaluating Model Performance (ROC Curves, AUC)
+- **ROC Curve**: A Receiver Operating Characteristic (ROC) curve is a graphical representation of a model's diagnostic ability. It plots the true positive rate (sensitivity) against the false positive rate (1 - specificity) for different threshold values.
+- **AUC (Area Under the Curve)**: The AUC is a single scalar value that summarizes the performance of the model across all threshold values. A higher AUC indicates better model performance.
+
+**Example and Demonstration**:
+
+```r
+# ROC Curve and AUC
+library(pROC)
+roc_curve <- roc(data$y, fitted(model_logit))
+plot(roc_curve)
+auc(roc_curve)
+```
+
+# Exercises for Categorical Data Analysis
+
+## Exercise 1: Logistic Regression
+- **Objective**: Fit a logistic regression model and interpret the results.
+- **Scenario**: A researcher wants to study the effect of two variables on the likelihood of an event occurring.
+- **Task**: Perform a logistic regression with a binary outcome variable and two predictors.
+
+  **Steps**:
+  ```r
+  # Sample data
+  x1 <- rnorm(100)
+  x2 <- rnorm(100)
+  y <- rbinom(100, 1, prob = 1 / (1 + exp(-(0.5 + 1.5 * x1 - 1 * x2))))
+
+  data <- data.frame(y, x1, x2)
+
+  # Fit Logistic Regression
+  model_logit <- glm(y ~ x1 + x2, data = data, family = binomial)
+  summary(model_logit)
+
+  # Interpretation of coefficients
+  exp(coef(model_logit))
+  ```
+  ```r
+  # TODO: Insert Exercise chunk with error messages and solutions.
+  ```
+
+## Exercise 2: Model Goodness of Fit
+- **Objective**: Assess the goodness of fit of a logistic regression model.
+- **Scenario**: A researcher has fitted a logistic regression model and wants to validate its fit.
+- **Task**: Use the Hosmer-Lemeshow test to assess the model fit.
+
+  **Steps**:
+  ```r
+  # Assessing model goodness of fit
+  library(ResourceSelection)
+  hoslem.test(data$y, fitted(model_logit))
+  ```
+  ```r
+  # TODO: Insert Exercise chunk with error messages and solutions.
+  ```
+
+## Exercise 3: Evaluating Model Performance
+- **Objective**: Evaluate the performance of a logistic regression model using ROC curves and AUC.
+- **Scenario**: A researcher wants to evaluate the performance of their logistic regression model.
+- **Task**: Plot the ROC curve and calculate the AUC for the logistic regression model.
+
+  **Steps**:
+  ```r
+  # ROC Curve and AUC
+  library(pROC)
+  roc_curve <- roc(data$y, fitted(model_logit))
+  plot(roc_curve)
+  auc(roc_curve)
+  ```
+  ```r
+  # TODO: Insert Exercise chunk with error messages and solutions.
+  ```

@@ -1,0 +1,172 @@
+# Analysis of Variance (ANOVA)
+
+## Conducting and Interpreting One-Way and Two-Way ANOVA
+
+Analysis of Variance (ANOVA) is a statistical method used to compare the means of three or more groups to see if at least one of them is significantly different from the others. It is an extension of the t-test that allows for the comparison of multiple groups.
+
+### Assumptions of ANOVA
+Before performing ANOVA, the following assumptions must be met:
+- **Normality**: The data in each group should be approximately normally distributed.
+- **Homogeneity of variances**: The variances among the groups should be approximately equal.
+- **Independence**: The observations should be independent of each other.
+
+### Interpreting ANOVA Tables
+The ANOVA table breaks down the sources of variation in the data into between-group and within-group variations. It shows the sums of squares, mean squares, F-values, and p-values. A significant p-value (typically ≤ 0.05) indicates that there are significant differences among the group means.
+
+### Post Hoc Tests and Multiple Comparisons
+When ANOVA shows significant results, post hoc tests help identify which specific groups differ from each other. Common post hoc tests include Tukey's HSD, Bonferroni, and Scheffé tests.
+
+**Example and Demonstration**:
+
+```r
+# Example data
+group1 <- rnorm(20, mean = 5)
+group2 <- rnorm(20, mean = 6)
+group3 <- rnorm(20, mean = 7)
+
+data <- data.frame(
+  value = c(group1, group2, group3),
+  group = factor(rep(c("Group1", "Group2", "Group3"), each = 20))
+)
+
+# Perform One-Way ANOVA
+anova_result <- aov(value ~ group, data = data)
+
+# Output ANOVA table
+summary(anova_result)
+
+# Perform post hoc test
+tukey_result <- TukeyHSD(anova_result)
+print(tukey_result)
+```
+
+## Understanding the F-test and its Applications
+
+The F-test is used in ANOVA to compare the variances of two or more groups and determine if there are significant differences among the group means.
+
+### The F Distribution and the F Ratio
+- The F distribution is used as the null distribution for the test statistic in ANOVA.
+- The F ratio is the ratio of between-groups variance to within-groups variance.
+
+### Between-groups and Within-groups Variance
+- **Between-groups variance**: Measures the variability due to the differences between group means.
+- **Within-groups variance**: Measures the variability within each group.
+
+### Applications in Experimental Design
+The F-test in ANOVA helps determine if the means of multiple groups are different. It is also used in regression analysis to test the overall significance of the model.
+
+**Example and Demonstration**:
+
+```r
+# Example data for F-test
+# This example will be part of the exercises.
+```
+
+# Exercises for ANOVA
+
+To consolidate the concepts learned in this chapter, the following exercises are designed to engage students in practical applications of ANOVA. These activities will help students gain hands-on experience in conducting and interpreting ANOVA tests, understanding test assumptions, and performing post hoc analyses.
+
+## Exercise 1: Conducting a One-Way ANOVA
+- **Objective**: Assess whether there is a significant difference in the means of three groups.
+- **Scenario**: A researcher is studying the effect of three different diets on weight loss. The data collected includes weight loss measurements for three groups following different diets.
+- **Task**: Perform a One-Way ANOVA to determine if there is a significant difference in weight loss among the three diet groups.
+
+  **Steps**:
+  ```r
+  # Sample data: Weight loss measurements for three diet groups
+  diet1 <- c(2.1, 2.3, 1.8, 2.5, 2.0)
+  diet2 <- c(2.0, 1.9, 2.2, 2.1, 1.8)
+  diet3 <- c(1.7, 1.8, 1.6, 1.9, 1.5)
+
+  weight_loss <- data.frame(
+    loss = c(diet1, diet2, diet3),
+    diet = factor(rep(c("Diet1", "Diet2", "Diet3"), each = 5))
+  )
+
+  # Perform One-Way ANOVA
+  anova_result <- aov(loss ~ diet, data = weight_loss)
+  summary(anova_result)
+
+  # Perform post hoc test
+  tukey_result <- TukeyHSD(anova_result)
+  print(tukey_result)
+  ```
+  ```r
+  # TODO: Insert Exercise chunk with error messages and solutions.
+  ```
+
+## Exercise 2: Conducting a Two-Way ANOVA
+- **Objective**: Assess the interaction effects of two factors on a response variable.
+- **Scenario**: A researcher is studying the effects of different fertilizers and watering schedules on plant growth. The data collected includes growth measurements for plants under different fertilizer and watering conditions.
+- **Task**: Perform a Two-Way ANOVA to determine the main effects and interaction effects of fertilizer and watering on plant growth.
+
+  **Steps**:
+  ```r
+  # Sample data: Plant growth measurements for different fertilizer and watering conditions
+  growth <- c(20, 22, 19, 24, 23, 25, 18, 21, 22, 23, 26, 24, 22, 21, 20)
+  fertilizer <- factor(rep(c("Fertilizer1", "Fertilizer2", "Fertilizer3"), each = 5))
+  watering <- factor(rep(c("Watering1", "Watering2", "Watering3"), times = 5))
+
+  plant_growth <- data.frame(growth, fertilizer, watering)
+
+  # Perform Two-Way ANOVA
+  anova_result <- aov(growth ~ fertilizer * watering, data = plant_growth)
+  summary(anova_result)
+  ```
+  ```r
+  # TODO: Insert Exercise chunk with error messages and solutions.
+  ```
+
+## Exercise 3: Understanding the F-test in Regression Analysis
+- **Objective**: Use the F-test to assess the overall significance of a regression model.
+- **Scenario**: A researcher is building a regression model to predict house prices based on square footage and the number of bedrooms.
+- **Task**: Perform an F-test to determine if the regression model significantly predicts house prices.
+
+  **Steps**:
+  ```r
+  # Sample data: House prices with square footage and number of bedrooms
+  prices <- c(300000, 350000, 400000, 250000, 450000, 500000)
+  sqft <- c(1500, 1600, 1700, 1400, 1800, 2000)
+  bedrooms <- c(3, 3, 4, 2, 4, 5)
+
+  house_data <- data.frame(prices, sqft, bedrooms)
+
+  # Build regression model
+  model <- lm(prices ~ sqft + bedrooms, data = house_data)
+
+  # Perform F-test
+  summary(model)
+  ```
+  ```r
+  # TODO: Insert Exercise chunk with error messages and solutions.
+  ```
+
+## Exercise 4: Conducting Post Hoc Tests
+- **Objective**: Use post hoc tests to determine which specific groups differ after a significant ANOVA result.
+- **Scenario**: After finding a significant difference in mean test scores among different teaching methods, a researcher wants to know which teaching methods are significantly different from each other.
+- **Task**: Perform a post hoc test to determine the specific differences between teaching methods.
+
+  **Steps**:
+  ```r
+  # Sample data: Test scores for different teaching methods
+  method1 <- c(85, 87, 88, 90, 86)
+  method2 <- c(80, 82, 81, 79, 83)
+  method3 <- c(88, 90, 89, 87, 91)
+
+  test_scores <- data.frame(
+    score = c(method1, method2, method3),
+    method = factor(rep(c("Method1", "Method2", "Method3"), each = 5))
+  )
+
+  # Perform One-Way ANOVA
+  anova_result <- aov(score ~ method, data = test_scores)
+  summary(anova_result)
+
+  # Perform post hoc test
+  tukey_result <- TukeyHSD(anova_result)
+  print(tukey_result)
+  ```
+
+  ```r
+  # TODO: Insert Exercise chunk with error messages and solutions.
+  ```

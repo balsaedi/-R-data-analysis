@@ -117,9 +117,7 @@ knitr::opts_chunk$set(echo = TRUE)
 - **Diagnostics and Assumptions of Linear Models**
   - Residual Analysis and Model Fit
   - Checking for Heteroscedasticity and Multicollinearity
-  - Model Selection Criteria (
-
-AIC, BIC, R-squared)
+  - Model Selection Criteria (AIC, BIC, R-squared)
 
 ### Categorical Data Analysis
 - **Introduction to Logistic Regression**
@@ -130,7 +128,6 @@ AIC, BIC, R-squared)
 - **Modeling and Interpretation of Binary Outcomes**
   - Predictive Modeling with Binary Data
   - Evaluating Model Performance (ROC Curves, AUC)
-  - Multiclass Logistic Regression
 
 ### Advanced R Programming Techniques
 - **Writing Functions and Loops for Automating Tasks**
@@ -143,22 +140,6 @@ AIC, BIC, R-squared)
   - Dealing with Text and Categorical Data
   - Working with Dates and Times
 
-### Data Import and Export
-- **Techniques for Efficient Data Import and Export**
-  - Reading and Writing CSV, Excel, and JSON
-  - Connecting to Databases with R
-  - Using APIs for Data Retrieval
-
-- **Working with Different File Formats and Databases**
-  - Understanding File Formats and Their Uses
-  - Data Storage and Retrieval Best Practices
-  - Introduction to SQL for Data Analysis
-
-### Bivariate and Multivariate Analysis
-- **Exploratory Data Analysis Techniques**
-  - Summary Statistics and Initial Data Checks
-  - Exploring Relationships with Crosstabs and Mosaic Plots
-  - Cluster Analysis and Discriminant Analysis
 
 - **Correlation, Causation, and Regression Techniques**
   - Pearson and Spearman Correlation Measures

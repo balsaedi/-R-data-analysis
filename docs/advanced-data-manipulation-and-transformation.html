@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 12 Probability Distributions and Statistical Concepts | Comprehensive R Course - Descriptive and Predictive Analysis</title>
-  <meta name="description" content="Chapter 12 Probability Distributions and Statistical Concepts | Comprehensive R Course - Descriptive and Predictive Analysis" />
+  <title>Chapter 24 Advanced Data Manipulation and Transformation | Comprehensive R Course - Descriptive and Predictive Analysis</title>
+  <meta name="description" content="Chapter 24 Advanced Data Manipulation and Transformation | Comprehensive R Course - Descriptive and Predictive Analysis" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 12 Probability Distributions and Statistical Concepts | Comprehensive R Course - Descriptive and Predictive Analysis" />
+  <meta property="og:title" content="Chapter 24 Advanced Data Manipulation and Transformation | Comprehensive R Course - Descriptive and Predictive Analysis" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 12 Probability Distributions and Statistical Concepts | Comprehensive R Course - Descriptive and Predictive Analysis" />
+  <meta name="twitter:title" content="Chapter 24 Advanced Data Manipulation and Transformation | Comprehensive R Course - Descriptive and Predictive Analysis" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="more-on-visualizing-distributions-and-relationships.html"/>
-<link rel="next" href="exploring-random-variables-and-expected-values.html"/>
+<link rel="prev" href="advanced-r-programming-techniques.html"/>
+<link rel="next" href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -465,54 +465,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="probability-distributions-and-statistical-concepts" class="section level1 hasAnchor" number="12">
-<h1><span class="header-section-number">Chapter 12</span> Probability Distributions and Statistical Concepts<a href="probability-distributions-and-statistical-concepts.html#probability-distributions-and-statistical-concepts" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="overview" class="section level2 hasAnchor" number="12.1">
-<h2><span class="header-section-number">12.1</span> Overview<a href="probability-distributions-and-statistical-concepts.html#overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This section delves into the fundamental concepts and applications of probability distributions, key statistical theorems, and methods for analyzing random variables. We aim to build a foundational understanding, enriched by practical examples and real-world applications.</p>
+<div id="advanced-data-manipulation-and-transformation" class="section level1 hasAnchor" number="24">
+<h1><span class="header-section-number">Chapter 24</span> Advanced Data Manipulation and Transformation<a href="advanced-data-manipulation-and-transformation.html#advanced-data-manipulation-and-transformation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In advanced data analysis, efficiently manipulating and transforming data is crucial. The <code>tidyverse</code> package in R provides a powerful and coherent set of tools for data wrangling.</p>
+<div id="tidyverse-approaches-to-data-wrangling" class="section level2 hasAnchor" number="24.1">
+<h2><span class="header-section-number">24.1</span> Tidyverse Approaches to Data Wrangling<a href="advanced-data-manipulation-and-transformation.html#tidyverse-approaches-to-data-wrangling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <code>tidyverse</code> is a collection of R packages designed for data science. It includes <code>dplyr</code> for data manipulation, <code>tidyr</code> for data tidying, and <code>ggplot2</code> for data visualization.</p>
+<div id="key-functions-in-dplyr" class="section level3 hasAnchor" number="24.1.1">
+<h3><span class="header-section-number">24.1.1</span> Key Functions in <code>dplyr</code><a href="advanced-data-manipulation-and-transformation.html#key-functions-in-dplyr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong><code>select()</code></strong>: Select specific columns.</li>
+<li><strong><code>filter()</code></strong>: Filter rows based on conditions.</li>
+<li><strong><code>mutate()</code></strong>: Create new columns or modify existing ones.</li>
+<li><strong><code>summarise()</code></strong>: Summarize data (e.g., calculating means or counts).</li>
+<li><strong><code>group_by()</code></strong>: Group data by one or more variables.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="advanced-data-manipulation-and-transformation.html#cb190-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb190-2"><a href="advanced-data-manipulation-and-transformation.html#cb190-2" tabindex="-1"></a></span>
+<span id="cb190-3"><a href="advanced-data-manipulation-and-transformation.html#cb190-3" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb190-4"><a href="advanced-data-manipulation-and-transformation.html#cb190-4" tabindex="-1"></a>data <span class="ot">&lt;-</span> iris</span>
+<span id="cb190-5"><a href="advanced-data-manipulation-and-transformation.html#cb190-5" tabindex="-1"></a></span>
+<span id="cb190-6"><a href="advanced-data-manipulation-and-transformation.html#cb190-6" tabindex="-1"></a><span class="co"># Select specific columns</span></span>
+<span id="cb190-7"><a href="advanced-data-manipulation-and-transformation.html#cb190-7" tabindex="-1"></a>selected_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb190-8"><a href="advanced-data-manipulation-and-transformation.html#cb190-8" tabindex="-1"></a>  <span class="fu">select</span>(Sepal.Length, Species)</span>
+<span id="cb190-9"><a href="advanced-data-manipulation-and-transformation.html#cb190-9" tabindex="-1"></a></span>
+<span id="cb190-10"><a href="advanced-data-manipulation-and-transformation.html#cb190-10" tabindex="-1"></a><span class="co"># Filter rows based on condition</span></span>
+<span id="cb190-11"><a href="advanced-data-manipulation-and-transformation.html#cb190-11" tabindex="-1"></a>filtered_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb190-12"><a href="advanced-data-manipulation-and-transformation.html#cb190-12" tabindex="-1"></a>  <span class="fu">filter</span>(Sepal.Length <span class="sc">&gt;</span> <span class="dv">5</span>)</span>
+<span id="cb190-13"><a href="advanced-data-manipulation-and-transformation.html#cb190-13" tabindex="-1"></a></span>
+<span id="cb190-14"><a href="advanced-data-manipulation-and-transformation.html#cb190-14" tabindex="-1"></a><span class="co"># Create a new column</span></span>
+<span id="cb190-15"><a href="advanced-data-manipulation-and-transformation.html#cb190-15" tabindex="-1"></a>mutated_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb190-16"><a href="advanced-data-manipulation-and-transformation.html#cb190-16" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sepal.Ratio =</span> Sepal.Length <span class="sc">/</span> Sepal.Width)</span>
+<span id="cb190-17"><a href="advanced-data-manipulation-and-transformation.html#cb190-17" tabindex="-1"></a></span>
+<span id="cb190-18"><a href="advanced-data-manipulation-and-transformation.html#cb190-18" tabindex="-1"></a><span class="co"># Summarize data</span></span>
+<span id="cb190-19"><a href="advanced-data-manipulation-and-transformation.html#cb190-19" tabindex="-1"></a>summary_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb190-20"><a href="advanced-data-manipulation-and-transformation.html#cb190-20" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
+<span id="cb190-21"><a href="advanced-data-manipulation-and-transformation.html#cb190-21" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Mean_Sepal.Length =</span> <span class="fu">mean</span>(Sepal.Length),</span>
+<span id="cb190-22"><a href="advanced-data-manipulation-and-transformation.html#cb190-22" tabindex="-1"></a>            <span class="at">Count =</span> <span class="fu">n</span>())</span></code></pre></div>
 </div>
-<div id="understanding-and-applying-common-probability-distributions" class="section level2 hasAnchor" number="12.2">
-<h2><span class="header-section-number">12.2</span> Understanding and Applying Common Probability Distributions<a href="probability-distributions-and-statistical-concepts.html#understanding-and-applying-common-probability-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="objective" class="section level3 hasAnchor" number="12.2.1">
-<h3><span class="header-section-number">12.2.1</span> Objective<a href="probability-distributions-and-statistical-concepts.html#objective" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Explore different types of probability distributions and their applications to effectively model and analyze data in various scenarios.</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Binomial, Poisson, and Normal Distributions</strong></p>
+</div>
+<div id="dealing-with-text-and-categorical-data" class="section level2 hasAnchor" number="24.2">
+<h2><span class="header-section-number">24.2</span> Dealing with Text and Categorical Data<a href="advanced-data-manipulation-and-transformation.html#dealing-with-text-and-categorical-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Handling text and categorical data involves operations like re-coding factors, string manipulation, and one-hot encoding.</p>
+<div id="key-functions" class="section level3 hasAnchor" number="24.2.1">
+<h3><span class="header-section-number">24.2.1</span> Key Functions<a href="advanced-data-manipulation-and-transformation.html#key-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li><p>The <strong>Binomial Distribution</strong> is applicable when modeling the number of successes in a fixed number of independent trials. For example, predicting the number of heads in 10 coin tosses or determining the probability of a certain number of defective items in a batch.</p></li>
-<li><p>The <strong>Poisson Distribution</strong> is ideal for modeling the number of events in a fixed interval of time or space when these events happen with a known constant rate. It’s used for things like counting the number of calls at a call center over an hour or the arrival of buses at a station.</p></li>
-<li><p>The <strong>Normal Distribution</strong> is a crucial tool in statistics, representing data that clusters around a mean or average. It is the basis for many statistical tests and is used to model everything from heights and test scores to measurement errors.</p></li>
+<li><strong><code>factor()</code></strong>: Create or modify factors.</li>
+<li><strong><code>str_*</code> functions</strong>: String manipulation functions from the <code>stringr</code> package (part of <code>tidyverse</code>).</li>
 </ul>
-<p><strong>Let’s look at these distributions in action with R:</strong></p>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="probability-distributions-and-statistical-concepts.html#cb134-1" tabindex="-1"></a><span class="co"># Binomial example: Probability of exactly 6 heads in 10 fair coin tosses</span></span>
-<span id="cb134-2"><a href="probability-distributions-and-statistical-concepts.html#cb134-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dbinom</span>(<span class="dv">6</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob=</span><span class="fl">0.5</span>))</span>
-<span id="cb134-3"><a href="probability-distributions-and-statistical-concepts.html#cb134-3" tabindex="-1"></a></span>
-<span id="cb134-4"><a href="probability-distributions-and-statistical-concepts.html#cb134-4" tabindex="-1"></a><span class="co"># Poisson example: Probability of receiving 3 emails in an hour if the average rate is 5 emails per hour</span></span>
-<span id="cb134-5"><a href="probability-distributions-and-statistical-concepts.html#cb134-5" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dpois</span>(<span class="dv">3</span>, <span class="at">lambda=</span><span class="dv">5</span>))</span>
-<span id="cb134-6"><a href="probability-distributions-and-statistical-concepts.html#cb134-6" tabindex="-1"></a></span>
-<span id="cb134-7"><a href="probability-distributions-and-statistical-concepts.html#cb134-7" tabindex="-1"></a><span class="co"># Normal distribution example: Probability density of a score at the mean of a distribution</span></span>
-<span id="cb134-8"><a href="probability-distributions-and-statistical-concepts.html#cb134-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dnorm</span>(<span class="dv">0</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span>))</span></code></pre></div></li>
-<li><p><strong>Continuous vs Discrete Distributions</strong></p>
+<p><strong>Example</strong>:</p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="advanced-data-manipulation-and-transformation.html#cb191-1" tabindex="-1"></a><span class="co"># Create a factor variable</span></span>
+<span id="cb191-2"><a href="advanced-data-manipulation-and-transformation.html#cb191-2" tabindex="-1"></a>data<span class="sc">$</span>Species <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>Species, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;setosa&quot;</span>, <span class="st">&quot;versicolor&quot;</span>, <span class="st">&quot;virginica&quot;</span>))</span>
+<span id="cb191-3"><a href="advanced-data-manipulation-and-transformation.html#cb191-3" tabindex="-1"></a></span>
+<span id="cb191-4"><a href="advanced-data-manipulation-and-transformation.html#cb191-4" tabindex="-1"></a><span class="co"># String manipulation</span></span>
+<span id="cb191-5"><a href="advanced-data-manipulation-and-transformation.html#cb191-5" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb191-6"><a href="advanced-data-manipulation-and-transformation.html#cb191-6" tabindex="-1"></a>text_data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>)</span>
+<span id="cb191-7"><a href="advanced-data-manipulation-and-transformation.html#cb191-7" tabindex="-1"></a>text_lengths <span class="ot">&lt;-</span> <span class="fu">str_length</span>(text_data)</span>
+<span id="cb191-8"><a href="advanced-data-manipulation-and-transformation.html#cb191-8" tabindex="-1"></a>text_upper <span class="ot">&lt;-</span> <span class="fu">str_to_upper</span>(text_data)</span></code></pre></div>
+</div>
+</div>
+<div id="working-with-dates-and-times" class="section level2 hasAnchor" number="24.3">
+<h2><span class="header-section-number">24.3</span> Working with Dates and Times<a href="advanced-data-manipulation-and-transformation.html#working-with-dates-and-times" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Handling dates and times is critical in many data analyses. The <code>lubridate</code> package (part of the <code>tidyverse</code>) makes it easier to work with date-time data.</p>
+<div id="key-functions-1" class="section level3 hasAnchor" number="24.3.1">
+<h3><span class="header-section-number">24.3.1</span> Key Functions<a href="advanced-data-manipulation-and-transformation.html#key-functions-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li><p><strong>Continuous distributions</strong> are used for data that can take any value within an interval. Measurements like weight, temperature, and distance, where data can vary continuously, are modeled using continuous distributions.</p></li>
-<li><p><strong>Discrete distributions</strong> are used for countable data. Whenever you count something, like the number of students in a class or the number of cars in a parking lot, you are working with discrete data.</p></li>
+<li><strong><code>ymd()</code>, <code>mdy()</code>, <code>dmy()</code></strong>: Parse dates in different formats.</li>
+<li><strong><code>year()</code>, <code>month()</code>, <code>day()</code></strong>: Extract components of dates.</li>
+<li><strong><code>now()</code></strong>: Get the current date and time.</li>
 </ul>
-<p><strong>Here’s how you might visualize these differences with R:</strong></p>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="probability-distributions-and-statistical-concepts.html#cb135-1" tabindex="-1"></a><span class="co"># Continuous distribution visualization</span></span>
-<span id="cb135-2"><a href="probability-distributions-and-statistical-concepts.html#cb135-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(<span class="fu">rnorm</span>(<span class="dv">1000</span>)), <span class="at">main=</span><span class="st">&quot;Continuous Distribution Example: Normal Distribution&quot;</span>)</span>
-<span id="cb135-3"><a href="probability-distributions-and-statistical-concepts.html#cb135-3" tabindex="-1"></a></span>
-<span id="cb135-4"><a href="probability-distributions-and-statistical-concepts.html#cb135-4" tabindex="-1"></a><span class="co"># Discrete distribution visualization</span></span>
-<span id="cb135-5"><a href="probability-distributions-and-statistical-concepts.html#cb135-5" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob=</span><span class="fl">0.5</span>), <span class="at">names.arg=</span><span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main=</span><span class="st">&quot;Discrete Distribution Example: Binomial Distribution&quot;</span>)</span></code></pre></div></li>
-<li><p><strong>The Central Limit Theorem (CLT)</strong></p>
-<ul>
-<li>A cornerstone of statistics, the CLT states that the distribution of sample means approximates a normal distribution as the sample size becomes large, regardless of the population distribution’s shape. This theorem underpins many statistical methods, including hypothesis testing and the creation of confidence intervals.</li>
-</ul>
-<p><strong>Experience the CLT through a simple R simulation:</strong></p>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="probability-distributions-and-statistical-concepts.html#cb136-1" tabindex="-1"></a><span class="co"># Simulating sample means</span></span>
-<span id="cb136-2"><a href="probability-distributions-and-statistical-concepts.html#cb136-2" tabindex="-1"></a>sample_means <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="fu">mean</span>(<span class="fu">runif</span>(<span class="dv">50</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>)))</span>
-<span id="cb136-3"><a href="probability-distributions-and-statistical-concepts.html#cb136-3" tabindex="-1"></a><span class="fu">hist</span>(sample_means, <span class="at">probability=</span><span class="cn">TRUE</span>, <span class="at">main=</span><span class="st">&quot;CLT Simulation&quot;</span>)</span>
-<span id="cb136-4"><a href="probability-distributions-and-statistical-concepts.html#cb136-4" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">density</span>(sample_means), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div></li>
-</ol>
+<p><strong>Example</strong>:</p>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="advanced-data-manipulation-and-transformation.html#cb192-1" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb192-2"><a href="advanced-data-manipulation-and-transformation.html#cb192-2" tabindex="-1"></a></span>
+<span id="cb192-3"><a href="advanced-data-manipulation-and-transformation.html#cb192-3" tabindex="-1"></a><span class="co"># Parse dates</span></span>
+<span id="cb192-4"><a href="advanced-data-manipulation-and-transformation.html#cb192-4" tabindex="-1"></a>dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;2023-01-01&quot;</span>, <span class="st">&quot;2023-02-15&quot;</span>, <span class="st">&quot;2023-03-10&quot;</span>)</span>
+<span id="cb192-5"><a href="advanced-data-manipulation-and-transformation.html#cb192-5" tabindex="-1"></a>parsed_dates <span class="ot">&lt;-</span> <span class="fu">ymd</span>(dates)</span>
+<span id="cb192-6"><a href="advanced-data-manipulation-and-transformation.html#cb192-6" tabindex="-1"></a></span>
+<span id="cb192-7"><a href="advanced-data-manipulation-and-transformation.html#cb192-7" tabindex="-1"></a><span class="co"># Extract components</span></span>
+<span id="cb192-8"><a href="advanced-data-manipulation-and-transformation.html#cb192-8" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="fu">year</span>(parsed_dates)</span>
+<span id="cb192-9"><a href="advanced-data-manipulation-and-transformation.html#cb192-9" tabindex="-1"></a>months <span class="ot">&lt;-</span> <span class="fu">month</span>(parsed_dates)</span>
+<span id="cb192-10"><a href="advanced-data-manipulation-and-transformation.html#cb192-10" tabindex="-1"></a>days <span class="ot">&lt;-</span> <span class="fu">day</span>(parsed_dates)</span>
+<span id="cb192-11"><a href="advanced-data-manipulation-and-transformation.html#cb192-11" tabindex="-1"></a></span>
+<span id="cb192-12"><a href="advanced-data-manipulation-and-transformation.html#cb192-12" tabindex="-1"></a><span class="co"># Get current date and time</span></span>
+<span id="cb192-13"><a href="advanced-data-manipulation-and-transformation.html#cb192-13" tabindex="-1"></a>current_time <span class="ot">&lt;-</span> <span class="fu">now</span>()</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -521,8 +557,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="more-on-visualizing-distributions-and-relationships.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exploring-random-variables-and-expected-values.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="advanced-r-programming-techniques.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -553,7 +589,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/betaways01/comprehensive-r-course/edit/main/06-ProbabilityAndStatistics.Rmd",
+"link": "https://github.com/betaways01/comprehensive-r-course/edit/main/DataWrangling.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -561,7 +597,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/betaways01/comprehensive-r-course/blob/main/06-ProbabilityAndStatistics.Rmd",
+"link": "https://github.com/betaways01/comprehensive-r-course/blob/main/DataWrangling.Rmd",
 "text": null
 },
 "download": null,

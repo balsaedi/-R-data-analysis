@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 12 Probability Distributions and Statistical Concepts | Comprehensive R Course - Descriptive and Predictive Analysis</title>
-  <meta name="description" content="Chapter 12 Probability Distributions and Statistical Concepts | Comprehensive R Course - Descriptive and Predictive Analysis" />
+  <title>Chapter 22 Exercises for Categorical Data Analysis | Comprehensive R Course - Descriptive and Predictive Analysis</title>
+  <meta name="description" content="Chapter 22 Exercises for Categorical Data Analysis | Comprehensive R Course - Descriptive and Predictive Analysis" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 12 Probability Distributions and Statistical Concepts | Comprehensive R Course - Descriptive and Predictive Analysis" />
+  <meta property="og:title" content="Chapter 22 Exercises for Categorical Data Analysis | Comprehensive R Course - Descriptive and Predictive Analysis" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 12 Probability Distributions and Statistical Concepts | Comprehensive R Course - Descriptive and Predictive Analysis" />
+  <meta name="twitter:title" content="Chapter 22 Exercises for Categorical Data Analysis | Comprehensive R Course - Descriptive and Predictive Analysis" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="more-on-visualizing-distributions-and-relationships.html"/>
-<link rel="next" href="exploring-random-variables-and-expected-values.html"/>
+<link rel="prev" href="categorical-data-analysis.html"/>
+<link rel="next" href="advanced-r-programming-techniques.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -465,55 +465,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="probability-distributions-and-statistical-concepts" class="section level1 hasAnchor" number="12">
-<h1><span class="header-section-number">Chapter 12</span> Probability Distributions and Statistical Concepts<a href="probability-distributions-and-statistical-concepts.html#probability-distributions-and-statistical-concepts" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="overview" class="section level2 hasAnchor" number="12.1">
-<h2><span class="header-section-number">12.1</span> Overview<a href="probability-distributions-and-statistical-concepts.html#overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This section delves into the fundamental concepts and applications of probability distributions, key statistical theorems, and methods for analyzing random variables. We aim to build a foundational understanding, enriched by practical examples and real-world applications.</p>
+<div id="exercises-for-categorical-data-analysis" class="section level1 hasAnchor" number="22">
+<h1><span class="header-section-number">Chapter 22</span> Exercises for Categorical Data Analysis<a href="exercises-for-categorical-data-analysis.html#exercises-for-categorical-data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="exercise-1-logistic-regression" class="section level2 hasAnchor" number="22.1">
+<h2><span class="header-section-number">22.1</span> Exercise 1: Logistic Regression<a href="exercises-for-categorical-data-analysis.html#exercise-1-logistic-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p><strong>Objective</strong>: Fit a logistic regression model and interpret the results.</p></li>
+<li><p><strong>Scenario</strong>: A researcher wants to study the effect of two variables on the likelihood of an event occurring.</p></li>
+<li><p><strong>Task</strong>: Perform a logistic regression with a binary outcome variable and two predictors.</p>
+<p><strong>Steps</strong>:</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="exercises-for-categorical-data-analysis.html#cb180-1" tabindex="-1"></a><span class="co"># Sample data</span></span>
+<span id="cb180-2"><a href="exercises-for-categorical-data-analysis.html#cb180-2" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb180-3"><a href="exercises-for-categorical-data-analysis.html#cb180-3" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb180-4"><a href="exercises-for-categorical-data-analysis.html#cb180-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>, <span class="dv">1</span>, <span class="at">prob =</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="sc">-</span>(<span class="fl">0.5</span> <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> x1 <span class="sc">-</span> <span class="dv">1</span> <span class="sc">*</span> x2))))</span>
+<span id="cb180-5"><a href="exercises-for-categorical-data-analysis.html#cb180-5" tabindex="-1"></a></span>
+<span id="cb180-6"><a href="exercises-for-categorical-data-analysis.html#cb180-6" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(y, x1, x2)</span>
+<span id="cb180-7"><a href="exercises-for-categorical-data-analysis.html#cb180-7" tabindex="-1"></a></span>
+<span id="cb180-8"><a href="exercises-for-categorical-data-analysis.html#cb180-8" tabindex="-1"></a><span class="co"># Fit Logistic Regression</span></span>
+<span id="cb180-9"><a href="exercises-for-categorical-data-analysis.html#cb180-9" tabindex="-1"></a>model_logit <span class="ot">&lt;-</span> <span class="fu">glm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2, <span class="at">data =</span> data, <span class="at">family =</span> binomial)</span>
+<span id="cb180-10"><a href="exercises-for-categorical-data-analysis.html#cb180-10" tabindex="-1"></a><span class="fu">summary</span>(model_logit)</span>
+<span id="cb180-11"><a href="exercises-for-categorical-data-analysis.html#cb180-11" tabindex="-1"></a></span>
+<span id="cb180-12"><a href="exercises-for-categorical-data-analysis.html#cb180-12" tabindex="-1"></a><span class="co"># Interpretation of coefficients</span></span>
+<span id="cb180-13"><a href="exercises-for-categorical-data-analysis.html#cb180-13" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(model_logit))</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="exercises-for-categorical-data-analysis.html#cb181-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
+</ul>
 </div>
-<div id="understanding-and-applying-common-probability-distributions" class="section level2 hasAnchor" number="12.2">
-<h2><span class="header-section-number">12.2</span> Understanding and Applying Common Probability Distributions<a href="probability-distributions-and-statistical-concepts.html#understanding-and-applying-common-probability-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="objective" class="section level3 hasAnchor" number="12.2.1">
-<h3><span class="header-section-number">12.2.1</span> Objective<a href="probability-distributions-and-statistical-concepts.html#objective" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Explore different types of probability distributions and their applications to effectively model and analyze data in various scenarios.</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Binomial, Poisson, and Normal Distributions</strong></p>
+<div id="exercise-2-model-goodness-of-fit" class="section level2 hasAnchor" number="22.2">
+<h2><span class="header-section-number">22.2</span> Exercise 2: Model Goodness of Fit<a href="exercises-for-categorical-data-analysis.html#exercise-2-model-goodness-of-fit" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><p>The <strong>Binomial Distribution</strong> is applicable when modeling the number of successes in a fixed number of independent trials. For example, predicting the number of heads in 10 coin tosses or determining the probability of a certain number of defective items in a batch.</p></li>
-<li><p>The <strong>Poisson Distribution</strong> is ideal for modeling the number of events in a fixed interval of time or space when these events happen with a known constant rate. It’s used for things like counting the number of calls at a call center over an hour or the arrival of buses at a station.</p></li>
-<li><p>The <strong>Normal Distribution</strong> is a crucial tool in statistics, representing data that clusters around a mean or average. It is the basis for many statistical tests and is used to model everything from heights and test scores to measurement errors.</p></li>
+<li><p><strong>Objective</strong>: Assess the goodness of fit of a logistic regression model.</p></li>
+<li><p><strong>Scenario</strong>: A researcher has fitted a logistic regression model and wants to validate its fit.</p></li>
+<li><p><strong>Task</strong>: Use the Hosmer-Lemeshow test to assess the model fit.</p>
+<p><strong>Steps</strong>:</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="exercises-for-categorical-data-analysis.html#cb182-1" tabindex="-1"></a><span class="co"># Assessing model goodness of fit</span></span>
+<span id="cb182-2"><a href="exercises-for-categorical-data-analysis.html#cb182-2" tabindex="-1"></a><span class="fu">library</span>(ResourceSelection)</span>
+<span id="cb182-3"><a href="exercises-for-categorical-data-analysis.html#cb182-3" tabindex="-1"></a><span class="fu">hoslem.test</span>(data<span class="sc">$</span>y, <span class="fu">fitted</span>(model_logit))</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="exercises-for-categorical-data-analysis.html#cb183-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
 </ul>
-<p><strong>Let’s look at these distributions in action with R:</strong></p>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="probability-distributions-and-statistical-concepts.html#cb134-1" tabindex="-1"></a><span class="co"># Binomial example: Probability of exactly 6 heads in 10 fair coin tosses</span></span>
-<span id="cb134-2"><a href="probability-distributions-and-statistical-concepts.html#cb134-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dbinom</span>(<span class="dv">6</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob=</span><span class="fl">0.5</span>))</span>
-<span id="cb134-3"><a href="probability-distributions-and-statistical-concepts.html#cb134-3" tabindex="-1"></a></span>
-<span id="cb134-4"><a href="probability-distributions-and-statistical-concepts.html#cb134-4" tabindex="-1"></a><span class="co"># Poisson example: Probability of receiving 3 emails in an hour if the average rate is 5 emails per hour</span></span>
-<span id="cb134-5"><a href="probability-distributions-and-statistical-concepts.html#cb134-5" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dpois</span>(<span class="dv">3</span>, <span class="at">lambda=</span><span class="dv">5</span>))</span>
-<span id="cb134-6"><a href="probability-distributions-and-statistical-concepts.html#cb134-6" tabindex="-1"></a></span>
-<span id="cb134-7"><a href="probability-distributions-and-statistical-concepts.html#cb134-7" tabindex="-1"></a><span class="co"># Normal distribution example: Probability density of a score at the mean of a distribution</span></span>
-<span id="cb134-8"><a href="probability-distributions-and-statistical-concepts.html#cb134-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dnorm</span>(<span class="dv">0</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span>))</span></code></pre></div></li>
-<li><p><strong>Continuous vs Discrete Distributions</strong></p>
-<ul>
-<li><p><strong>Continuous distributions</strong> are used for data that can take any value within an interval. Measurements like weight, temperature, and distance, where data can vary continuously, are modeled using continuous distributions.</p></li>
-<li><p><strong>Discrete distributions</strong> are used for countable data. Whenever you count something, like the number of students in a class or the number of cars in a parking lot, you are working with discrete data.</p></li>
-</ul>
-<p><strong>Here’s how you might visualize these differences with R:</strong></p>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="probability-distributions-and-statistical-concepts.html#cb135-1" tabindex="-1"></a><span class="co"># Continuous distribution visualization</span></span>
-<span id="cb135-2"><a href="probability-distributions-and-statistical-concepts.html#cb135-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(<span class="fu">rnorm</span>(<span class="dv">1000</span>)), <span class="at">main=</span><span class="st">&quot;Continuous Distribution Example: Normal Distribution&quot;</span>)</span>
-<span id="cb135-3"><a href="probability-distributions-and-statistical-concepts.html#cb135-3" tabindex="-1"></a></span>
-<span id="cb135-4"><a href="probability-distributions-and-statistical-concepts.html#cb135-4" tabindex="-1"></a><span class="co"># Discrete distribution visualization</span></span>
-<span id="cb135-5"><a href="probability-distributions-and-statistical-concepts.html#cb135-5" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob=</span><span class="fl">0.5</span>), <span class="at">names.arg=</span><span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main=</span><span class="st">&quot;Discrete Distribution Example: Binomial Distribution&quot;</span>)</span></code></pre></div></li>
-<li><p><strong>The Central Limit Theorem (CLT)</strong></p>
-<ul>
-<li>A cornerstone of statistics, the CLT states that the distribution of sample means approximates a normal distribution as the sample size becomes large, regardless of the population distribution’s shape. This theorem underpins many statistical methods, including hypothesis testing and the creation of confidence intervals.</li>
-</ul>
-<p><strong>Experience the CLT through a simple R simulation:</strong></p>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="probability-distributions-and-statistical-concepts.html#cb136-1" tabindex="-1"></a><span class="co"># Simulating sample means</span></span>
-<span id="cb136-2"><a href="probability-distributions-and-statistical-concepts.html#cb136-2" tabindex="-1"></a>sample_means <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="fu">mean</span>(<span class="fu">runif</span>(<span class="dv">50</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>)))</span>
-<span id="cb136-3"><a href="probability-distributions-and-statistical-concepts.html#cb136-3" tabindex="-1"></a><span class="fu">hist</span>(sample_means, <span class="at">probability=</span><span class="cn">TRUE</span>, <span class="at">main=</span><span class="st">&quot;CLT Simulation&quot;</span>)</span>
-<span id="cb136-4"><a href="probability-distributions-and-statistical-concepts.html#cb136-4" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">density</span>(sample_means), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div></li>
-</ol>
 </div>
+<div id="exercise-3-evaluating-model-performance" class="section level2 hasAnchor" number="22.3">
+<h2><span class="header-section-number">22.3</span> Exercise 3: Evaluating Model Performance<a href="exercises-for-categorical-data-analysis.html#exercise-3-evaluating-model-performance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p><strong>Objective</strong>: Evaluate the performance of a logistic regression model using ROC curves and AUC.</p></li>
+<li><p><strong>Scenario</strong>: A researcher wants to evaluate the performance of their logistic regression model.</p></li>
+<li><p><strong>Task</strong>: Plot the ROC curve and calculate the AUC for the logistic regression model.</p>
+<p><strong>Steps</strong>:</p>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="exercises-for-categorical-data-analysis.html#cb184-1" tabindex="-1"></a><span class="co"># ROC Curve and AUC</span></span>
+<span id="cb184-2"><a href="exercises-for-categorical-data-analysis.html#cb184-2" tabindex="-1"></a><span class="fu">library</span>(pROC)</span>
+<span id="cb184-3"><a href="exercises-for-categorical-data-analysis.html#cb184-3" tabindex="-1"></a>roc_curve <span class="ot">&lt;-</span> <span class="fu">roc</span>(data<span class="sc">$</span>y, <span class="fu">fitted</span>(model_logit))</span>
+<span id="cb184-4"><a href="exercises-for-categorical-data-analysis.html#cb184-4" tabindex="-1"></a><span class="fu">plot</span>(roc_curve)</span>
+<span id="cb184-5"><a href="exercises-for-categorical-data-analysis.html#cb184-5" tabindex="-1"></a><span class="fu">auc</span>(roc_curve)</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="exercises-for-categorical-data-analysis.html#cb185-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
+</ul>
+
 </div>
 </div>
             </section>
@@ -521,8 +525,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="more-on-visualizing-distributions-and-relationships.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exploring-random-variables-and-expected-values.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="categorical-data-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="advanced-r-programming-techniques.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -553,7 +557,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/betaways01/comprehensive-r-course/edit/main/06-ProbabilityAndStatistics.Rmd",
+"link": "https://github.com/betaways01/comprehensive-r-course/edit/main/10-CategoricalDataAnalysis.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -561,7 +565,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/betaways01/comprehensive-r-course/blob/main/06-ProbabilityAndStatistics.Rmd",
+"link": "https://github.com/betaways01/comprehensive-r-course/blob/main/10-CategoricalDataAnalysis.Rmd",
 "text": null
 },
 "download": null,

@@ -1,0 +1,155 @@
+# Regression Analysis
+
+## Simple and Multiple Linear Regression (OLS, MLR)
+
+Regression analysis is used to understand the relationship between a dependent variable and one or more independent variables. It helps in predicting the value of the dependent variable based on the values of the independent variables.
+
+### Constructing and Fitting Regression Models
+- **Simple Linear Regression**: This involves a single independent variable. The relationship between the dependent variable $y$ and the independent variable $x$ is modeled as $y = \beta_0 + \beta_1 x + \epsilon$.
+- **Multiple Linear Regression**: This involves multiple independent variables. The relationship is modeled as $y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_p x_p + \epsilon$.
+
+### Understanding Coefficients and Predictions
+- **Coefficients**: The coefficients $\beta_i$ represent the change in the dependent variable for a one-unit change in the independent variable.
+- **Predictions**: Once the model is fitted, it can be used to predict the values of the dependent variable for given values of the independent variables.
+
+### Multiple Regression and Adjusting for Confounders
+- **Confounders**: Variables that influence both the dependent and independent variables. Multiple regression helps in adjusting for these confounders by including them in the model.
+
+**Example and Demonstration**:
+
+```r
+# Example data
+set.seed(123)
+x1 <- rnorm(100, mean = 5)
+x2 <- rnorm(100, mean = 7)
+y <- 3 + 2*x1 + 1.5*x2 + rnorm(100)
+
+data <- data.frame(y, x1, x2)
+
+# Fit Simple Linear Regression
+model_simple <- lm(y ~ x1, data = data)
+summary(model_simple)
+
+# Fit Multiple Linear Regression
+model_multiple <- lm(y ~ x1 + x2, data = data)
+summary(model_multiple)
+```
+
+## Diagnostics and Assumptions of Linear Models
+
+### Residual Analysis and Model Fit
+- **Residuals**: The differences between the observed and predicted values. Residual analysis helps in checking the assumptions of the model.
+- **Model Fit**: Assessed using various statistics like R-squared, which indicates the proportion of variance explained by the model.
+
+### Checking for Heteroscedasticity and Multicollinearity
+- **Heteroscedasticity**: Occurs when the variance of the residuals is not constant. This can be checked using plots of residuals vs fitted values.
+- **Multicollinearity**: Occurs when independent variables are highly correlated. This can be checked using the Variance Inflation Factor (VIF).
+
+### Model Selection Criteria (AIC, BIC, R-squared)
+- **AIC (Akaike Information Criterion)**: A measure of the relative quality of a statistical model for a given set of data.
+- **BIC (Bayesian Information Criterion)**: Similar to AIC but with a larger penalty for models with more parameters.
+- **R-squared**: Indicates the proportion of variance in the dependent variable that is predictable from the independent variables.
+
+**Example and Demonstration**:
+
+```r
+# Residual analysis
+par(mfrow = c(2, 2))
+plot(model_multiple)
+
+# Check for heteroscedasticity
+library(car)
+ncvTest(model_multiple)
+
+# Check for multicollinearity
+vif(model_multiple)
+```
+
+# Exercises for Regression Analysis
+
+## Exercise 1: Simple Linear Regression
+- **Objective**: Fit a simple linear regression model and interpret the results.
+- **Scenario**: A researcher wants to study the relationship between advertising spend and sales.
+- **Task**: Perform a simple linear regression with sales as the dependent variable and advertising spend as the independent variable.
+
+  **Steps**:
+  ```r
+  # Sample data: Advertising spend and sales
+  advertising <- c(230, 150, 300, 290, 180, 270, 320, 210, 250, 190)
+  sales <- c(480, 340, 600, 590, 380, 540, 640, 410, 500, 430)
+
+  data <- data.frame(sales, advertising)
+
+  # Fit Simple Linear Regression
+  model_simple <- lm(sales ~ advertising, data = data)
+  summary(model_simple)
+  ```
+  ```r
+  # TODO: Insert Exercise chunk with error messages and solutions.
+  ```
+
+## Exercise 2: Multiple Linear Regression
+- **Objective**: Fit a multiple linear regression model and interpret the results.
+- **Scenario**: A researcher wants to predict house prices based on square footage and number of bedrooms.
+- **Task**: Perform a multiple linear regression with house prices as the dependent variable and square footage and number of bedrooms as independent variables.
+
+  **Steps**:
+  ```r
+  # Sample data: House prices, square footage, and number of bedrooms
+  prices <- c(300000, 350000, 400000, 250000, 450000, 500000)
+  sqft <- c(1500, 1600, 1700, 1400, 1800, 2000)
+  bedrooms <- c(3, 3, 4, 2, 4, 5)
+
+  house_data <- data.frame(prices, sqft, bedrooms)
+
+  # Fit Multiple Linear Regression
+  model_multiple <- lm(prices ~ sqft + bedrooms, data = house_data)
+  summary(model_multiple)
+  ```
+  ```r
+  # TODO: Insert Exercise chunk with error messages and solutions.
+  ```
+
+## Exercise 3: Residual Analysis
+- **Objective**: Perform residual analysis to check the assumptions of the regression model.
+- **Scenario**: A researcher has fitted a multiple linear regression model and wants to validate its assumptions.
+- **Task**: Analyze the residuals of the model and check for heteroscedasticity and multicollinearity.
+
+  **Steps**:
+  ```r
+  # Residual analysis
+  par(mfrow = c(2, 2))
+  plot(model_multiple)
+
+  # Check for heteroscedasticity
+  library(car)
+  ncvTest(model_multiple)
+
+  # Check for multicollinearity
+  vif(model_multiple)
+  ```
+  ```r
+  # TODO: Insert Exercise chunk with error messages and solutions.
+  ```
+
+## Exercise 4: Model Selection Criteria
+- **Objective**: Compare different models using AIC and BIC.
+- **Scenario**: A researcher has two different regression models and wants to determine which one is better.
+- **Task**: Calculate and compare the AIC and BIC values for both models.
+
+  **Steps**:
+  ```r
+  # Model 1: Simple linear regression
+  model1 <- lm(prices ~ sqft, data = house_data)
+
+  # Model 2: Multiple linear regression
+  model2 <- lm(prices ~ sqft + bedrooms, data = house_data)
+
+  # Compare AIC and BIC
+  AIC(model1, model2)
+  BIC(model1, model2)
+  ```
+
+  ```r
+  # TODO: Insert Exercise chunk with error messages and solutions.
+  ```

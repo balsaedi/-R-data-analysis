@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 12 Probability Distributions and Statistical Concepts | Comprehensive R Course - Descriptive and Predictive Analysis</title>
-  <meta name="description" content="Chapter 12 Probability Distributions and Statistical Concepts | Comprehensive R Course - Descriptive and Predictive Analysis" />
+  <title>Chapter 18 Exercises for ANOVA | Comprehensive R Course - Descriptive and Predictive Analysis</title>
+  <meta name="description" content="Chapter 18 Exercises for ANOVA | Comprehensive R Course - Descriptive and Predictive Analysis" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 12 Probability Distributions and Statistical Concepts | Comprehensive R Course - Descriptive and Predictive Analysis" />
+  <meta property="og:title" content="Chapter 18 Exercises for ANOVA | Comprehensive R Course - Descriptive and Predictive Analysis" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 12 Probability Distributions and Statistical Concepts | Comprehensive R Course - Descriptive and Predictive Analysis" />
+  <meta name="twitter:title" content="Chapter 18 Exercises for ANOVA | Comprehensive R Course - Descriptive and Predictive Analysis" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="more-on-visualizing-distributions-and-relationships.html"/>
-<link rel="next" href="exploring-random-variables-and-expected-values.html"/>
+<link rel="prev" href="analysis-of-variance-anova.html"/>
+<link rel="next" href="regression-analysis.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -465,55 +465,105 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="probability-distributions-and-statistical-concepts" class="section level1 hasAnchor" number="12">
-<h1><span class="header-section-number">Chapter 12</span> Probability Distributions and Statistical Concepts<a href="probability-distributions-and-statistical-concepts.html#probability-distributions-and-statistical-concepts" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="overview" class="section level2 hasAnchor" number="12.1">
-<h2><span class="header-section-number">12.1</span> Overview<a href="probability-distributions-and-statistical-concepts.html#overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>This section delves into the fundamental concepts and applications of probability distributions, key statistical theorems, and methods for analyzing random variables. We aim to build a foundational understanding, enriched by practical examples and real-world applications.</p>
+<div id="exercises-for-anova" class="section level1 hasAnchor" number="18">
+<h1><span class="header-section-number">Chapter 18</span> Exercises for ANOVA<a href="exercises-for-anova.html#exercises-for-anova" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>To consolidate the concepts learned in this chapter, the following exercises are designed to engage students in practical applications of ANOVA. These activities will help students gain hands-on experience in conducting and interpreting ANOVA tests, understanding test assumptions, and performing post hoc analyses.</p>
+<div id="exercise-1-conducting-a-one-way-anova" class="section level2 hasAnchor" number="18.1">
+<h2><span class="header-section-number">18.1</span> Exercise 1: Conducting a One-Way ANOVA<a href="exercises-for-anova.html#exercise-1-conducting-a-one-way-anova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p><strong>Objective</strong>: Assess whether there is a significant difference in the means of three groups.</p></li>
+<li><p><strong>Scenario</strong>: A researcher is studying the effect of three different diets on weight loss. The data collected includes weight loss measurements for three groups following different diets.</p></li>
+<li><p><strong>Task</strong>: Perform a One-Way ANOVA to determine if there is a significant difference in weight loss among the three diet groups.</p>
+<p><strong>Steps</strong>:</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="exercises-for-anova.html#cb159-1" tabindex="-1"></a><span class="co"># Sample data: Weight loss measurements for three diet groups</span></span>
+<span id="cb159-2"><a href="exercises-for-anova.html#cb159-2" tabindex="-1"></a>diet1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">2.1</span>, <span class="fl">2.3</span>, <span class="fl">1.8</span>, <span class="fl">2.5</span>, <span class="fl">2.0</span>)</span>
+<span id="cb159-3"><a href="exercises-for-anova.html#cb159-3" tabindex="-1"></a>diet2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">2.0</span>, <span class="fl">1.9</span>, <span class="fl">2.2</span>, <span class="fl">2.1</span>, <span class="fl">1.8</span>)</span>
+<span id="cb159-4"><a href="exercises-for-anova.html#cb159-4" tabindex="-1"></a>diet3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.7</span>, <span class="fl">1.8</span>, <span class="fl">1.6</span>, <span class="fl">1.9</span>, <span class="fl">1.5</span>)</span>
+<span id="cb159-5"><a href="exercises-for-anova.html#cb159-5" tabindex="-1"></a></span>
+<span id="cb159-6"><a href="exercises-for-anova.html#cb159-6" tabindex="-1"></a>weight_loss <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb159-7"><a href="exercises-for-anova.html#cb159-7" tabindex="-1"></a>  <span class="at">loss =</span> <span class="fu">c</span>(diet1, diet2, diet3),</span>
+<span id="cb159-8"><a href="exercises-for-anova.html#cb159-8" tabindex="-1"></a>  <span class="at">diet =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Diet1&quot;</span>, <span class="st">&quot;Diet2&quot;</span>, <span class="st">&quot;Diet3&quot;</span>), <span class="at">each =</span> <span class="dv">5</span>))</span>
+<span id="cb159-9"><a href="exercises-for-anova.html#cb159-9" tabindex="-1"></a>)</span>
+<span id="cb159-10"><a href="exercises-for-anova.html#cb159-10" tabindex="-1"></a></span>
+<span id="cb159-11"><a href="exercises-for-anova.html#cb159-11" tabindex="-1"></a><span class="co"># Perform One-Way ANOVA</span></span>
+<span id="cb159-12"><a href="exercises-for-anova.html#cb159-12" tabindex="-1"></a>anova_result <span class="ot">&lt;-</span> <span class="fu">aov</span>(loss <span class="sc">~</span> diet, <span class="at">data =</span> weight_loss)</span>
+<span id="cb159-13"><a href="exercises-for-anova.html#cb159-13" tabindex="-1"></a><span class="fu">summary</span>(anova_result)</span>
+<span id="cb159-14"><a href="exercises-for-anova.html#cb159-14" tabindex="-1"></a></span>
+<span id="cb159-15"><a href="exercises-for-anova.html#cb159-15" tabindex="-1"></a><span class="co"># Perform post hoc test</span></span>
+<span id="cb159-16"><a href="exercises-for-anova.html#cb159-16" tabindex="-1"></a>tukey_result <span class="ot">&lt;-</span> <span class="fu">TukeyHSD</span>(anova_result)</span>
+<span id="cb159-17"><a href="exercises-for-anova.html#cb159-17" tabindex="-1"></a><span class="fu">print</span>(tukey_result)</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="exercises-for-anova.html#cb160-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
+</ul>
 </div>
-<div id="understanding-and-applying-common-probability-distributions" class="section level2 hasAnchor" number="12.2">
-<h2><span class="header-section-number">12.2</span> Understanding and Applying Common Probability Distributions<a href="probability-distributions-and-statistical-concepts.html#understanding-and-applying-common-probability-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="objective" class="section level3 hasAnchor" number="12.2.1">
-<h3><span class="header-section-number">12.2.1</span> Objective<a href="probability-distributions-and-statistical-concepts.html#objective" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Explore different types of probability distributions and their applications to effectively model and analyze data in various scenarios.</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Binomial, Poisson, and Normal Distributions</strong></p>
+<div id="exercise-2-conducting-a-two-way-anova" class="section level2 hasAnchor" number="18.2">
+<h2><span class="header-section-number">18.2</span> Exercise 2: Conducting a Two-Way ANOVA<a href="exercises-for-anova.html#exercise-2-conducting-a-two-way-anova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><p>The <strong>Binomial Distribution</strong> is applicable when modeling the number of successes in a fixed number of independent trials. For example, predicting the number of heads in 10 coin tosses or determining the probability of a certain number of defective items in a batch.</p></li>
-<li><p>The <strong>Poisson Distribution</strong> is ideal for modeling the number of events in a fixed interval of time or space when these events happen with a known constant rate. It’s used for things like counting the number of calls at a call center over an hour or the arrival of buses at a station.</p></li>
-<li><p>The <strong>Normal Distribution</strong> is a crucial tool in statistics, representing data that clusters around a mean or average. It is the basis for many statistical tests and is used to model everything from heights and test scores to measurement errors.</p></li>
+<li><p><strong>Objective</strong>: Assess the interaction effects of two factors on a response variable.</p></li>
+<li><p><strong>Scenario</strong>: A researcher is studying the effects of different fertilizers and watering schedules on plant growth. The data collected includes growth measurements for plants under different fertilizer and watering conditions.</p></li>
+<li><p><strong>Task</strong>: Perform a Two-Way ANOVA to determine the main effects and interaction effects of fertilizer and watering on plant growth.</p>
+<p><strong>Steps</strong>:</p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="exercises-for-anova.html#cb161-1" tabindex="-1"></a><span class="co"># Sample data: Plant growth measurements for different fertilizer and watering conditions</span></span>
+<span id="cb161-2"><a href="exercises-for-anova.html#cb161-2" tabindex="-1"></a>growth <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">22</span>, <span class="dv">19</span>, <span class="dv">24</span>, <span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">18</span>, <span class="dv">21</span>, <span class="dv">22</span>, <span class="dv">23</span>, <span class="dv">26</span>, <span class="dv">24</span>, <span class="dv">22</span>, <span class="dv">21</span>, <span class="dv">20</span>)</span>
+<span id="cb161-3"><a href="exercises-for-anova.html#cb161-3" tabindex="-1"></a>fertilizer <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Fertilizer1&quot;</span>, <span class="st">&quot;Fertilizer2&quot;</span>, <span class="st">&quot;Fertilizer3&quot;</span>), <span class="at">each =</span> <span class="dv">5</span>))</span>
+<span id="cb161-4"><a href="exercises-for-anova.html#cb161-4" tabindex="-1"></a>watering <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Watering1&quot;</span>, <span class="st">&quot;Watering2&quot;</span>, <span class="st">&quot;Watering3&quot;</span>), <span class="at">times =</span> <span class="dv">5</span>))</span>
+<span id="cb161-5"><a href="exercises-for-anova.html#cb161-5" tabindex="-1"></a></span>
+<span id="cb161-6"><a href="exercises-for-anova.html#cb161-6" tabindex="-1"></a>plant_growth <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(growth, fertilizer, watering)</span>
+<span id="cb161-7"><a href="exercises-for-anova.html#cb161-7" tabindex="-1"></a></span>
+<span id="cb161-8"><a href="exercises-for-anova.html#cb161-8" tabindex="-1"></a><span class="co"># Perform Two-Way ANOVA</span></span>
+<span id="cb161-9"><a href="exercises-for-anova.html#cb161-9" tabindex="-1"></a>anova_result <span class="ot">&lt;-</span> <span class="fu">aov</span>(growth <span class="sc">~</span> fertilizer <span class="sc">*</span> watering, <span class="at">data =</span> plant_growth)</span>
+<span id="cb161-10"><a href="exercises-for-anova.html#cb161-10" tabindex="-1"></a><span class="fu">summary</span>(anova_result)</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="exercises-for-anova.html#cb162-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
 </ul>
-<p><strong>Let’s look at these distributions in action with R:</strong></p>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="probability-distributions-and-statistical-concepts.html#cb134-1" tabindex="-1"></a><span class="co"># Binomial example: Probability of exactly 6 heads in 10 fair coin tosses</span></span>
-<span id="cb134-2"><a href="probability-distributions-and-statistical-concepts.html#cb134-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dbinom</span>(<span class="dv">6</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob=</span><span class="fl">0.5</span>))</span>
-<span id="cb134-3"><a href="probability-distributions-and-statistical-concepts.html#cb134-3" tabindex="-1"></a></span>
-<span id="cb134-4"><a href="probability-distributions-and-statistical-concepts.html#cb134-4" tabindex="-1"></a><span class="co"># Poisson example: Probability of receiving 3 emails in an hour if the average rate is 5 emails per hour</span></span>
-<span id="cb134-5"><a href="probability-distributions-and-statistical-concepts.html#cb134-5" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dpois</span>(<span class="dv">3</span>, <span class="at">lambda=</span><span class="dv">5</span>))</span>
-<span id="cb134-6"><a href="probability-distributions-and-statistical-concepts.html#cb134-6" tabindex="-1"></a></span>
-<span id="cb134-7"><a href="probability-distributions-and-statistical-concepts.html#cb134-7" tabindex="-1"></a><span class="co"># Normal distribution example: Probability density of a score at the mean of a distribution</span></span>
-<span id="cb134-8"><a href="probability-distributions-and-statistical-concepts.html#cb134-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dnorm</span>(<span class="dv">0</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span>))</span></code></pre></div></li>
-<li><p><strong>Continuous vs Discrete Distributions</strong></p>
-<ul>
-<li><p><strong>Continuous distributions</strong> are used for data that can take any value within an interval. Measurements like weight, temperature, and distance, where data can vary continuously, are modeled using continuous distributions.</p></li>
-<li><p><strong>Discrete distributions</strong> are used for countable data. Whenever you count something, like the number of students in a class or the number of cars in a parking lot, you are working with discrete data.</p></li>
-</ul>
-<p><strong>Here’s how you might visualize these differences with R:</strong></p>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="probability-distributions-and-statistical-concepts.html#cb135-1" tabindex="-1"></a><span class="co"># Continuous distribution visualization</span></span>
-<span id="cb135-2"><a href="probability-distributions-and-statistical-concepts.html#cb135-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(<span class="fu">rnorm</span>(<span class="dv">1000</span>)), <span class="at">main=</span><span class="st">&quot;Continuous Distribution Example: Normal Distribution&quot;</span>)</span>
-<span id="cb135-3"><a href="probability-distributions-and-statistical-concepts.html#cb135-3" tabindex="-1"></a></span>
-<span id="cb135-4"><a href="probability-distributions-and-statistical-concepts.html#cb135-4" tabindex="-1"></a><span class="co"># Discrete distribution visualization</span></span>
-<span id="cb135-5"><a href="probability-distributions-and-statistical-concepts.html#cb135-5" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob=</span><span class="fl">0.5</span>), <span class="at">names.arg=</span><span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main=</span><span class="st">&quot;Discrete Distribution Example: Binomial Distribution&quot;</span>)</span></code></pre></div></li>
-<li><p><strong>The Central Limit Theorem (CLT)</strong></p>
-<ul>
-<li>A cornerstone of statistics, the CLT states that the distribution of sample means approximates a normal distribution as the sample size becomes large, regardless of the population distribution’s shape. This theorem underpins many statistical methods, including hypothesis testing and the creation of confidence intervals.</li>
-</ul>
-<p><strong>Experience the CLT through a simple R simulation:</strong></p>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="probability-distributions-and-statistical-concepts.html#cb136-1" tabindex="-1"></a><span class="co"># Simulating sample means</span></span>
-<span id="cb136-2"><a href="probability-distributions-and-statistical-concepts.html#cb136-2" tabindex="-1"></a>sample_means <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="fu">mean</span>(<span class="fu">runif</span>(<span class="dv">50</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>)))</span>
-<span id="cb136-3"><a href="probability-distributions-and-statistical-concepts.html#cb136-3" tabindex="-1"></a><span class="fu">hist</span>(sample_means, <span class="at">probability=</span><span class="cn">TRUE</span>, <span class="at">main=</span><span class="st">&quot;CLT Simulation&quot;</span>)</span>
-<span id="cb136-4"><a href="probability-distributions-and-statistical-concepts.html#cb136-4" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">density</span>(sample_means), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div></li>
-</ol>
 </div>
+<div id="exercise-3-understanding-the-f-test-in-regression-analysis" class="section level2 hasAnchor" number="18.3">
+<h2><span class="header-section-number">18.3</span> Exercise 3: Understanding the F-test in Regression Analysis<a href="exercises-for-anova.html#exercise-3-understanding-the-f-test-in-regression-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p><strong>Objective</strong>: Use the F-test to assess the overall significance of a regression model.</p></li>
+<li><p><strong>Scenario</strong>: A researcher is building a regression model to predict house prices based on square footage and the number of bedrooms.</p></li>
+<li><p><strong>Task</strong>: Perform an F-test to determine if the regression model significantly predicts house prices.</p>
+<p><strong>Steps</strong>:</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="exercises-for-anova.html#cb163-1" tabindex="-1"></a><span class="co"># Sample data: House prices with square footage and number of bedrooms</span></span>
+<span id="cb163-2"><a href="exercises-for-anova.html#cb163-2" tabindex="-1"></a>prices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">300000</span>, <span class="dv">350000</span>, <span class="dv">400000</span>, <span class="dv">250000</span>, <span class="dv">450000</span>, <span class="dv">500000</span>)</span>
+<span id="cb163-3"><a href="exercises-for-anova.html#cb163-3" tabindex="-1"></a>sqft <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1500</span>, <span class="dv">1600</span>, <span class="dv">1700</span>, <span class="dv">1400</span>, <span class="dv">1800</span>, <span class="dv">2000</span>)</span>
+<span id="cb163-4"><a href="exercises-for-anova.html#cb163-4" tabindex="-1"></a>bedrooms <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb163-5"><a href="exercises-for-anova.html#cb163-5" tabindex="-1"></a></span>
+<span id="cb163-6"><a href="exercises-for-anova.html#cb163-6" tabindex="-1"></a>house_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(prices, sqft, bedrooms)</span>
+<span id="cb163-7"><a href="exercises-for-anova.html#cb163-7" tabindex="-1"></a></span>
+<span id="cb163-8"><a href="exercises-for-anova.html#cb163-8" tabindex="-1"></a><span class="co"># Build regression model</span></span>
+<span id="cb163-9"><a href="exercises-for-anova.html#cb163-9" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(prices <span class="sc">~</span> sqft <span class="sc">+</span> bedrooms, <span class="at">data =</span> house_data)</span>
+<span id="cb163-10"><a href="exercises-for-anova.html#cb163-10" tabindex="-1"></a></span>
+<span id="cb163-11"><a href="exercises-for-anova.html#cb163-11" tabindex="-1"></a><span class="co"># Perform F-test</span></span>
+<span id="cb163-12"><a href="exercises-for-anova.html#cb163-12" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="exercises-for-anova.html#cb164-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
+</ul>
+</div>
+<div id="exercise-4-conducting-post-hoc-tests" class="section level2 hasAnchor" number="18.4">
+<h2><span class="header-section-number">18.4</span> Exercise 4: Conducting Post Hoc Tests<a href="exercises-for-anova.html#exercise-4-conducting-post-hoc-tests" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p><strong>Objective</strong>: Use post hoc tests to determine which specific groups differ after a significant ANOVA result.</p></li>
+<li><p><strong>Scenario</strong>: After finding a significant difference in mean test scores among different teaching methods, a researcher wants to know which teaching methods are significantly different from each other.</p></li>
+<li><p><strong>Task</strong>: Perform a post hoc test to determine the specific differences between teaching methods.</p>
+<p><strong>Steps</strong>:</p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="exercises-for-anova.html#cb165-1" tabindex="-1"></a><span class="co"># Sample data: Test scores for different teaching methods</span></span>
+<span id="cb165-2"><a href="exercises-for-anova.html#cb165-2" tabindex="-1"></a>method1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">87</span>, <span class="dv">88</span>, <span class="dv">90</span>, <span class="dv">86</span>)</span>
+<span id="cb165-3"><a href="exercises-for-anova.html#cb165-3" tabindex="-1"></a>method2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">82</span>, <span class="dv">81</span>, <span class="dv">79</span>, <span class="dv">83</span>)</span>
+<span id="cb165-4"><a href="exercises-for-anova.html#cb165-4" tabindex="-1"></a>method3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">88</span>, <span class="dv">90</span>, <span class="dv">89</span>, <span class="dv">87</span>, <span class="dv">91</span>)</span>
+<span id="cb165-5"><a href="exercises-for-anova.html#cb165-5" tabindex="-1"></a></span>
+<span id="cb165-6"><a href="exercises-for-anova.html#cb165-6" tabindex="-1"></a>test_scores <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb165-7"><a href="exercises-for-anova.html#cb165-7" tabindex="-1"></a>  <span class="at">score =</span> <span class="fu">c</span>(method1, method2, method3),</span>
+<span id="cb165-8"><a href="exercises-for-anova.html#cb165-8" tabindex="-1"></a>  <span class="at">method =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Method1&quot;</span>, <span class="st">&quot;Method2&quot;</span>, <span class="st">&quot;Method3&quot;</span>), <span class="at">each =</span> <span class="dv">5</span>))</span>
+<span id="cb165-9"><a href="exercises-for-anova.html#cb165-9" tabindex="-1"></a>)</span>
+<span id="cb165-10"><a href="exercises-for-anova.html#cb165-10" tabindex="-1"></a></span>
+<span id="cb165-11"><a href="exercises-for-anova.html#cb165-11" tabindex="-1"></a><span class="co"># Perform One-Way ANOVA</span></span>
+<span id="cb165-12"><a href="exercises-for-anova.html#cb165-12" tabindex="-1"></a>anova_result <span class="ot">&lt;-</span> <span class="fu">aov</span>(score <span class="sc">~</span> method, <span class="at">data =</span> test_scores)</span>
+<span id="cb165-13"><a href="exercises-for-anova.html#cb165-13" tabindex="-1"></a><span class="fu">summary</span>(anova_result)</span>
+<span id="cb165-14"><a href="exercises-for-anova.html#cb165-14" tabindex="-1"></a></span>
+<span id="cb165-15"><a href="exercises-for-anova.html#cb165-15" tabindex="-1"></a><span class="co"># Perform post hoc test</span></span>
+<span id="cb165-16"><a href="exercises-for-anova.html#cb165-16" tabindex="-1"></a>tukey_result <span class="ot">&lt;-</span> <span class="fu">TukeyHSD</span>(anova_result)</span>
+<span id="cb165-17"><a href="exercises-for-anova.html#cb165-17" tabindex="-1"></a><span class="fu">print</span>(tukey_result)</span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="exercises-for-anova.html#cb166-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
+</ul>
+
 </div>
 </div>
             </section>
@@ -521,8 +571,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="more-on-visualizing-distributions-and-relationships.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exploring-random-variables-and-expected-values.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="analysis-of-variance-anova.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="regression-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -553,7 +603,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/betaways01/comprehensive-r-course/edit/main/06-ProbabilityAndStatistics.Rmd",
+"link": "https://github.com/betaways01/comprehensive-r-course/edit/main/08-ANOVA.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -561,7 +611,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/betaways01/comprehensive-r-course/blob/main/06-ProbabilityAndStatistics.Rmd",
+"link": "https://github.com/betaways01/comprehensive-r-course/blob/main/08-ANOVA.Rmd",
 "text": null
 },
 "download": null,
