@@ -1,5 +1,5 @@
 --- 
-title: "Comprehensive R Course"
+title: "Comprehensive R Course - Descriptive and Predictive Analysis"
 author: "Basim Alsaedi"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
