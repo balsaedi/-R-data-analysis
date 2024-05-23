@@ -1,4 +1,4 @@
---- 
+---
 title: "Comprehensive R Course - Descriptive and Predictive Analysis"
 author: "Basim Alsaedi"
 date: "`r Sys.Date()`"
@@ -9,11 +9,11 @@ site: bookdown::bookdown_site
 
 ## Purpose of this Book
 
-- **To Master Descriptive Statistics**: Teach readers how to summarize and describe essential features of data effectively, enabling a deeper understanding of datasets.
-- **To Equip Readers with Hypothesis Testing Skills**: Provide a solid foundation in conducting and interpreting various statistical tests, including Chi-Square, t-tests, z-tests, and non-parametric tests, crucial for making informed decisions based on data.
-- **To Introduce ANOVA and F-tests**: Guide readers through the process of analyzing variance among group means with the ANOVA technique and explain the importance of F-tests in comparing statistical models.
-- **To Explore Regression Analysis**: Offer comprehensive insights into Ordinary Least Squares (OLS) and Multiple Linear Regression (MLR), essential tools for modeling and predicting continuous outcomes.
-- **To Understand Categorical Data Analysis**: Provide the basics of analyzing categorical data using simple logistic regression, essential for situations where response variables are categorical.
+-   **To Master Descriptive Statistics**: Teach readers how to summarize and describe essential features of data effectively, enabling a deeper understanding of datasets.
+-   **To Equip Readers with Hypothesis Testing Skills**: Provide a solid foundation in conducting and interpreting various statistical tests, including Chi-Square, t-tests, z-tests, and non-parametric tests, crucial for making informed decisions based on data.
+-   **To Introduce ANOVA and F-tests**: Guide readers through the process of analyzing variance among group means with the ANOVA technique and explain the importance of F-tests in comparing statistical models.
+-   **To Explore Regression Analysis**: Offer comprehensive insights into Ordinary Least Squares (OLS) and Multiple Linear Regression (MLR), essential tools for modeling and predicting continuous outcomes.
+-   **To Understand Categorical Data Analysis**: Provide the basics of analyzing categorical data using simple logistic regression, essential for situations where response variables are categorical.
 
 ## Overview of R and the RStudio Interface
 
@@ -58,10 +58,9 @@ my_mean_function(cars$speed)
 
 Each of these code chunks illustrates a different aspect of RStudio:
 
-1. **Basic data visualization**: Introduces us to R's plotting capabilities, which will display in the Plots panel of RStudio.
-2. **Accessing documentation**: Shows how to use the Help system in RStudio, demonstrating how to find information on specific functions.
-3. **Writing a function**: Encourages users to practice scripting in the Source panel and understand the concept of function creation in R.
-
+1.  **Basic data visualization**: Introduces us to R's plotting capabilities, which will display in the Plots panel of RStudio.
+2.  **Accessing documentation**: Shows how to use the Help system in RStudio, demonstrating how to find information on specific functions.
+3.  **Writing a function**: Encourages users to practice scripting in the Source panel and understand the concept of function creation in R.
 
 ### RStudio Projects and Workspace Management
 
@@ -89,30 +88,31 @@ library(tidyverse)
 ## Importance of Data Analysis with R
 
 ### Role of Data Analysis in Modern Industries
+
 Data analysis isn’t just crunching numbers; it’s about telling stories and making informed decisions. In modern industries, it guides everything from predicting market trends to optimizing supply chains. With R, you're not just learning a programming language, but gaining a key to unlock these data-driven narratives.
 
 ### Case Studies of R in Action
+
 Imagine a company figuring out what makes a marketing campaign successful or a scientist discovering a groundbreaking way to save endangered species—all with the help of R. These real-world successes aren't just stories; they're blueprints for what you can accomplish with data analysis in R.
 
 ### R's Ecosystem and Community
+
 Joining R is like moving into a friendly neighborhood. There’s always someone to lend you a hand—whether it's through forums, user groups, or conferences. And with an ever-growing collection of packages, R is like a toolbox that's constantly being filled with new, shiny tools.
 
 ### Future Trends in Data Analysis with R
+
 Data analysis with R is like having a crystal ball; it helps predict future trends, from advancements in AI and machine learning to big data's expanding role. As you dive into R, you’re not just keeping up—you’re riding the wave of the data revolution.
 
---- 
+------------------------------------------------------------------------
 
 ## Exercises
 
-**1. Get to know RStudio.**
-- Open RStudio and identify each of the four main panels.
+**1. Get to know RStudio.** - Open RStudio and identify each of the four main panels.
 
-**2. Create your first RStudio project.**
-- Use the RStudio interface to start a new project in a new directory.
+**2. Create your first RStudio project.** - Use the RStudio interface to start a new project in a new directory.
 
-**3. Install and load a package.**
-- Install the `dplyr` and `tidyverse` packages and load them using `library()`. 
+**3. Install and load a package.** - Install the `dplyr` and `tidyverse` packages and load them using `library()`.
 
-```r
+``` r
 # TODO: Insert Exercise chunk with error messages and solutions.
 ```

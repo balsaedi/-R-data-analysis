@@ -1,4 +1,4 @@
-# Advanced R Programming Techniques
+# Advanced R Programming Techniques (`OPTIONAL`)
 
 ## Writing Functions and Loops for Automating Tasks
 

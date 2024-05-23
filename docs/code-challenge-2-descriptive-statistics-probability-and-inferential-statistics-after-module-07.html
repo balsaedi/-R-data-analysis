@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 21 Categorical Data Analysis | Comprehensive R Course - Descriptive and Predictive Analysis</title>
-  <meta name="description" content="Chapter 21 Categorical Data Analysis | Comprehensive R Course - Descriptive and Predictive Analysis" />
+  <title>Chapter 24 Code Challenge 2: Descriptive Statistics, Probability, and Inferential Statistics (After Module 07) | Comprehensive R Course - Descriptive and Predictive Analysis</title>
+  <meta name="description" content="Chapter 24 Code Challenge 2: Descriptive Statistics, Probability, and Inferential Statistics (After Module 07) | Comprehensive R Course - Descriptive and Predictive Analysis" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 21 Categorical Data Analysis | Comprehensive R Course - Descriptive and Predictive Analysis" />
+  <meta property="og:title" content="Chapter 24 Code Challenge 2: Descriptive Statistics, Probability, and Inferential Statistics (After Module 07) | Comprehensive R Course - Descriptive and Predictive Analysis" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 21 Categorical Data Analysis | Comprehensive R Course - Descriptive and Predictive Analysis" />
+  <meta name="twitter:title" content="Chapter 24 Code Challenge 2: Descriptive Statistics, Probability, and Inferential Statistics (After Module 07) | Comprehensive R Course - Descriptive and Predictive Analysis" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="exercises-for-regression-analysis.html"/>
-<link rel="next" href="exercises-for-categorical-data-analysis.html"/>
+<link rel="prev" href="code-challenge-1-fundamentals-and-data-structures-after-module-02.html"/>
+<link rel="next" href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -468,79 +468,182 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="categorical-data-analysis" class="section level1 hasAnchor" number="21">
-<h1><span class="header-section-number">Chapter 21</span> Categorical Data Analysis<a href="categorical-data-analysis.html#categorical-data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="introduction-to-logistic-regression" class="section level2 hasAnchor" number="21.1">
-<h2><span class="header-section-number">21.1</span> Introduction to Logistic Regression<a href="categorical-data-analysis.html#introduction-to-logistic-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Logistic regression is used when the dependent variable is binary (i.e., it has two possible outcomes). It models the probability of the occurrence of an event by fitting data to a logistic curve.</p>
-<div id="odds-ratios-and-logit-function" class="section level3 hasAnchor" number="21.1.1">
-<h3><span class="header-section-number">21.1.1</span> Odds Ratios and Logit Function<a href="categorical-data-analysis.html#odds-ratios-and-logit-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07" class="section level1 hasAnchor" number="24">
+<h1><span class="header-section-number">Chapter 24</span> Code Challenge 2: Descriptive Statistics, Probability, and Inferential Statistics (After Module 07)<a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Objective</strong>: Test students on their understanding of descriptive statistics, probability distributions, and inferential statistics.</p>
+<p><strong>Modules Covered</strong>: 05-DescriptiveStatistics.Rmd, 06-ProbabilityAndStatistics.Rmd, 07-InferentialAndHypothesis.Rmd</p>
 <ul>
-<li><strong>Odds Ratios</strong>: The odds ratio is a measure of association between an exposure and an outcome. It represents the odds that an event will occur given a particular exposure, compared to the odds of the event occurring without that exposure.</li>
-<li><strong>Logit Function</strong>: The logit function is the natural logarithm of the odds of the dependent event. Logistic regression uses this function to model the relationship between the independent variables and the probability of the dependent event occurring.</li>
+<li><h2 id="instructions-1" class="hasAnchor">Instructions:<a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#instructions-1" class="anchor-section" aria-label="Anchor link to header"></a></h2></li>
 </ul>
-</div>
-<div id="model-fitting-and-interpretation" class="section level3 hasAnchor" number="21.1.2">
-<h3><span class="header-section-number">21.1.2</span> Model Fitting and Interpretation<a href="categorical-data-analysis.html#model-fitting-and-interpretation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Descriptive Statistics</strong>:
 <ul>
-<li><strong>Model Fitting</strong>: Logistic regression models are fitted using maximum likelihood estimation. The coefficients obtained from the model represent the change in the log odds of the dependent variable for a one-unit change in the independent variable.</li>
-<li><strong>Interpretation</strong>: The exponentiated coefficients (exp(coef)) can be interpreted as odds ratios. A coefficient of 0 means no effect, positive coefficients increase the odds, and negative coefficients decrease the odds.</li>
-</ul>
-<p><strong>Example and Demonstration</strong>:</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="categorical-data-analysis.html#cb177-1" tabindex="-1"></a><span class="co"># Example data</span></span>
-<span id="cb177-2"><a href="categorical-data-analysis.html#cb177-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb177-3"><a href="categorical-data-analysis.html#cb177-3" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
-<span id="cb177-4"><a href="categorical-data-analysis.html#cb177-4" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
-<span id="cb177-5"><a href="categorical-data-analysis.html#cb177-5" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>, <span class="dv">1</span>, <span class="at">prob =</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="sc">-</span>(<span class="fl">0.5</span> <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> x1 <span class="sc">-</span> <span class="dv">1</span> <span class="sc">*</span> x2))))</span>
-<span id="cb177-6"><a href="categorical-data-analysis.html#cb177-6" tabindex="-1"></a></span>
-<span id="cb177-7"><a href="categorical-data-analysis.html#cb177-7" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(y, x1, x2)</span>
-<span id="cb177-8"><a href="categorical-data-analysis.html#cb177-8" tabindex="-1"></a></span>
-<span id="cb177-9"><a href="categorical-data-analysis.html#cb177-9" tabindex="-1"></a><span class="co"># Fit Logistic Regression</span></span>
-<span id="cb177-10"><a href="categorical-data-analysis.html#cb177-10" tabindex="-1"></a>model_logit <span class="ot">&lt;-</span> <span class="fu">glm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2, <span class="at">data =</span> data, <span class="at">family =</span> binomial)</span>
-<span id="cb177-11"><a href="categorical-data-analysis.html#cb177-11" tabindex="-1"></a><span class="fu">summary</span>(model_logit)</span>
-<span id="cb177-12"><a href="categorical-data-analysis.html#cb177-12" tabindex="-1"></a></span>
-<span id="cb177-13"><a href="categorical-data-analysis.html#cb177-13" tabindex="-1"></a><span class="co"># Interpretation of coefficients</span></span>
-<span id="cb177-14"><a href="categorical-data-analysis.html#cb177-14" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(model_logit))</span></code></pre></div>
-</div>
-<div id="assessing-model-goodness-of-fit" class="section level3 hasAnchor" number="21.1.3">
-<h3><span class="header-section-number">21.1.3</span> Assessing Model Goodness of Fit<a href="categorical-data-analysis.html#assessing-model-goodness-of-fit" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<li><strong>Task 1</strong>: Calculate the mean, median, mode, variance, and standard deviation of a given dataset.</li>
+<li><strong>Task 2</strong>: Normalize and standardize the dataset.</li>
+<li><strong>Task 3</strong>: Create histograms and box plots to visualize the data distribution.</li>
+</ul></li>
+<li><strong>Probability Distributions</strong>:
 <ul>
-<li><strong>Goodness of Fit</strong>: The goodness of fit of a logistic regression model can be assessed using various methods such as the Hosmer-Lemeshow test, Akaike Information Criterion (AIC), and analysis of residuals.</li>
-<li><strong>Example</strong>: Use the Hosmer-Lemeshow test to assess the model fit.</li>
-</ul>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="categorical-data-analysis.html#cb178-1" tabindex="-1"></a><span class="co"># Assessing model goodness of fit</span></span>
-<span id="cb178-2"><a href="categorical-data-analysis.html#cb178-2" tabindex="-1"></a><span class="fu">library</span>(ResourceSelection)</span>
-<span id="cb178-3"><a href="categorical-data-analysis.html#cb178-3" tabindex="-1"></a><span class="fu">hoslem.test</span>(data<span class="sc">$</span>y, <span class="fu">fitted</span>(model_logit))</span></code></pre></div>
-</div>
-</div>
-<div id="modeling-and-interpretation-of-binary-outcomes" class="section level2 hasAnchor" number="21.2">
-<h2><span class="header-section-number">21.2</span> Modeling and Interpretation of Binary Outcomes<a href="categorical-data-analysis.html#modeling-and-interpretation-of-binary-outcomes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="predictive-modeling-with-binary-data" class="section level3 hasAnchor" number="21.2.1">
-<h3><span class="header-section-number">21.2.1</span> Predictive Modeling with Binary Data<a href="categorical-data-analysis.html#predictive-modeling-with-binary-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Logistic regression is commonly used for predictive modeling with binary outcomes. The model predicts the probability that a given input belongs to one of the two outcome categories.</p>
-</div>
-<div id="evaluating-model-performance-roc-curves-auc" class="section level3 hasAnchor" number="21.2.2">
-<h3><span class="header-section-number">21.2.2</span> Evaluating Model Performance (ROC Curves, AUC)<a href="categorical-data-analysis.html#evaluating-model-performance-roc-curves-auc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<li><strong>Task 4</strong>: Demonstrate the use of binomial, Poisson, and normal distributions.</li>
+<li><strong>Task 5</strong>: Simulate the Central Limit Theorem (CLT) using a random dataset.</li>
+</ul></li>
+<li><strong>Inferential Statistics</strong>:
 <ul>
-<li><strong>ROC Curve</strong>: A Receiver Operating Characteristic (ROC) curve is a graphical representation of a model’s diagnostic ability. It plots the true positive rate (sensitivity) against the false positive rate (1 - specificity) for different threshold values.</li>
-<li><strong>AUC (Area Under the Curve)</strong>: The AUC is a single scalar value that summarizes the performance of the model across all threshold values. A higher AUC indicates better model performance.</li>
+<li><strong>Task 6</strong>: Conduct a chi-square test to assess the relationship between two categorical variables.</li>
+<li><strong>Task 7</strong>: Perform a one-sample t-test to compare a sample mean to a known population mean.</li>
+<li><strong>Task 8</strong>: Use a non-parametric test (Mann-Whitney U test) to compare two groups with non-normally distributed data.</li>
+</ul></li>
+</ol>
+<ul>
+<li><h2 id="template-1" class="hasAnchor">Template:<a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#template-1" class="anchor-section" aria-label="Anchor link to header"></a></h2></li>
 </ul>
-<p><strong>Example and Demonstration</strong>:</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="categorical-data-analysis.html#cb179-1" tabindex="-1"></a><span class="co"># ROC Curve and AUC</span></span>
-<span id="cb179-2"><a href="categorical-data-analysis.html#cb179-2" tabindex="-1"></a><span class="fu">library</span>(pROC)</span>
-<span id="cb179-3"><a href="categorical-data-analysis.html#cb179-3" tabindex="-1"></a>roc_curve <span class="ot">&lt;-</span> <span class="fu">roc</span>(data<span class="sc">$</span>y, <span class="fu">fitted</span>(model_logit))</span>
-<span id="cb179-4"><a href="categorical-data-analysis.html#cb179-4" tabindex="-1"></a><span class="fu">plot</span>(roc_curve)</span>
-<span id="cb179-5"><a href="categorical-data-analysis.html#cb179-5" tabindex="-1"></a><span class="fu">auc</span>(roc_curve)</span></code></pre></div>
-</div>
-</div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-1" tabindex="-1"></a><span class="co"># CODE CHALLENGE 2 TEMPLATE</span></span>
+<span id="cb187-2"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-2" tabindex="-1"></a></span>
+<span id="cb187-3"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-3" tabindex="-1"></a><span class="co"># STUDENT NAME: ______________________</span></span>
+<span id="cb187-4"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-4" tabindex="-1"></a><span class="co"># STUDENT ID: ________________________</span></span>
+<span id="cb187-5"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-5" tabindex="-1"></a></span>
+<span id="cb187-6"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-6" tabindex="-1"></a><span class="do">########################</span></span>
+<span id="cb187-7"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-7" tabindex="-1"></a><span class="co"># SECTION 1: Descriptive Statistics</span></span>
+<span id="cb187-8"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-8" tabindex="-1"></a><span class="do">########################</span></span>
+<span id="cb187-9"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-9" tabindex="-1"></a></span>
+<span id="cb187-10"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-10" tabindex="-1"></a><span class="co"># Task 1: Calculate the mean, median, mode, variance, and standard deviation of a given dataset.</span></span>
+<span id="cb187-11"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-11" tabindex="-1"></a></span>
+<span id="cb187-12"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-12" tabindex="-1"></a><span class="co"># Sample data</span></span>
+<span id="cb187-13"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-13" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">22</span>, <span class="dv">24</span>, <span class="dv">24</span>, <span class="dv">18</span>, <span class="dv">30</span>, <span class="dv">32</span>, <span class="dv">19</span>, <span class="dv">21</span>, <span class="dv">24</span>, <span class="dv">20</span>, <span class="dv">23</span>, <span class="dv">19</span>, <span class="dv">22</span>, <span class="dv">25</span>)</span>
+<span id="cb187-14"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-14" tabindex="-1"></a></span>
+<span id="cb187-15"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-15" tabindex="-1"></a><span class="co"># Calculating mean</span></span>
+<span id="cb187-16"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-16" tabindex="-1"></a>mean_value <span class="ot">&lt;-</span> <span class="fu">mean</span>(data)</span>
+<span id="cb187-17"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-17" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Mean:&quot;</span>, mean_value))</span>
+<span id="cb187-18"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-18" tabindex="-1"></a></span>
+<span id="cb187-19"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-19" tabindex="-1"></a><span class="co"># Calculating median</span></span>
+<span id="cb187-20"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-20" tabindex="-1"></a>median_value <span class="ot">&lt;-</span> <span class="fu">median</span>(data)</span>
+<span id="cb187-21"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-21" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Median:&quot;</span>, median_value))</span>
+<span id="cb187-22"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-22" tabindex="-1"></a></span>
+<span id="cb187-23"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-23" tabindex="-1"></a><span class="co"># Calculating mode</span></span>
+<span id="cb187-24"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-24" tabindex="-1"></a>get_mode <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb187-25"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-25" tabindex="-1"></a>  uniqx <span class="ot">&lt;-</span> <span class="fu">unique</span>(x)</span>
+<span id="cb187-26"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-26" tabindex="-1"></a>  uniqx[<span class="fu">which.max</span>(<span class="fu">tabulate</span>(<span class="fu">match</span>(x, uniqx)))]</span>
+<span id="cb187-27"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-27" tabindex="-1"></a>}</span>
+<span id="cb187-28"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-28" tabindex="-1"></a>mode_value <span class="ot">&lt;-</span> <span class="fu">get_mode</span>(data)</span>
+<span id="cb187-29"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-29" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Mode:&quot;</span>, mode_value))</span>
+<span id="cb187-30"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-30" tabindex="-1"></a></span>
+<span id="cb187-31"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-31" tabindex="-1"></a><span class="co"># Calculating variance</span></span>
+<span id="cb187-32"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-32" tabindex="-1"></a>variance_value <span class="ot">&lt;-</span> <span class="fu">var</span>(data)</span>
+<span id="cb187-33"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-33" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Variance:&quot;</span>, variance_value))</span>
+<span id="cb187-34"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-34" tabindex="-1"></a></span>
+<span id="cb187-35"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-35" tabindex="-1"></a><span class="co"># Calculating standard deviation</span></span>
+<span id="cb187-36"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-36" tabindex="-1"></a>sd_value <span class="ot">&lt;-</span> <span class="fu">sd</span>(data)</span>
+<span id="cb187-37"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-37" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Standard Deviation:&quot;</span>, sd_value))</span>
+<span id="cb187-38"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-38" tabindex="-1"></a></span>
+<span id="cb187-39"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-39" tabindex="-1"></a><span class="co"># Task 2: Normalize and standardize the dataset.</span></span>
+<span id="cb187-40"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-40" tabindex="-1"></a></span>
+<span id="cb187-41"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-41" tabindex="-1"></a><span class="co"># Normalization</span></span>
+<span id="cb187-42"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-42" tabindex="-1"></a>normalize <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb187-43"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-43" tabindex="-1"></a>  (x <span class="sc">-</span> <span class="fu">min</span>(x)) <span class="sc">/</span> (<span class="fu">max</span>(x) <span class="sc">-</span> <span class="fu">min</span>(x))</span>
+<span id="cb187-44"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-44" tabindex="-1"></a>}</span>
+<span id="cb187-45"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-45" tabindex="-1"></a>normalized_data <span class="ot">&lt;-</span> <span class="fu">normalize</span>(data)</span>
+<span id="cb187-46"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-46" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Normalized Data:&quot;</span>)</span>
+<span id="cb187-47"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-47" tabindex="-1"></a><span class="fu">print</span>(normalized_data)</span>
+<span id="cb187-48"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-48" tabindex="-1"></a></span>
+<span id="cb187-49"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-49" tabindex="-1"></a><span class="co"># Standardization</span></span>
+<span id="cb187-50"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-50" tabindex="-1"></a>standardize <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb187-51"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-51" tabindex="-1"></a>  (x <span class="sc">-</span> <span class="fu">mean</span>(x)) <span class="sc">/</span> <span class="fu">sd</span>(x)</span>
+<span id="cb187-52"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-52" tabindex="-1"></a>}</span>
+<span id="cb187-53"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-53" tabindex="-1"></a>standardized_data <span class="ot">&lt;-</span> <span class="fu">standardize</span>(data)</span>
+<span id="cb187-54"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-54" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Standardized Data:&quot;</span>)</span>
+<span id="cb187-55"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-55" tabindex="-1"></a><span class="fu">print</span>(standardized_data)</span>
+<span id="cb187-56"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-56" tabindex="-1"></a></span>
+<span id="cb187-57"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-57" tabindex="-1"></a><span class="co"># Task 3: Create histograms and box plots to visualize the data distribution.</span></span>
+<span id="cb187-58"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-58" tabindex="-1"></a></span>
+<span id="cb187-59"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-59" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb187-60"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-60" tabindex="-1"></a></span>
+<span id="cb187-61"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-61" tabindex="-1"></a><span class="co"># Histogram</span></span>
+<span id="cb187-62"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-62" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(data), <span class="fu">aes</span>(<span class="at">x =</span> data)) <span class="sc">+</span></span>
+<span id="cb187-63"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-63" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="st">&#39;blue&#39;</span>, <span class="at">color =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
+<span id="cb187-64"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-64" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Histogram of Data&quot;</span>)</span>
+<span id="cb187-65"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-65" tabindex="-1"></a></span>
+<span id="cb187-66"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-66" tabindex="-1"></a><span class="co"># Box Plot</span></span>
+<span id="cb187-67"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-67" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(data), <span class="fu">aes</span>(<span class="at">y =</span> data)) <span class="sc">+</span></span>
+<span id="cb187-68"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-68" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&#39;tomato&#39;</span>) <span class="sc">+</span></span>
+<span id="cb187-69"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-69" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Box Plot of Data&quot;</span>)</span>
+<span id="cb187-70"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-70" tabindex="-1"></a></span>
+<span id="cb187-71"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-71" tabindex="-1"></a><span class="do">########################</span></span>
+<span id="cb187-72"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-72" tabindex="-1"></a><span class="co"># SECTION 2: Probability Distributions</span></span>
+<span id="cb187-73"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-73" tabindex="-1"></a><span class="do">########################</span></span>
+<span id="cb187-74"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-74" tabindex="-1"></a></span>
+<span id="cb187-75"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-75" tabindex="-1"></a><span class="co"># Task 4: Demonstrate the use of binomial, Poisson, and normal distributions.</span></span>
+<span id="cb187-76"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-76" tabindex="-1"></a></span>
+<span id="cb187-77"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-77" tabindex="-1"></a><span class="co"># Binomial example: Probability of exactly 6 heads in 10 fair coin tosses</span></span>
+<span id="cb187-78"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-78" tabindex="-1"></a>binom_prob <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(<span class="dv">6</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">prob =</span> <span class="fl">0.5</span>)</span>
+<span id="cb187-79"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-79" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Binomial Probability (6 heads out of 10):&quot;</span>, binom_prob))</span>
+<span id="cb187-80"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-80" tabindex="-1"></a></span>
+<span id="cb187-81"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-81" tabindex="-1"></a><span class="co"># Poisson example: Probability of receiving 3 emails in an hour if the average rate is 5 emails per hour</span></span>
+<span id="cb187-82"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-82" tabindex="-1"></a>pois_prob <span class="ot">&lt;-</span> <span class="fu">dpois</span>(<span class="dv">3</span>, <span class="at">lambda =</span> <span class="dv">5</span>)</span>
+<span id="cb187-83"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-83" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Poisson Probability (3 emails):&quot;</span>, pois_prob))</span>
+<span id="cb187-84"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-84" tabindex="-1"></a></span>
+<span id="cb187-85"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-85" tabindex="-1"></a><span class="co"># Normal distribution example: Probability density of a score at the mean of a distribution</span></span>
+<span id="cb187-86"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-86" tabindex="-1"></a>norm_prob <span class="ot">&lt;-</span> <span class="fu">dnorm</span>(<span class="dv">0</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb187-87"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-87" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Normal Distribution Density (mean):&quot;</span>, norm_prob))</span>
+<span id="cb187-88"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-88" tabindex="-1"></a></span>
+<span id="cb187-89"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-89" tabindex="-1"></a><span class="co"># Task 5: Simulate the Central Limit Theorem (CLT) using a random dataset.</span></span>
+<span id="cb187-90"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-90" tabindex="-1"></a></span>
+<span id="cb187-91"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-91" tabindex="-1"></a><span class="co"># Simulating sample means</span></span>
+<span id="cb187-92"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-92" tabindex="-1"></a>sample_means <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="fu">mean</span>(<span class="fu">runif</span>(<span class="dv">50</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>)))</span>
+<span id="cb187-93"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-93" tabindex="-1"></a><span class="fu">hist</span>(sample_means, <span class="at">probability =</span> <span class="cn">TRUE</span>, <span class="at">main =</span> <span class="st">&quot;CLT Simulation&quot;</span>)</span>
+<span id="cb187-94"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-94" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">density</span>(sample_means), <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb187-95"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-95" tabindex="-1"></a></span>
+<span id="cb187-96"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-96" tabindex="-1"></a><span class="do">########################</span></span>
+<span id="cb187-97"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-97" tabindex="-1"></a><span class="co"># SECTION 3: Inferential Statistics</span></span>
+<span id="cb187-98"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-98" tabindex="-1"></a><span class="do">########################</span></span>
+<span id="cb187-99"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-99" tabindex="-1"></a></span>
+<span id="cb187-100"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-100" tabindex="-1"></a><span class="co"># Task 6: Conduct a chi-square test to assess the relationship between two categorical variables.</span></span>
+<span id="cb187-101"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-101" tabindex="-1"></a></span>
+<span id="cb187-102"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-102" tabindex="-1"></a><span class="co"># Sample data: Counts of male and female students preferring vegetarian and non-vegetarian diets</span></span>
+<span id="cb187-103"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-103" tabindex="-1"></a>diet_data <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">70</span>, <span class="dv">45</span>, <span class="dv">55</span>), <span class="at">nrow =</span> <span class="dv">2</span>,</span>
+<span id="cb187-104"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-104" tabindex="-1"></a>                    <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="at">gender =</span> <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>),</span>
+<span id="cb187-105"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-105" tabindex="-1"></a>                                    <span class="at">diet =</span> <span class="fu">c</span>(<span class="st">&quot;Vegetarian&quot;</span>, <span class="st">&quot;Non-Vegetarian&quot;</span>)))</span>
+<span id="cb187-106"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-106" tabindex="-1"></a></span>
+<span id="cb187-107"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-107" tabindex="-1"></a><span class="co"># Perform Chi-Square Test</span></span>
+<span id="cb187-108"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-108" tabindex="-1"></a>chi_test <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(diet_data)</span>
+<span id="cb187-109"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-109" tabindex="-1"></a><span class="fu">print</span>(chi_test)</span>
+<span id="cb187-110"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-110" tabindex="-1"></a></span>
+<span id="cb187-111"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-111" tabindex="-1"></a><span class="co"># Task 7: Perform a one-sample t-test to compare a sample mean to a known population mean.</span></span>
+<span id="cb187-112"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-112" tabindex="-1"></a></span>
+<span id="cb187-113"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-113" tabindex="-1"></a><span class="co"># Sample data</span></span>
+<span id="cb187-114"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-114" tabindex="-1"></a>study_times <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="at">mean =</span> <span class="fl">3.8</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb187-115"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-115" tabindex="-1"></a></span>
+<span id="cb187-116"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-116" tabindex="-1"></a><span class="co"># Perform the t-test</span></span>
+<span id="cb187-117"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-117" tabindex="-1"></a>t_test_results <span class="ot">&lt;-</span> <span class="fu">t.test</span>(study_times, <span class="at">mu =</span> <span class="fl">3.5</span>)</span>
+<span id="cb187-118"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-118" tabindex="-1"></a><span class="fu">print</span>(t_test_results)</span>
+<span id="cb187-119"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-119" tabindex="-1"></a></span>
+<span id="cb187-120"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-120" tabindex="-1"></a><span class="co"># Task 8: Use a non-parametric test (Mann-Whitney U test) to compare two groups with non-normally distributed data.</span></span>
+<span id="cb187-121"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-121" tabindex="-1"></a></span>
+<span id="cb187-122"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-122" tabindex="-1"></a><span class="co"># Data: Test scores from two small classes</span></span>
+<span id="cb187-123"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-123" tabindex="-1"></a>scores_class1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">88</span>, <span class="dv">82</span>, <span class="dv">84</span>, <span class="dv">91</span>, <span class="dv">87</span>, <span class="dv">85</span>, <span class="dv">90</span>)</span>
+<span id="cb187-124"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-124" tabindex="-1"></a>scores_class2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">78</span>, <span class="dv">81</span>, <span class="dv">79</span>, <span class="dv">74</span>, <span class="dv">80</span>, <span class="dv">83</span>, <span class="dv">77</span>)</span>
+<span id="cb187-125"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-125" tabindex="-1"></a></span>
+<span id="cb187-126"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-126" tabindex="-1"></a><span class="co"># Mann-Whitney U Test</span></span>
+<span id="cb187-127"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-127" tabindex="-1"></a>mann_whitney_test <span class="ot">&lt;-</span> <span class="fu">wilcox.test</span>(scores_class1, scores_class2)</span>
+<span id="cb187-128"><a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#cb187-128" tabindex="-1"></a><span class="fu">print</span>(mann_whitney_test)</span></code></pre></div>
+<ul>
+<li><h2 id="submission-instructions-1" class="hasAnchor">Submission Instructions:<a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html#submission-instructions-1" class="anchor-section" aria-label="Anchor link to header"></a></h2></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>Complete the code challenge template by filling in your solutions in the specified sections.</li>
+<li>Save your completed R script with the filename format: <code>CodeChallenge2_YourName.R</code></li>
+<li>Upload your script to your GitHub repository under the Code Challenges folder.</li>
+<li>The auto-grader will evaluate your submission and provide immediate feedback.</li>
+<li>Once you are satisfied with your marks, finalize your submission which will automatically be sent to the instructor’s Google Drive for review.</li>
+</ol>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="exercises-for-regression-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exercises-for-categorical-data-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="code-challenge-1-fundamentals-and-data-structures-after-module-02.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -571,7 +674,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/betaways01/comprehensive-r-course/edit/main/10-CategoricalDataAnalysis.Rmd",
+"link": "https://github.com/betaways01/comprehensive-r-course/edit/main/12-CodeChallenge-2.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -579,7 +682,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/betaways01/comprehensive-r-course/blob/main/10-CategoricalDataAnalysis.Rmd",
+"link": "https://github.com/betaways01/comprehensive-r-course/blob/main/12-CodeChallenge-2.Rmd",
 "text": null
 },
 "download": null,

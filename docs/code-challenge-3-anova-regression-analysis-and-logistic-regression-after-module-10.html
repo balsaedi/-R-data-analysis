@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 21 Categorical Data Analysis | Comprehensive R Course - Descriptive and Predictive Analysis</title>
-  <meta name="description" content="Chapter 21 Categorical Data Analysis | Comprehensive R Course - Descriptive and Predictive Analysis" />
+  <title>Chapter 25 Code Challenge 3: ANOVA, Regression Analysis, and Logistic Regression (After Module 10) | Comprehensive R Course - Descriptive and Predictive Analysis</title>
+  <meta name="description" content="Chapter 25 Code Challenge 3: ANOVA, Regression Analysis, and Logistic Regression (After Module 10) | Comprehensive R Course - Descriptive and Predictive Analysis" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 21 Categorical Data Analysis | Comprehensive R Course - Descriptive and Predictive Analysis" />
+  <meta property="og:title" content="Chapter 25 Code Challenge 3: ANOVA, Regression Analysis, and Logistic Regression (After Module 10) | Comprehensive R Course - Descriptive and Predictive Analysis" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 21 Categorical Data Analysis | Comprehensive R Course - Descriptive and Predictive Analysis" />
+  <meta name="twitter:title" content="Chapter 25 Code Challenge 3: ANOVA, Regression Analysis, and Logistic Regression (After Module 10) | Comprehensive R Course - Descriptive and Predictive Analysis" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="exercises-for-regression-analysis.html"/>
-<link rel="next" href="exercises-for-categorical-data-analysis.html"/>
+<link rel="prev" href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html"/>
+<link rel="next" href="advanced-data-manipulation-and-transformation-optional.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -468,79 +468,162 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="categorical-data-analysis" class="section level1 hasAnchor" number="21">
-<h1><span class="header-section-number">Chapter 21</span> Categorical Data Analysis<a href="categorical-data-analysis.html#categorical-data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="introduction-to-logistic-regression" class="section level2 hasAnchor" number="21.1">
-<h2><span class="header-section-number">21.1</span> Introduction to Logistic Regression<a href="categorical-data-analysis.html#introduction-to-logistic-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Logistic regression is used when the dependent variable is binary (i.e., it has two possible outcomes). It models the probability of the occurrence of an event by fitting data to a logistic curve.</p>
-<div id="odds-ratios-and-logit-function" class="section level3 hasAnchor" number="21.1.1">
-<h3><span class="header-section-number">21.1.1</span> Odds Ratios and Logit Function<a href="categorical-data-analysis.html#odds-ratios-and-logit-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10" class="section level1 hasAnchor" number="25">
+<h1><span class="header-section-number">Chapter 25</span> Code Challenge 3: ANOVA, Regression Analysis, and Logistic Regression (After Module 10)<a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>Objective</strong>: Test students on their understanding of ANOVA, regression analysis, and logistic regression.</p>
+<p><strong>Modules Covered</strong>: 08-ANOVA.Rmd, 09-RegressionAnalysis.Rmd, 10-CategoricalDataAnalysis.Rmd</p>
 <ul>
-<li><strong>Odds Ratios</strong>: The odds ratio is a measure of association between an exposure and an outcome. It represents the odds that an event will occur given a particular exposure, compared to the odds of the event occurring without that exposure.</li>
-<li><strong>Logit Function</strong>: The logit function is the natural logarithm of the odds of the dependent event. Logistic regression uses this function to model the relationship between the independent variables and the probability of the dependent event occurring.</li>
+<li><h2 id="instructions-2" class="hasAnchor">Instructions:<a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#instructions-2" class="anchor-section" aria-label="Anchor link to header"></a></h2></li>
 </ul>
-</div>
-<div id="model-fitting-and-interpretation" class="section level3 hasAnchor" number="21.1.2">
-<h3><span class="header-section-number">21.1.2</span> Model Fitting and Interpretation<a href="categorical-data-analysis.html#model-fitting-and-interpretation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>ANOVA</strong>:
 <ul>
-<li><strong>Model Fitting</strong>: Logistic regression models are fitted using maximum likelihood estimation. The coefficients obtained from the model represent the change in the log odds of the dependent variable for a one-unit change in the independent variable.</li>
-<li><strong>Interpretation</strong>: The exponentiated coefficients (exp(coef)) can be interpreted as odds ratios. A coefficient of 0 means no effect, positive coefficients increase the odds, and negative coefficients decrease the odds.</li>
-</ul>
-<p><strong>Example and Demonstration</strong>:</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="categorical-data-analysis.html#cb177-1" tabindex="-1"></a><span class="co"># Example data</span></span>
-<span id="cb177-2"><a href="categorical-data-analysis.html#cb177-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb177-3"><a href="categorical-data-analysis.html#cb177-3" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
-<span id="cb177-4"><a href="categorical-data-analysis.html#cb177-4" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
-<span id="cb177-5"><a href="categorical-data-analysis.html#cb177-5" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>, <span class="dv">1</span>, <span class="at">prob =</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="sc">-</span>(<span class="fl">0.5</span> <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> x1 <span class="sc">-</span> <span class="dv">1</span> <span class="sc">*</span> x2))))</span>
-<span id="cb177-6"><a href="categorical-data-analysis.html#cb177-6" tabindex="-1"></a></span>
-<span id="cb177-7"><a href="categorical-data-analysis.html#cb177-7" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(y, x1, x2)</span>
-<span id="cb177-8"><a href="categorical-data-analysis.html#cb177-8" tabindex="-1"></a></span>
-<span id="cb177-9"><a href="categorical-data-analysis.html#cb177-9" tabindex="-1"></a><span class="co"># Fit Logistic Regression</span></span>
-<span id="cb177-10"><a href="categorical-data-analysis.html#cb177-10" tabindex="-1"></a>model_logit <span class="ot">&lt;-</span> <span class="fu">glm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2, <span class="at">data =</span> data, <span class="at">family =</span> binomial)</span>
-<span id="cb177-11"><a href="categorical-data-analysis.html#cb177-11" tabindex="-1"></a><span class="fu">summary</span>(model_logit)</span>
-<span id="cb177-12"><a href="categorical-data-analysis.html#cb177-12" tabindex="-1"></a></span>
-<span id="cb177-13"><a href="categorical-data-analysis.html#cb177-13" tabindex="-1"></a><span class="co"># Interpretation of coefficients</span></span>
-<span id="cb177-14"><a href="categorical-data-analysis.html#cb177-14" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(model_logit))</span></code></pre></div>
-</div>
-<div id="assessing-model-goodness-of-fit" class="section level3 hasAnchor" number="21.1.3">
-<h3><span class="header-section-number">21.1.3</span> Assessing Model Goodness of Fit<a href="categorical-data-analysis.html#assessing-model-goodness-of-fit" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<li><strong>Task 1</strong>: Conduct a one-way ANOVA to determine if there are significant differences in group means.</li>
+<li><strong>Task 2</strong>: Perform a two-way ANOVA to analyze the interaction effects of two factors on a response variable.</li>
+</ul></li>
+<li><strong>Regression Analysis</strong>:
 <ul>
-<li><strong>Goodness of Fit</strong>: The goodness of fit of a logistic regression model can be assessed using various methods such as the Hosmer-Lemeshow test, Akaike Information Criterion (AIC), and analysis of residuals.</li>
-<li><strong>Example</strong>: Use the Hosmer-Lemeshow test to assess the model fit.</li>
-</ul>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="categorical-data-analysis.html#cb178-1" tabindex="-1"></a><span class="co"># Assessing model goodness of fit</span></span>
-<span id="cb178-2"><a href="categorical-data-analysis.html#cb178-2" tabindex="-1"></a><span class="fu">library</span>(ResourceSelection)</span>
-<span id="cb178-3"><a href="categorical-data-analysis.html#cb178-3" tabindex="-1"></a><span class="fu">hoslem.test</span>(data<span class="sc">$</span>y, <span class="fu">fitted</span>(model_logit))</span></code></pre></div>
-</div>
-</div>
-<div id="modeling-and-interpretation-of-binary-outcomes" class="section level2 hasAnchor" number="21.2">
-<h2><span class="header-section-number">21.2</span> Modeling and Interpretation of Binary Outcomes<a href="categorical-data-analysis.html#modeling-and-interpretation-of-binary-outcomes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="predictive-modeling-with-binary-data" class="section level3 hasAnchor" number="21.2.1">
-<h3><span class="header-section-number">21.2.1</span> Predictive Modeling with Binary Data<a href="categorical-data-analysis.html#predictive-modeling-with-binary-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Logistic regression is commonly used for predictive modeling with binary outcomes. The model predicts the probability that a given input belongs to one of the two outcome categories.</p>
-</div>
-<div id="evaluating-model-performance-roc-curves-auc" class="section level3 hasAnchor" number="21.2.2">
-<h3><span class="header-section-number">21.2.2</span> Evaluating Model Performance (ROC Curves, AUC)<a href="categorical-data-analysis.html#evaluating-model-performance-roc-curves-auc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<li><strong>Task 3</strong>: Fit a simple linear regression model and interpret the results.</li>
+<li><strong>Task 4</strong>: Fit a multiple linear regression model, perform residual analysis, and check for heteroscedasticity and multicollinearity.</li>
+</ul></li>
+<li><strong>Logistic Regression</strong>:
 <ul>
-<li><strong>ROC Curve</strong>: A Receiver Operating Characteristic (ROC) curve is a graphical representation of a model’s diagnostic ability. It plots the true positive rate (sensitivity) against the false positive rate (1 - specificity) for different threshold values.</li>
-<li><strong>AUC (Area Under the Curve)</strong>: The AUC is a single scalar value that summarizes the performance of the model across all threshold values. A higher AUC indicates better model performance.</li>
+<li><strong>Task 5</strong>: Fit a logistic regression model with a binary outcome and interpret the results.</li>
+<li><strong>Task 6</strong>: Evaluate the logistic regression model performance using ROC curves and AUC.</li>
+</ul></li>
+</ol>
+<ul>
+<li><h2 id="template-2" class="hasAnchor">Template:<a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#template-2" class="anchor-section" aria-label="Anchor link to header"></a></h2></li>
 </ul>
-<p><strong>Example and Demonstration</strong>:</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="categorical-data-analysis.html#cb179-1" tabindex="-1"></a><span class="co"># ROC Curve and AUC</span></span>
-<span id="cb179-2"><a href="categorical-data-analysis.html#cb179-2" tabindex="-1"></a><span class="fu">library</span>(pROC)</span>
-<span id="cb179-3"><a href="categorical-data-analysis.html#cb179-3" tabindex="-1"></a>roc_curve <span class="ot">&lt;-</span> <span class="fu">roc</span>(data<span class="sc">$</span>y, <span class="fu">fitted</span>(model_logit))</span>
-<span id="cb179-4"><a href="categorical-data-analysis.html#cb179-4" tabindex="-1"></a><span class="fu">plot</span>(roc_curve)</span>
-<span id="cb179-5"><a href="categorical-data-analysis.html#cb179-5" tabindex="-1"></a><span class="fu">auc</span>(roc_curve)</span></code></pre></div>
-</div>
-</div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-1" tabindex="-1"></a><span class="co"># CODE CHALLENGE 3 TEMPLATE</span></span>
+<span id="cb188-2"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-2" tabindex="-1"></a></span>
+<span id="cb188-3"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-3" tabindex="-1"></a><span class="co"># STUDENT NAME: ______________________</span></span>
+<span id="cb188-4"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-4" tabindex="-1"></a><span class="co"># STUDENT ID: ________________________</span></span>
+<span id="cb188-5"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-5" tabindex="-1"></a></span>
+<span id="cb188-6"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-6" tabindex="-1"></a><span class="do">########################</span></span>
+<span id="cb188-7"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-7" tabindex="-1"></a><span class="co"># SECTION 1: ANOVA</span></span>
+<span id="cb188-8"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-8" tabindex="-1"></a><span class="do">########################</span></span>
+<span id="cb188-9"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-9" tabindex="-1"></a></span>
+<span id="cb188-10"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-10" tabindex="-1"></a><span class="co"># Task 1: Conduct a one-way ANOVA to determine if there are significant differences in group means.</span></span>
+<span id="cb188-11"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-11" tabindex="-1"></a></span>
+<span id="cb188-12"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-12" tabindex="-1"></a><span class="co"># Sample data: Weight loss measurements for three diet groups</span></span>
+<span id="cb188-13"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-13" tabindex="-1"></a>diet1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">2.1</span>, <span class="fl">2.3</span>, <span class="fl">1.8</span>, <span class="fl">2.5</span>, <span class="fl">2.0</span>)</span>
+<span id="cb188-14"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-14" tabindex="-1"></a>diet2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">2.0</span>, <span class="fl">1.9</span>, <span class="fl">2.2</span>, <span class="fl">2.1</span>, <span class="fl">1.8</span>)</span>
+<span id="cb188-15"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-15" tabindex="-1"></a>diet3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.7</span>, <span class="fl">1.8</span>, <span class="fl">1.6</span>, <span class="fl">1.9</span>, <span class="fl">1.5</span>)</span>
+<span id="cb188-16"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-16" tabindex="-1"></a></span>
+<span id="cb188-17"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-17" tabindex="-1"></a>weight_loss <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb188-18"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-18" tabindex="-1"></a>  <span class="at">loss =</span> <span class="fu">c</span>(diet1, diet2, diet3),</span>
+<span id="cb188-19"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-19" tabindex="-1"></a>  <span class="at">diet =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Diet1&quot;</span>, <span class="st">&quot;Diet2&quot;</span>, <span class="st">&quot;Diet3&quot;</span>), <span class="at">each =</span> <span class="dv">5</span>))</span>
+<span id="cb188-20"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-20" tabindex="-1"></a>)</span>
+<span id="cb188-21"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-21" tabindex="-1"></a></span>
+<span id="cb188-22"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-22" tabindex="-1"></a><span class="co"># Perform One-Way ANOVA</span></span>
+<span id="cb188-23"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-23" tabindex="-1"></a>anova_result <span class="ot">&lt;-</span> <span class="fu">aov</span>(loss <span class="sc">~</span> diet, <span class="at">data =</span> weight_loss)</span>
+<span id="cb188-24"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-24" tabindex="-1"></a><span class="fu">summary</span>(anova_result)</span>
+<span id="cb188-25"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-25" tabindex="-1"></a></span>
+<span id="cb188-26"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-26" tabindex="-1"></a><span class="co"># Perform post hoc test</span></span>
+<span id="cb188-27"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-27" tabindex="-1"></a>tukey_result <span class="ot">&lt;-</span> <span class="fu">TukeyHSD</span>(anova_result)</span>
+<span id="cb188-28"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-28" tabindex="-1"></a><span class="fu">print</span>(tukey_result)</span>
+<span id="cb188-29"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-29" tabindex="-1"></a></span>
+<span id="cb188-30"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-30" tabindex="-1"></a><span class="co"># Task 2: Perform a two-way ANOVA to analyze the interaction effects of two factors on a response variable.</span></span>
+<span id="cb188-31"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-31" tabindex="-1"></a></span>
+<span id="cb188-32"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-32" tabindex="-1"></a><span class="co"># Sample data: Plant growth measurements for different fertilizer and watering conditions</span></span>
+<span id="cb188-33"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-33" tabindex="-1"></a>growth <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">22</span>, <span class="dv">19</span>, <span class="dv">24</span>, <span class="dv">23</span>, <span class="dv">25</span>, <span class="dv">18</span>, <span class="dv">21</span>, <span class="dv">22</span>, <span class="dv">23</span>, <span class="dv">26</span>, <span class="dv">24</span>, <span class="dv">22</span>, <span class="dv">21</span>, <span class="dv">20</span>)</span>
+<span id="cb188-34"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-34" tabindex="-1"></a>fertilizer <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Fertilizer1&quot;</span>, <span class="st">&quot;Fertilizer2&quot;</span>, <span class="st">&quot;Fertilizer3&quot;</span>), <span class="at">each =</span> <span class="dv">5</span>))</span>
+<span id="cb188-35"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-35" tabindex="-1"></a>watering <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Watering1&quot;</span>, <span class="st">&quot;Watering2&quot;</span>, <span class="st">&quot;Watering3&quot;</span>), <span class="at">times =</span> <span class="dv">5</span>))</span>
+<span id="cb188-36"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-36" tabindex="-1"></a></span>
+<span id="cb188-37"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-37" tabindex="-1"></a>plant_growth <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(growth, fertilizer, watering)</span>
+<span id="cb188-38"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-38" tabindex="-1"></a></span>
+<span id="cb188-39"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-39" tabindex="-1"></a><span class="co"># Perform Two-Way ANOVA</span></span>
+<span id="cb188-40"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-40" tabindex="-1"></a>anova_result_2way <span class="ot">&lt;-</span> <span class="fu">aov</span>(growth <span class="sc">~</span> fertilizer <span class="sc">*</span> watering, <span class="at">data =</span> plant_growth)</span>
+<span id="cb188-41"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-41" tabindex="-1"></a><span class="fu">summary</span>(anova_result_2way)</span>
+<span id="cb188-42"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-42" tabindex="-1"></a></span>
+<span id="cb188-43"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-43" tabindex="-1"></a><span class="do">########################</span></span>
+<span id="cb188-44"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-44" tabindex="-1"></a><span class="co"># SECTION 2: Regression Analysis</span></span>
+<span id="cb188-45"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-45" tabindex="-1"></a><span class="do">########################</span></span>
+<span id="cb188-46"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-46" tabindex="-1"></a></span>
+<span id="cb188-47"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-47" tabindex="-1"></a><span class="co"># Task 3: Fit a simple linear regression model and interpret the results.</span></span>
+<span id="cb188-48"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-48" tabindex="-1"></a></span>
+<span id="cb188-49"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-49" tabindex="-1"></a><span class="co"># Sample data: Advertising spend and sales</span></span>
+<span id="cb188-50"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-50" tabindex="-1"></a>advertising <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">230</span>, <span class="dv">150</span>, <span class="dv">300</span>, <span class="dv">290</span>, <span class="dv">180</span>, <span class="dv">270</span>, <span class="dv">320</span>, <span class="dv">210</span>, <span class="dv">250</span>, <span class="dv">190</span>)</span>
+<span id="cb188-51"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-51" tabindex="-1"></a>sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">480</span>, <span class="dv">340</span>, <span class="dv">600</span>, <span class="dv">590</span>, <span class="dv">380</span>, <span class="dv">540</span>, <span class="dv">640</span>, <span class="dv">410</span>, <span class="dv">500</span>, <span class="dv">430</span>)</span>
+<span id="cb188-52"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-52" tabindex="-1"></a></span>
+<span id="cb188-53"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-53" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(sales, advertising)</span>
+<span id="cb188-54"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-54" tabindex="-1"></a></span>
+<span id="cb188-55"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-55" tabindex="-1"></a><span class="co"># Fit Simple Linear Regression</span></span>
+<span id="cb188-56"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-56" tabindex="-1"></a>model_simple <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> advertising, <span class="at">data =</span> data)</span>
+<span id="cb188-57"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-57" tabindex="-1"></a><span class="fu">summary</span>(model_simple)</span>
+<span id="cb188-58"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-58" tabindex="-1"></a></span>
+<span id="cb188-59"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-59" tabindex="-1"></a><span class="co"># Task 4: Fit a multiple linear regression model, perform residual analysis, and check for heteroscedasticity and multicollinearity.</span></span>
+<span id="cb188-60"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-60" tabindex="-1"></a></span>
+<span id="cb188-61"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-61" tabindex="-1"></a><span class="co"># Sample data: House prices, square footage, and number of bedrooms</span></span>
+<span id="cb188-62"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-62" tabindex="-1"></a>prices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">300000</span>, <span class="dv">350000</span>, <span class="dv">400000</span>, <span class="dv">250000</span>, <span class="dv">450000</span>, <span class="dv">500000</span>)</span>
+<span id="cb188-63"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-63" tabindex="-1"></a>sqft <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1500</span>, <span class="dv">1600</span>, <span class="dv">1700</span>, <span class="dv">1400</span>, <span class="dv">1800</span>, <span class="dv">2000</span>)</span>
+<span id="cb188-64"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-64" tabindex="-1"></a>bedrooms <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb188-65"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-65" tabindex="-1"></a></span>
+<span id="cb188-66"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-66" tabindex="-1"></a>house_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(prices, sqft, bedrooms)</span>
+<span id="cb188-67"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-67" tabindex="-1"></a></span>
+<span id="cb188-68"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-68" tabindex="-1"></a><span class="co"># Fit Multiple Linear Regression</span></span>
+<span id="cb188-69"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-69" tabindex="-1"></a>model_multiple <span class="ot">&lt;-</span> <span class="fu">lm</span>(prices <span class="sc">~</span> sqft <span class="sc">+</span> bedrooms, <span class="at">data =</span> house_data)</span>
+<span id="cb188-70"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-70" tabindex="-1"></a><span class="fu">summary</span>(model_multiple)</span>
+<span id="cb188-71"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-71" tabindex="-1"></a></span>
+<span id="cb188-72"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-72" tabindex="-1"></a><span class="co"># Residual analysis</span></span>
+<span id="cb188-73"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-73" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb188-74"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-74" tabindex="-1"></a><span class="fu">plot</span>(model_multiple)</span>
+<span id="cb188-75"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-75" tabindex="-1"></a></span>
+<span id="cb188-76"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-76" tabindex="-1"></a><span class="co"># Check for heteroscedasticity</span></span>
+<span id="cb188-77"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-77" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb188-78"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-78" tabindex="-1"></a><span class="fu">ncvTest</span>(model_multiple)</span>
+<span id="cb188-79"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-79" tabindex="-1"></a></span>
+<span id="cb188-80"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-80" tabindex="-1"></a><span class="co"># Check for multicollinearity</span></span>
+<span id="cb188-81"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-81" tabindex="-1"></a><span class="fu">vif</span>(model_multiple)</span>
+<span id="cb188-82"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-82" tabindex="-1"></a></span>
+<span id="cb188-83"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-83" tabindex="-1"></a><span class="do">########################</span></span>
+<span id="cb188-84"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-84" tabindex="-1"></a><span class="co"># SECTION 3: Logistic Regression</span></span>
+<span id="cb188-85"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-85" tabindex="-1"></a><span class="do">########################</span></span>
+<span id="cb188-86"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-86" tabindex="-1"></a></span>
+<span id="cb188-87"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-87" tabindex="-1"></a><span class="co"># Task 5: Fit a logistic regression model with a binary outcome and interpret the results.</span></span>
+<span id="cb188-88"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-88" tabindex="-1"></a></span>
+<span id="cb188-89"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-89" tabindex="-1"></a><span class="co"># Sample data</span></span>
+<span id="cb188-90"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-90" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb188-91"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-91" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb188-92"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-92" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb188-93"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-93" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>, <span class="dv">1</span>, <span class="at">prob =</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="sc">-</span>(<span class="fl">0.5</span> <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> x1 <span class="sc">-</span> <span class="dv">1</span> <span class="sc">*</span> x2))))</span>
+<span id="cb188-94"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-94" tabindex="-1"></a></span>
+<span id="cb188-95"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-95" tabindex="-1"></a>data_logit <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(y, x1, x2)</span>
+<span id="cb188-96"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-96" tabindex="-1"></a></span>
+<span id="cb188-97"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-97" tabindex="-1"></a><span class="co"># Fit Logistic Regression</span></span>
+<span id="cb188-98"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-98" tabindex="-1"></a>model_logit <span class="ot">&lt;-</span> <span class="fu">glm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2, <span class="at">data =</span> data_logit, <span class="at">family =</span> binomial)</span>
+<span id="cb188-99"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-99" tabindex="-1"></a><span class="fu">summary</span>(model_logit)</span>
+<span id="cb188-100"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-100" tabindex="-1"></a></span>
+<span id="cb188-101"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-101" tabindex="-1"></a><span class="co"># Interpretation of coefficients</span></span>
+<span id="cb188-102"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-102" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(model_logit))</span>
+<span id="cb188-103"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-103" tabindex="-1"></a></span>
+<span id="cb188-104"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-104" tabindex="-1"></a><span class="co"># Task 6: Evaluate the logistic regression model performance using ROC curves and AUC.</span></span>
+<span id="cb188-105"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-105" tabindex="-1"></a></span>
+<span id="cb188-106"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-106" tabindex="-1"></a><span class="co"># ROC Curve and AUC</span></span>
+<span id="cb188-107"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-107" tabindex="-1"></a><span class="fu">library</span>(pROC)</span>
+<span id="cb188-108"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-108" tabindex="-1"></a>roc_curve <span class="ot">&lt;-</span> <span class="fu">roc</span>(data_logit<span class="sc">$</span>y, <span class="fu">fitted</span>(model_logit))</span>
+<span id="cb188-109"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-109" tabindex="-1"></a><span class="fu">plot</span>(roc_curve)</span>
+<span id="cb188-110"><a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#cb188-110" tabindex="-1"></a><span class="fu">auc</span>(roc_curve)</span></code></pre></div>
+<ul>
+<li><h2 id="submission-instructions-2" class="hasAnchor">Submission Instructions:<a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html#submission-instructions-2" class="anchor-section" aria-label="Anchor link to header"></a></h2></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>Complete the code challenge template by filling in your solutions in the specified sections.</li>
+<li>Save your completed R script with the filename format: <code>CodeChallenge3_YourName.R</code></li>
+<li>Upload your script to your GitHub repository under the Code Challenges folder.</li>
+<li>The auto-grader will evaluate your submission and provide immediate feedback.</li>
+<li>Once you are satisfied with your marks, finalize your submission which will automatically be sent to the instructor’s Google Drive for review.</li>
+</ol>
+
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="exercises-for-regression-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exercises-for-categorical-data-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="code-challenge-2-descriptive-statistics-probability-and-inferential-statistics-after-module-07.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="advanced-data-manipulation-and-transformation-optional.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -571,7 +654,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/betaways01/comprehensive-r-course/edit/main/10-CategoricalDataAnalysis.Rmd",
+"link": "https://github.com/betaways01/comprehensive-r-course/edit/main/13-CodeChallenge-3.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -579,7 +662,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/betaways01/comprehensive-r-course/blob/main/10-CategoricalDataAnalysis.Rmd",
+"link": "https://github.com/betaways01/comprehensive-r-course/blob/main/13-CodeChallenge-3.Rmd",
 "text": null
 },
 "download": null,

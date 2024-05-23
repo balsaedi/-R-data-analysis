@@ -1,237 +1,273 @@
----
-title: "Comprehensive R Course - Descriptive and Predictive Analysis"
-output: html_document
-date: "2024-04-26"
----
+Great! Based on the structure of your course, we can strategically place the three code challenges to ensure they cover different aspects of the material progressively. Here are the ideas for the three code challenges:
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+### Code Challenge 1: Fundamentals and Data Structures (After Module 02)
+**Objective**: Test students on basic R programming, data structures, and initial data handling techniques.
+**Modules Covered**: 01-R-Fundamentals.Rmd, 02-DataStructureHandling.Rmd
 
-### Introduction
-- **Overview of R and the RStudio Interface**
-  - History and Philosophy of R
-  - Navigating RStudio: Panels, Scripts, Console, and Environment
-  - RStudio Projects and Workspace Management
-  - Installing and Managing Packages
+#### Tasks:
+1. **Basic R Programming**:
+   - Write a function to calculate the factorial of a number using both iterative and recursive methods.
+   - Demonstrate the use of control structures (if-else, for loop) to manipulate a vector of numbers.
 
+2. **Data Structures**:
+   - Create and manipulate vectors, matrices, lists, and data frames.
+   - Convert a list into a data frame and perform basic data operations (e.g., selecting columns, filtering rows).
 
-### R Programming Fundamentals (Light Focus)
-- **Basics of R Syntax and Functions**
-  - Variables and Data Types
-  - Control Structures: Loops and Conditional Statements
-  - Writing and Using Functions
-  - Debugging and Error Handling
+3. **Basic Data Handling**:
+   - Load and explore a dataset from R's built-in datasets (e.g., `iris`).
+   - Summarize the data (mean, median, mode) and visualize basic distributions using histograms and box plots.
 
-- **Efficient Programming Practices**
-  - Code Organization and Readability
-  - Introduction to R's Vectorized Operations
-  - Best Practices for Speed and Performance
-  - Using R Profiler for Code Optimization
+### Code Challenge 2: Descriptive Statistics and Probability (After Module 06)
+**Objective**: Assess students' understanding of descriptive statistics, probability distributions, and statistical concepts.
+**Modules Covered**: 03-DataVisualization.Rmd, 04-DataAnalysisTypes.Rmd, 05-DescriptiveStatistics.Rmd, 06-ProbabilityAndStatistics.Rmd
 
-### Data Structures and Data Handling in R (Light Focus)
-- **Overview of Vectors, Matrices, Lists, and Data Frames**
-  - Creating and Manipulating Vectors
-  - Operations with Matrices and Arrays
-  - Understanding Lists and Their Uses
-  - Data Frames for Tabular Data
+#### Tasks:
+1. **Descriptive Statistics**:
+   - Calculate measures of central tendency and dispersion (mean, median, variance, standard deviation) for a dataset.
+   - Create visualizations such as histograms, box plots, and scatter plots to describe the data.
 
-- **Data Handling Techniques with dplyr**
-  - Selecting, Filtering, and Arranging Data
-  - Mutating and Summarizing Data Sets
-  - Joins and Data Merging Techniques
-  - Group Operations with `group_by` and `summarise`
+2. **Probability Distributions**:
+   - Fit and visualize different probability distributions (normal, binomial, Poisson) to a dataset.
+   - Perform simulations to demonstrate the Central Limit Theorem.
 
-### Data Visualization in R (Light Focus)
-- **Introduction to ggplot2 and Basic Plotting**
-  - ggplot2 Syntax and Layering System
-  - Creating Histograms, Bar Plots, and Scatter Plots
-  - Aesthetics and Themes
+3. **Statistical Concepts**:
+   - Conduct hypothesis testing (t-tests, chi-square tests) on the dataset.
+   - Interpret the results and discuss the implications of Type I and Type II errors.
 
-- **Customizing Graphs for Data Presentation**
-  - Customizing Axes, Legends, and Labels
-  - Fine-tuning Scales and Coordinates
-  - Adding Annotations and Custom Geometries
+### Code Challenge 3: Inferential Statistics, Regression, and ANOVA (After Module 10)
+**Objective**: Evaluate students' proficiency in inferential statistics, regression analysis, ANOVA, and logistic regression.
+**Modules Covered**: 07-InferentialAndHypothesis.Rmd, 08-ANOVA.Rmd, 09-RegressionAnalysis.Rmd, 10-CategoricalDataAnalysis.Rmd
 
-### Working with Different Types of Data (Light Focus)
-- **Overview of Qualitative and Quantitative Data**
-  - Defining Qualitative vs Quantitative Data
-  - Sampling Strategies and Data Collection Methods
-  - Structuring Data Sets for Analysis
+#### Tasks:
+1. **Inferential Statistics**:
+   - Perform hypothesis tests and interpret the results (t-tests, z-tests, chi-square tests).
+   - Calculate and interpret confidence intervals.
 
-- **Best Practices in Data Collection and Cleaning**
-  - Identifying and Handling Missing Data
-  - Data Type Conversions and Formatting
-  - Detecting and Dealing with Outliers
+2. **Regression Analysis**:
+   - Fit both simple and multiple linear regression models to a dataset.
+   - Interpret the regression coefficients and evaluate the model fit using R-squared and residual analysis.
 
-### Descriptive Statistics
-- **Measures of Central Tendency, Variability, and Standard Scores**
-  - Calculating Mean, Median, Mode
-  - Variance, Standard Deviation, and Range
-  - Normalization and Standardization of Scores
+3. **ANOVA**:
+   - Conduct a one-way ANOVA to compare means across different groups.
+   - Perform post hoc tests to determine which groups differ significantly.
 
-- **Visualizing Distributions and Relationships**
-  - Box Plots, Violin Plots, and Density Plots
-  - Pairwise Relationships with Scatter Plots and Correlograms
-  - Introduction to Multidimensional Scaling and PCA
+4. **Logistic Regression**:
+   - Fit a logistic regression model to a binary outcome dataset.
+   - Interpret the coefficients and evaluate the model using ROC curves and AUC.
 
-### Probability Distributions and Statistical Concepts
-- **Understanding and Applying Common Probability Distributions**
-  - Binomial, Poisson, and Normal Distributions
-  - Continuous vs Discrete Distributions
-  - The Central Limit Theorem and Its Importance
+### Placement in the Course:
+- **Code Challenge 1**: After 02-DataStructureHandling.Rmd
+- **Code Challenge 2**: After 06-ProbabilityAndStatistics.Rmd
+- **Code Challenge 3**: After 10-CategoricalDataAnalysis.Rmd
 
-- **Exploring Random Variables and Expected Values**
-  - Defining and Calculating Expected Values
-  - Variance and Standard Deviation of Random Variables
-  - The Law of Large Numbers
-
-### Inferential Statistics and Hypothesis Testing
-- **Theoretical Basis for Hypothesis Testing and Significance**
-  - Null and Alternative Hypotheses
-  - Type I and Type II Errors
-  - p-Values and Confidence Intervals
-
-- **Chi-Square, t-tests, z-tests, and Non-Parametric Tests**
-  - Conducting and Interpreting Chi-Square Tests
-  - One-sample and Two-sample t-tests
-  - Non-Parametric Alternatives to Parametric Tests
-
-### Analysis of Variance (ANOVA)
-- **Conducting and Interpreting One-Way and Two-Way ANOVA**
-  - Assumptions of ANOVA
-  - Interpreting ANOVA Tables
-  - Post Hoc Tests and Multiple Comparisons
-
-- **Understanding the F-test and its Applications**
-  - The F Distribution and the F Ratio
-  - Between-groups and Within-groups Variance
-  - Applications in Experimental Design
-
-### Regression Analysis
-- **Simple and Multiple Linear Regression (OLS, MLR)**
-  - Constructing and Fitting Regression Models
-  - Understanding Coefficients and Predictions
-  - Multiple Regression and Adjusting for Confounders
-
-- **Diagnostics and Assumptions of Linear Models**
-  - Residual Analysis and Model Fit
-  - Checking for Heteroscedasticity and Multicollinearity
-  - Model Selection Criteria (AIC, BIC, R-squared)
-
-### Categorical Data Analysis
-- **Introduction to Logistic Regression**
-  - Odds Ratios and Logit Function
-  - Model Fitting and Interpretation
-  - Assessing Model Goodness of Fit
-
-- **Modeling and Interpretation of Binary Outcomes**
-  - Predictive Modeling with Binary Data
-  - Evaluating Model Performance (ROC Curves, AUC)
-
-### Advanced R Programming Techniques
-- **Writing Functions and Loops for Automating Tasks**
-  - Function Arguments and Return Values
-  - Looping Constructs: `for`, `while`, and `apply` Family
-  - Avoiding Loops: Vectorization and Parallel Processing
-
-- **Advanced Data Manipulation and Transformation**
-  - Tidyverse Approaches to Data Wrangling
-  - Dealing with Text and Categorical Data
-  - Working with Dates and Times
-
-
-- **Correlation, Causation, and Regression Techniques**
-  - Pearson and Spearman Correlation Measures
-  - Path Analysis and Structural Equation Modeling
-  - Multivariate Regression Models
-
-### Practical Applications in R
-- **Case Studies and Real-World Data Analysis**
-  - Sector-specific Analysis (e.g., Healthcare, Finance, Marketing)
-  - Interpreting Results in a Business Context
-  - Addressing Ethical Considerations in Data Analysis
-
-- **Developing a Capstone Project to Apply Learned Skills**
-  - Identifying a Problem and Formulating Questions
-  - Data Collection and Analysis Plan
-  - Presenting Findings and Recommendations
-
-### Reporting and Communication
-- **Crafting Reports with R Markdown**
-  - Basics of R Markdown for Reporting
-  - Dynamic Report Generation and Parameterized Reports
-  - Creating Interactive Dashboards with Shiny
-
-- **Effective Communication of Statistical Findings**
-  - Visualization Techniques for Storytelling with Data
-  - Translating Statistical Outputs into Business Insights
-  - Communicating Uncertainty and Model Limitations
+These challenges will ensure that students are tested on key concepts and techniques progressively, aligning with the course content they have learned up to that point.
 
 
 
-When creating R Markdown (Rmd) documents, you can embed different types of code chunks that serve various purposes. These chunks can be tailored for demonstration purposes, to show pre-run code with results, and to provide interactive code exercises. Here’s how you can handle each usage scenario in your Rmd documents, which will also work when you convert them into a Bookdown project:
 
-### Usage 1: Code for Demonstration (Non-Executable)
-To include code for demonstration purposes where the code is displayed but not run, you can use the `eval=FALSE` chunk option. This will display the code without actually executing it when the document is knit.
+
+
+
+
+
+
+
+
+Yes, this is certainly doable! Here's a detailed plan to create and implement the code challenge based on your specifications.
+
+### 1. Code Challenge Outline
+The code challenge will cover the key concepts and techniques taught in the course, including hypothesis testing, regression analysis, ANOVA, logistic regression, and advanced data manipulation.
+
+### 2. Challenge Structure
+- **Hypothesis Testing**: Conduct a t-test and interpret the results.
+- **Regression Analysis**: Perform both simple and multiple linear regression, interpret the coefficients, and evaluate the model.
+- **ANOVA**: Conduct a one-way ANOVA, interpret the results, and perform post hoc tests.
+- **Logistic Regression**: Fit a logistic regression model, interpret the coefficients, and assess the model fit.
+- **Data Manipulation**: Use `tidyverse` functions to manipulate and summarize data.
+
+### 3. Template for the Code Challenge
+The template will include placeholders for each task with instructions. Students will fill in their code in the specified sections.
+
+### 4. Auto-Grader Setup
+The auto-grader will run predefined tests on the student's submitted code to evaluate correctness and completeness. We'll use a combination of R's testing frameworks like `testthat` and custom scripts.
+
+### 5. Submission and Evaluation
+Students will submit their code via GitHub Pages. The auto-grader will provide immediate feedback and scores. Once satisfied, students can finalize and upload their code, which will be sent to the teacher's Google Drive.
+
+### 6. Recording Marks
+The marks for each challenge and overall course performance will be recorded. This can be managed through a database or a simple spreadsheet linked with the grading system.
+
+### Detailed Implementation
+
+#### Template for the Code Challenge
 
 ```r
-```{r eval=FALSE}
-# This is demonstration code
-summary(cars$speed)
-```
+# CODE CHALLENGE TEMPLATE
+
+# STUDENT NAME: ______________________
+# STUDENT ID: ________________________
+
+# SECTION 1: Hypothesis Testing
+# Task: Conduct a t-test on the provided data and interpret the results.
+
+# Load necessary libraries
+library(tidyverse)
+library(stats)
+
+# Provided data for hypothesis testing
+data <- c(5.2, 5.7, 6.3, 5.8, 6.1, 5.9, 6.4, 5.6, 6.2, 5.7)
+
+# Perform t-test (students will replace the code below)
+t_test_result <- t.test(data, mu = 6)
+print(t_test_result)
+
+# SECTION 2: Regression Analysis
+# Task: Perform a simple and multiple linear regression, interpret the coefficients, and evaluate the model.
+
+# Load necessary libraries
+library(tidyverse)
+library(caret)
+
+# Provided data for regression analysis
+set.seed(123)
+x1 <- rnorm(100)
+x2 <- rnorm(100)
+y <- 3 + 2 * x1 + 1.5 * x2 + rnorm(100)
+data <- data.frame(y, x1, x2)
+
+# Perform simple linear regression
+model_simple <- lm(y ~ x1, data = data)
+summary(model_simple)
+
+# Perform multiple linear regression
+model_multiple <- lm(y ~ x1 + x2, data = data)
+summary(model_multiple)
+
+# SECTION 3: ANOVA
+# Task: Conduct a one-way ANOVA, interpret the results, and perform post hoc tests.
+
+# Provided data for ANOVA
+group1 <- rnorm(20, mean = 5)
+group2 <- rnorm(20, mean = 6)
+group3 <- rnorm(20, mean = 7)
+data_anova <- data.frame(
+  value = c(group1, group2, group3),
+  group = factor(rep(c("Group1", "Group2", "Group3"), each = 20))
+)
+
+# Perform ANOVA
+anova_result <- aov(value ~ group, data = data_anova)
+summary(anova_result)
+
+# Perform post hoc test
+tukey_result <- TukeyHSD(anova_result)
+print(tukey_result)
+
+# SECTION 4: Logistic Regression
+# Task: Fit a logistic regression model, interpret the coefficients, and assess the model fit.
+
+# Provided data for logistic regression
+set.seed(123)
+x1 <- rnorm(100)
+x2 <- rnorm(100)
+y <- rbinom(100, 1, prob = 1 / (1 + exp(-(0.5 + 1.5 * x1 - 1 * x2))))
+data_logit <- data.frame(y, x1, x2)
+
+# Fit logistic regression
+model_logit <- glm(y ~ x1 + x2, data = data_logit, family = binomial)
+summary(model_logit)
+exp(coef(model_logit))
+
+# SECTION 5: Data Manipulation
+# Task: Use `tidyverse` functions to manipulate and summarize the provided data.
+
+# Provided data for data manipulation
+data_mtcars <- mtcars
+
+# Select and rename columns
+selected_data <- data_mtcars %>%
+  select(mpg, cyl, hp, wt) %>%
+  rename(Miles_Per_Gallon = mpg, Cylinders = cyl, Horsepower = hp, Weight = wt)
+
+# Filter rows
+filtered_data <- selected_data %>%
+  filter(Miles_Per_Gallon > 20, Cylinders == 4)
+
+# Create new columns
+mutated_data <- filtered_data %>%
+  mutate(Horsepower_per_Weight = Horsepower / Weight,
+         Weight_Category = ifelse(Weight > 3, "Heavy", "Light"))
+
+# Summarize data
+summary_data <- mutated_data %>%
+  group_by(Weight_Category) %>%
+  summarise(Mean_Horsepower_per_Weight = mean(Horsepower_per_Weight),
+            Count = n())
+
+print(summary_data)
 ```
 
-### Usage 2: Pre-Run Code Showing Results
-To display code along with its results without allowing it to be changed, simply include the code chunk without any special options. When the Rmd document is knit, the code will run, and the output will be included in the document.
+#### Auto-Grader Setup
+
+We'll use `testthat` to write tests that will automatically grade the student's submissions. Here's an example of how the tests can be structured:
 
 ```r
-```{r}
-# Pre-run code for results
-plot(cars$speed, cars$dist)
+# AUTO-GRADER SCRIPT
+
+library(testthat)
+
+# Hypothesis Testing
+test_that("t-test mean is correct", {
+  expect_true(t_test_result$estimate == mean(data))
+})
+
+test_that("t-test p-value is correct", {
+  expect_true(t_test_result$p.value < 0.05)
+})
+
+# Regression Analysis
+test_that("simple regression coefficient is correct", {
+  expect_true(coef(model_simple)[2] > 1.5 && coef(model_simple)[2] < 2.5)
+})
+
+test_that("multiple regression coefficients are correct", {
+  expect_true(coef(model_multiple)[2] > 1.5 && coef(model_multiple)[2] < 2.5)
+  expect_true(coef(model_multiple)[3] > 1.0 && coef(model_multiple)[3] < 2.0)
+})
+
+# ANOVA
+test_that("ANOVA F-value is significant", {
+  expect_true(summary(anova_result)[[1]][["Pr(>F)"]][1] < 0.05)
+})
+
+test_that("Tukey HSD results are correct", {
+  expect_true(tukey_result$group1[1] < -1)
+})
+
+# Logistic Regression
+test_that("logistic regression coefficients are correct", {
+  expect_true(exp(coef(model_logit))[2] > 3)
+  expect_true(exp(coef(model_logit))[3] < 1)
+})
+
+# Data Manipulation
+test_that("data manipulation is correct", {
+  expect_true(nrow(filtered_data) == 11)
+  expect_true(summary_data$Mean_Horsepower_per_Weight[1] > 40)
+})
 ```
-```
 
-The output, such as plots or tables, will be generated and embedded into the final document automatically.
+#### Submission and Evaluation
 
-### Usage 3: Interactive Code Writing and Execution
-To allow users to write and run code within the Rmd document, you can use a standard R code chunk. Once the Rmd is knit, the code can be run in the output document if you are generating an HTML document using the `runtime: shiny` option in the YAML header. This enables interactivity in the HTML document but note that this feature won’t be available in PDFs or other non-interactive formats.
+1. **Submission**: Students will upload their R script to a GitHub repository set up for this purpose.
+2. **Auto-Grader**: A CI/CD pipeline (e.g., GitHub Actions) will be configured to run the `testthat` script automatically upon submission.
+3. **Feedback**: The results will be provided as feedback through the CI/CD pipeline, showing which tests passed or failed.
+4. **Final Submission**: Once satisfied, students can finalize their submission, which will be automatically sent to the teacher's Google Drive and recorded.
 
-Here’s what the YAML header would look like to enable Shiny for an HTML document:
+### Implementation Steps
 
-```yaml
----
-title: "Interactive Book"
-output: html_document
-runtime: shiny
----
-```
+1. **Create GitHub Repository**: Set up a repository for students to fork and submit their code.
+2. **Set Up GitHub Actions**: Configure GitHub Actions to run the `testthat` script on every push to the repository.
+3. **Google Drive Integration**: Use Google Drive API to automatically upload final submissions to a specific folder.
 
-And here's how you include a code chunk that the user can interact with:
-
-```r
-```{r}
-# Interactive code chunk
-summary(cars$speed)
-```
-```
-
-If you want to provide a terminal for students to write and execute commands, you can embed a Shiny app within your Bookdown book. However, the app must be hosted on a Shiny server or a service like shinyapps.io, and the book must be rendered as an HTML document.
-
-### Additional Tips for Bookdown
-
-When transitioning from Rmd files to Bookdown, keep the following in mind:
-
-- **Chunk Naming**: It’s good practice to name your chunks uniquely to avoid duplicate label issues in Bookdown when combining multiple Rmd files.
-  
-- **Chunk Options**: Review the chunk options available in knitr. Options like `include=FALSE` can hide code but show its output, `echo=FALSE` will hide the code but execute it, etc.
-
-- **Interactive Documents**: For full interactivity, like Shiny exercises at the end of topics, ensure your output format supports it (i.e., HTML).
-
-- **External Resources**: For exercises, you might want to consider external resources like DataCamp’s Workspace or other interactive platforms where students can practice.
-
-- **Session Management**: Manage the R session carefully for reproducibility. Bookdown compiles documents in a fresh R session by default, which is usually what you want for consistency.
-
-- **Output Management**: Use the `_output.yml` file to manage output options for different formats (HTML, PDF, etc.) within Bookdown.
-
-Remember that the interactivity of code chunks that allow users to modify and run code is limited to HTML documents with Shiny capabilities and won't be interactive in PDFs or ePub formats. For a fully interactive online learning experience, you may need to complement your Bookdown content with external tools or platforms that support interactive coding.
+This setup ensures that students get immediate feedback on their code, and the teacher can efficiently manage and review submissions.

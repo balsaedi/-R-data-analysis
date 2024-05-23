@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 21 Categorical Data Analysis | Comprehensive R Course - Descriptive and Predictive Analysis</title>
-  <meta name="description" content="Chapter 21 Categorical Data Analysis | Comprehensive R Course - Descriptive and Predictive Analysis" />
+  <title>Chapter 26 Advanced Data Manipulation and Transformation (OPTIONAL) | Comprehensive R Course - Descriptive and Predictive Analysis</title>
+  <meta name="description" content="Chapter 26 Advanced Data Manipulation and Transformation (OPTIONAL) | Comprehensive R Course - Descriptive and Predictive Analysis" />
   <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 21 Categorical Data Analysis | Comprehensive R Course - Descriptive and Predictive Analysis" />
+  <meta property="og:title" content="Chapter 26 Advanced Data Manipulation and Transformation (OPTIONAL) | Comprehensive R Course - Descriptive and Predictive Analysis" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 21 Categorical Data Analysis | Comprehensive R Course - Descriptive and Predictive Analysis" />
+  <meta name="twitter:title" content="Chapter 26 Advanced Data Manipulation and Transformation (OPTIONAL) | Comprehensive R Course - Descriptive and Predictive Analysis" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="exercises-for-regression-analysis.html"/>
-<link rel="next" href="exercises-for-categorical-data-analysis.html"/>
+<link rel="prev" href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html"/>
+<link rel="next" href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -468,69 +468,90 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="categorical-data-analysis" class="section level1 hasAnchor" number="21">
-<h1><span class="header-section-number">Chapter 21</span> Categorical Data Analysis<a href="categorical-data-analysis.html#categorical-data-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="introduction-to-logistic-regression" class="section level2 hasAnchor" number="21.1">
-<h2><span class="header-section-number">21.1</span> Introduction to Logistic Regression<a href="categorical-data-analysis.html#introduction-to-logistic-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Logistic regression is used when the dependent variable is binary (i.e., it has two possible outcomes). It models the probability of the occurrence of an event by fitting data to a logistic curve.</p>
-<div id="odds-ratios-and-logit-function" class="section level3 hasAnchor" number="21.1.1">
-<h3><span class="header-section-number">21.1.1</span> Odds Ratios and Logit Function<a href="categorical-data-analysis.html#odds-ratios-and-logit-function" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="advanced-data-manipulation-and-transformation-optional" class="section level1 hasAnchor" number="26">
+<h1><span class="header-section-number">Chapter 26</span> Advanced Data Manipulation and Transformation (<code>OPTIONAL</code>)<a href="advanced-data-manipulation-and-transformation-optional.html#advanced-data-manipulation-and-transformation-optional" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In advanced data analysis, efficiently manipulating and transforming data is crucial. The <code>tidyverse</code> package in R provides a powerful and coherent set of tools for data wrangling.</p>
+<div id="tidyverse-approaches-to-data-wrangling" class="section level2 hasAnchor" number="26.1">
+<h2><span class="header-section-number">26.1</span> Tidyverse Approaches to Data Wrangling<a href="advanced-data-manipulation-and-transformation-optional.html#tidyverse-approaches-to-data-wrangling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <code>tidyverse</code> is a collection of R packages designed for data science. It includes <code>dplyr</code> for data manipulation, <code>tidyr</code> for data tidying, and <code>ggplot2</code> for data visualization.</p>
+<div id="key-functions-in-dplyr" class="section level3 hasAnchor" number="26.1.1">
+<h3><span class="header-section-number">26.1.1</span> Key Functions in <code>dplyr</code><a href="advanced-data-manipulation-and-transformation-optional.html#key-functions-in-dplyr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li><strong>Odds Ratios</strong>: The odds ratio is a measure of association between an exposure and an outcome. It represents the odds that an event will occur given a particular exposure, compared to the odds of the event occurring without that exposure.</li>
-<li><strong>Logit Function</strong>: The logit function is the natural logarithm of the odds of the dependent event. Logistic regression uses this function to model the relationship between the independent variables and the probability of the dependent event occurring.</li>
+<li><strong><code>select()</code></strong>: Select specific columns.</li>
+<li><strong><code>filter()</code></strong>: Filter rows based on conditions.</li>
+<li><strong><code>mutate()</code></strong>: Create new columns or modify existing ones.</li>
+<li><strong><code>summarise()</code></strong>: Summarize data (e.g., calculating means or counts).</li>
+<li><strong><code>group_by()</code></strong>: Group data by one or more variables.</li>
 </ul>
+<p><strong>Example</strong>:</p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb189-2"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-2" tabindex="-1"></a></span>
+<span id="cb189-3"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-3" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb189-4"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-4" tabindex="-1"></a>data <span class="ot">&lt;-</span> iris</span>
+<span id="cb189-5"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-5" tabindex="-1"></a></span>
+<span id="cb189-6"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-6" tabindex="-1"></a><span class="co"># Select specific columns</span></span>
+<span id="cb189-7"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-7" tabindex="-1"></a>selected_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb189-8"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-8" tabindex="-1"></a>  <span class="fu">select</span>(Sepal.Length, Species)</span>
+<span id="cb189-9"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-9" tabindex="-1"></a></span>
+<span id="cb189-10"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-10" tabindex="-1"></a><span class="co"># Filter rows based on condition</span></span>
+<span id="cb189-11"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-11" tabindex="-1"></a>filtered_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb189-12"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-12" tabindex="-1"></a>  <span class="fu">filter</span>(Sepal.Length <span class="sc">&gt;</span> <span class="dv">5</span>)</span>
+<span id="cb189-13"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-13" tabindex="-1"></a></span>
+<span id="cb189-14"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-14" tabindex="-1"></a><span class="co"># Create a new column</span></span>
+<span id="cb189-15"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-15" tabindex="-1"></a>mutated_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb189-16"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-16" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sepal.Ratio =</span> Sepal.Length <span class="sc">/</span> Sepal.Width)</span>
+<span id="cb189-17"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-17" tabindex="-1"></a></span>
+<span id="cb189-18"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-18" tabindex="-1"></a><span class="co"># Summarize data</span></span>
+<span id="cb189-19"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-19" tabindex="-1"></a>summary_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb189-20"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-20" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
+<span id="cb189-21"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-21" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Mean_Sepal.Length =</span> <span class="fu">mean</span>(Sepal.Length),</span>
+<span id="cb189-22"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-22" tabindex="-1"></a>            <span class="at">Count =</span> <span class="fu">n</span>())</span></code></pre></div>
 </div>
-<div id="model-fitting-and-interpretation" class="section level3 hasAnchor" number="21.1.2">
-<h3><span class="header-section-number">21.1.2</span> Model Fitting and Interpretation<a href="categorical-data-analysis.html#model-fitting-and-interpretation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="dealing-with-text-and-categorical-data" class="section level2 hasAnchor" number="26.2">
+<h2><span class="header-section-number">26.2</span> Dealing with Text and Categorical Data<a href="advanced-data-manipulation-and-transformation-optional.html#dealing-with-text-and-categorical-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Handling text and categorical data involves operations like re-coding factors, string manipulation, and one-hot encoding.</p>
+<div id="key-functions" class="section level3 hasAnchor" number="26.2.1">
+<h3><span class="header-section-number">26.2.1</span> Key Functions<a href="advanced-data-manipulation-and-transformation-optional.html#key-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li><strong>Model Fitting</strong>: Logistic regression models are fitted using maximum likelihood estimation. The coefficients obtained from the model represent the change in the log odds of the dependent variable for a one-unit change in the independent variable.</li>
-<li><strong>Interpretation</strong>: The exponentiated coefficients (exp(coef)) can be interpreted as odds ratios. A coefficient of 0 means no effect, positive coefficients increase the odds, and negative coefficients decrease the odds.</li>
+<li><strong><code>factor()</code></strong>: Create or modify factors.</li>
+<li><strong><code>str_*</code> functions</strong>: String manipulation functions from the <code>stringr</code> package (part of <code>tidyverse</code>).</li>
 </ul>
-<p><strong>Example and Demonstration</strong>:</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="categorical-data-analysis.html#cb177-1" tabindex="-1"></a><span class="co"># Example data</span></span>
-<span id="cb177-2"><a href="categorical-data-analysis.html#cb177-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb177-3"><a href="categorical-data-analysis.html#cb177-3" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
-<span id="cb177-4"><a href="categorical-data-analysis.html#cb177-4" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
-<span id="cb177-5"><a href="categorical-data-analysis.html#cb177-5" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>, <span class="dv">1</span>, <span class="at">prob =</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="sc">-</span>(<span class="fl">0.5</span> <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> x1 <span class="sc">-</span> <span class="dv">1</span> <span class="sc">*</span> x2))))</span>
-<span id="cb177-6"><a href="categorical-data-analysis.html#cb177-6" tabindex="-1"></a></span>
-<span id="cb177-7"><a href="categorical-data-analysis.html#cb177-7" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(y, x1, x2)</span>
-<span id="cb177-8"><a href="categorical-data-analysis.html#cb177-8" tabindex="-1"></a></span>
-<span id="cb177-9"><a href="categorical-data-analysis.html#cb177-9" tabindex="-1"></a><span class="co"># Fit Logistic Regression</span></span>
-<span id="cb177-10"><a href="categorical-data-analysis.html#cb177-10" tabindex="-1"></a>model_logit <span class="ot">&lt;-</span> <span class="fu">glm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2, <span class="at">data =</span> data, <span class="at">family =</span> binomial)</span>
-<span id="cb177-11"><a href="categorical-data-analysis.html#cb177-11" tabindex="-1"></a><span class="fu">summary</span>(model_logit)</span>
-<span id="cb177-12"><a href="categorical-data-analysis.html#cb177-12" tabindex="-1"></a></span>
-<span id="cb177-13"><a href="categorical-data-analysis.html#cb177-13" tabindex="-1"></a><span class="co"># Interpretation of coefficients</span></span>
-<span id="cb177-14"><a href="categorical-data-analysis.html#cb177-14" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(model_logit))</span></code></pre></div>
+<p><strong>Example</strong>:</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="advanced-data-manipulation-and-transformation-optional.html#cb190-1" tabindex="-1"></a><span class="co"># Create a factor variable</span></span>
+<span id="cb190-2"><a href="advanced-data-manipulation-and-transformation-optional.html#cb190-2" tabindex="-1"></a>data<span class="sc">$</span>Species <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>Species, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;setosa&quot;</span>, <span class="st">&quot;versicolor&quot;</span>, <span class="st">&quot;virginica&quot;</span>))</span>
+<span id="cb190-3"><a href="advanced-data-manipulation-and-transformation-optional.html#cb190-3" tabindex="-1"></a></span>
+<span id="cb190-4"><a href="advanced-data-manipulation-and-transformation-optional.html#cb190-4" tabindex="-1"></a><span class="co"># String manipulation</span></span>
+<span id="cb190-5"><a href="advanced-data-manipulation-and-transformation-optional.html#cb190-5" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb190-6"><a href="advanced-data-manipulation-and-transformation-optional.html#cb190-6" tabindex="-1"></a>text_data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>)</span>
+<span id="cb190-7"><a href="advanced-data-manipulation-and-transformation-optional.html#cb190-7" tabindex="-1"></a>text_lengths <span class="ot">&lt;-</span> <span class="fu">str_length</span>(text_data)</span>
+<span id="cb190-8"><a href="advanced-data-manipulation-and-transformation-optional.html#cb190-8" tabindex="-1"></a>text_upper <span class="ot">&lt;-</span> <span class="fu">str_to_upper</span>(text_data)</span></code></pre></div>
 </div>
-<div id="assessing-model-goodness-of-fit" class="section level3 hasAnchor" number="21.1.3">
-<h3><span class="header-section-number">21.1.3</span> Assessing Model Goodness of Fit<a href="categorical-data-analysis.html#assessing-model-goodness-of-fit" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="working-with-dates-and-times" class="section level2 hasAnchor" number="26.3">
+<h2><span class="header-section-number">26.3</span> Working with Dates and Times<a href="advanced-data-manipulation-and-transformation-optional.html#working-with-dates-and-times" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Handling dates and times is critical in many data analyses. The <code>lubridate</code> package (part of the <code>tidyverse</code>) makes it easier to work with date-time data.</p>
+<div id="key-functions-1" class="section level3 hasAnchor" number="26.3.1">
+<h3><span class="header-section-number">26.3.1</span> Key Functions<a href="advanced-data-manipulation-and-transformation-optional.html#key-functions-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li><strong>Goodness of Fit</strong>: The goodness of fit of a logistic regression model can be assessed using various methods such as the Hosmer-Lemeshow test, Akaike Information Criterion (AIC), and analysis of residuals.</li>
-<li><strong>Example</strong>: Use the Hosmer-Lemeshow test to assess the model fit.</li>
+<li><strong><code>ymd()</code>, <code>mdy()</code>, <code>dmy()</code></strong>: Parse dates in different formats.</li>
+<li><strong><code>year()</code>, <code>month()</code>, <code>day()</code></strong>: Extract components of dates.</li>
+<li><strong><code>now()</code></strong>: Get the current date and time.</li>
 </ul>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="categorical-data-analysis.html#cb178-1" tabindex="-1"></a><span class="co"># Assessing model goodness of fit</span></span>
-<span id="cb178-2"><a href="categorical-data-analysis.html#cb178-2" tabindex="-1"></a><span class="fu">library</span>(ResourceSelection)</span>
-<span id="cb178-3"><a href="categorical-data-analysis.html#cb178-3" tabindex="-1"></a><span class="fu">hoslem.test</span>(data<span class="sc">$</span>y, <span class="fu">fitted</span>(model_logit))</span></code></pre></div>
-</div>
-</div>
-<div id="modeling-and-interpretation-of-binary-outcomes" class="section level2 hasAnchor" number="21.2">
-<h2><span class="header-section-number">21.2</span> Modeling and Interpretation of Binary Outcomes<a href="categorical-data-analysis.html#modeling-and-interpretation-of-binary-outcomes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="predictive-modeling-with-binary-data" class="section level3 hasAnchor" number="21.2.1">
-<h3><span class="header-section-number">21.2.1</span> Predictive Modeling with Binary Data<a href="categorical-data-analysis.html#predictive-modeling-with-binary-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Logistic regression is commonly used for predictive modeling with binary outcomes. The model predicts the probability that a given input belongs to one of the two outcome categories.</p>
-</div>
-<div id="evaluating-model-performance-roc-curves-auc" class="section level3 hasAnchor" number="21.2.2">
-<h3><span class="header-section-number">21.2.2</span> Evaluating Model Performance (ROC Curves, AUC)<a href="categorical-data-analysis.html#evaluating-model-performance-roc-curves-auc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><strong>ROC Curve</strong>: A Receiver Operating Characteristic (ROC) curve is a graphical representation of a model’s diagnostic ability. It plots the true positive rate (sensitivity) against the false positive rate (1 - specificity) for different threshold values.</li>
-<li><strong>AUC (Area Under the Curve)</strong>: The AUC is a single scalar value that summarizes the performance of the model across all threshold values. A higher AUC indicates better model performance.</li>
-</ul>
-<p><strong>Example and Demonstration</strong>:</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="categorical-data-analysis.html#cb179-1" tabindex="-1"></a><span class="co"># ROC Curve and AUC</span></span>
-<span id="cb179-2"><a href="categorical-data-analysis.html#cb179-2" tabindex="-1"></a><span class="fu">library</span>(pROC)</span>
-<span id="cb179-3"><a href="categorical-data-analysis.html#cb179-3" tabindex="-1"></a>roc_curve <span class="ot">&lt;-</span> <span class="fu">roc</span>(data<span class="sc">$</span>y, <span class="fu">fitted</span>(model_logit))</span>
-<span id="cb179-4"><a href="categorical-data-analysis.html#cb179-4" tabindex="-1"></a><span class="fu">plot</span>(roc_curve)</span>
-<span id="cb179-5"><a href="categorical-data-analysis.html#cb179-5" tabindex="-1"></a><span class="fu">auc</span>(roc_curve)</span></code></pre></div>
+<p><strong>Example</strong>:</p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-1" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb191-2"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-2" tabindex="-1"></a></span>
+<span id="cb191-3"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-3" tabindex="-1"></a><span class="co"># Parse dates</span></span>
+<span id="cb191-4"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-4" tabindex="-1"></a>dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;2023-01-01&quot;</span>, <span class="st">&quot;2023-02-15&quot;</span>, <span class="st">&quot;2023-03-10&quot;</span>)</span>
+<span id="cb191-5"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-5" tabindex="-1"></a>parsed_dates <span class="ot">&lt;-</span> <span class="fu">ymd</span>(dates)</span>
+<span id="cb191-6"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-6" tabindex="-1"></a></span>
+<span id="cb191-7"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-7" tabindex="-1"></a><span class="co"># Extract components</span></span>
+<span id="cb191-8"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-8" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="fu">year</span>(parsed_dates)</span>
+<span id="cb191-9"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-9" tabindex="-1"></a>months <span class="ot">&lt;-</span> <span class="fu">month</span>(parsed_dates)</span>
+<span id="cb191-10"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-10" tabindex="-1"></a>days <span class="ot">&lt;-</span> <span class="fu">day</span>(parsed_dates)</span>
+<span id="cb191-11"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-11" tabindex="-1"></a></span>
+<span id="cb191-12"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-12" tabindex="-1"></a><span class="co"># Get current date and time</span></span>
+<span id="cb191-13"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-13" tabindex="-1"></a>current_time <span class="ot">&lt;-</span> <span class="fu">now</span>()</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -539,8 +560,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="exercises-for-regression-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="exercises-for-categorical-data-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="code-challenge-3-anova-regression-analysis-and-logistic-regression-after-module-10.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -571,7 +592,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/betaways01/comprehensive-r-course/edit/main/10-CategoricalDataAnalysis.Rmd",
+"link": "https://github.com/betaways01/comprehensive-r-course/edit/main/14-DataWrangling.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -579,7 +600,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/betaways01/comprehensive-r-course/blob/main/10-CategoricalDataAnalysis.Rmd",
+"link": "https://github.com/betaways01/comprehensive-r-course/blob/main/14-DataWrangling.Rmd",
 "text": null
 },
 "download": null,
