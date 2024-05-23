@@ -2,4 +2,8 @@
 .Rhistory
 .RData
 .Ruserdata
-bookdownproj_files
+# Ignore the bookdownproj_files directory outside of docs
+/bookdownproj_files/
+
+# Include the bookdownproj_files directory inside docs
+!/docs/bookdownproj_files/
