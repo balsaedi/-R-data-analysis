@@ -119,6 +119,14 @@ Data analysis with R is like having a crystal ball; it helps predict future tren
 
 <!--chapter:end:index.Rmd-->
 
+---
+title: "Code Challenge 2: Data Structures and Data Handling"
+output: 
+  learnr::tutorial:
+    progressive: true
+runtime: shiny_prerendered
+---
+
 # R Programming Fundamentals (Light Focus)
 
 ## Basics of R Syntax and Functions
