@@ -166,10 +166,16 @@ Rprof(NULL)
 summaryRprof()
 ```
 
-## Code Exercises 2
+```{r setup, include=FALSE}
+library(learnr)
+library(gradethis)
+```
 
-**Exercise 1: Refactor a provided piece of poorly organized R code to improve its readability and structure.**
-```r
+## Code Exercises
+
+Exercise 1: Refactor a provided piece of poorly organized R code to improve its readability and structure.
+
+```{r refactor, exercise=TRUE, exercise.eval=TRUE}
 # Initial code: Computes the mean of positive numbers in a vector
 numbers <- c(1, -1, 2, -2, 3, -3)
 result <- 0
@@ -185,11 +191,22 @@ mean <- result / count
 # Refactor the above code to improve readability and structure.
 # Hint: Use vectorized operations and create a function to calculate the mean.
 ```
-```r
-# TODO: Insert Exercise chunk with error messages and solutions.
+
+```{r refactor-check}
+grade_code(
+  correct_code = {
+    positive_mean <- function(numbers) {
+      positive_numbers <- numbers[numbers > 0]
+      mean(positive_numbers)
+    }
+    positive_mean(c(1, -1, 2, -2, 3, -3))
+  }
+)
 ```
-**Exercise 2: Convert a loop that calculates the logarithm of each element in a large vector into a vectorized expression.**
-```r
+
+Exercise 2: Convert a loop that calculates the logarithm of each element in a large vector into a vectorized expression.
+
+```{r vectorize, exercise=TRUE, exercise.eval=TRUE}
 # Loop version: Calculate the logarithm base 10 of each element
 numbers <- seq(1, 1000, by = 1)
 log_values <- vector("numeric", length(numbers))
@@ -200,11 +217,18 @@ for (i in seq_along(numbers)) {
 # Rewrite the above loop as a vectorized expression.
 # Hint: Use a vectorized log10() function.
 ```
-```r
-# TODO: Insert Exercise chunk with error messages and solutions.
+
+```{r vectorize-check}
+grade_code(
+  correct_code = {
+    log_values <- log10(seq(1, 1000, by = 1))
+  }
+)
 ```
-**Exercise 3: Write a script that calculates the mean of 1 million randomly generated numbers, first using a loop and then using a vectorized function. Compare the time taken for both methods.**
-```r
+
+Exercise 3: Write a script that calculates the mean of 1 million randomly generated numbers, first using a loop and then using a vectorized function. Compare the time taken for both methods.
+
+```{r mean-calculation, exercise=TRUE, exercise.eval=TRUE}
 # Generating random numbers
 set.seed(123)
 random_numbers <- runif(1e6)
@@ -221,11 +245,20 @@ system.time({
 # Calculate the mean using a vectorized method and compare the time.
 # Hint: Use the mean() function.
 ```
-```r
-# TODO: Insert Exercise chunk with error messages and solutions.
+
+```{r mean-calculation-check}
+grade_code(
+  correct_code = {
+    system.time({
+      mean_vectorized <- mean(random_numbers)
+    })
+  }
+)
 ```
-**Exercise 4: Use `Rprof()` to profile the script from Exercise 3 and identify any potential bottlenecks.**
-```r
+
+Exercise 4: Use `Rprof()` to profile the script from Exercise 3 and identify any potential bottlenecks.
+
+```{r profiling, exercise=TRUE, exercise.eval=TRUE}
 # Assume vectorized mean calculation from Exercise 3 is saved in `mean_vectorized`
 Rprof(tmp <- tempfile())
 mean_vectorized <- mean(random_numbers)
@@ -235,9 +268,14 @@ Rprof(NULL)
 # Hint: Use summaryRprof() to see the profiling summary.
 summaryRprof(tmp)
 ```
-```r
-# TODO: Insert Exercise chunk with error messages and solutions.
+
+```{r profiling-check}
+grade_code(
+  correct_code = {
+    Rprof(tmp <- tempfile())
+    mean_vectorized <- mean(random_numbers)
+    Rprof(NULL)
+    summaryRprof(tmp)
+  }
+)
 ```
-
-
-These exercises provide an opportunity for students to apply their knowledge practically while giving them a structure to guide their coding efforts. They will refactor code for clarity, use vectorized operations for efficiency, and profile code to identify performance issues, building a solid foundation in R programming best practices.
