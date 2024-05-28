@@ -23,7 +23,7 @@
 <meta name="author" content="Basim Alsaedi" />
 
 
-<meta name="date" content="2024-05-23" />
+<meta name="date" content="2024-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,7 +173,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#introduction-to-rs-vectorized-operations"><i class="fa fa-check"></i><b>3.2</b> Introduction to R’s Vectorized Operations</a></li>
 <li class="chapter" data-level="3.3" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#best-practices-for-speed-and-performance"><i class="fa fa-check"></i><b>3.3</b> Best Practices for Speed and Performance</a></li>
 <li class="chapter" data-level="3.4" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#using-r-profiler-for-code-optimization"><i class="fa fa-check"></i><b>3.4</b> Using R Profiler for Code Optimization</a></li>
-<li class="chapter" data-level="3.5" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#code-exercises-2"><i class="fa fa-check"></i><b>3.5</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-structures-and-data-handling-in-r-light-focus.html"><a href="data-structures-and-data-handling-in-r-light-focus.html"><i class="fa fa-check"></i><b>4</b> Data Structures and Data Handling in R (Light Focus)</a>
 <ul>
@@ -225,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#annotations"><i class="fa fa-check"></i><b>7.3.1</b> Annotations</a></li>
 <li class="chapter" data-level="7.3.2" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#custom-geometries"><i class="fa fa-check"></i><b>7.3.2</b> Custom Geometries</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2-1"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="working-with-different-types-of-data-light-focus.html"><a href="working-with-different-types-of-data-light-focus.html"><i class="fa fa-check"></i><b>8</b> Working with Different Types of Data (Light Focus)</a>
 <ul>
@@ -254,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3.1" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#detecting-outliers"><i class="fa fa-check"></i><b>9.3.1</b> Detecting Outliers</a></li>
 <li class="chapter" data-level="9.3.2" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#handling-outliers"><i class="fa fa-check"></i><b>9.3.2</b> Handling Outliers</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-2"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-1"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>10</b> Descriptive Statistics</a>
 <ul>
@@ -476,11 +475,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="ggplot2-syntax-and-layering-system" class="section level3 hasAnchor" number="6.1.1">
 <h3><span class="header-section-number">6.1.1</span> ggplot2 Syntax and Layering System<a href="data-visualization-in-r-light-focus.html#ggplot2-syntax-and-layering-system" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>ggplot2</code> is based on the grammar of graphics, a system that allows you to create graphs layer by layer. You start with data, add <code>aes</code> (aesthetics) to indicate which variables to plot, and then add <code>geoms</code> (geometric objects) to decide the type of plot.</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="data-visualization-in-r-light-focus.html#cb64-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb64-2"><a href="data-visualization-in-r-light-focus.html#cb64-2" tabindex="-1"></a></span>
-<span id="cb64-3"><a href="data-visualization-in-r-light-focus.html#cb64-3" tabindex="-1"></a><span class="co"># Basic syntax</span></span>
-<span id="cb64-4"><a href="data-visualization-in-r-light-focus.html#cb64-4" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg)) <span class="sc">+</span> </span>
-<span id="cb64-5"><a href="data-visualization-in-r-light-focus.html#cb64-5" tabindex="-1"></a>  <span class="fu">geom_point</span>()  <span class="co"># adds a layer for scatter plot</span></span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="data-visualization-in-r-light-focus.html#cb56-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb56-2"><a href="data-visualization-in-r-light-focus.html#cb56-2" tabindex="-1"></a></span>
+<span id="cb56-3"><a href="data-visualization-in-r-light-focus.html#cb56-3" tabindex="-1"></a><span class="co"># Basic syntax</span></span>
+<span id="cb56-4"><a href="data-visualization-in-r-light-focus.html#cb56-4" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg)) <span class="sc">+</span> </span>
+<span id="cb56-5"><a href="data-visualization-in-r-light-focus.html#cb56-5" tabindex="-1"></a>  <span class="fu">geom_point</span>()  <span class="co"># adds a layer for scatter plot</span></span></code></pre></div>
 <p>In this example, <code>mtcars</code> is the dataset, <code>wt</code> (car weight) and <code>mpg</code> (miles per gallon) are the variables, and <code>geom_point()</code> creates a scatter plot.</p>
 </div>
 <div id="creating-histograms-bar-plots-and-scatter-plots" class="section level3 hasAnchor" number="6.1.2">
@@ -489,39 +488,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="histograms" class="section level4 hasAnchor" number="6.1.2.1">
 <h4><span class="header-section-number">6.1.2.1</span> Histograms<a href="data-visualization-in-r-light-focus.html#histograms" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Histograms are used to visualize the distribution of a single continuous variable by dividing the data into bins and counting the number of observations in each bin.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="data-visualization-in-r-light-focus.html#cb65-1" tabindex="-1"></a><span class="co"># Creating a histogram of car weights</span></span>
-<span id="cb65-2"><a href="data-visualization-in-r-light-focus.html#cb65-2" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt)) <span class="sc">+</span> </span>
-<span id="cb65-3"><a href="data-visualization-in-r-light-focus.html#cb65-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.5</span>, <span class="at">fill =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="data-visualization-in-r-light-focus.html#cb57-1" tabindex="-1"></a><span class="co"># Creating a histogram of car weights</span></span>
+<span id="cb57-2"><a href="data-visualization-in-r-light-focus.html#cb57-2" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt)) <span class="sc">+</span> </span>
+<span id="cb57-3"><a href="data-visualization-in-r-light-focus.html#cb57-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="fl">0.5</span>, <span class="at">fill =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)</span></code></pre></div>
 </div>
 <div id="bar-plots" class="section level4 hasAnchor" number="6.1.2.2">
 <h4><span class="header-section-number">6.1.2.2</span> Bar Plots<a href="data-visualization-in-r-light-focus.html#bar-plots" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Bar plots are useful for comparing quantities corresponding to different groups.</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="data-visualization-in-r-light-focus.html#cb66-1" tabindex="-1"></a><span class="co"># Convert cyl (number of cylinders) to a factor for a bar plot</span></span>
-<span id="cb66-2"><a href="data-visualization-in-r-light-focus.html#cb66-2" tabindex="-1"></a>mtcars<span class="sc">$</span>cyl <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(mtcars<span class="sc">$</span>cyl)</span>
-<span id="cb66-3"><a href="data-visualization-in-r-light-focus.html#cb66-3" tabindex="-1"></a></span>
-<span id="cb66-4"><a href="data-visualization-in-r-light-focus.html#cb66-4" tabindex="-1"></a><span class="co"># Creating a bar plot of car counts per cylinder type</span></span>
-<span id="cb66-5"><a href="data-visualization-in-r-light-focus.html#cb66-5" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> cyl)) <span class="sc">+</span></span>
-<span id="cb66-6"><a href="data-visualization-in-r-light-focus.html#cb66-6" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">&quot;tomato&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="data-visualization-in-r-light-focus.html#cb58-1" tabindex="-1"></a><span class="co"># Convert cyl (number of cylinders) to a factor for a bar plot</span></span>
+<span id="cb58-2"><a href="data-visualization-in-r-light-focus.html#cb58-2" tabindex="-1"></a>mtcars<span class="sc">$</span>cyl <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(mtcars<span class="sc">$</span>cyl)</span>
+<span id="cb58-3"><a href="data-visualization-in-r-light-focus.html#cb58-3" tabindex="-1"></a></span>
+<span id="cb58-4"><a href="data-visualization-in-r-light-focus.html#cb58-4" tabindex="-1"></a><span class="co"># Creating a bar plot of car counts per cylinder type</span></span>
+<span id="cb58-5"><a href="data-visualization-in-r-light-focus.html#cb58-5" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> cyl)) <span class="sc">+</span></span>
+<span id="cb58-6"><a href="data-visualization-in-r-light-focus.html#cb58-6" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">&quot;tomato&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)</span></code></pre></div>
 </div>
 <div id="scatter-plots" class="section level4 hasAnchor" number="6.1.2.3">
 <h4><span class="header-section-number">6.1.2.3</span> Scatter Plots<a href="data-visualization-in-r-light-focus.html#scatter-plots" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Scatter plots are ideal for examining the relationship between two continuous variables.</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="data-visualization-in-r-light-focus.html#cb67-1" tabindex="-1"></a><span class="co"># Creating a scatter plot of mpg vs wt</span></span>
-<span id="cb67-2"><a href="data-visualization-in-r-light-focus.html#cb67-2" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
-<span id="cb67-3"><a href="data-visualization-in-r-light-focus.html#cb67-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">&quot;dodgerblue&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="data-visualization-in-r-light-focus.html#cb59-1" tabindex="-1"></a><span class="co"># Creating a scatter plot of mpg vs wt</span></span>
+<span id="cb59-2"><a href="data-visualization-in-r-light-focus.html#cb59-2" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb59-3"><a href="data-visualization-in-r-light-focus.html#cb59-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">&quot;dodgerblue&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="aesthetics-and-themes" class="section level3 hasAnchor" number="6.1.3">
 <h3><span class="header-section-number">6.1.3</span> Aesthetics and Themes<a href="data-visualization-in-r-light-focus.html#aesthetics-and-themes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>ggplot2</code> allows extensive customization of plots through aesthetics and themes, enabling you to make plots more informative and appealing.</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="data-visualization-in-r-light-focus.html#cb68-1" tabindex="-1"></a><span class="co"># Enhancing scatter plot with themes and labels</span></span>
-<span id="cb68-2"><a href="data-visualization-in-r-light-focus.html#cb68-2" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg, <span class="at">color =</span> cyl)) <span class="sc">+</span>  <span class="co"># Color points by cylinder count</span></span>
-<span id="cb68-3"><a href="data-visualization-in-r-light-focus.html#cb68-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
-<span id="cb68-4"><a href="data-visualization-in-r-light-focus.html#cb68-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Car Weight vs. MPG&quot;</span>,</span>
-<span id="cb68-5"><a href="data-visualization-in-r-light-focus.html#cb68-5" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Weight (1000 lbs)&quot;</span>,</span>
-<span id="cb68-6"><a href="data-visualization-in-r-light-focus.html#cb68-6" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Miles per Gallon&quot;</span>,</span>
-<span id="cb68-7"><a href="data-visualization-in-r-light-focus.html#cb68-7" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Number of Cylinders&quot;</span>) <span class="sc">+</span></span>
-<span id="cb68-8"><a href="data-visualization-in-r-light-focus.html#cb68-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()  <span class="co"># Using a minimal theme</span></span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="data-visualization-in-r-light-focus.html#cb60-1" tabindex="-1"></a><span class="co"># Enhancing scatter plot with themes and labels</span></span>
+<span id="cb60-2"><a href="data-visualization-in-r-light-focus.html#cb60-2" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg, <span class="at">color =</span> cyl)) <span class="sc">+</span>  <span class="co"># Color points by cylinder count</span></span>
+<span id="cb60-3"><a href="data-visualization-in-r-light-focus.html#cb60-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb60-4"><a href="data-visualization-in-r-light-focus.html#cb60-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Car Weight vs. MPG&quot;</span>,</span>
+<span id="cb60-5"><a href="data-visualization-in-r-light-focus.html#cb60-5" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Weight (1000 lbs)&quot;</span>,</span>
+<span id="cb60-6"><a href="data-visualization-in-r-light-focus.html#cb60-6" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Miles per Gallon&quot;</span>,</span>
+<span id="cb60-7"><a href="data-visualization-in-r-light-focus.html#cb60-7" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Number of Cylinders&quot;</span>) <span class="sc">+</span></span>
+<span id="cb60-8"><a href="data-visualization-in-r-light-focus.html#cb60-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()  <span class="co"># Using a minimal theme</span></span></code></pre></div>
 <p>These examples demonstrate basic <code>ggplot2</code> usage for creating various types of plots, setting the stage for more advanced visualization techniques. Each type of plot serves different purposes and can be tailored extensively using <code>ggplot2</code>’s powerful customization options.</p>
 </div>
 </div>
@@ -529,53 +528,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">6.2</span> Code Exercises 1<a href="data-visualization-in-r-light-focus.html#code-exercises-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Exercise 1: Create a Histogram</strong>
 Task: Use the <code>ggplot2</code> package to create a histogram of the <code>hp</code> (horsepower) variable from the <code>mtcars</code> dataset. Customize the bin width to 20 and set the fill color to green.</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="data-visualization-in-r-light-focus.html#cb69-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb69-2"><a href="data-visualization-in-r-light-focus.html#cb69-2" tabindex="-1"></a></span>
-<span id="cb69-3"><a href="data-visualization-in-r-light-focus.html#cb69-3" tabindex="-1"></a><span class="co"># Task: Create a histogram of the hp variable from the mtcars dataset</span></span>
-<span id="cb69-4"><a href="data-visualization-in-r-light-focus.html#cb69-4" tabindex="-1"></a><span class="co"># Customize the bin width and fill color</span></span>
-<span id="cb69-5"><a href="data-visualization-in-r-light-focus.html#cb69-5" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> hp)) <span class="sc">+</span></span>
-<span id="cb69-6"><a href="data-visualization-in-r-light-focus.html#cb69-6" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">20</span>, <span class="at">fill =</span> <span class="st">&quot;green&quot;</span>) <span class="sc">+</span></span>
-<span id="cb69-7"><a href="data-visualization-in-r-light-focus.html#cb69-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Histogram of Car Horsepower&quot;</span>,</span>
-<span id="cb69-8"><a href="data-visualization-in-r-light-focus.html#cb69-8" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Horsepower&quot;</span>,</span>
-<span id="cb69-9"><a href="data-visualization-in-r-light-focus.html#cb69-9" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="data-visualization-in-r-light-focus.html#cb70-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="data-visualization-in-r-light-focus.html#cb61-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb61-2"><a href="data-visualization-in-r-light-focus.html#cb61-2" tabindex="-1"></a></span>
+<span id="cb61-3"><a href="data-visualization-in-r-light-focus.html#cb61-3" tabindex="-1"></a><span class="co"># Task: Create a histogram of the hp variable from the mtcars dataset</span></span>
+<span id="cb61-4"><a href="data-visualization-in-r-light-focus.html#cb61-4" tabindex="-1"></a><span class="co"># Customize the bin width and fill color</span></span>
+<span id="cb61-5"><a href="data-visualization-in-r-light-focus.html#cb61-5" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> hp)) <span class="sc">+</span></span>
+<span id="cb61-6"><a href="data-visualization-in-r-light-focus.html#cb61-6" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">20</span>, <span class="at">fill =</span> <span class="st">&quot;green&quot;</span>) <span class="sc">+</span></span>
+<span id="cb61-7"><a href="data-visualization-in-r-light-focus.html#cb61-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Histogram of Car Horsepower&quot;</span>,</span>
+<span id="cb61-8"><a href="data-visualization-in-r-light-focus.html#cb61-8" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Horsepower&quot;</span>,</span>
+<span id="cb61-9"><a href="data-visualization-in-r-light-focus.html#cb61-9" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="data-visualization-in-r-light-focus.html#cb62-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 <p><strong>Exercise 2: Create a Bar Plot</strong>
 Task: Create a bar plot showing the number of cars with each number of gears (<code>gear</code>) in the <code>mtcars</code> dataset. Use the color red for the bars.</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="data-visualization-in-r-light-focus.html#cb71-1" tabindex="-1"></a><span class="co"># Task: Create a bar plot of the gear variable from the mtcars dataset</span></span>
-<span id="cb71-2"><a href="data-visualization-in-r-light-focus.html#cb71-2" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(gear))) <span class="sc">+</span></span>
-<span id="cb71-3"><a href="data-visualization-in-r-light-focus.html#cb71-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
-<span id="cb71-4"><a href="data-visualization-in-r-light-focus.html#cb71-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Number of Cars by Gear Count&quot;</span>,</span>
-<span id="cb71-5"><a href="data-visualization-in-r-light-focus.html#cb71-5" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Number of Gears&quot;</span>,</span>
-<span id="cb71-6"><a href="data-visualization-in-r-light-focus.html#cb71-6" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="data-visualization-in-r-light-focus.html#cb72-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="data-visualization-in-r-light-focus.html#cb63-1" tabindex="-1"></a><span class="co"># Task: Create a bar plot of the gear variable from the mtcars dataset</span></span>
+<span id="cb63-2"><a href="data-visualization-in-r-light-focus.html#cb63-2" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(gear))) <span class="sc">+</span></span>
+<span id="cb63-3"><a href="data-visualization-in-r-light-focus.html#cb63-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb63-4"><a href="data-visualization-in-r-light-focus.html#cb63-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Number of Cars by Gear Count&quot;</span>,</span>
+<span id="cb63-5"><a href="data-visualization-in-r-light-focus.html#cb63-5" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Number of Gears&quot;</span>,</span>
+<span id="cb63-6"><a href="data-visualization-in-r-light-focus.html#cb63-6" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="data-visualization-in-r-light-focus.html#cb64-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 <p><strong>Exercise 3: Create a Scatter Plot</strong>
 Task: Plot <code>mpg</code> (miles per gallon) against <code>disp</code> (displacement) using <code>ggplot2</code>. Color the points by <code>cyl</code> (number of cylinders), and add a smooth line to the plot.</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="data-visualization-in-r-light-focus.html#cb73-1" tabindex="-1"></a><span class="co"># Task: Create a scatter plot of mpg vs disp, color by cyl, and add a smooth line</span></span>
-<span id="cb73-2"><a href="data-visualization-in-r-light-focus.html#cb73-2" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg, <span class="at">color =</span> <span class="fu">factor</span>(cyl))) <span class="sc">+</span></span>
-<span id="cb73-3"><a href="data-visualization-in-r-light-focus.html#cb73-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb73-4"><a href="data-visualization-in-r-light-focus.html#cb73-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb73-5"><a href="data-visualization-in-r-light-focus.html#cb73-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;MPG vs. Displacement&quot;</span>,</span>
-<span id="cb73-6"><a href="data-visualization-in-r-light-focus.html#cb73-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Displacement&quot;</span>,</span>
-<span id="cb73-7"><a href="data-visualization-in-r-light-focus.html#cb73-7" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Miles per Gallon&quot;</span>,</span>
-<span id="cb73-8"><a href="data-visualization-in-r-light-focus.html#cb73-8" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Number of Cylinders&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="data-visualization-in-r-light-focus.html#cb74-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="data-visualization-in-r-light-focus.html#cb65-1" tabindex="-1"></a><span class="co"># Task: Create a scatter plot of mpg vs disp, color by cyl, and add a smooth line</span></span>
+<span id="cb65-2"><a href="data-visualization-in-r-light-focus.html#cb65-2" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg, <span class="at">color =</span> <span class="fu">factor</span>(cyl))) <span class="sc">+</span></span>
+<span id="cb65-3"><a href="data-visualization-in-r-light-focus.html#cb65-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb65-4"><a href="data-visualization-in-r-light-focus.html#cb65-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb65-5"><a href="data-visualization-in-r-light-focus.html#cb65-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;MPG vs. Displacement&quot;</span>,</span>
+<span id="cb65-6"><a href="data-visualization-in-r-light-focus.html#cb65-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Displacement&quot;</span>,</span>
+<span id="cb65-7"><a href="data-visualization-in-r-light-focus.html#cb65-7" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Miles per Gallon&quot;</span>,</span>
+<span id="cb65-8"><a href="data-visualization-in-r-light-focus.html#cb65-8" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Number of Cylinders&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="data-visualization-in-r-light-focus.html#cb66-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 <p><strong>Exercise 4: Customize a Scatter Plot with Themes</strong>
 Task: Enhance the previous scatter plot by applying the <code>theme_bw()</code> theme and customizing the plot’s text elements and legends.</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="data-visualization-in-r-light-focus.html#cb75-1" tabindex="-1"></a><span class="co"># Task: Enhance the scatter plot with theme_bw and customize text and legends</span></span>
-<span id="cb75-2"><a href="data-visualization-in-r-light-focus.html#cb75-2" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg, <span class="at">color =</span> <span class="fu">factor</span>(cyl))) <span class="sc">+</span></span>
-<span id="cb75-3"><a href="data-visualization-in-r-light-focus.html#cb75-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb75-4"><a href="data-visualization-in-r-light-focus.html#cb75-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb75-5"><a href="data-visualization-in-r-light-focus.html#cb75-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;MPG vs. Displacement: Enhanced Visualization&quot;</span>,</span>
-<span id="cb75-6"><a href="data-visualization-in-r-light-focus.html#cb75-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Displacement (cc)&quot;</span>,</span>
-<span id="cb75-7"><a href="data-visualization-in-r-light-focus.html#cb75-7" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Miles per Gallon&quot;</span>,</span>
-<span id="cb75-8"><a href="data-visualization-in-r-light-focus.html#cb75-8" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Cylinder Count&quot;</span>) <span class="sc">+</span></span>
-<span id="cb75-9"><a href="data-visualization-in-r-light-focus.html#cb75-9" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb75-10"><a href="data-visualization-in-r-light-focus.html#cb75-10" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb75-11"><a href="data-visualization-in-r-light-focus.html#cb75-11" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb75-12"><a href="data-visualization-in-r-light-focus.html#cb75-12" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
-<span id="cb75-13"><a href="data-visualization-in-r-light-focus.html#cb75-13" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;top&quot;</span></span>
-<span id="cb75-14"><a href="data-visualization-in-r-light-focus.html#cb75-14" tabindex="-1"></a>  )</span></code></pre></div>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="data-visualization-in-r-light-focus.html#cb76-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="data-visualization-in-r-light-focus.html#cb67-1" tabindex="-1"></a><span class="co"># Task: Enhance the scatter plot with theme_bw and customize text and legends</span></span>
+<span id="cb67-2"><a href="data-visualization-in-r-light-focus.html#cb67-2" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> disp, <span class="at">y =</span> mpg, <span class="at">color =</span> <span class="fu">factor</span>(cyl))) <span class="sc">+</span></span>
+<span id="cb67-3"><a href="data-visualization-in-r-light-focus.html#cb67-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb67-4"><a href="data-visualization-in-r-light-focus.html#cb67-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb67-5"><a href="data-visualization-in-r-light-focus.html#cb67-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;MPG vs. Displacement: Enhanced Visualization&quot;</span>,</span>
+<span id="cb67-6"><a href="data-visualization-in-r-light-focus.html#cb67-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Displacement (cc)&quot;</span>,</span>
+<span id="cb67-7"><a href="data-visualization-in-r-light-focus.html#cb67-7" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Miles per Gallon&quot;</span>,</span>
+<span id="cb67-8"><a href="data-visualization-in-r-light-focus.html#cb67-8" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Cylinder Count&quot;</span>) <span class="sc">+</span></span>
+<span id="cb67-9"><a href="data-visualization-in-r-light-focus.html#cb67-9" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb67-10"><a href="data-visualization-in-r-light-focus.html#cb67-10" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb67-11"><a href="data-visualization-in-r-light-focus.html#cb67-11" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb67-12"><a href="data-visualization-in-r-light-focus.html#cb67-12" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb67-13"><a href="data-visualization-in-r-light-focus.html#cb67-13" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;top&quot;</span></span>
+<span id="cb67-14"><a href="data-visualization-in-r-light-focus.html#cb67-14" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="data-visualization-in-r-light-focus.html#cb68-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 <p>These exercises encourage students to apply their knowledge of ggplot2 for creating, customizing, and enhancing visual representations of data. By completing these tasks, students will gain hands-on experience in effectively communicating data insights through visualizations.</p>
 </div>
 </div>

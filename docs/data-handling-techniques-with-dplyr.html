@@ -23,7 +23,7 @@
 <meta name="author" content="Basim Alsaedi" />
 
 
-<meta name="date" content="2024-05-23" />
+<meta name="date" content="2024-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,7 +173,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#introduction-to-rs-vectorized-operations"><i class="fa fa-check"></i><b>3.2</b> Introduction to R’s Vectorized Operations</a></li>
 <li class="chapter" data-level="3.3" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#best-practices-for-speed-and-performance"><i class="fa fa-check"></i><b>3.3</b> Best Practices for Speed and Performance</a></li>
 <li class="chapter" data-level="3.4" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#using-r-profiler-for-code-optimization"><i class="fa fa-check"></i><b>3.4</b> Using R Profiler for Code Optimization</a></li>
-<li class="chapter" data-level="3.5" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#code-exercises-2"><i class="fa fa-check"></i><b>3.5</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-structures-and-data-handling-in-r-light-focus.html"><a href="data-structures-and-data-handling-in-r-light-focus.html"><i class="fa fa-check"></i><b>4</b> Data Structures and Data Handling in R (Light Focus)</a>
 <ul>
@@ -225,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#annotations"><i class="fa fa-check"></i><b>7.3.1</b> Annotations</a></li>
 <li class="chapter" data-level="7.3.2" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#custom-geometries"><i class="fa fa-check"></i><b>7.3.2</b> Custom Geometries</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2-1"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="working-with-different-types-of-data-light-focus.html"><a href="working-with-different-types-of-data-light-focus.html"><i class="fa fa-check"></i><b>8</b> Working with Different Types of Data (Light Focus)</a>
 <ul>
@@ -254,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3.1" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#detecting-outliers"><i class="fa fa-check"></i><b>9.3.1</b> Detecting Outliers</a></li>
 <li class="chapter" data-level="9.3.2" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#handling-outliers"><i class="fa fa-check"></i><b>9.3.2</b> Handling Outliers</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-2"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-1"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>10</b> Descriptive Statistics</a>
 <ul>
@@ -478,32 +477,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="selecting-data" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> Selecting Data<a href="data-handling-techniques-with-dplyr.html#selecting-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Use <code>select()</code> to choose a subset of columns to keep.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="data-handling-techniques-with-dplyr.html#cb47-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb47-2"><a href="data-handling-techniques-with-dplyr.html#cb47-2" tabindex="-1"></a></span>
-<span id="cb47-3"><a href="data-handling-techniques-with-dplyr.html#cb47-3" tabindex="-1"></a><span class="co"># Sample data frame</span></span>
-<span id="cb47-4"><a href="data-handling-techniques-with-dplyr.html#cb47-4" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb47-5"><a href="data-handling-techniques-with-dplyr.html#cb47-5" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Carol&quot;</span>, <span class="st">&quot;David&quot;</span>),</span>
-<span id="cb47-6"><a href="data-handling-techniques-with-dplyr.html#cb47-6" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">19</span>, <span class="dv">22</span>),</span>
-<span id="cb47-7"><a href="data-handling-techniques-with-dplyr.html#cb47-7" tabindex="-1"></a>  <span class="at">salary =</span> <span class="fu">c</span>(<span class="dv">50000</span>, <span class="dv">54000</span>, <span class="dv">32000</span>, <span class="dv">45000</span>)</span>
-<span id="cb47-8"><a href="data-handling-techniques-with-dplyr.html#cb47-8" tabindex="-1"></a>)</span>
-<span id="cb47-9"><a href="data-handling-techniques-with-dplyr.html#cb47-9" tabindex="-1"></a></span>
-<span id="cb47-10"><a href="data-handling-techniques-with-dplyr.html#cb47-10" tabindex="-1"></a><span class="co"># Selecting only the name and age columns</span></span>
-<span id="cb47-11"><a href="data-handling-techniques-with-dplyr.html#cb47-11" tabindex="-1"></a>selected_data <span class="ot">&lt;-</span> <span class="fu">select</span>(data, name, age)</span>
-<span id="cb47-12"><a href="data-handling-techniques-with-dplyr.html#cb47-12" tabindex="-1"></a><span class="fu">print</span>(selected_data)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="data-handling-techniques-with-dplyr.html#cb39-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb39-2"><a href="data-handling-techniques-with-dplyr.html#cb39-2" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="data-handling-techniques-with-dplyr.html#cb39-3" tabindex="-1"></a><span class="co"># Sample data frame</span></span>
+<span id="cb39-4"><a href="data-handling-techniques-with-dplyr.html#cb39-4" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb39-5"><a href="data-handling-techniques-with-dplyr.html#cb39-5" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Carol&quot;</span>, <span class="st">&quot;David&quot;</span>),</span>
+<span id="cb39-6"><a href="data-handling-techniques-with-dplyr.html#cb39-6" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">19</span>, <span class="dv">22</span>),</span>
+<span id="cb39-7"><a href="data-handling-techniques-with-dplyr.html#cb39-7" tabindex="-1"></a>  <span class="at">salary =</span> <span class="fu">c</span>(<span class="dv">50000</span>, <span class="dv">54000</span>, <span class="dv">32000</span>, <span class="dv">45000</span>)</span>
+<span id="cb39-8"><a href="data-handling-techniques-with-dplyr.html#cb39-8" tabindex="-1"></a>)</span>
+<span id="cb39-9"><a href="data-handling-techniques-with-dplyr.html#cb39-9" tabindex="-1"></a></span>
+<span id="cb39-10"><a href="data-handling-techniques-with-dplyr.html#cb39-10" tabindex="-1"></a><span class="co"># Selecting only the name and age columns</span></span>
+<span id="cb39-11"><a href="data-handling-techniques-with-dplyr.html#cb39-11" tabindex="-1"></a>selected_data <span class="ot">&lt;-</span> <span class="fu">select</span>(data, name, age)</span>
+<span id="cb39-12"><a href="data-handling-techniques-with-dplyr.html#cb39-12" tabindex="-1"></a><span class="fu">print</span>(selected_data)</span></code></pre></div>
 </div>
 <div id="filtering-data" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">5.3</span> Filtering Data<a href="data-handling-techniques-with-dplyr.html#filtering-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>filter()</code> is used to retrieve rows that meet certain conditions.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="data-handling-techniques-with-dplyr.html#cb48-1" tabindex="-1"></a><span class="co"># Filtering to find only those over 25 years old</span></span>
-<span id="cb48-2"><a href="data-handling-techniques-with-dplyr.html#cb48-2" tabindex="-1"></a>filtered_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(data, age <span class="sc">&gt;</span> <span class="dv">25</span>)</span>
-<span id="cb48-3"><a href="data-handling-techniques-with-dplyr.html#cb48-3" tabindex="-1"></a><span class="fu">print</span>(filtered_data)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="data-handling-techniques-with-dplyr.html#cb40-1" tabindex="-1"></a><span class="co"># Filtering to find only those over 25 years old</span></span>
+<span id="cb40-2"><a href="data-handling-techniques-with-dplyr.html#cb40-2" tabindex="-1"></a>filtered_data <span class="ot">&lt;-</span> <span class="fu">filter</span>(data, age <span class="sc">&gt;</span> <span class="dv">25</span>)</span>
+<span id="cb40-3"><a href="data-handling-techniques-with-dplyr.html#cb40-3" tabindex="-1"></a><span class="fu">print</span>(filtered_data)</span></code></pre></div>
 </div>
 <div id="arranging-data" class="section level2 hasAnchor" number="5.4">
 <h2><span class="header-section-number">5.4</span> Arranging Data<a href="data-handling-techniques-with-dplyr.html#arranging-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>arrange()</code> is used to reorder rows of a data frame.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="data-handling-techniques-with-dplyr.html#cb49-1" tabindex="-1"></a><span class="co"># Arranging data by age in ascending order</span></span>
-<span id="cb49-2"><a href="data-handling-techniques-with-dplyr.html#cb49-2" tabindex="-1"></a>arranged_data <span class="ot">&lt;-</span> <span class="fu">arrange</span>(data, age)</span>
-<span id="cb49-3"><a href="data-handling-techniques-with-dplyr.html#cb49-3" tabindex="-1"></a><span class="fu">print</span>(arranged_data)</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="data-handling-techniques-with-dplyr.html#cb41-1" tabindex="-1"></a><span class="co"># Arranging data by age in ascending order</span></span>
+<span id="cb41-2"><a href="data-handling-techniques-with-dplyr.html#cb41-2" tabindex="-1"></a>arranged_data <span class="ot">&lt;-</span> <span class="fu">arrange</span>(data, age)</span>
+<span id="cb41-3"><a href="data-handling-techniques-with-dplyr.html#cb41-3" tabindex="-1"></a><span class="fu">print</span>(arranged_data)</span></code></pre></div>
 </div>
 <div id="mutating-and-summarizing-data-sets" class="section level2 hasAnchor" number="5.5">
 <h2><span class="header-section-number">5.5</span> Mutating and Summarizing Data Sets<a href="data-handling-techniques-with-dplyr.html#mutating-and-summarizing-data-sets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -511,39 +510,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="mutating-data" class="section level2 hasAnchor" number="5.6">
 <h2><span class="header-section-number">5.6</span> Mutating Data<a href="data-handling-techniques-with-dplyr.html#mutating-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="data-handling-techniques-with-dplyr.html#cb50-1" tabindex="-1"></a><span class="co"># Adding a new column that calculates yearly savings potential</span></span>
-<span id="cb50-2"><a href="data-handling-techniques-with-dplyr.html#cb50-2" tabindex="-1"></a>mutated_data <span class="ot">&lt;-</span> <span class="fu">mutate</span>(data, <span class="at">savings =</span> salary <span class="sc">*</span> <span class="fl">0.1</span>)</span>
-<span id="cb50-3"><a href="data-handling-techniques-with-dplyr.html#cb50-3" tabindex="-1"></a><span class="fu">print</span>(mutated_data)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="data-handling-techniques-with-dplyr.html#cb42-1" tabindex="-1"></a><span class="co"># Adding a new column that calculates yearly savings potential</span></span>
+<span id="cb42-2"><a href="data-handling-techniques-with-dplyr.html#cb42-2" tabindex="-1"></a>mutated_data <span class="ot">&lt;-</span> <span class="fu">mutate</span>(data, <span class="at">savings =</span> salary <span class="sc">*</span> <span class="fl">0.1</span>)</span>
+<span id="cb42-3"><a href="data-handling-techniques-with-dplyr.html#cb42-3" tabindex="-1"></a><span class="fu">print</span>(mutated_data)</span></code></pre></div>
 </div>
 <div id="summarizing-data" class="section level2 hasAnchor" number="5.7">
 <h2><span class="header-section-number">5.7</span> Summarizing Data<a href="data-handling-techniques-with-dplyr.html#summarizing-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="data-handling-techniques-with-dplyr.html#cb51-1" tabindex="-1"></a><span class="co"># Summarizing to find the average salary</span></span>
-<span id="cb51-2"><a href="data-handling-techniques-with-dplyr.html#cb51-2" tabindex="-1"></a>summary_data <span class="ot">&lt;-</span> <span class="fu">summarise</span>(data, <span class="at">average_salary =</span> <span class="fu">mean</span>(salary))</span>
-<span id="cb51-3"><a href="data-handling-techniques-with-dplyr.html#cb51-3" tabindex="-1"></a><span class="fu">print</span>(summary_data)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="data-handling-techniques-with-dplyr.html#cb43-1" tabindex="-1"></a><span class="co"># Summarizing to find the average salary</span></span>
+<span id="cb43-2"><a href="data-handling-techniques-with-dplyr.html#cb43-2" tabindex="-1"></a>summary_data <span class="ot">&lt;-</span> <span class="fu">summarise</span>(data, <span class="at">average_salary =</span> <span class="fu">mean</span>(salary))</span>
+<span id="cb43-3"><a href="data-handling-techniques-with-dplyr.html#cb43-3" tabindex="-1"></a><span class="fu">print</span>(summary_data)</span></code></pre></div>
 </div>
 <div id="joins-and-data-merging-techniques" class="section level2 hasAnchor" number="5.8">
 <h2><span class="header-section-number">5.8</span> Joins and Data Merging Techniques<a href="data-handling-techniques-with-dplyr.html#joins-and-data-merging-techniques" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>dplyr</code> provides several functions to merge data frames together, such as <code>left_join()</code>, <code>right_join()</code>, <code>inner_join()</code>, and <code>full_join()</code>.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="data-handling-techniques-with-dplyr.html#cb52-1" tabindex="-1"></a><span class="co"># Additional data frame with department information</span></span>
-<span id="cb52-2"><a href="data-handling-techniques-with-dplyr.html#cb52-2" tabindex="-1"></a>department_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb52-3"><a href="data-handling-techniques-with-dplyr.html#cb52-3" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;David&quot;</span>),</span>
-<span id="cb52-4"><a href="data-handling-techniques-with-dplyr.html#cb52-4" tabindex="-1"></a>  <span class="at">department =</span> <span class="fu">c</span>(<span class="st">&quot;Finance&quot;</span>, <span class="st">&quot;IT&quot;</span>, <span class="st">&quot;Marketing&quot;</span>)</span>
-<span id="cb52-5"><a href="data-handling-techniques-with-dplyr.html#cb52-5" tabindex="-1"></a>)</span>
-<span id="cb52-6"><a href="data-handling-techniques-with-dplyr.html#cb52-6" tabindex="-1"></a></span>
-<span id="cb52-7"><a href="data-handling-techniques-with-dplyr.html#cb52-7" tabindex="-1"></a><span class="co"># Joining data on the name column</span></span>
-<span id="cb52-8"><a href="data-handling-techniques-with-dplyr.html#cb52-8" tabindex="-1"></a>joined_data <span class="ot">&lt;-</span> <span class="fu">left_join</span>(data, department_data, <span class="at">by =</span> <span class="st">&quot;name&quot;</span>)</span>
-<span id="cb52-9"><a href="data-handling-techniques-with-dplyr.html#cb52-9" tabindex="-1"></a><span class="fu">print</span>(joined_data)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="data-handling-techniques-with-dplyr.html#cb44-1" tabindex="-1"></a><span class="co"># Additional data frame with department information</span></span>
+<span id="cb44-2"><a href="data-handling-techniques-with-dplyr.html#cb44-2" tabindex="-1"></a>department_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb44-3"><a href="data-handling-techniques-with-dplyr.html#cb44-3" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;David&quot;</span>),</span>
+<span id="cb44-4"><a href="data-handling-techniques-with-dplyr.html#cb44-4" tabindex="-1"></a>  <span class="at">department =</span> <span class="fu">c</span>(<span class="st">&quot;Finance&quot;</span>, <span class="st">&quot;IT&quot;</span>, <span class="st">&quot;Marketing&quot;</span>)</span>
+<span id="cb44-5"><a href="data-handling-techniques-with-dplyr.html#cb44-5" tabindex="-1"></a>)</span>
+<span id="cb44-6"><a href="data-handling-techniques-with-dplyr.html#cb44-6" tabindex="-1"></a></span>
+<span id="cb44-7"><a href="data-handling-techniques-with-dplyr.html#cb44-7" tabindex="-1"></a><span class="co"># Joining data on the name column</span></span>
+<span id="cb44-8"><a href="data-handling-techniques-with-dplyr.html#cb44-8" tabindex="-1"></a>joined_data <span class="ot">&lt;-</span> <span class="fu">left_join</span>(data, department_data, <span class="at">by =</span> <span class="st">&quot;name&quot;</span>)</span>
+<span id="cb44-9"><a href="data-handling-techniques-with-dplyr.html#cb44-9" tabindex="-1"></a><span class="fu">print</span>(joined_data)</span></code></pre></div>
 </div>
 <div id="group-operations-with-group_by-and-summarise" class="section level2 hasAnchor" number="5.9">
 <h2><span class="header-section-number">5.9</span> Group Operations with <code>group_by</code> and <code>summarise</code><a href="data-handling-techniques-with-dplyr.html#group-operations-with-group_by-and-summarise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Grouping data makes it possible to compute summaries over groups of data.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="data-handling-techniques-with-dplyr.html#cb53-1" tabindex="-1"></a><span class="co"># Grouping data by department and calculating average salary</span></span>
-<span id="cb53-2"><a href="data-handling-techniques-with-dplyr.html#cb53-2" tabindex="-1"></a>grouped_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb53-3"><a href="data-handling-techniques-with-dplyr.html#cb53-3" tabindex="-1"></a>  <span class="fu">left_join</span>(department_data, <span class="at">by =</span> <span class="st">&quot;name&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb53-4"><a href="data-handling-techniques-with-dplyr.html#cb53-4" tabindex="-1"></a>  <span class="fu">group_by</span>(department) <span class="sc">%&gt;%</span></span>
-<span id="cb53-5"><a href="data-handling-techniques-with-dplyr.html#cb53-5" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">average_salary =</span> <span class="fu">mean</span>(salary, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb53-6"><a href="data-handling-techniques-with-dplyr.html#cb53-6" tabindex="-1"></a></span>
-<span id="cb53-7"><a href="data-handling-techniques-with-dplyr.html#cb53-7" tabindex="-1"></a><span class="fu">print</span>(grouped_data)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="data-handling-techniques-with-dplyr.html#cb45-1" tabindex="-1"></a><span class="co"># Grouping data by department and calculating average salary</span></span>
+<span id="cb45-2"><a href="data-handling-techniques-with-dplyr.html#cb45-2" tabindex="-1"></a>grouped_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb45-3"><a href="data-handling-techniques-with-dplyr.html#cb45-3" tabindex="-1"></a>  <span class="fu">left_join</span>(department_data, <span class="at">by =</span> <span class="st">&quot;name&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb45-4"><a href="data-handling-techniques-with-dplyr.html#cb45-4" tabindex="-1"></a>  <span class="fu">group_by</span>(department) <span class="sc">%&gt;%</span></span>
+<span id="cb45-5"><a href="data-handling-techniques-with-dplyr.html#cb45-5" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">average_salary =</span> <span class="fu">mean</span>(salary, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb45-6"><a href="data-handling-techniques-with-dplyr.html#cb45-6" tabindex="-1"></a></span>
+<span id="cb45-7"><a href="data-handling-techniques-with-dplyr.html#cb45-7" tabindex="-1"></a><span class="fu">print</span>(grouped_data)</span></code></pre></div>
 <p>This demonstration of <code>dplyr</code>’s capabilities shows how straightforward it is to manipulate and analyze data sets in R. These functions are not only powerful but also help make your data manipulation tasks more readable and concise.</p>
 <p>Certainly! Let’s craft some practical exercises for this section on data handling techniques using <code>dplyr</code>. These exercises will reinforce the skills students need to manipulate and analyze data effectively with R.</p>
 </div>
@@ -551,66 +550,66 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.10</span> Code Exercises for Data Handling Techniques with <code>dplyr</code><a href="data-handling-techniques-with-dplyr.html#code-exercises-for-data-handling-techniques-with-dplyr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Exercise 1: Select and Filter Data</strong><br />
 Create a data frame and use <code>dplyr</code> to select specific columns and filter rows based on conditions.</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="data-handling-techniques-with-dplyr.html#cb54-1" tabindex="-1"></a><span class="co"># Define the data frame</span></span>
-<span id="cb54-2"><a href="data-handling-techniques-with-dplyr.html#cb54-2" tabindex="-1"></a>exercise_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb54-3"><a href="data-handling-techniques-with-dplyr.html#cb54-3" tabindex="-1"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
-<span id="cb54-4"><a href="data-handling-techniques-with-dplyr.html#cb54-4" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Carol&quot;</span>, <span class="st">&quot;David&quot;</span>, <span class="st">&quot;Eve&quot;</span>),</span>
-<span id="cb54-5"><a href="data-handling-techniques-with-dplyr.html#cb54-5" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">28</span>, <span class="dv">22</span>, <span class="dv">35</span>, <span class="dv">19</span>, <span class="dv">31</span>),</span>
-<span id="cb54-6"><a href="data-handling-techniques-with-dplyr.html#cb54-6" tabindex="-1"></a>  <span class="at">salary =</span> <span class="fu">c</span>(<span class="dv">62000</span>, <span class="dv">52000</span>, <span class="dv">58000</span>, <span class="dv">48000</span>, <span class="dv">59000</span>)</span>
-<span id="cb54-7"><a href="data-handling-techniques-with-dplyr.html#cb54-7" tabindex="-1"></a>)</span>
-<span id="cb54-8"><a href="data-handling-techniques-with-dplyr.html#cb54-8" tabindex="-1"></a></span>
-<span id="cb54-9"><a href="data-handling-techniques-with-dplyr.html#cb54-9" tabindex="-1"></a><span class="co"># Use dplyr to select the name and age columns, then filter for ages greater than 25</span></span>
-<span id="cb54-10"><a href="data-handling-techniques-with-dplyr.html#cb54-10" tabindex="-1"></a>selected_filtered_data <span class="ot">&lt;-</span> exercise_data <span class="sc">%&gt;%</span></span>
-<span id="cb54-11"><a href="data-handling-techniques-with-dplyr.html#cb54-11" tabindex="-1"></a>  <span class="fu">select</span>(name, age) <span class="sc">%&gt;%</span></span>
-<span id="cb54-12"><a href="data-handling-techniques-with-dplyr.html#cb54-12" tabindex="-1"></a>  <span class="fu">filter</span>(age <span class="sc">&gt;</span> <span class="dv">25</span>)</span>
-<span id="cb54-13"><a href="data-handling-techniques-with-dplyr.html#cb54-13" tabindex="-1"></a></span>
-<span id="cb54-14"><a href="data-handling-techniques-with-dplyr.html#cb54-14" tabindex="-1"></a><span class="co"># Print the result</span></span>
-<span id="cb54-15"><a href="data-handling-techniques-with-dplyr.html#cb54-15" tabindex="-1"></a><span class="fu">print</span>(selected_filtered_data)</span></code></pre></div>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="data-handling-techniques-with-dplyr.html#cb55-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="data-handling-techniques-with-dplyr.html#cb46-1" tabindex="-1"></a><span class="co"># Define the data frame</span></span>
+<span id="cb46-2"><a href="data-handling-techniques-with-dplyr.html#cb46-2" tabindex="-1"></a>exercise_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb46-3"><a href="data-handling-techniques-with-dplyr.html#cb46-3" tabindex="-1"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb46-4"><a href="data-handling-techniques-with-dplyr.html#cb46-4" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Carol&quot;</span>, <span class="st">&quot;David&quot;</span>, <span class="st">&quot;Eve&quot;</span>),</span>
+<span id="cb46-5"><a href="data-handling-techniques-with-dplyr.html#cb46-5" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">28</span>, <span class="dv">22</span>, <span class="dv">35</span>, <span class="dv">19</span>, <span class="dv">31</span>),</span>
+<span id="cb46-6"><a href="data-handling-techniques-with-dplyr.html#cb46-6" tabindex="-1"></a>  <span class="at">salary =</span> <span class="fu">c</span>(<span class="dv">62000</span>, <span class="dv">52000</span>, <span class="dv">58000</span>, <span class="dv">48000</span>, <span class="dv">59000</span>)</span>
+<span id="cb46-7"><a href="data-handling-techniques-with-dplyr.html#cb46-7" tabindex="-1"></a>)</span>
+<span id="cb46-8"><a href="data-handling-techniques-with-dplyr.html#cb46-8" tabindex="-1"></a></span>
+<span id="cb46-9"><a href="data-handling-techniques-with-dplyr.html#cb46-9" tabindex="-1"></a><span class="co"># Use dplyr to select the name and age columns, then filter for ages greater than 25</span></span>
+<span id="cb46-10"><a href="data-handling-techniques-with-dplyr.html#cb46-10" tabindex="-1"></a>selected_filtered_data <span class="ot">&lt;-</span> exercise_data <span class="sc">%&gt;%</span></span>
+<span id="cb46-11"><a href="data-handling-techniques-with-dplyr.html#cb46-11" tabindex="-1"></a>  <span class="fu">select</span>(name, age) <span class="sc">%&gt;%</span></span>
+<span id="cb46-12"><a href="data-handling-techniques-with-dplyr.html#cb46-12" tabindex="-1"></a>  <span class="fu">filter</span>(age <span class="sc">&gt;</span> <span class="dv">25</span>)</span>
+<span id="cb46-13"><a href="data-handling-techniques-with-dplyr.html#cb46-13" tabindex="-1"></a></span>
+<span id="cb46-14"><a href="data-handling-techniques-with-dplyr.html#cb46-14" tabindex="-1"></a><span class="co"># Print the result</span></span>
+<span id="cb46-15"><a href="data-handling-techniques-with-dplyr.html#cb46-15" tabindex="-1"></a><span class="fu">print</span>(selected_filtered_data)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="data-handling-techniques-with-dplyr.html#cb47-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 <p><strong>Exercise 2: Arrange and Mutate Data</strong><br />
 Add a new column to the data frame that calculates the monthly salary, then arrange the data frame by this new column in descending order.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="data-handling-techniques-with-dplyr.html#cb56-1" tabindex="-1"></a><span class="co"># Use dplyr to add a new column for monthly salary and then arrange by it</span></span>
-<span id="cb56-2"><a href="data-handling-techniques-with-dplyr.html#cb56-2" tabindex="-1"></a>mutated_arranged_data <span class="ot">&lt;-</span> exercise_data <span class="sc">%&gt;%</span></span>
-<span id="cb56-3"><a href="data-handling-techniques-with-dplyr.html#cb56-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">monthly_salary =</span> salary <span class="sc">/</span> <span class="dv">12</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb56-4"><a href="data-handling-techniques-with-dplyr.html#cb56-4" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(monthly_salary))</span>
-<span id="cb56-5"><a href="data-handling-techniques-with-dplyr.html#cb56-5" tabindex="-1"></a></span>
-<span id="cb56-6"><a href="data-handling-techniques-with-dplyr.html#cb56-6" tabindex="-1"></a><span class="co"># Print the result</span></span>
-<span id="cb56-7"><a href="data-handling-techniques-with-dplyr.html#cb56-7" tabindex="-1"></a><span class="fu">print</span>(mutated_arranged_data)</span></code></pre></div>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="data-handling-techniques-with-dplyr.html#cb57-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="data-handling-techniques-with-dplyr.html#cb48-1" tabindex="-1"></a><span class="co"># Use dplyr to add a new column for monthly salary and then arrange by it</span></span>
+<span id="cb48-2"><a href="data-handling-techniques-with-dplyr.html#cb48-2" tabindex="-1"></a>mutated_arranged_data <span class="ot">&lt;-</span> exercise_data <span class="sc">%&gt;%</span></span>
+<span id="cb48-3"><a href="data-handling-techniques-with-dplyr.html#cb48-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">monthly_salary =</span> salary <span class="sc">/</span> <span class="dv">12</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb48-4"><a href="data-handling-techniques-with-dplyr.html#cb48-4" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(monthly_salary))</span>
+<span id="cb48-5"><a href="data-handling-techniques-with-dplyr.html#cb48-5" tabindex="-1"></a></span>
+<span id="cb48-6"><a href="data-handling-techniques-with-dplyr.html#cb48-6" tabindex="-1"></a><span class="co"># Print the result</span></span>
+<span id="cb48-7"><a href="data-handling-techniques-with-dplyr.html#cb48-7" tabindex="-1"></a><span class="fu">print</span>(mutated_arranged_data)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="data-handling-techniques-with-dplyr.html#cb49-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 <p><strong>Exercise 3: Summarize Data</strong><br />
 Calculate the average age and median salary from the data frame.</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="data-handling-techniques-with-dplyr.html#cb58-1" tabindex="-1"></a><span class="co"># Use dplyr to summarize the data with average age and median salary</span></span>
-<span id="cb58-2"><a href="data-handling-techniques-with-dplyr.html#cb58-2" tabindex="-1"></a>summarized_data <span class="ot">&lt;-</span> exercise_data <span class="sc">%&gt;%</span></span>
-<span id="cb58-3"><a href="data-handling-techniques-with-dplyr.html#cb58-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">average_age =</span> <span class="fu">mean</span>(age), <span class="at">median_salary =</span> <span class="fu">median</span>(salary))</span>
-<span id="cb58-4"><a href="data-handling-techniques-with-dplyr.html#cb58-4" tabindex="-1"></a></span>
-<span id="cb58-5"><a href="data-handling-techniques-with-dplyr.html#cb58-5" tabindex="-1"></a><span class="co"># Print the result</span></span>
-<span id="cb58-6"><a href="data-handling-techniques-with-dplyr.html#cb58-6" tabindex="-1"></a><span class="fu">print</span>(summarized_data)</span></code></pre></div>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="data-handling-techniques-with-dplyr.html#cb59-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="data-handling-techniques-with-dplyr.html#cb50-1" tabindex="-1"></a><span class="co"># Use dplyr to summarize the data with average age and median salary</span></span>
+<span id="cb50-2"><a href="data-handling-techniques-with-dplyr.html#cb50-2" tabindex="-1"></a>summarized_data <span class="ot">&lt;-</span> exercise_data <span class="sc">%&gt;%</span></span>
+<span id="cb50-3"><a href="data-handling-techniques-with-dplyr.html#cb50-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">average_age =</span> <span class="fu">mean</span>(age), <span class="at">median_salary =</span> <span class="fu">median</span>(salary))</span>
+<span id="cb50-4"><a href="data-handling-techniques-with-dplyr.html#cb50-4" tabindex="-1"></a></span>
+<span id="cb50-5"><a href="data-handling-techniques-with-dplyr.html#cb50-5" tabindex="-1"></a><span class="co"># Print the result</span></span>
+<span id="cb50-6"><a href="data-handling-techniques-with-dplyr.html#cb50-6" tabindex="-1"></a><span class="fu">print</span>(summarized_data)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="data-handling-techniques-with-dplyr.html#cb51-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 <p><strong>Exercise 4: Join Data</strong><br />
 Merge two data frames on the <code>name</code> column and explore the resulting joined data.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="data-handling-techniques-with-dplyr.html#cb60-1" tabindex="-1"></a><span class="co"># Additional data frame with department info</span></span>
-<span id="cb60-2"><a href="data-handling-techniques-with-dplyr.html#cb60-2" tabindex="-1"></a>department_info <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb60-3"><a href="data-handling-techniques-with-dplyr.html#cb60-3" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Carol&quot;</span>, <span class="st">&quot;Eve&quot;</span>),</span>
-<span id="cb60-4"><a href="data-handling-techniques-with-dplyr.html#cb60-4" tabindex="-1"></a>  <span class="at">department =</span> <span class="fu">c</span>(<span class="st">&quot;Human Resources&quot;</span>, <span class="st">&quot;Marketing&quot;</span>, <span class="st">&quot;Product Development&quot;</span>)</span>
-<span id="cb60-5"><a href="data-handling-techniques-with-dplyr.html#cb60-5" tabindex="-1"></a>)</span>
-<span id="cb60-6"><a href="data-handling-techniques-with-dplyr.html#cb60-6" tabindex="-1"></a></span>
-<span id="cb60-7"><a href="data-handling-techniques-with-dplyr.html#cb60-7" tabindex="-1"></a><span class="co"># Use dplyr to join the data frames</span></span>
-<span id="cb60-8"><a href="data-handling-techniques-with-dplyr.html#cb60-8" tabindex="-1"></a>joined_data <span class="ot">&lt;-</span> <span class="fu">left_join</span>(exercise_data, department_info, <span class="at">by =</span> <span class="st">&quot;name&quot;</span>)</span>
-<span id="cb60-9"><a href="data-handling-techniques-with-dplyr.html#cb60-9" tabindex="-1"></a></span>
-<span id="cb60-10"><a href="data-handling-techniques-with-dplyr.html#cb60-10" tabindex="-1"></a><span class="co"># Print the result</span></span>
-<span id="cb60-11"><a href="data-handling-techniques-with-dplyr.html#cb60-11" tabindex="-1"></a><span class="fu">print</span>(joined_data)</span></code></pre></div>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="data-handling-techniques-with-dplyr.html#cb61-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="data-handling-techniques-with-dplyr.html#cb52-1" tabindex="-1"></a><span class="co"># Additional data frame with department info</span></span>
+<span id="cb52-2"><a href="data-handling-techniques-with-dplyr.html#cb52-2" tabindex="-1"></a>department_info <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb52-3"><a href="data-handling-techniques-with-dplyr.html#cb52-3" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Carol&quot;</span>, <span class="st">&quot;Eve&quot;</span>),</span>
+<span id="cb52-4"><a href="data-handling-techniques-with-dplyr.html#cb52-4" tabindex="-1"></a>  <span class="at">department =</span> <span class="fu">c</span>(<span class="st">&quot;Human Resources&quot;</span>, <span class="st">&quot;Marketing&quot;</span>, <span class="st">&quot;Product Development&quot;</span>)</span>
+<span id="cb52-5"><a href="data-handling-techniques-with-dplyr.html#cb52-5" tabindex="-1"></a>)</span>
+<span id="cb52-6"><a href="data-handling-techniques-with-dplyr.html#cb52-6" tabindex="-1"></a></span>
+<span id="cb52-7"><a href="data-handling-techniques-with-dplyr.html#cb52-7" tabindex="-1"></a><span class="co"># Use dplyr to join the data frames</span></span>
+<span id="cb52-8"><a href="data-handling-techniques-with-dplyr.html#cb52-8" tabindex="-1"></a>joined_data <span class="ot">&lt;-</span> <span class="fu">left_join</span>(exercise_data, department_info, <span class="at">by =</span> <span class="st">&quot;name&quot;</span>)</span>
+<span id="cb52-9"><a href="data-handling-techniques-with-dplyr.html#cb52-9" tabindex="-1"></a></span>
+<span id="cb52-10"><a href="data-handling-techniques-with-dplyr.html#cb52-10" tabindex="-1"></a><span class="co"># Print the result</span></span>
+<span id="cb52-11"><a href="data-handling-techniques-with-dplyr.html#cb52-11" tabindex="-1"></a><span class="fu">print</span>(joined_data)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="data-handling-techniques-with-dplyr.html#cb53-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 <p><strong>Exercise 5: Group and Summarize Data</strong><br />
 Group the data by a specified column (e.g., department) and calculate the total salary for each group.</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="data-handling-techniques-with-dplyr.html#cb62-1" tabindex="-1"></a><span class="co"># Assuming the joined_data from Exercise 4</span></span>
-<span id="cb62-2"><a href="data-handling-techniques-with-dplyr.html#cb62-2" tabindex="-1"></a><span class="co"># Group by department and calculate total salary</span></span>
-<span id="cb62-3"><a href="data-handling-techniques-with-dplyr.html#cb62-3" tabindex="-1"></a>grouped_summarized_data <span class="ot">&lt;-</span> joined_data <span class="sc">%&gt;%</span></span>
-<span id="cb62-4"><a href="data-handling-techniques-with-dplyr.html#cb62-4" tabindex="-1"></a>  <span class="fu">group_by</span>(department) <span class="sc">%&gt;%</span></span>
-<span id="cb62-5"><a href="data-handling-techniques-with-dplyr.html#cb62-5" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_salary =</span> <span class="fu">sum</span>(salary, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb62-6"><a href="data-handling-techniques-with-dplyr.html#cb62-6" tabindex="-1"></a></span>
-<span id="cb62-7"><a href="data-handling-techniques-with-dplyr.html#cb62-7" tabindex="-1"></a><span class="co"># Print the result</span></span>
-<span id="cb62-8"><a href="data-handling-techniques-with-dplyr.html#cb62-8" tabindex="-1"></a><span class="fu">print</span>(grouped_summarized_data)</span></code></pre></div>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="data-handling-techniques-with-dplyr.html#cb63-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="data-handling-techniques-with-dplyr.html#cb54-1" tabindex="-1"></a><span class="co"># Assuming the joined_data from Exercise 4</span></span>
+<span id="cb54-2"><a href="data-handling-techniques-with-dplyr.html#cb54-2" tabindex="-1"></a><span class="co"># Group by department and calculate total salary</span></span>
+<span id="cb54-3"><a href="data-handling-techniques-with-dplyr.html#cb54-3" tabindex="-1"></a>grouped_summarized_data <span class="ot">&lt;-</span> joined_data <span class="sc">%&gt;%</span></span>
+<span id="cb54-4"><a href="data-handling-techniques-with-dplyr.html#cb54-4" tabindex="-1"></a>  <span class="fu">group_by</span>(department) <span class="sc">%&gt;%</span></span>
+<span id="cb54-5"><a href="data-handling-techniques-with-dplyr.html#cb54-5" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_salary =</span> <span class="fu">sum</span>(salary, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb54-6"><a href="data-handling-techniques-with-dplyr.html#cb54-6" tabindex="-1"></a></span>
+<span id="cb54-7"><a href="data-handling-techniques-with-dplyr.html#cb54-7" tabindex="-1"></a><span class="co"># Print the result</span></span>
+<span id="cb54-8"><a href="data-handling-techniques-with-dplyr.html#cb54-8" tabindex="-1"></a><span class="fu">print</span>(grouped_summarized_data)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="data-handling-techniques-with-dplyr.html#cb55-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 <p>These exercises are designed to provide hands-on experience with real-world data manipulation tasks, reinforcing the techniques discussed in the chapter and enhancing the student’s proficiency with <code>dplyr</code>.</p>
 
 </div>

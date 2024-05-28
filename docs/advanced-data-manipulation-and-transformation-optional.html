@@ -23,7 +23,7 @@
 <meta name="author" content="Basim Alsaedi" />
 
 
-<meta name="date" content="2024-05-23" />
+<meta name="date" content="2024-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,7 +173,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#introduction-to-rs-vectorized-operations"><i class="fa fa-check"></i><b>3.2</b> Introduction to R’s Vectorized Operations</a></li>
 <li class="chapter" data-level="3.3" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#best-practices-for-speed-and-performance"><i class="fa fa-check"></i><b>3.3</b> Best Practices for Speed and Performance</a></li>
 <li class="chapter" data-level="3.4" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#using-r-profiler-for-code-optimization"><i class="fa fa-check"></i><b>3.4</b> Using R Profiler for Code Optimization</a></li>
-<li class="chapter" data-level="3.5" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#code-exercises-2"><i class="fa fa-check"></i><b>3.5</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-structures-and-data-handling-in-r-light-focus.html"><a href="data-structures-and-data-handling-in-r-light-focus.html"><i class="fa fa-check"></i><b>4</b> Data Structures and Data Handling in R (Light Focus)</a>
 <ul>
@@ -225,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#annotations"><i class="fa fa-check"></i><b>7.3.1</b> Annotations</a></li>
 <li class="chapter" data-level="7.3.2" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#custom-geometries"><i class="fa fa-check"></i><b>7.3.2</b> Custom Geometries</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2-1"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="working-with-different-types-of-data-light-focus.html"><a href="working-with-different-types-of-data-light-focus.html"><i class="fa fa-check"></i><b>8</b> Working with Different Types of Data (Light Focus)</a>
 <ul>
@@ -254,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3.1" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#detecting-outliers"><i class="fa fa-check"></i><b>9.3.1</b> Detecting Outliers</a></li>
 <li class="chapter" data-level="9.3.2" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#handling-outliers"><i class="fa fa-check"></i><b>9.3.2</b> Handling Outliers</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-2"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-1"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>10</b> Descriptive Statistics</a>
 <ul>
@@ -484,28 +483,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong><code>group_by()</code></strong>: Group data by one or more variables.</li>
 </ul>
 <p><strong>Example</strong>:</p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb189-2"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-2" tabindex="-1"></a></span>
-<span id="cb189-3"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-3" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
-<span id="cb189-4"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-4" tabindex="-1"></a>data <span class="ot">&lt;-</span> iris</span>
-<span id="cb189-5"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-5" tabindex="-1"></a></span>
-<span id="cb189-6"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-6" tabindex="-1"></a><span class="co"># Select specific columns</span></span>
-<span id="cb189-7"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-7" tabindex="-1"></a>selected_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb189-8"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-8" tabindex="-1"></a>  <span class="fu">select</span>(Sepal.Length, Species)</span>
-<span id="cb189-9"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-9" tabindex="-1"></a></span>
-<span id="cb189-10"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-10" tabindex="-1"></a><span class="co"># Filter rows based on condition</span></span>
-<span id="cb189-11"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-11" tabindex="-1"></a>filtered_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb189-12"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-12" tabindex="-1"></a>  <span class="fu">filter</span>(Sepal.Length <span class="sc">&gt;</span> <span class="dv">5</span>)</span>
-<span id="cb189-13"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-13" tabindex="-1"></a></span>
-<span id="cb189-14"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-14" tabindex="-1"></a><span class="co"># Create a new column</span></span>
-<span id="cb189-15"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-15" tabindex="-1"></a>mutated_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb189-16"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-16" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sepal.Ratio =</span> Sepal.Length <span class="sc">/</span> Sepal.Width)</span>
-<span id="cb189-17"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-17" tabindex="-1"></a></span>
-<span id="cb189-18"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-18" tabindex="-1"></a><span class="co"># Summarize data</span></span>
-<span id="cb189-19"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-19" tabindex="-1"></a>summary_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb189-20"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-20" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
-<span id="cb189-21"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-21" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Mean_Sepal.Length =</span> <span class="fu">mean</span>(Sepal.Length),</span>
-<span id="cb189-22"><a href="advanced-data-manipulation-and-transformation-optional.html#cb189-22" tabindex="-1"></a>            <span class="at">Count =</span> <span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb181-2"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-2" tabindex="-1"></a></span>
+<span id="cb181-3"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-3" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb181-4"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-4" tabindex="-1"></a>data <span class="ot">&lt;-</span> iris</span>
+<span id="cb181-5"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-5" tabindex="-1"></a></span>
+<span id="cb181-6"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-6" tabindex="-1"></a><span class="co"># Select specific columns</span></span>
+<span id="cb181-7"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-7" tabindex="-1"></a>selected_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb181-8"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-8" tabindex="-1"></a>  <span class="fu">select</span>(Sepal.Length, Species)</span>
+<span id="cb181-9"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-9" tabindex="-1"></a></span>
+<span id="cb181-10"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-10" tabindex="-1"></a><span class="co"># Filter rows based on condition</span></span>
+<span id="cb181-11"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-11" tabindex="-1"></a>filtered_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb181-12"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-12" tabindex="-1"></a>  <span class="fu">filter</span>(Sepal.Length <span class="sc">&gt;</span> <span class="dv">5</span>)</span>
+<span id="cb181-13"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-13" tabindex="-1"></a></span>
+<span id="cb181-14"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-14" tabindex="-1"></a><span class="co"># Create a new column</span></span>
+<span id="cb181-15"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-15" tabindex="-1"></a>mutated_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb181-16"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-16" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sepal.Ratio =</span> Sepal.Length <span class="sc">/</span> Sepal.Width)</span>
+<span id="cb181-17"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-17" tabindex="-1"></a></span>
+<span id="cb181-18"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-18" tabindex="-1"></a><span class="co"># Summarize data</span></span>
+<span id="cb181-19"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-19" tabindex="-1"></a>summary_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb181-20"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-20" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
+<span id="cb181-21"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-21" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Mean_Sepal.Length =</span> <span class="fu">mean</span>(Sepal.Length),</span>
+<span id="cb181-22"><a href="advanced-data-manipulation-and-transformation-optional.html#cb181-22" tabindex="-1"></a>            <span class="at">Count =</span> <span class="fu">n</span>())</span></code></pre></div>
 </div>
 </div>
 <div id="dealing-with-text-and-categorical-data" class="section level2 hasAnchor" number="26.2">
@@ -518,14 +517,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong><code>str_*</code> functions</strong>: String manipulation functions from the <code>stringr</code> package (part of <code>tidyverse</code>).</li>
 </ul>
 <p><strong>Example</strong>:</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="advanced-data-manipulation-and-transformation-optional.html#cb190-1" tabindex="-1"></a><span class="co"># Create a factor variable</span></span>
-<span id="cb190-2"><a href="advanced-data-manipulation-and-transformation-optional.html#cb190-2" tabindex="-1"></a>data<span class="sc">$</span>Species <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>Species, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;setosa&quot;</span>, <span class="st">&quot;versicolor&quot;</span>, <span class="st">&quot;virginica&quot;</span>))</span>
-<span id="cb190-3"><a href="advanced-data-manipulation-and-transformation-optional.html#cb190-3" tabindex="-1"></a></span>
-<span id="cb190-4"><a href="advanced-data-manipulation-and-transformation-optional.html#cb190-4" tabindex="-1"></a><span class="co"># String manipulation</span></span>
-<span id="cb190-5"><a href="advanced-data-manipulation-and-transformation-optional.html#cb190-5" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb190-6"><a href="advanced-data-manipulation-and-transformation-optional.html#cb190-6" tabindex="-1"></a>text_data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>)</span>
-<span id="cb190-7"><a href="advanced-data-manipulation-and-transformation-optional.html#cb190-7" tabindex="-1"></a>text_lengths <span class="ot">&lt;-</span> <span class="fu">str_length</span>(text_data)</span>
-<span id="cb190-8"><a href="advanced-data-manipulation-and-transformation-optional.html#cb190-8" tabindex="-1"></a>text_upper <span class="ot">&lt;-</span> <span class="fu">str_to_upper</span>(text_data)</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="advanced-data-manipulation-and-transformation-optional.html#cb182-1" tabindex="-1"></a><span class="co"># Create a factor variable</span></span>
+<span id="cb182-2"><a href="advanced-data-manipulation-and-transformation-optional.html#cb182-2" tabindex="-1"></a>data<span class="sc">$</span>Species <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>Species, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;setosa&quot;</span>, <span class="st">&quot;versicolor&quot;</span>, <span class="st">&quot;virginica&quot;</span>))</span>
+<span id="cb182-3"><a href="advanced-data-manipulation-and-transformation-optional.html#cb182-3" tabindex="-1"></a></span>
+<span id="cb182-4"><a href="advanced-data-manipulation-and-transformation-optional.html#cb182-4" tabindex="-1"></a><span class="co"># String manipulation</span></span>
+<span id="cb182-5"><a href="advanced-data-manipulation-and-transformation-optional.html#cb182-5" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb182-6"><a href="advanced-data-manipulation-and-transformation-optional.html#cb182-6" tabindex="-1"></a>text_data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>)</span>
+<span id="cb182-7"><a href="advanced-data-manipulation-and-transformation-optional.html#cb182-7" tabindex="-1"></a>text_lengths <span class="ot">&lt;-</span> <span class="fu">str_length</span>(text_data)</span>
+<span id="cb182-8"><a href="advanced-data-manipulation-and-transformation-optional.html#cb182-8" tabindex="-1"></a>text_upper <span class="ot">&lt;-</span> <span class="fu">str_to_upper</span>(text_data)</span></code></pre></div>
 </div>
 </div>
 <div id="working-with-dates-and-times" class="section level2 hasAnchor" number="26.3">
@@ -539,19 +538,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong><code>now()</code></strong>: Get the current date and time.</li>
 </ul>
 <p><strong>Example</strong>:</p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-1" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb191-2"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-2" tabindex="-1"></a></span>
-<span id="cb191-3"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-3" tabindex="-1"></a><span class="co"># Parse dates</span></span>
-<span id="cb191-4"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-4" tabindex="-1"></a>dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;2023-01-01&quot;</span>, <span class="st">&quot;2023-02-15&quot;</span>, <span class="st">&quot;2023-03-10&quot;</span>)</span>
-<span id="cb191-5"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-5" tabindex="-1"></a>parsed_dates <span class="ot">&lt;-</span> <span class="fu">ymd</span>(dates)</span>
-<span id="cb191-6"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-6" tabindex="-1"></a></span>
-<span id="cb191-7"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-7" tabindex="-1"></a><span class="co"># Extract components</span></span>
-<span id="cb191-8"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-8" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="fu">year</span>(parsed_dates)</span>
-<span id="cb191-9"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-9" tabindex="-1"></a>months <span class="ot">&lt;-</span> <span class="fu">month</span>(parsed_dates)</span>
-<span id="cb191-10"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-10" tabindex="-1"></a>days <span class="ot">&lt;-</span> <span class="fu">day</span>(parsed_dates)</span>
-<span id="cb191-11"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-11" tabindex="-1"></a></span>
-<span id="cb191-12"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-12" tabindex="-1"></a><span class="co"># Get current date and time</span></span>
-<span id="cb191-13"><a href="advanced-data-manipulation-and-transformation-optional.html#cb191-13" tabindex="-1"></a>current_time <span class="ot">&lt;-</span> <span class="fu">now</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="advanced-data-manipulation-and-transformation-optional.html#cb183-1" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb183-2"><a href="advanced-data-manipulation-and-transformation-optional.html#cb183-2" tabindex="-1"></a></span>
+<span id="cb183-3"><a href="advanced-data-manipulation-and-transformation-optional.html#cb183-3" tabindex="-1"></a><span class="co"># Parse dates</span></span>
+<span id="cb183-4"><a href="advanced-data-manipulation-and-transformation-optional.html#cb183-4" tabindex="-1"></a>dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;2023-01-01&quot;</span>, <span class="st">&quot;2023-02-15&quot;</span>, <span class="st">&quot;2023-03-10&quot;</span>)</span>
+<span id="cb183-5"><a href="advanced-data-manipulation-and-transformation-optional.html#cb183-5" tabindex="-1"></a>parsed_dates <span class="ot">&lt;-</span> <span class="fu">ymd</span>(dates)</span>
+<span id="cb183-6"><a href="advanced-data-manipulation-and-transformation-optional.html#cb183-6" tabindex="-1"></a></span>
+<span id="cb183-7"><a href="advanced-data-manipulation-and-transformation-optional.html#cb183-7" tabindex="-1"></a><span class="co"># Extract components</span></span>
+<span id="cb183-8"><a href="advanced-data-manipulation-and-transformation-optional.html#cb183-8" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="fu">year</span>(parsed_dates)</span>
+<span id="cb183-9"><a href="advanced-data-manipulation-and-transformation-optional.html#cb183-9" tabindex="-1"></a>months <span class="ot">&lt;-</span> <span class="fu">month</span>(parsed_dates)</span>
+<span id="cb183-10"><a href="advanced-data-manipulation-and-transformation-optional.html#cb183-10" tabindex="-1"></a>days <span class="ot">&lt;-</span> <span class="fu">day</span>(parsed_dates)</span>
+<span id="cb183-11"><a href="advanced-data-manipulation-and-transformation-optional.html#cb183-11" tabindex="-1"></a></span>
+<span id="cb183-12"><a href="advanced-data-manipulation-and-transformation-optional.html#cb183-12" tabindex="-1"></a><span class="co"># Get current date and time</span></span>
+<span id="cb183-13"><a href="advanced-data-manipulation-and-transformation-optional.html#cb183-13" tabindex="-1"></a>current_time <span class="ot">&lt;-</span> <span class="fu">now</span>()</span></code></pre></div>
 </div>
 </div>
 </div>

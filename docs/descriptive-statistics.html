@@ -23,7 +23,7 @@
 <meta name="author" content="Basim Alsaedi" />
 
 
-<meta name="date" content="2024-05-23" />
+<meta name="date" content="2024-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,7 +173,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#introduction-to-rs-vectorized-operations"><i class="fa fa-check"></i><b>3.2</b> Introduction to R’s Vectorized Operations</a></li>
 <li class="chapter" data-level="3.3" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#best-practices-for-speed-and-performance"><i class="fa fa-check"></i><b>3.3</b> Best Practices for Speed and Performance</a></li>
 <li class="chapter" data-level="3.4" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#using-r-profiler-for-code-optimization"><i class="fa fa-check"></i><b>3.4</b> Using R Profiler for Code Optimization</a></li>
-<li class="chapter" data-level="3.5" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#code-exercises-2"><i class="fa fa-check"></i><b>3.5</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-structures-and-data-handling-in-r-light-focus.html"><a href="data-structures-and-data-handling-in-r-light-focus.html"><i class="fa fa-check"></i><b>4</b> Data Structures and Data Handling in R (Light Focus)</a>
 <ul>
@@ -225,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#annotations"><i class="fa fa-check"></i><b>7.3.1</b> Annotations</a></li>
 <li class="chapter" data-level="7.3.2" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#custom-geometries"><i class="fa fa-check"></i><b>7.3.2</b> Custom Geometries</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2-1"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="working-with-different-types-of-data-light-focus.html"><a href="working-with-different-types-of-data-light-focus.html"><i class="fa fa-check"></i><b>8</b> Working with Different Types of Data (Light Focus)</a>
 <ul>
@@ -254,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3.1" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#detecting-outliers"><i class="fa fa-check"></i><b>9.3.1</b> Detecting Outliers</a></li>
 <li class="chapter" data-level="9.3.2" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#handling-outliers"><i class="fa fa-check"></i><b>9.3.2</b> Handling Outliers</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-2"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-1"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>10</b> Descriptive Statistics</a>
 <ul>
@@ -482,24 +481,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Mode</strong> is the most frequently occurring value in a data set and can be used for both numerical and categorical data.</li>
 </ul>
 <p><strong>Example in R:</strong></p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="descriptive-statistics.html#cb114-1" tabindex="-1"></a><span class="co"># Sample data</span></span>
-<span id="cb114-2"><a href="descriptive-statistics.html#cb114-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span>
-<span id="cb114-3"><a href="descriptive-statistics.html#cb114-3" tabindex="-1"></a></span>
-<span id="cb114-4"><a href="descriptive-statistics.html#cb114-4" tabindex="-1"></a><span class="co"># Calculating mean</span></span>
-<span id="cb114-5"><a href="descriptive-statistics.html#cb114-5" tabindex="-1"></a>mean_value <span class="ot">&lt;-</span> <span class="fu">mean</span>(data)</span>
-<span id="cb114-6"><a href="descriptive-statistics.html#cb114-6" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Mean:&quot;</span>, mean_value))</span>
-<span id="cb114-7"><a href="descriptive-statistics.html#cb114-7" tabindex="-1"></a></span>
-<span id="cb114-8"><a href="descriptive-statistics.html#cb114-8" tabindex="-1"></a><span class="co"># Calculating median</span></span>
-<span id="cb114-9"><a href="descriptive-statistics.html#cb114-9" tabindex="-1"></a>median_value <span class="ot">&lt;-</span> <span class="fu">median</span>(data)</span>
-<span id="cb114-10"><a href="descriptive-statistics.html#cb114-10" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Median:&quot;</span>, median_value))</span>
-<span id="cb114-11"><a href="descriptive-statistics.html#cb114-11" tabindex="-1"></a></span>
-<span id="cb114-12"><a href="descriptive-statistics.html#cb114-12" tabindex="-1"></a><span class="co"># Calculating mode</span></span>
-<span id="cb114-13"><a href="descriptive-statistics.html#cb114-13" tabindex="-1"></a>get_mode <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb114-14"><a href="descriptive-statistics.html#cb114-14" tabindex="-1"></a>  uniqx <span class="ot">&lt;-</span> <span class="fu">unique</span>(x)</span>
-<span id="cb114-15"><a href="descriptive-statistics.html#cb114-15" tabindex="-1"></a>  uniqx[<span class="fu">which.max</span>(<span class="fu">tabulate</span>(<span class="fu">match</span>(x, uniqx)))]</span>
-<span id="cb114-16"><a href="descriptive-statistics.html#cb114-16" tabindex="-1"></a>}</span>
-<span id="cb114-17"><a href="descriptive-statistics.html#cb114-17" tabindex="-1"></a>mode_value <span class="ot">&lt;-</span> <span class="fu">get_mode</span>(data)</span>
-<span id="cb114-18"><a href="descriptive-statistics.html#cb114-18" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Mode:&quot;</span>, mode_value))</span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="descriptive-statistics.html#cb106-1" tabindex="-1"></a><span class="co"># Sample data</span></span>
+<span id="cb106-2"><a href="descriptive-statistics.html#cb106-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span>
+<span id="cb106-3"><a href="descriptive-statistics.html#cb106-3" tabindex="-1"></a></span>
+<span id="cb106-4"><a href="descriptive-statistics.html#cb106-4" tabindex="-1"></a><span class="co"># Calculating mean</span></span>
+<span id="cb106-5"><a href="descriptive-statistics.html#cb106-5" tabindex="-1"></a>mean_value <span class="ot">&lt;-</span> <span class="fu">mean</span>(data)</span>
+<span id="cb106-6"><a href="descriptive-statistics.html#cb106-6" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Mean:&quot;</span>, mean_value))</span>
+<span id="cb106-7"><a href="descriptive-statistics.html#cb106-7" tabindex="-1"></a></span>
+<span id="cb106-8"><a href="descriptive-statistics.html#cb106-8" tabindex="-1"></a><span class="co"># Calculating median</span></span>
+<span id="cb106-9"><a href="descriptive-statistics.html#cb106-9" tabindex="-1"></a>median_value <span class="ot">&lt;-</span> <span class="fu">median</span>(data)</span>
+<span id="cb106-10"><a href="descriptive-statistics.html#cb106-10" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Median:&quot;</span>, median_value))</span>
+<span id="cb106-11"><a href="descriptive-statistics.html#cb106-11" tabindex="-1"></a></span>
+<span id="cb106-12"><a href="descriptive-statistics.html#cb106-12" tabindex="-1"></a><span class="co"># Calculating mode</span></span>
+<span id="cb106-13"><a href="descriptive-statistics.html#cb106-13" tabindex="-1"></a>get_mode <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb106-14"><a href="descriptive-statistics.html#cb106-14" tabindex="-1"></a>  uniqx <span class="ot">&lt;-</span> <span class="fu">unique</span>(x)</span>
+<span id="cb106-15"><a href="descriptive-statistics.html#cb106-15" tabindex="-1"></a>  uniqx[<span class="fu">which.max</span>(<span class="fu">tabulate</span>(<span class="fu">match</span>(x, uniqx)))]</span>
+<span id="cb106-16"><a href="descriptive-statistics.html#cb106-16" tabindex="-1"></a>}</span>
+<span id="cb106-17"><a href="descriptive-statistics.html#cb106-17" tabindex="-1"></a>mode_value <span class="ot">&lt;-</span> <span class="fu">get_mode</span>(data)</span>
+<span id="cb106-18"><a href="descriptive-statistics.html#cb106-18" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Mode:&quot;</span>, mode_value))</span></code></pre></div>
 </div>
 <div id="variance-standard-deviation-and-range" class="section level3 hasAnchor" number="10.1.2">
 <h3><span class="header-section-number">10.1.2</span> Variance, Standard Deviation, and Range<a href="descriptive-statistics.html#variance-standard-deviation-and-range" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -510,17 +509,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Range</strong> is the difference between the maximum and minimum values in the dataset.</li>
 </ul>
 <p><strong>Example in R:</strong></p>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="descriptive-statistics.html#cb115-1" tabindex="-1"></a><span class="co"># Calculating variance</span></span>
-<span id="cb115-2"><a href="descriptive-statistics.html#cb115-2" tabindex="-1"></a>variance_value <span class="ot">&lt;-</span> <span class="fu">var</span>(data)</span>
-<span id="cb115-3"><a href="descriptive-statistics.html#cb115-3" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Variance:&quot;</span>, variance_value))</span>
-<span id="cb115-4"><a href="descriptive-statistics.html#cb115-4" tabindex="-1"></a></span>
-<span id="cb115-5"><a href="descriptive-statistics.html#cb115-5" tabindex="-1"></a><span class="co"># Calculating standard deviation</span></span>
-<span id="cb115-6"><a href="descriptive-statistics.html#cb115-6" tabindex="-1"></a>sd_value <span class="ot">&lt;-</span> <span class="fu">sd</span>(data)</span>
-<span id="cb115-7"><a href="descriptive-statistics.html#cb115-7" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Standard Deviation:&quot;</span>, sd_value))</span>
-<span id="cb115-8"><a href="descriptive-statistics.html#cb115-8" tabindex="-1"></a></span>
-<span id="cb115-9"><a href="descriptive-statistics.html#cb115-9" tabindex="-1"></a><span class="co"># Calculating range</span></span>
-<span id="cb115-10"><a href="descriptive-statistics.html#cb115-10" tabindex="-1"></a>range_value <span class="ot">&lt;-</span> <span class="fu">max</span>(data) <span class="sc">-</span> <span class="fu">min</span>(data)</span>
-<span id="cb115-11"><a href="descriptive-statistics.html#cb115-11" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Range:&quot;</span>, range_value))</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="descriptive-statistics.html#cb107-1" tabindex="-1"></a><span class="co"># Calculating variance</span></span>
+<span id="cb107-2"><a href="descriptive-statistics.html#cb107-2" tabindex="-1"></a>variance_value <span class="ot">&lt;-</span> <span class="fu">var</span>(data)</span>
+<span id="cb107-3"><a href="descriptive-statistics.html#cb107-3" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Variance:&quot;</span>, variance_value))</span>
+<span id="cb107-4"><a href="descriptive-statistics.html#cb107-4" tabindex="-1"></a></span>
+<span id="cb107-5"><a href="descriptive-statistics.html#cb107-5" tabindex="-1"></a><span class="co"># Calculating standard deviation</span></span>
+<span id="cb107-6"><a href="descriptive-statistics.html#cb107-6" tabindex="-1"></a>sd_value <span class="ot">&lt;-</span> <span class="fu">sd</span>(data)</span>
+<span id="cb107-7"><a href="descriptive-statistics.html#cb107-7" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Standard Deviation:&quot;</span>, sd_value))</span>
+<span id="cb107-8"><a href="descriptive-statistics.html#cb107-8" tabindex="-1"></a></span>
+<span id="cb107-9"><a href="descriptive-statistics.html#cb107-9" tabindex="-1"></a><span class="co"># Calculating range</span></span>
+<span id="cb107-10"><a href="descriptive-statistics.html#cb107-10" tabindex="-1"></a>range_value <span class="ot">&lt;-</span> <span class="fu">max</span>(data) <span class="sc">-</span> <span class="fu">min</span>(data)</span>
+<span id="cb107-11"><a href="descriptive-statistics.html#cb107-11" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Range:&quot;</span>, range_value))</span></code></pre></div>
 </div>
 <div id="normalization-and-standardization-of-scores" class="section level3 hasAnchor" number="10.1.3">
 <h3><span class="header-section-number">10.1.3</span> Normalization and Standardization of Scores<a href="descriptive-statistics.html#normalization-and-standardization-of-scores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -530,34 +529,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Standardization</strong> (Z-score normalization) involves rescaling data to have a mean of 0 and a standard deviation of 1.</li>
 </ul>
 <p><strong>Example in R:</strong></p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="descriptive-statistics.html#cb116-1" tabindex="-1"></a><span class="co"># Normalization</span></span>
-<span id="cb116-2"><a href="descriptive-statistics.html#cb116-2" tabindex="-1"></a>normalize <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb116-3"><a href="descriptive-statistics.html#cb116-3" tabindex="-1"></a>  (x <span class="sc">-</span> <span class="fu">min</span>(x)) <span class="sc">/</span> (<span class="fu">max</span>(x) <span class="sc">-</span> <span class="fu">min</span>(x))</span>
-<span id="cb116-4"><a href="descriptive-statistics.html#cb116-4" tabindex="-1"></a>}</span>
-<span id="cb116-5"><a href="descriptive-statistics.html#cb116-5" tabindex="-1"></a>normalized_data <span class="ot">&lt;-</span> <span class="fu">normalize</span>(data)</span>
-<span id="cb116-6"><a href="descriptive-statistics.html#cb116-6" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Normalized Data:&quot;</span>)</span>
-<span id="cb116-7"><a href="descriptive-statistics.html#cb116-7" tabindex="-1"></a><span class="fu">print</span>(normalized_data)</span>
-<span id="cb116-8"><a href="descriptive-statistics.html#cb116-8" tabindex="-1"></a></span>
-<span id="cb116-9"><a href="descriptive-statistics.html#cb116-9" tabindex="-1"></a><span class="co"># Standardization</span></span>
-<span id="cb116-10"><a href="descriptive-statistics.html#cb116-10" tabindex="-1"></a>standardize <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb116-11"><a href="descriptive-statistics.html#cb116-11" tabindex="-1"></a>  (x <span class="sc">-</span> <span class="fu">mean</span>(x)) <span class="sc">/</span> <span class="fu">sd</span>(x)</span>
-<span id="cb116-12"><a href="descriptive-statistics.html#cb116-12" tabindex="-1"></a>}</span>
-<span id="cb116-13"><a href="descriptive-statistics.html#cb116-13" tabindex="-1"></a>standardized_data <span class="ot">&lt;-</span> <span class="fu">standardize</span>(data)</span>
-<span id="cb116-14"><a href="descriptive-statistics.html#cb116-14" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Standardized Data:&quot;</span>)</span>
-<span id="cb116-15"><a href="descriptive-statistics.html#cb116-15" tabindex="-1"></a><span class="fu">print</span>(standardized_data)</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="descriptive-statistics.html#cb108-1" tabindex="-1"></a><span class="co"># Normalization</span></span>
+<span id="cb108-2"><a href="descriptive-statistics.html#cb108-2" tabindex="-1"></a>normalize <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb108-3"><a href="descriptive-statistics.html#cb108-3" tabindex="-1"></a>  (x <span class="sc">-</span> <span class="fu">min</span>(x)) <span class="sc">/</span> (<span class="fu">max</span>(x) <span class="sc">-</span> <span class="fu">min</span>(x))</span>
+<span id="cb108-4"><a href="descriptive-statistics.html#cb108-4" tabindex="-1"></a>}</span>
+<span id="cb108-5"><a href="descriptive-statistics.html#cb108-5" tabindex="-1"></a>normalized_data <span class="ot">&lt;-</span> <span class="fu">normalize</span>(data)</span>
+<span id="cb108-6"><a href="descriptive-statistics.html#cb108-6" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Normalized Data:&quot;</span>)</span>
+<span id="cb108-7"><a href="descriptive-statistics.html#cb108-7" tabindex="-1"></a><span class="fu">print</span>(normalized_data)</span>
+<span id="cb108-8"><a href="descriptive-statistics.html#cb108-8" tabindex="-1"></a></span>
+<span id="cb108-9"><a href="descriptive-statistics.html#cb108-9" tabindex="-1"></a><span class="co"># Standardization</span></span>
+<span id="cb108-10"><a href="descriptive-statistics.html#cb108-10" tabindex="-1"></a>standardize <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb108-11"><a href="descriptive-statistics.html#cb108-11" tabindex="-1"></a>  (x <span class="sc">-</span> <span class="fu">mean</span>(x)) <span class="sc">/</span> <span class="fu">sd</span>(x)</span>
+<span id="cb108-12"><a href="descriptive-statistics.html#cb108-12" tabindex="-1"></a>}</span>
+<span id="cb108-13"><a href="descriptive-statistics.html#cb108-13" tabindex="-1"></a>standardized_data <span class="ot">&lt;-</span> <span class="fu">standardize</span>(data)</span>
+<span id="cb108-14"><a href="descriptive-statistics.html#cb108-14" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Standardized Data:&quot;</span>)</span>
+<span id="cb108-15"><a href="descriptive-statistics.html#cb108-15" tabindex="-1"></a><span class="fu">print</span>(standardized_data)</span></code></pre></div>
 </div>
 <div id="graphical-representations" class="section level3 hasAnchor" number="10.1.4">
 <h3><span class="header-section-number">10.1.4</span> Graphical Representations<a href="descriptive-statistics.html#graphical-representations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Visual tools like histograms and box plots are invaluable for understanding data distributions.</p>
 <p><strong>Histogram Example:</strong></p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="descriptive-statistics.html#cb117-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb117-2"><a href="descriptive-statistics.html#cb117-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(data), <span class="fu">aes</span>(<span class="at">x=</span>data)) <span class="sc">+</span> </span>
-<span id="cb117-3"><a href="descriptive-statistics.html#cb117-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">fill=</span><span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
-<span id="cb117-4"><a href="descriptive-statistics.html#cb117-4" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Histogram of Data&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="descriptive-statistics.html#cb109-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb109-2"><a href="descriptive-statistics.html#cb109-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(data), <span class="fu">aes</span>(<span class="at">x=</span>data)) <span class="sc">+</span> </span>
+<span id="cb109-3"><a href="descriptive-statistics.html#cb109-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">fill=</span><span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb109-4"><a href="descriptive-statistics.html#cb109-4" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Histogram of Data&quot;</span>)</span></code></pre></div>
 <p><strong>Box Plot Example:</strong></p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="descriptive-statistics.html#cb118-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(data), <span class="fu">aes</span>(<span class="at">y=</span>data)) <span class="sc">+</span> </span>
-<span id="cb118-2"><a href="descriptive-statistics.html#cb118-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill=</span><span class="st">&quot;tomato&quot;</span>) <span class="sc">+</span></span>
-<span id="cb118-3"><a href="descriptive-statistics.html#cb118-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Box Plot of Data&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="descriptive-statistics.html#cb110-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(data), <span class="fu">aes</span>(<span class="at">y=</span>data)) <span class="sc">+</span> </span>
+<span id="cb110-2"><a href="descriptive-statistics.html#cb110-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill=</span><span class="st">&quot;tomato&quot;</span>) <span class="sc">+</span></span>
+<span id="cb110-3"><a href="descriptive-statistics.html#cb110-3" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Box Plot of Data&quot;</span>)</span></code></pre></div>
 </div>
 <div id="real-world-applications" class="section level3 hasAnchor" number="10.1.5">
 <h3><span class="header-section-number">10.1.5</span> Real-World Applications<a href="descriptive-statistics.html#real-world-applications" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -568,68 +567,68 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">10.2</span> Code Exercises 1<a href="descriptive-statistics.html#code-exercises-1-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Exercise 1: Compute and Visualize Descriptive Statistics</strong><br />
 Task: Given a dataset of daily temperatures, calculate the mean, median, mode, variance, and standard deviation. Additionally, create a histogram and a box plot to visualize the data distribution.</p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="descriptive-statistics.html#cb119-1" tabindex="-1"></a><span class="co"># Sample data: Daily temperatures</span></span>
-<span id="cb119-2"><a href="descriptive-statistics.html#cb119-2" tabindex="-1"></a>temperatures <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">22</span>, <span class="dv">24</span>, <span class="dv">24</span>, <span class="dv">18</span>, <span class="dv">30</span>, <span class="dv">32</span>, <span class="dv">19</span>, <span class="dv">21</span>, <span class="dv">24</span>, <span class="dv">20</span>, <span class="dv">23</span>, <span class="dv">19</span>, <span class="dv">22</span>, <span class="dv">25</span>)</span>
-<span id="cb119-3"><a href="descriptive-statistics.html#cb119-3" tabindex="-1"></a></span>
-<span id="cb119-4"><a href="descriptive-statistics.html#cb119-4" tabindex="-1"></a><span class="co"># Task: Calculate descriptive statistics</span></span>
-<span id="cb119-5"><a href="descriptive-statistics.html#cb119-5" tabindex="-1"></a>mean_temp <span class="ot">&lt;-</span> <span class="fu">mean</span>(temperatures)</span>
-<span id="cb119-6"><a href="descriptive-statistics.html#cb119-6" tabindex="-1"></a>median_temp <span class="ot">&lt;-</span> <span class="fu">median</span>(temperatures)</span>
-<span id="cb119-7"><a href="descriptive-statistics.html#cb119-7" tabindex="-1"></a>mode_temp <span class="ot">&lt;-</span> <span class="fu">get_mode</span>(temperatures)  <span class="co"># Assuming get_mode is a pre-defined function</span></span>
-<span id="cb119-8"><a href="descriptive-statistics.html#cb119-8" tabindex="-1"></a>variance_temp <span class="ot">&lt;-</span> <span class="fu">var</span>(temperatures)</span>
-<span id="cb119-9"><a href="descriptive-statistics.html#cb119-9" tabindex="-1"></a>sd_temp <span class="ot">&lt;-</span> <span class="fu">sd</span>(temperatures)</span>
-<span id="cb119-10"><a href="descriptive-statistics.html#cb119-10" tabindex="-1"></a></span>
-<span id="cb119-11"><a href="descriptive-statistics.html#cb119-11" tabindex="-1"></a><span class="co"># Task: Print the calculated statistics</span></span>
-<span id="cb119-12"><a href="descriptive-statistics.html#cb119-12" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Mean Temperature:&quot;</span>, mean_temp))</span>
-<span id="cb119-13"><a href="descriptive-statistics.html#cb119-13" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Median Temperature:&quot;</span>, median_temp))</span>
-<span id="cb119-14"><a href="descriptive-statistics.html#cb119-14" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Mode Temperature:&quot;</span>, mode_temp))</span>
-<span id="cb119-15"><a href="descriptive-statistics.html#cb119-15" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Variance of Temperature:&quot;</span>, variance_temp))</span>
-<span id="cb119-16"><a href="descriptive-statistics.html#cb119-16" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Standard Deviation of Temperature:&quot;</span>, sd_temp))</span>
-<span id="cb119-17"><a href="descriptive-statistics.html#cb119-17" tabindex="-1"></a></span>
-<span id="cb119-18"><a href="descriptive-statistics.html#cb119-18" tabindex="-1"></a><span class="co"># Task: Visualize the data</span></span>
-<span id="cb119-19"><a href="descriptive-statistics.html#cb119-19" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb119-20"><a href="descriptive-statistics.html#cb119-20" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(temperatures), <span class="fu">aes</span>(<span class="at">x=</span>temperatures)) <span class="sc">+</span></span>
-<span id="cb119-21"><a href="descriptive-statistics.html#cb119-21" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">fill=</span><span class="st">&#39;blue&#39;</span>, <span class="at">color=</span><span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
-<span id="cb119-22"><a href="descriptive-statistics.html#cb119-22" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Histogram of Daily Temperatures&quot;</span>)</span>
-<span id="cb119-23"><a href="descriptive-statistics.html#cb119-23" tabindex="-1"></a></span>
-<span id="cb119-24"><a href="descriptive-statistics.html#cb119-24" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(temperatures), <span class="fu">aes</span>(<span class="at">y=</span>temperatures)) <span class="sc">+</span></span>
-<span id="cb119-25"><a href="descriptive-statistics.html#cb119-25" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill=</span><span class="st">&#39;tomato&#39;</span>) <span class="sc">+</span></span>
-<span id="cb119-26"><a href="descriptive-statistics.html#cb119-26" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Box Plot of Daily Temperatures&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="descriptive-statistics.html#cb120-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="descriptive-statistics.html#cb111-1" tabindex="-1"></a><span class="co"># Sample data: Daily temperatures</span></span>
+<span id="cb111-2"><a href="descriptive-statistics.html#cb111-2" tabindex="-1"></a>temperatures <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">22</span>, <span class="dv">24</span>, <span class="dv">24</span>, <span class="dv">18</span>, <span class="dv">30</span>, <span class="dv">32</span>, <span class="dv">19</span>, <span class="dv">21</span>, <span class="dv">24</span>, <span class="dv">20</span>, <span class="dv">23</span>, <span class="dv">19</span>, <span class="dv">22</span>, <span class="dv">25</span>)</span>
+<span id="cb111-3"><a href="descriptive-statistics.html#cb111-3" tabindex="-1"></a></span>
+<span id="cb111-4"><a href="descriptive-statistics.html#cb111-4" tabindex="-1"></a><span class="co"># Task: Calculate descriptive statistics</span></span>
+<span id="cb111-5"><a href="descriptive-statistics.html#cb111-5" tabindex="-1"></a>mean_temp <span class="ot">&lt;-</span> <span class="fu">mean</span>(temperatures)</span>
+<span id="cb111-6"><a href="descriptive-statistics.html#cb111-6" tabindex="-1"></a>median_temp <span class="ot">&lt;-</span> <span class="fu">median</span>(temperatures)</span>
+<span id="cb111-7"><a href="descriptive-statistics.html#cb111-7" tabindex="-1"></a>mode_temp <span class="ot">&lt;-</span> <span class="fu">get_mode</span>(temperatures)  <span class="co"># Assuming get_mode is a pre-defined function</span></span>
+<span id="cb111-8"><a href="descriptive-statistics.html#cb111-8" tabindex="-1"></a>variance_temp <span class="ot">&lt;-</span> <span class="fu">var</span>(temperatures)</span>
+<span id="cb111-9"><a href="descriptive-statistics.html#cb111-9" tabindex="-1"></a>sd_temp <span class="ot">&lt;-</span> <span class="fu">sd</span>(temperatures)</span>
+<span id="cb111-10"><a href="descriptive-statistics.html#cb111-10" tabindex="-1"></a></span>
+<span id="cb111-11"><a href="descriptive-statistics.html#cb111-11" tabindex="-1"></a><span class="co"># Task: Print the calculated statistics</span></span>
+<span id="cb111-12"><a href="descriptive-statistics.html#cb111-12" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Mean Temperature:&quot;</span>, mean_temp))</span>
+<span id="cb111-13"><a href="descriptive-statistics.html#cb111-13" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Median Temperature:&quot;</span>, median_temp))</span>
+<span id="cb111-14"><a href="descriptive-statistics.html#cb111-14" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Mode Temperature:&quot;</span>, mode_temp))</span>
+<span id="cb111-15"><a href="descriptive-statistics.html#cb111-15" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Variance of Temperature:&quot;</span>, variance_temp))</span>
+<span id="cb111-16"><a href="descriptive-statistics.html#cb111-16" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Standard Deviation of Temperature:&quot;</span>, sd_temp))</span>
+<span id="cb111-17"><a href="descriptive-statistics.html#cb111-17" tabindex="-1"></a></span>
+<span id="cb111-18"><a href="descriptive-statistics.html#cb111-18" tabindex="-1"></a><span class="co"># Task: Visualize the data</span></span>
+<span id="cb111-19"><a href="descriptive-statistics.html#cb111-19" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb111-20"><a href="descriptive-statistics.html#cb111-20" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(temperatures), <span class="fu">aes</span>(<span class="at">x=</span>temperatures)) <span class="sc">+</span></span>
+<span id="cb111-21"><a href="descriptive-statistics.html#cb111-21" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">fill=</span><span class="st">&#39;blue&#39;</span>, <span class="at">color=</span><span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
+<span id="cb111-22"><a href="descriptive-statistics.html#cb111-22" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Histogram of Daily Temperatures&quot;</span>)</span>
+<span id="cb111-23"><a href="descriptive-statistics.html#cb111-23" tabindex="-1"></a></span>
+<span id="cb111-24"><a href="descriptive-statistics.html#cb111-24" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(temperatures), <span class="fu">aes</span>(<span class="at">y=</span>temperatures)) <span class="sc">+</span></span>
+<span id="cb111-25"><a href="descriptive-statistics.html#cb111-25" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill=</span><span class="st">&#39;tomato&#39;</span>) <span class="sc">+</span></span>
+<span id="cb111-26"><a href="descriptive-statistics.html#cb111-26" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Box Plot of Daily Temperatures&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="descriptive-statistics.html#cb112-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 <p><strong>Exercise 2: Normalize and Standardize a Dataset</strong><br />
 Task: Normalize and standardize the given sales data. Discuss how these transformations might affect further data analysis.</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="descriptive-statistics.html#cb121-1" tabindex="-1"></a><span class="co"># Sample sales data</span></span>
-<span id="cb121-2"><a href="descriptive-statistics.html#cb121-2" tabindex="-1"></a>sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">400</span>, <span class="dv">600</span>, <span class="dv">600</span>, <span class="dv">700</span>, <span class="dv">100</span>)</span>
-<span id="cb121-3"><a href="descriptive-statistics.html#cb121-3" tabindex="-1"></a></span>
-<span id="cb121-4"><a href="descriptive-statistics.html#cb121-4" tabindex="-1"></a><span class="co"># Task: Normalize and standardize the sales data</span></span>
-<span id="cb121-5"><a href="descriptive-statistics.html#cb121-5" tabindex="-1"></a>normalized_sales <span class="ot">&lt;-</span> (sales <span class="sc">-</span> <span class="fu">min</span>(sales)) <span class="sc">/</span> (<span class="fu">max</span>(sales) <span class="sc">-</span> <span class="fu">min</span>(sales))</span>
-<span id="cb121-6"><a href="descriptive-statistics.html#cb121-6" tabindex="-1"></a>standardized_sales <span class="ot">&lt;-</span> (sales <span class="sc">-</span> <span class="fu">mean</span>(sales)) <span class="sc">/</span> <span class="fu">sd</span>(sales)</span>
-<span id="cb121-7"><a href="descriptive-statistics.html#cb121-7" tabindex="-1"></a></span>
-<span id="cb121-8"><a href="descriptive-statistics.html#cb121-8" tabindex="-1"></a><span class="co"># Task: Print the transformed data</span></span>
-<span id="cb121-9"><a href="descriptive-statistics.html#cb121-9" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Normalized Sales:&quot;</span>)</span>
-<span id="cb121-10"><a href="descriptive-statistics.html#cb121-10" tabindex="-1"></a><span class="fu">print</span>(normalized_sales)</span>
-<span id="cb121-11"><a href="descriptive-statistics.html#cb121-11" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Standardized Sales:&quot;</span>)</span>
-<span id="cb121-12"><a href="descriptive-statistics.html#cb121-12" tabindex="-1"></a><span class="fu">print</span>(standardized_sales)</span></code></pre></div>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="descriptive-statistics.html#cb122-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="descriptive-statistics.html#cb113-1" tabindex="-1"></a><span class="co"># Sample sales data</span></span>
+<span id="cb113-2"><a href="descriptive-statistics.html#cb113-2" tabindex="-1"></a>sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">400</span>, <span class="dv">600</span>, <span class="dv">600</span>, <span class="dv">700</span>, <span class="dv">100</span>)</span>
+<span id="cb113-3"><a href="descriptive-statistics.html#cb113-3" tabindex="-1"></a></span>
+<span id="cb113-4"><a href="descriptive-statistics.html#cb113-4" tabindex="-1"></a><span class="co"># Task: Normalize and standardize the sales data</span></span>
+<span id="cb113-5"><a href="descriptive-statistics.html#cb113-5" tabindex="-1"></a>normalized_sales <span class="ot">&lt;-</span> (sales <span class="sc">-</span> <span class="fu">min</span>(sales)) <span class="sc">/</span> (<span class="fu">max</span>(sales) <span class="sc">-</span> <span class="fu">min</span>(sales))</span>
+<span id="cb113-6"><a href="descriptive-statistics.html#cb113-6" tabindex="-1"></a>standardized_sales <span class="ot">&lt;-</span> (sales <span class="sc">-</span> <span class="fu">mean</span>(sales)) <span class="sc">/</span> <span class="fu">sd</span>(sales)</span>
+<span id="cb113-7"><a href="descriptive-statistics.html#cb113-7" tabindex="-1"></a></span>
+<span id="cb113-8"><a href="descriptive-statistics.html#cb113-8" tabindex="-1"></a><span class="co"># Task: Print the transformed data</span></span>
+<span id="cb113-9"><a href="descriptive-statistics.html#cb113-9" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Normalized Sales:&quot;</span>)</span>
+<span id="cb113-10"><a href="descriptive-statistics.html#cb113-10" tabindex="-1"></a><span class="fu">print</span>(normalized_sales)</span>
+<span id="cb113-11"><a href="descriptive-statistics.html#cb113-11" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Standardized Sales:&quot;</span>)</span>
+<span id="cb113-12"><a href="descriptive-statistics.html#cb113-12" tabindex="-1"></a><span class="fu">print</span>(standardized_sales)</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="descriptive-statistics.html#cb114-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 <p><strong>Exercise 3: Real-World Application Scenario</strong><br />
 Imagine you’re a data analyst at a retail company. You have the following monthly sales data for different products. Calculate the average sales, identify any outliers, and determine which products are underperforming.</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="descriptive-statistics.html#cb123-1" tabindex="-1"></a><span class="co"># Monthly sales data for products</span></span>
-<span id="cb123-2"><a href="descriptive-statistics.html#cb123-2" tabindex="-1"></a>monthly_sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">600</span>, <span class="dv">150</span>, <span class="dv">200</span>, <span class="dv">650</span>, <span class="dv">700</span>, <span class="dv">580</span>, <span class="dv">250</span>, <span class="dv">300</span>, <span class="dv">450</span>, <span class="dv">420</span>, <span class="dv">500</span>)</span>
-<span id="cb123-3"><a href="descriptive-statistics.html#cb123-3" tabindex="-1"></a></span>
-<span id="cb123-4"><a href="descriptive-statistics.html#cb123-4" tabindex="-1"></a><span class="co"># Task: Calculate average sales and detect outliers</span></span>
-<span id="cb123-5"><a href="descriptive-statistics.html#cb123-5" tabindex="-1"></a>average_sales <span class="ot">&lt;-</span> <span class="fu">mean</span>(monthly_sales)</span>
-<span id="cb123-6"><a href="descriptive-statistics.html#cb123-6" tabindex="-1"></a>sales_sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(monthly_sales)</span>
-<span id="cb123-7"><a href="descriptive-statistics.html#cb123-7" tabindex="-1"></a>outliers <span class="ot">&lt;-</span> monthly_sales[monthly_sales <span class="sc">&gt;</span> (average_sales <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> sales_sd) <span class="sc">|</span> monthly_sales <span class="sc">&lt;</span> (average_sales <span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> sales_sd)]</span>
-<span id="cb123-8"><a href="descriptive-statistics.html#cb123-8" tabindex="-1"></a></span>
-<span id="cb123-9"><a href="descriptive-statistics.html#cb123-9" tabindex="-1"></a><span class="co"># Task: Identify underperforming products (below average)</span></span>
-<span id="cb123-10"><a href="descriptive-statistics.html#cb123-10" tabindex="-1"></a>underperforming <span class="ot">&lt;-</span> monthly_sales[monthly_sales <span class="sc">&lt;</span> average_sales]</span>
-<span id="cb123-11"><a href="descriptive-statistics.html#cb123-11" tabindex="-1"></a></span>
-<span id="cb123-12"><a href="descriptive-statistics.html#cb123-12" tabindex="-1"></a><span class="co"># Task: Print results</span></span>
-<span id="cb123-13"><a href="descriptive-statistics.html#cb123-13" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Average Sales:&quot;</span>, average_sales))</span>
-<span id="cb123-14"><a href="descriptive-statistics.html#cb123-14" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Outliers in Sales:&quot;</span>)</span>
-<span id="cb123-15"><a href="descriptive-statistics.html#cb123-15" tabindex="-1"></a><span class="fu">print</span>(outliers)</span>
-<span id="cb123-16"><a href="descriptive-statistics.html#cb123-16" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Underperforming Product Sales:&quot;</span>)</span>
-<span id="cb123-17"><a href="descriptive-statistics.html#cb123-17" tabindex="-1"></a><span class="fu">print</span>(underperforming)</span></code></pre></div>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="descriptive-statistics.html#cb124-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="descriptive-statistics.html#cb115-1" tabindex="-1"></a><span class="co"># Monthly sales data for products</span></span>
+<span id="cb115-2"><a href="descriptive-statistics.html#cb115-2" tabindex="-1"></a>monthly_sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">600</span>, <span class="dv">150</span>, <span class="dv">200</span>, <span class="dv">650</span>, <span class="dv">700</span>, <span class="dv">580</span>, <span class="dv">250</span>, <span class="dv">300</span>, <span class="dv">450</span>, <span class="dv">420</span>, <span class="dv">500</span>)</span>
+<span id="cb115-3"><a href="descriptive-statistics.html#cb115-3" tabindex="-1"></a></span>
+<span id="cb115-4"><a href="descriptive-statistics.html#cb115-4" tabindex="-1"></a><span class="co"># Task: Calculate average sales and detect outliers</span></span>
+<span id="cb115-5"><a href="descriptive-statistics.html#cb115-5" tabindex="-1"></a>average_sales <span class="ot">&lt;-</span> <span class="fu">mean</span>(monthly_sales)</span>
+<span id="cb115-6"><a href="descriptive-statistics.html#cb115-6" tabindex="-1"></a>sales_sd <span class="ot">&lt;-</span> <span class="fu">sd</span>(monthly_sales)</span>
+<span id="cb115-7"><a href="descriptive-statistics.html#cb115-7" tabindex="-1"></a>outliers <span class="ot">&lt;-</span> monthly_sales[monthly_sales <span class="sc">&gt;</span> (average_sales <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> sales_sd) <span class="sc">|</span> monthly_sales <span class="sc">&lt;</span> (average_sales <span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> sales_sd)]</span>
+<span id="cb115-8"><a href="descriptive-statistics.html#cb115-8" tabindex="-1"></a></span>
+<span id="cb115-9"><a href="descriptive-statistics.html#cb115-9" tabindex="-1"></a><span class="co"># Task: Identify underperforming products (below average)</span></span>
+<span id="cb115-10"><a href="descriptive-statistics.html#cb115-10" tabindex="-1"></a>underperforming <span class="ot">&lt;-</span> monthly_sales[monthly_sales <span class="sc">&lt;</span> average_sales]</span>
+<span id="cb115-11"><a href="descriptive-statistics.html#cb115-11" tabindex="-1"></a></span>
+<span id="cb115-12"><a href="descriptive-statistics.html#cb115-12" tabindex="-1"></a><span class="co"># Task: Print results</span></span>
+<span id="cb115-13"><a href="descriptive-statistics.html#cb115-13" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Average Sales:&quot;</span>, average_sales))</span>
+<span id="cb115-14"><a href="descriptive-statistics.html#cb115-14" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Outliers in Sales:&quot;</span>)</span>
+<span id="cb115-15"><a href="descriptive-statistics.html#cb115-15" tabindex="-1"></a><span class="fu">print</span>(outliers)</span>
+<span id="cb115-16"><a href="descriptive-statistics.html#cb115-16" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Underperforming Product Sales:&quot;</span>)</span>
+<span id="cb115-17"><a href="descriptive-statistics.html#cb115-17" tabindex="-1"></a><span class="fu">print</span>(underperforming)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="descriptive-statistics.html#cb116-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 </div>
 </div>
             </section>

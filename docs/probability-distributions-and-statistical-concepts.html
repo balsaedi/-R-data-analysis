@@ -23,7 +23,7 @@
 <meta name="author" content="Basim Alsaedi" />
 
 
-<meta name="date" content="2024-05-23" />
+<meta name="date" content="2024-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,7 +173,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#introduction-to-rs-vectorized-operations"><i class="fa fa-check"></i><b>3.2</b> Introduction to R’s Vectorized Operations</a></li>
 <li class="chapter" data-level="3.3" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#best-practices-for-speed-and-performance"><i class="fa fa-check"></i><b>3.3</b> Best Practices for Speed and Performance</a></li>
 <li class="chapter" data-level="3.4" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#using-r-profiler-for-code-optimization"><i class="fa fa-check"></i><b>3.4</b> Using R Profiler for Code Optimization</a></li>
-<li class="chapter" data-level="3.5" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#code-exercises-2"><i class="fa fa-check"></i><b>3.5</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-structures-and-data-handling-in-r-light-focus.html"><a href="data-structures-and-data-handling-in-r-light-focus.html"><i class="fa fa-check"></i><b>4</b> Data Structures and Data Handling in R (Light Focus)</a>
 <ul>
@@ -225,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#annotations"><i class="fa fa-check"></i><b>7.3.1</b> Annotations</a></li>
 <li class="chapter" data-level="7.3.2" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#custom-geometries"><i class="fa fa-check"></i><b>7.3.2</b> Custom Geometries</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2-1"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="working-with-different-types-of-data-light-focus.html"><a href="working-with-different-types-of-data-light-focus.html"><i class="fa fa-check"></i><b>8</b> Working with Different Types of Data (Light Focus)</a>
 <ul>
@@ -254,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3.1" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#detecting-outliers"><i class="fa fa-check"></i><b>9.3.1</b> Detecting Outliers</a></li>
 <li class="chapter" data-level="9.3.2" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#handling-outliers"><i class="fa fa-check"></i><b>9.3.2</b> Handling Outliers</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-2"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-1"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>10</b> Descriptive Statistics</a>
 <ul>
@@ -487,34 +486,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>The <strong>Normal Distribution</strong> is a crucial tool in statistics, representing data that clusters around a mean or average. It is the basis for many statistical tests and is used to model everything from heights and test scores to measurement errors.</p></li>
 </ul>
 <p><strong>Let’s look at these distributions in action with R:</strong></p>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="probability-distributions-and-statistical-concepts.html#cb134-1" tabindex="-1"></a><span class="co"># Binomial example: Probability of exactly 6 heads in 10 fair coin tosses</span></span>
-<span id="cb134-2"><a href="probability-distributions-and-statistical-concepts.html#cb134-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dbinom</span>(<span class="dv">6</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob=</span><span class="fl">0.5</span>))</span>
-<span id="cb134-3"><a href="probability-distributions-and-statistical-concepts.html#cb134-3" tabindex="-1"></a></span>
-<span id="cb134-4"><a href="probability-distributions-and-statistical-concepts.html#cb134-4" tabindex="-1"></a><span class="co"># Poisson example: Probability of receiving 3 emails in an hour if the average rate is 5 emails per hour</span></span>
-<span id="cb134-5"><a href="probability-distributions-and-statistical-concepts.html#cb134-5" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dpois</span>(<span class="dv">3</span>, <span class="at">lambda=</span><span class="dv">5</span>))</span>
-<span id="cb134-6"><a href="probability-distributions-and-statistical-concepts.html#cb134-6" tabindex="-1"></a></span>
-<span id="cb134-7"><a href="probability-distributions-and-statistical-concepts.html#cb134-7" tabindex="-1"></a><span class="co"># Normal distribution example: Probability density of a score at the mean of a distribution</span></span>
-<span id="cb134-8"><a href="probability-distributions-and-statistical-concepts.html#cb134-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dnorm</span>(<span class="dv">0</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span>))</span></code></pre></div></li>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="probability-distributions-and-statistical-concepts.html#cb126-1" tabindex="-1"></a><span class="co"># Binomial example: Probability of exactly 6 heads in 10 fair coin tosses</span></span>
+<span id="cb126-2"><a href="probability-distributions-and-statistical-concepts.html#cb126-2" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dbinom</span>(<span class="dv">6</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob=</span><span class="fl">0.5</span>))</span>
+<span id="cb126-3"><a href="probability-distributions-and-statistical-concepts.html#cb126-3" tabindex="-1"></a></span>
+<span id="cb126-4"><a href="probability-distributions-and-statistical-concepts.html#cb126-4" tabindex="-1"></a><span class="co"># Poisson example: Probability of receiving 3 emails in an hour if the average rate is 5 emails per hour</span></span>
+<span id="cb126-5"><a href="probability-distributions-and-statistical-concepts.html#cb126-5" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dpois</span>(<span class="dv">3</span>, <span class="at">lambda=</span><span class="dv">5</span>))</span>
+<span id="cb126-6"><a href="probability-distributions-and-statistical-concepts.html#cb126-6" tabindex="-1"></a></span>
+<span id="cb126-7"><a href="probability-distributions-and-statistical-concepts.html#cb126-7" tabindex="-1"></a><span class="co"># Normal distribution example: Probability density of a score at the mean of a distribution</span></span>
+<span id="cb126-8"><a href="probability-distributions-and-statistical-concepts.html#cb126-8" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">dnorm</span>(<span class="dv">0</span>, <span class="at">mean=</span><span class="dv">0</span>, <span class="at">sd=</span><span class="dv">1</span>))</span></code></pre></div></li>
 <li><p><strong>Continuous vs Discrete Distributions</strong></p>
 <ul>
 <li><p><strong>Continuous distributions</strong> are used for data that can take any value within an interval. Measurements like weight, temperature, and distance, where data can vary continuously, are modeled using continuous distributions.</p></li>
 <li><p><strong>Discrete distributions</strong> are used for countable data. Whenever you count something, like the number of students in a class or the number of cars in a parking lot, you are working with discrete data.</p></li>
 </ul>
 <p><strong>Here’s how you might visualize these differences with R:</strong></p>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="probability-distributions-and-statistical-concepts.html#cb135-1" tabindex="-1"></a><span class="co"># Continuous distribution visualization</span></span>
-<span id="cb135-2"><a href="probability-distributions-and-statistical-concepts.html#cb135-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(<span class="fu">rnorm</span>(<span class="dv">1000</span>)), <span class="at">main=</span><span class="st">&quot;Continuous Distribution Example: Normal Distribution&quot;</span>)</span>
-<span id="cb135-3"><a href="probability-distributions-and-statistical-concepts.html#cb135-3" tabindex="-1"></a></span>
-<span id="cb135-4"><a href="probability-distributions-and-statistical-concepts.html#cb135-4" tabindex="-1"></a><span class="co"># Discrete distribution visualization</span></span>
-<span id="cb135-5"><a href="probability-distributions-and-statistical-concepts.html#cb135-5" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob=</span><span class="fl">0.5</span>), <span class="at">names.arg=</span><span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main=</span><span class="st">&quot;Discrete Distribution Example: Binomial Distribution&quot;</span>)</span></code></pre></div></li>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="probability-distributions-and-statistical-concepts.html#cb127-1" tabindex="-1"></a><span class="co"># Continuous distribution visualization</span></span>
+<span id="cb127-2"><a href="probability-distributions-and-statistical-concepts.html#cb127-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(<span class="fu">rnorm</span>(<span class="dv">1000</span>)), <span class="at">main=</span><span class="st">&quot;Continuous Distribution Example: Normal Distribution&quot;</span>)</span>
+<span id="cb127-3"><a href="probability-distributions-and-statistical-concepts.html#cb127-3" tabindex="-1"></a></span>
+<span id="cb127-4"><a href="probability-distributions-and-statistical-concepts.html#cb127-4" tabindex="-1"></a><span class="co"># Discrete distribution visualization</span></span>
+<span id="cb127-5"><a href="probability-distributions-and-statistical-concepts.html#cb127-5" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob=</span><span class="fl">0.5</span>), <span class="at">names.arg=</span><span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main=</span><span class="st">&quot;Discrete Distribution Example: Binomial Distribution&quot;</span>)</span></code></pre></div></li>
 <li><p><strong>The Central Limit Theorem (CLT)</strong></p>
 <ul>
 <li>A cornerstone of statistics, the CLT states that the distribution of sample means approximates a normal distribution as the sample size becomes large, regardless of the population distribution’s shape. This theorem underpins many statistical methods, including hypothesis testing and the creation of confidence intervals.</li>
 </ul>
 <p><strong>Experience the CLT through a simple R simulation:</strong></p>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="probability-distributions-and-statistical-concepts.html#cb136-1" tabindex="-1"></a><span class="co"># Simulating sample means</span></span>
-<span id="cb136-2"><a href="probability-distributions-and-statistical-concepts.html#cb136-2" tabindex="-1"></a>sample_means <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="fu">mean</span>(<span class="fu">runif</span>(<span class="dv">50</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>)))</span>
-<span id="cb136-3"><a href="probability-distributions-and-statistical-concepts.html#cb136-3" tabindex="-1"></a><span class="fu">hist</span>(sample_means, <span class="at">probability=</span><span class="cn">TRUE</span>, <span class="at">main=</span><span class="st">&quot;CLT Simulation&quot;</span>)</span>
-<span id="cb136-4"><a href="probability-distributions-and-statistical-concepts.html#cb136-4" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">density</span>(sample_means), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div></li>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="probability-distributions-and-statistical-concepts.html#cb128-1" tabindex="-1"></a><span class="co"># Simulating sample means</span></span>
+<span id="cb128-2"><a href="probability-distributions-and-statistical-concepts.html#cb128-2" tabindex="-1"></a>sample_means <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="fu">mean</span>(<span class="fu">runif</span>(<span class="dv">50</span>, <span class="at">min=</span><span class="dv">0</span>, <span class="at">max=</span><span class="dv">1</span>)))</span>
+<span id="cb128-3"><a href="probability-distributions-and-statistical-concepts.html#cb128-3" tabindex="-1"></a><span class="fu">hist</span>(sample_means, <span class="at">probability=</span><span class="cn">TRUE</span>, <span class="at">main=</span><span class="st">&quot;CLT Simulation&quot;</span>)</span>
+<span id="cb128-4"><a href="probability-distributions-and-statistical-concepts.html#cb128-4" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">density</span>(sample_means), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div></li>
 </ol>
 </div>
 </div>

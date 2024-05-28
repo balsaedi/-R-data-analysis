@@ -23,7 +23,7 @@
 <meta name="author" content="Basim Alsaedi" />
 
 
-<meta name="date" content="2024-05-23" />
+<meta name="date" content="2024-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,7 +173,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#introduction-to-rs-vectorized-operations"><i class="fa fa-check"></i><b>3.2</b> Introduction to R’s Vectorized Operations</a></li>
 <li class="chapter" data-level="3.3" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#best-practices-for-speed-and-performance"><i class="fa fa-check"></i><b>3.3</b> Best Practices for Speed and Performance</a></li>
 <li class="chapter" data-level="3.4" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#using-r-profiler-for-code-optimization"><i class="fa fa-check"></i><b>3.4</b> Using R Profiler for Code Optimization</a></li>
-<li class="chapter" data-level="3.5" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#code-exercises-2"><i class="fa fa-check"></i><b>3.5</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-structures-and-data-handling-in-r-light-focus.html"><a href="data-structures-and-data-handling-in-r-light-focus.html"><i class="fa fa-check"></i><b>4</b> Data Structures and Data Handling in R (Light Focus)</a>
 <ul>
@@ -225,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#annotations"><i class="fa fa-check"></i><b>7.3.1</b> Annotations</a></li>
 <li class="chapter" data-level="7.3.2" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#custom-geometries"><i class="fa fa-check"></i><b>7.3.2</b> Custom Geometries</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2-1"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="working-with-different-types-of-data-light-focus.html"><a href="working-with-different-types-of-data-light-focus.html"><i class="fa fa-check"></i><b>8</b> Working with Different Types of Data (Light Focus)</a>
 <ul>
@@ -254,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3.1" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#detecting-outliers"><i class="fa fa-check"></i><b>9.3.1</b> Detecting Outliers</a></li>
 <li class="chapter" data-level="9.3.2" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#handling-outliers"><i class="fa fa-check"></i><b>9.3.2</b> Handling Outliers</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-2"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-1"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>10</b> Descriptive Statistics</a>
 <ul>
@@ -477,15 +476,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="identifying-missing-data" class="section level3 hasAnchor" number="9.1.1">
 <h3><span class="header-section-number">9.1.1</span> Identifying Missing Data<a href="best-practices-in-data-collection-and-cleaning.html#identifying-missing-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You can identify missing data in R using functions like <code>is.na()</code> which returns a logical vector indicating which elements are NA.</p>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-1" tabindex="-1"></a><span class="co"># Example dataset with missing values</span></span>
-<span id="cb100-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb100-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-3" tabindex="-1"></a>  <span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="cn">NA</span>, <span class="st">&quot;David&quot;</span>),</span>
-<span id="cb100-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-4" tabindex="-1"></a>  <span class="at">scores =</span> <span class="fu">c</span>(<span class="dv">92</span>, <span class="cn">NA</span>, <span class="dv">88</span>, <span class="dv">94</span>)</span>
-<span id="cb100-5"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-5" tabindex="-1"></a>)</span>
-<span id="cb100-6"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-6" tabindex="-1"></a></span>
-<span id="cb100-7"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-7" tabindex="-1"></a><span class="co"># Identifying missing data</span></span>
-<span id="cb100-8"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-8" tabindex="-1"></a>missing_data <span class="ot">&lt;-</span> <span class="fu">is.na</span>(data)</span>
-<span id="cb100-9"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-9" tabindex="-1"></a><span class="fu">print</span>(missing_data)</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb92-1" tabindex="-1"></a><span class="co"># Example dataset with missing values</span></span>
+<span id="cb92-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb92-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb92-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb92-3" tabindex="-1"></a>  <span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="cn">NA</span>, <span class="st">&quot;David&quot;</span>),</span>
+<span id="cb92-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb92-4" tabindex="-1"></a>  <span class="at">scores =</span> <span class="fu">c</span>(<span class="dv">92</span>, <span class="cn">NA</span>, <span class="dv">88</span>, <span class="dv">94</span>)</span>
+<span id="cb92-5"><a href="best-practices-in-data-collection-and-cleaning.html#cb92-5" tabindex="-1"></a>)</span>
+<span id="cb92-6"><a href="best-practices-in-data-collection-and-cleaning.html#cb92-6" tabindex="-1"></a></span>
+<span id="cb92-7"><a href="best-practices-in-data-collection-and-cleaning.html#cb92-7" tabindex="-1"></a><span class="co"># Identifying missing data</span></span>
+<span id="cb92-8"><a href="best-practices-in-data-collection-and-cleaning.html#cb92-8" tabindex="-1"></a>missing_data <span class="ot">&lt;-</span> <span class="fu">is.na</span>(data)</span>
+<span id="cb92-9"><a href="best-practices-in-data-collection-and-cleaning.html#cb92-9" tabindex="-1"></a><span class="fu">print</span>(missing_data)</span></code></pre></div>
 </div>
 <div id="handling-missing-data" class="section level3 hasAnchor" number="9.1.2">
 <h3><span class="header-section-number">9.1.2</span> Handling Missing Data<a href="best-practices-in-data-collection-and-cleaning.html#handling-missing-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -494,13 +493,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Removing missing data</strong>: Use <code>na.omit()</code> to remove rows with NA values.</li>
 <li><strong>Imputing missing data</strong>: Replace missing values with statistical measures (mean, median) or more sophisticated algorithms.</li>
 </ul>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb101-1" tabindex="-1"></a><span class="co"># Removing missing data</span></span>
-<span id="cb101-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb101-2" tabindex="-1"></a>clean_data <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(data)</span>
-<span id="cb101-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb101-3" tabindex="-1"></a><span class="fu">print</span>(clean_data)</span>
-<span id="cb101-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb101-4" tabindex="-1"></a></span>
-<span id="cb101-5"><a href="best-practices-in-data-collection-and-cleaning.html#cb101-5" tabindex="-1"></a><span class="co"># Imputing missing data with the mean</span></span>
-<span id="cb101-6"><a href="best-practices-in-data-collection-and-cleaning.html#cb101-6" tabindex="-1"></a>data<span class="sc">$</span>scores[<span class="fu">is.na</span>(data<span class="sc">$</span>scores)] <span class="ot">&lt;-</span> <span class="fu">mean</span>(data<span class="sc">$</span>scores, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb101-7"><a href="best-practices-in-data-collection-and-cleaning.html#cb101-7" tabindex="-1"></a><span class="fu">print</span>(data)</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb93-1" tabindex="-1"></a><span class="co"># Removing missing data</span></span>
+<span id="cb93-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb93-2" tabindex="-1"></a>clean_data <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(data)</span>
+<span id="cb93-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb93-3" tabindex="-1"></a><span class="fu">print</span>(clean_data)</span>
+<span id="cb93-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb93-4" tabindex="-1"></a></span>
+<span id="cb93-5"><a href="best-practices-in-data-collection-and-cleaning.html#cb93-5" tabindex="-1"></a><span class="co"># Imputing missing data with the mean</span></span>
+<span id="cb93-6"><a href="best-practices-in-data-collection-and-cleaning.html#cb93-6" tabindex="-1"></a>data<span class="sc">$</span>scores[<span class="fu">is.na</span>(data<span class="sc">$</span>scores)] <span class="ot">&lt;-</span> <span class="fu">mean</span>(data<span class="sc">$</span>scores, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb93-7"><a href="best-practices-in-data-collection-and-cleaning.html#cb93-7" tabindex="-1"></a><span class="fu">print</span>(data)</span></code></pre></div>
 </div>
 </div>
 <div id="data-type-conversions-and-formatting" class="section level2 hasAnchor" number="9.2">
@@ -509,18 +508,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="data-type-conversion" class="section level3 hasAnchor" number="9.2.1">
 <h3><span class="header-section-number">9.2.1</span> Data Type Conversion<a href="best-practices-in-data-collection-and-cleaning.html#data-type-conversion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Use functions like <code>as.numeric()</code>, <code>as.factor()</code>, etc., to convert data types in R.</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-1" tabindex="-1"></a><span class="co"># Example of converting character data to numeric</span></span>
-<span id="cb102-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-2" tabindex="-1"></a>data<span class="sc">$</span>ages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;20&quot;</span>, <span class="st">&quot;25&quot;</span>, <span class="st">&quot;30&quot;</span>, <span class="st">&quot;35&quot;</span>)</span>
-<span id="cb102-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-3" tabindex="-1"></a>data<span class="sc">$</span>ages <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data<span class="sc">$</span>ages)</span>
-<span id="cb102-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-4" tabindex="-1"></a><span class="fu">print</span>(data<span class="sc">$</span>ages)</span></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb94-1" tabindex="-1"></a><span class="co"># Example of converting character data to numeric</span></span>
+<span id="cb94-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb94-2" tabindex="-1"></a>data<span class="sc">$</span>ages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;20&quot;</span>, <span class="st">&quot;25&quot;</span>, <span class="st">&quot;30&quot;</span>, <span class="st">&quot;35&quot;</span>)</span>
+<span id="cb94-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb94-3" tabindex="-1"></a>data<span class="sc">$</span>ages <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data<span class="sc">$</span>ages)</span>
+<span id="cb94-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb94-4" tabindex="-1"></a><span class="fu">print</span>(data<span class="sc">$</span>ages)</span></code></pre></div>
 </div>
 <div id="formatting-data" class="section level3 hasAnchor" number="9.2.2">
 <h3><span class="header-section-number">9.2.2</span> Formatting Data<a href="best-practices-in-data-collection-and-cleaning.html#formatting-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Formatting data for readability and consistency (e.g., date formats) ensures that your datasets are easy to understand and analyze.</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb103-1" tabindex="-1"></a><span class="co"># Formatting dates</span></span>
-<span id="cb103-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb103-2" tabindex="-1"></a>data<span class="sc">$</span>dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;01-01-2020&quot;</span>, <span class="st">&quot;02-01-2020&quot;</span>, <span class="st">&quot;03-01-2020&quot;</span>)</span>
-<span id="cb103-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb103-3" tabindex="-1"></a>data<span class="sc">$</span>dates <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(data<span class="sc">$</span>dates, <span class="at">format =</span> <span class="st">&quot;%d-%m-%Y&quot;</span>)</span>
-<span id="cb103-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb103-4" tabindex="-1"></a><span class="fu">print</span>(data<span class="sc">$</span>dates)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb95-1" tabindex="-1"></a><span class="co"># Formatting dates</span></span>
+<span id="cb95-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb95-2" tabindex="-1"></a>data<span class="sc">$</span>dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;01-01-2020&quot;</span>, <span class="st">&quot;02-01-2020&quot;</span>, <span class="st">&quot;03-01-2020&quot;</span>)</span>
+<span id="cb95-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb95-3" tabindex="-1"></a>data<span class="sc">$</span>dates <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(data<span class="sc">$</span>dates, <span class="at">format =</span> <span class="st">&quot;%d-%m-%Y&quot;</span>)</span>
+<span id="cb95-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb95-4" tabindex="-1"></a><span class="fu">print</span>(data<span class="sc">$</span>dates)</span></code></pre></div>
 </div>
 </div>
 <div id="detecting-and-dealing-with-outliers" class="section level2 hasAnchor" number="9.3">
@@ -529,13 +528,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="detecting-outliers" class="section level3 hasAnchor" number="9.3.1">
 <h3><span class="header-section-number">9.3.1</span> Detecting Outliers<a href="best-practices-in-data-collection-and-cleaning.html#detecting-outliers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A common method to detect outliers is to use statistical thresholds like the interquartile range (IQR).</p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-1" tabindex="-1"></a><span class="co"># Detecting outliers using IQR</span></span>
-<span id="cb104-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-2" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">102</span>, <span class="dv">99</span>, <span class="dv">105</span>, <span class="dv">110</span>, <span class="dv">200</span>, <span class="dv">98</span>, <span class="dv">97</span>, <span class="dv">95</span>, <span class="dv">250</span>)</span>
-<span id="cb104-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-3" tabindex="-1"></a>Q1 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(scores, <span class="fl">0.25</span>)</span>
-<span id="cb104-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-4" tabindex="-1"></a>Q3 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(scores, <span class="fl">0.75</span>)</span>
-<span id="cb104-5"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-5" tabindex="-1"></a>IQR <span class="ot">&lt;-</span> Q3 <span class="sc">-</span> Q1</span>
-<span id="cb104-6"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-6" tabindex="-1"></a>outliers <span class="ot">&lt;-</span> scores <span class="sc">&lt;</span> (Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR) <span class="sc">|</span> scores <span class="sc">&gt;</span> (Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR)</span>
-<span id="cb104-7"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-7" tabindex="-1"></a><span class="fu">print</span>(scores[outliers])</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb96-1" tabindex="-1"></a><span class="co"># Detecting outliers using IQR</span></span>
+<span id="cb96-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb96-2" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">102</span>, <span class="dv">99</span>, <span class="dv">105</span>, <span class="dv">110</span>, <span class="dv">200</span>, <span class="dv">98</span>, <span class="dv">97</span>, <span class="dv">95</span>, <span class="dv">250</span>)</span>
+<span id="cb96-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb96-3" tabindex="-1"></a>Q1 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(scores, <span class="fl">0.25</span>)</span>
+<span id="cb96-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb96-4" tabindex="-1"></a>Q3 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(scores, <span class="fl">0.75</span>)</span>
+<span id="cb96-5"><a href="best-practices-in-data-collection-and-cleaning.html#cb96-5" tabindex="-1"></a>IQR <span class="ot">&lt;-</span> Q3 <span class="sc">-</span> Q1</span>
+<span id="cb96-6"><a href="best-practices-in-data-collection-and-cleaning.html#cb96-6" tabindex="-1"></a>outliers <span class="ot">&lt;-</span> scores <span class="sc">&lt;</span> (Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR) <span class="sc">|</span> scores <span class="sc">&gt;</span> (Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR)</span>
+<span id="cb96-7"><a href="best-practices-in-data-collection-and-cleaning.html#cb96-7" tabindex="-1"></a><span class="fu">print</span>(scores[outliers])</span></code></pre></div>
 </div>
 <div id="handling-outliers" class="section level3 hasAnchor" number="9.3.2">
 <h3><span class="header-section-number">9.3.2</span> Handling Outliers<a href="best-practices-in-data-collection-and-cleaning.html#handling-outliers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -544,84 +543,84 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>Removing outliers</strong>: If they are errors or extremely rare.</li>
 <li><strong>Capping values</strong>: Replacing outliers with the highest non-outlier values.</li>
 </ul>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb105-1" tabindex="-1"></a><span class="co"># Removing outliers</span></span>
-<span id="cb105-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb105-2" tabindex="-1"></a>clean_scores <span class="ot">&lt;-</span> scores[<span class="sc">!</span>outliers]</span>
-<span id="cb105-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb105-3" tabindex="-1"></a><span class="fu">print</span>(clean_scores)</span>
-<span id="cb105-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb105-4" tabindex="-1"></a></span>
-<span id="cb105-5"><a href="best-practices-in-data-collection-and-cleaning.html#cb105-5" tabindex="-1"></a><span class="co"># Capping outliers</span></span>
-<span id="cb105-6"><a href="best-practices-in-data-collection-and-cleaning.html#cb105-6" tabindex="-1"></a>scores[scores <span class="sc">&lt;</span> (Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR)] <span class="ot">&lt;-</span> Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR</span>
-<span id="cb105-7"><a href="best-practices-in-data-collection-and-cleaning.html#cb105-7" tabindex="-1"></a>scores[scores <span class="sc">&gt;</span> (Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR)] <span class="ot">&lt;-</span> Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR</span>
-<span id="cb105-8"><a href="best-practices-in-data-collection-and-cleaning.html#cb105-8" tabindex="-1"></a><span class="fu">print</span>(scores)</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb97-1" tabindex="-1"></a><span class="co"># Removing outliers</span></span>
+<span id="cb97-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb97-2" tabindex="-1"></a>clean_scores <span class="ot">&lt;-</span> scores[<span class="sc">!</span>outliers]</span>
+<span id="cb97-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb97-3" tabindex="-1"></a><span class="fu">print</span>(clean_scores)</span>
+<span id="cb97-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb97-4" tabindex="-1"></a></span>
+<span id="cb97-5"><a href="best-practices-in-data-collection-and-cleaning.html#cb97-5" tabindex="-1"></a><span class="co"># Capping outliers</span></span>
+<span id="cb97-6"><a href="best-practices-in-data-collection-and-cleaning.html#cb97-6" tabindex="-1"></a>scores[scores <span class="sc">&lt;</span> (Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR)] <span class="ot">&lt;-</span> Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR</span>
+<span id="cb97-7"><a href="best-practices-in-data-collection-and-cleaning.html#cb97-7" tabindex="-1"></a>scores[scores <span class="sc">&gt;</span> (Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR)] <span class="ot">&lt;-</span> Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR</span>
+<span id="cb97-8"><a href="best-practices-in-data-collection-and-cleaning.html#cb97-8" tabindex="-1"></a><span class="fu">print</span>(scores)</span></code></pre></div>
 </div>
 </div>
-<div id="code-exercises-2-2" class="section level2 hasAnchor" number="9.4">
-<h2><span class="header-section-number">9.4</span> Code Exercises 2<a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="code-exercises-2-1" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Code Exercises 2<a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Exercise 1: Identify and Handle Missing Data</strong>
 Task: Given a data frame with missing values, identify the missing values and then fill these missing values with the column mean.</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb106-1" tabindex="-1"></a><span class="co"># Provided data frame</span></span>
-<span id="cb106-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb106-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb106-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb106-3" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="cn">NA</span>, <span class="st">&quot;David&quot;</span>),</span>
-<span id="cb106-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb106-4" tabindex="-1"></a>  <span class="at">score =</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="cn">NA</span>, <span class="dv">88</span>, <span class="dv">90</span>)</span>
-<span id="cb106-5"><a href="best-practices-in-data-collection-and-cleaning.html#cb106-5" tabindex="-1"></a>)</span>
-<span id="cb106-6"><a href="best-practices-in-data-collection-and-cleaning.html#cb106-6" tabindex="-1"></a></span>
-<span id="cb106-7"><a href="best-practices-in-data-collection-and-cleaning.html#cb106-7" tabindex="-1"></a><span class="co"># Task: Identify missing values</span></span>
-<span id="cb106-8"><a href="best-practices-in-data-collection-and-cleaning.html#cb106-8" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Missing Data Identification:&quot;</span>)</span>
-<span id="cb106-9"><a href="best-practices-in-data-collection-and-cleaning.html#cb106-9" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">is.na</span>(data))</span>
-<span id="cb106-10"><a href="best-practices-in-data-collection-and-cleaning.html#cb106-10" tabindex="-1"></a></span>
-<span id="cb106-11"><a href="best-practices-in-data-collection-and-cleaning.html#cb106-11" tabindex="-1"></a><span class="co"># Task: Fill missing scores with the column mean</span></span>
-<span id="cb106-12"><a href="best-practices-in-data-collection-and-cleaning.html#cb106-12" tabindex="-1"></a>data<span class="sc">$</span>score[<span class="fu">is.na</span>(data<span class="sc">$</span>score)] <span class="ot">&lt;-</span> <span class="fu">mean</span>(data<span class="sc">$</span>score, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb106-13"><a href="best-practices-in-data-collection-and-cleaning.html#cb106-13" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Data after handling missing values:&quot;</span>)</span>
-<span id="cb106-14"><a href="best-practices-in-data-collection-and-cleaning.html#cb106-14" tabindex="-1"></a><span class="fu">print</span>(data)</span></code></pre></div>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb107-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb98-1" tabindex="-1"></a><span class="co"># Provided data frame</span></span>
+<span id="cb98-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb98-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb98-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb98-3" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="cn">NA</span>, <span class="st">&quot;David&quot;</span>),</span>
+<span id="cb98-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb98-4" tabindex="-1"></a>  <span class="at">score =</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="cn">NA</span>, <span class="dv">88</span>, <span class="dv">90</span>)</span>
+<span id="cb98-5"><a href="best-practices-in-data-collection-and-cleaning.html#cb98-5" tabindex="-1"></a>)</span>
+<span id="cb98-6"><a href="best-practices-in-data-collection-and-cleaning.html#cb98-6" tabindex="-1"></a></span>
+<span id="cb98-7"><a href="best-practices-in-data-collection-and-cleaning.html#cb98-7" tabindex="-1"></a><span class="co"># Task: Identify missing values</span></span>
+<span id="cb98-8"><a href="best-practices-in-data-collection-and-cleaning.html#cb98-8" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Missing Data Identification:&quot;</span>)</span>
+<span id="cb98-9"><a href="best-practices-in-data-collection-and-cleaning.html#cb98-9" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">is.na</span>(data))</span>
+<span id="cb98-10"><a href="best-practices-in-data-collection-and-cleaning.html#cb98-10" tabindex="-1"></a></span>
+<span id="cb98-11"><a href="best-practices-in-data-collection-and-cleaning.html#cb98-11" tabindex="-1"></a><span class="co"># Task: Fill missing scores with the column mean</span></span>
+<span id="cb98-12"><a href="best-practices-in-data-collection-and-cleaning.html#cb98-12" tabindex="-1"></a>data<span class="sc">$</span>score[<span class="fu">is.na</span>(data<span class="sc">$</span>score)] <span class="ot">&lt;-</span> <span class="fu">mean</span>(data<span class="sc">$</span>score, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb98-13"><a href="best-practices-in-data-collection-and-cleaning.html#cb98-13" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Data after handling missing values:&quot;</span>)</span>
+<span id="cb98-14"><a href="best-practices-in-data-collection-and-cleaning.html#cb98-14" tabindex="-1"></a><span class="fu">print</span>(data)</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb99-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 <p><strong>Exercise 2: Convert Data Types</strong>
 Task: Convert character data representing integers into numeric data, then verify the conversion by checking the data type.</p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb108-1" tabindex="-1"></a><span class="co"># Character data</span></span>
-<span id="cb108-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb108-2" tabindex="-1"></a>char_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb108-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb108-3" tabindex="-1"></a>  <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;100&quot;</span>, <span class="st">&quot;200&quot;</span>, <span class="st">&quot;300&quot;</span>, <span class="st">&quot;400&quot;</span>)</span>
-<span id="cb108-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb108-4" tabindex="-1"></a>)</span>
-<span id="cb108-5"><a href="best-practices-in-data-collection-and-cleaning.html#cb108-5" tabindex="-1"></a></span>
-<span id="cb108-6"><a href="best-practices-in-data-collection-and-cleaning.html#cb108-6" tabindex="-1"></a><span class="co"># Task: Convert character to numeric</span></span>
-<span id="cb108-7"><a href="best-practices-in-data-collection-and-cleaning.html#cb108-7" tabindex="-1"></a>char_data<span class="sc">$</span>values <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(char_data<span class="sc">$</span>values)</span>
-<span id="cb108-8"><a href="best-practices-in-data-collection-and-cleaning.html#cb108-8" tabindex="-1"></a></span>
-<span id="cb108-9"><a href="best-practices-in-data-collection-and-cleaning.html#cb108-9" tabindex="-1"></a><span class="co"># Task: Print the converted data and data type</span></span>
-<span id="cb108-10"><a href="best-practices-in-data-collection-and-cleaning.html#cb108-10" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Converted Data:&quot;</span>)</span>
-<span id="cb108-11"><a href="best-practices-in-data-collection-and-cleaning.html#cb108-11" tabindex="-1"></a><span class="fu">print</span>(char_data)</span>
-<span id="cb108-12"><a href="best-practices-in-data-collection-and-cleaning.html#cb108-12" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Data Type Verification:&quot;</span>)</span>
-<span id="cb108-13"><a href="best-practices-in-data-collection-and-cleaning.html#cb108-13" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">sapply</span>(char_data, class))</span></code></pre></div>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb109-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-1" tabindex="-1"></a><span class="co"># Character data</span></span>
+<span id="cb100-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-2" tabindex="-1"></a>char_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb100-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-3" tabindex="-1"></a>  <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;100&quot;</span>, <span class="st">&quot;200&quot;</span>, <span class="st">&quot;300&quot;</span>, <span class="st">&quot;400&quot;</span>)</span>
+<span id="cb100-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-4" tabindex="-1"></a>)</span>
+<span id="cb100-5"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-5" tabindex="-1"></a></span>
+<span id="cb100-6"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-6" tabindex="-1"></a><span class="co"># Task: Convert character to numeric</span></span>
+<span id="cb100-7"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-7" tabindex="-1"></a>char_data<span class="sc">$</span>values <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(char_data<span class="sc">$</span>values)</span>
+<span id="cb100-8"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-8" tabindex="-1"></a></span>
+<span id="cb100-9"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-9" tabindex="-1"></a><span class="co"># Task: Print the converted data and data type</span></span>
+<span id="cb100-10"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-10" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Converted Data:&quot;</span>)</span>
+<span id="cb100-11"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-11" tabindex="-1"></a><span class="fu">print</span>(char_data)</span>
+<span id="cb100-12"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-12" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Data Type Verification:&quot;</span>)</span>
+<span id="cb100-13"><a href="best-practices-in-data-collection-and-cleaning.html#cb100-13" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">sapply</span>(char_data, class))</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb101-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 <p><strong>Exercise 3: Detect and Handle Outliers</strong>
 Task: Given a vector of data, detect outliers using the IQR method and replace them with the median of the dataset.</p>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb110-1" tabindex="-1"></a><span class="co"># Provided data</span></span>
-<span id="cb110-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb110-2" tabindex="-1"></a>values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">55</span>, <span class="dv">45</span>, <span class="dv">60</span>, <span class="dv">400</span>, <span class="dv">65</span>, <span class="dv">50</span>, <span class="dv">430</span>, <span class="dv">49</span>, <span class="dv">52</span>)</span>
-<span id="cb110-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb110-3" tabindex="-1"></a></span>
-<span id="cb110-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb110-4" tabindex="-1"></a><span class="co"># Task: Detect outliers</span></span>
-<span id="cb110-5"><a href="best-practices-in-data-collection-and-cleaning.html#cb110-5" tabindex="-1"></a>Q1 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(values, <span class="fl">0.25</span>)</span>
-<span id="cb110-6"><a href="best-practices-in-data-collection-and-cleaning.html#cb110-6" tabindex="-1"></a>Q3 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(values, <span class="fl">0.75</span>)</span>
-<span id="cb110-7"><a href="best-practices-in-data-collection-and-cleaning.html#cb110-7" tabindex="-1"></a>IQR <span class="ot">&lt;-</span> Q3 <span class="sc">-</span> Q1</span>
-<span id="cb110-8"><a href="best-practices-in-data-collection-and-cleaning.html#cb110-8" tabindex="-1"></a>outliers <span class="ot">&lt;-</span> <span class="fu">which</span>(values <span class="sc">&lt;</span> (Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR) <span class="sc">|</span> values <span class="sc">&gt;</span> (Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR))</span>
-<span id="cb110-9"><a href="best-practices-in-data-collection-and-cleaning.html#cb110-9" tabindex="-1"></a></span>
-<span id="cb110-10"><a href="best-practices-in-data-collection-and-cleaning.html#cb110-10" tabindex="-1"></a><span class="co"># Task: Replace outliers with the median</span></span>
-<span id="cb110-11"><a href="best-practices-in-data-collection-and-cleaning.html#cb110-11" tabindex="-1"></a>values[outliers] <span class="ot">&lt;-</span> <span class="fu">median</span>(values)</span>
-<span id="cb110-12"><a href="best-practices-in-data-collection-and-cleaning.html#cb110-12" tabindex="-1"></a></span>
-<span id="cb110-13"><a href="best-practices-in-data-collection-and-cleaning.html#cb110-13" tabindex="-1"></a><span class="co"># Print the cleaned data</span></span>
-<span id="cb110-14"><a href="best-practices-in-data-collection-and-cleaning.html#cb110-14" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Cleaned Data:&quot;</span>)</span>
-<span id="cb110-15"><a href="best-practices-in-data-collection-and-cleaning.html#cb110-15" tabindex="-1"></a><span class="fu">print</span>(values)</span></code></pre></div>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb111-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-1" tabindex="-1"></a><span class="co"># Provided data</span></span>
+<span id="cb102-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-2" tabindex="-1"></a>values <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">55</span>, <span class="dv">45</span>, <span class="dv">60</span>, <span class="dv">400</span>, <span class="dv">65</span>, <span class="dv">50</span>, <span class="dv">430</span>, <span class="dv">49</span>, <span class="dv">52</span>)</span>
+<span id="cb102-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-3" tabindex="-1"></a></span>
+<span id="cb102-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-4" tabindex="-1"></a><span class="co"># Task: Detect outliers</span></span>
+<span id="cb102-5"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-5" tabindex="-1"></a>Q1 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(values, <span class="fl">0.25</span>)</span>
+<span id="cb102-6"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-6" tabindex="-1"></a>Q3 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(values, <span class="fl">0.75</span>)</span>
+<span id="cb102-7"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-7" tabindex="-1"></a>IQR <span class="ot">&lt;-</span> Q3 <span class="sc">-</span> Q1</span>
+<span id="cb102-8"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-8" tabindex="-1"></a>outliers <span class="ot">&lt;-</span> <span class="fu">which</span>(values <span class="sc">&lt;</span> (Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR) <span class="sc">|</span> values <span class="sc">&gt;</span> (Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR))</span>
+<span id="cb102-9"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-9" tabindex="-1"></a></span>
+<span id="cb102-10"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-10" tabindex="-1"></a><span class="co"># Task: Replace outliers with the median</span></span>
+<span id="cb102-11"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-11" tabindex="-1"></a>values[outliers] <span class="ot">&lt;-</span> <span class="fu">median</span>(values)</span>
+<span id="cb102-12"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-12" tabindex="-1"></a></span>
+<span id="cb102-13"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-13" tabindex="-1"></a><span class="co"># Print the cleaned data</span></span>
+<span id="cb102-14"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-14" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Cleaned Data:&quot;</span>)</span>
+<span id="cb102-15"><a href="best-practices-in-data-collection-and-cleaning.html#cb102-15" tabindex="-1"></a><span class="fu">print</span>(values)</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb103-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 <p><strong>Exercise 4: Date Formatting</strong>
 Task: Convert a vector of date strings from the format “dd-mm-yyyy” to R Date objects and then change their format to “yyyy/mm/dd”.</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb112-1" tabindex="-1"></a><span class="co"># Provided date strings</span></span>
-<span id="cb112-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb112-2" tabindex="-1"></a>date_strings <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;01-12-2022&quot;</span>, <span class="st">&quot;15-11-2022&quot;</span>, <span class="st">&quot;23-10-2022&quot;</span>)</span>
-<span id="cb112-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb112-3" tabindex="-1"></a></span>
-<span id="cb112-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb112-4" tabindex="-1"></a><span class="co"># Task: Convert to Date object</span></span>
-<span id="cb112-5"><a href="best-practices-in-data-collection-and-cleaning.html#cb112-5" tabindex="-1"></a>dates <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(date_strings, <span class="at">format =</span> <span class="st">&quot;%d-%m-%Y&quot;</span>)</span>
-<span id="cb112-6"><a href="best-practices-in-data-collection-and-cleaning.html#cb112-6" tabindex="-1"></a></span>
-<span id="cb112-7"><a href="best-practices-in-data-collection-and-cleaning.html#cb112-7" tabindex="-1"></a><span class="co"># Task: Reformat dates to &quot;yyyy/mm/dd&quot;</span></span>
-<span id="cb112-8"><a href="best-practices-in-data-collection-and-cleaning.html#cb112-8" tabindex="-1"></a>formatted_dates <span class="ot">&lt;-</span> <span class="fu">format</span>(dates, <span class="st">&quot;%Y/%m/%d&quot;</span>)</span>
-<span id="cb112-9"><a href="best-practices-in-data-collection-and-cleaning.html#cb112-9" tabindex="-1"></a></span>
-<span id="cb112-10"><a href="best-practices-in-data-collection-and-cleaning.html#cb112-10" tabindex="-1"></a><span class="co"># Print the formatted dates</span></span>
-<span id="cb112-11"><a href="best-practices-in-data-collection-and-cleaning.html#cb112-11" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Formatted Dates:&quot;</span>)</span>
-<span id="cb112-12"><a href="best-practices-in-data-collection-and-cleaning.html#cb112-12" tabindex="-1"></a><span class="fu">print</span>(formatted_dates)</span></code></pre></div>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb113-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-1" tabindex="-1"></a><span class="co"># Provided date strings</span></span>
+<span id="cb104-2"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-2" tabindex="-1"></a>date_strings <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;01-12-2022&quot;</span>, <span class="st">&quot;15-11-2022&quot;</span>, <span class="st">&quot;23-10-2022&quot;</span>)</span>
+<span id="cb104-3"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-3" tabindex="-1"></a></span>
+<span id="cb104-4"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-4" tabindex="-1"></a><span class="co"># Task: Convert to Date object</span></span>
+<span id="cb104-5"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-5" tabindex="-1"></a>dates <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(date_strings, <span class="at">format =</span> <span class="st">&quot;%d-%m-%Y&quot;</span>)</span>
+<span id="cb104-6"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-6" tabindex="-1"></a></span>
+<span id="cb104-7"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-7" tabindex="-1"></a><span class="co"># Task: Reformat dates to &quot;yyyy/mm/dd&quot;</span></span>
+<span id="cb104-8"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-8" tabindex="-1"></a>formatted_dates <span class="ot">&lt;-</span> <span class="fu">format</span>(dates, <span class="st">&quot;%Y/%m/%d&quot;</span>)</span>
+<span id="cb104-9"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-9" tabindex="-1"></a></span>
+<span id="cb104-10"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-10" tabindex="-1"></a><span class="co"># Print the formatted dates</span></span>
+<span id="cb104-11"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-11" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Formatted Dates:&quot;</span>)</span>
+<span id="cb104-12"><a href="best-practices-in-data-collection-and-cleaning.html#cb104-12" tabindex="-1"></a><span class="fu">print</span>(formatted_dates)</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="best-practices-in-data-collection-and-cleaning.html#cb105-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 
 </div>
 </div>

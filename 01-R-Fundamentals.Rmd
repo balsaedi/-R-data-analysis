@@ -1,11 +1,3 @@
----
-title: "Code Challenge 2: Data Structures and Data Handling"
-output: 
-  learnr::tutorial:
-    progressive: true
-runtime: shiny_prerendered
----
-
 # R Programming Fundamentals (Light Focus)
 
 ## Basics of R Syntax and Functions
@@ -13,9 +5,10 @@ runtime: shiny_prerendered
 Understanding the basics of R syntax and how functions work is essential for any aspiring data analyst. Here’s a breakdown to help you get started.
 
 ## Variables and Data Types
+
 In R, variables are used to store data which can be of various types: numeric, integer, character (string), and logical (boolean). Setting up variables correctly is crucial for managing and manipulating your data effectively.
 
-```r
+``` r
 # Example of defining different types of variables
 a <- 5.5  # Numeric
 b <- 3    # Integer
@@ -24,9 +17,10 @@ d <- TRUE  # Logical
 ```
 
 ## Control Structures: Loops and Conditional Statements
+
 Control structures in R, such as loops and conditional statements, control the flow of execution of the script. `if-else` statements make decisions, while loops (`for`, `while`) repeat actions, which is very useful for automating repetitive tasks.
 
-```r
+``` r
 # Example of an if-else statement
 if (a > b) {
   print("a is greater than b")
@@ -39,14 +33,16 @@ for(i in 1:5) {
   print(paste("Iteration", i))
 }
 ```
-```r
+
+``` r
 # TODO: Demonstration
 ```
 
 ## Writing and Using Functions
+
 Functions are blocks of code that you can reuse. They are defined using the `function()` keyword and can return a value using the `return()` function, although it's optional as R automatically returns the last expression evaluated.
 
-```r
+``` r
 # Example of writing a simple function
 my_sum <- function(x, y) {
   sum <- x + y
@@ -56,13 +52,16 @@ my_sum <- function(x, y) {
 # Using the function
 my_sum(5, 3)
 ```
-```r
+
+``` r
 # TODO: Demonstration
 ```
+
 ## Debugging and Error Handling
+
 Debugging is an essential skill in programming. R provides several tools for debugging, such as `browser()`, `traceback()`, and `debug()`. Error handling can be performed using `try()`, `tryCatch()`, and `stop()` functions to manage exceptions and maintain the flow of execution.
 
-```r
+``` r
 # Example of simple error handling
 result <- try(log(-1), silent = TRUE)
 if(inherits(result, "try-error")) {
@@ -71,49 +70,59 @@ if(inherits(result, "try-error")) {
   print(result)
 }
 ```
-```r
+
+``` r
 # TODO: Demonstration
 ```
 
 ## Code Exercise 1
 
 **Exercise 1:** Create variables of each type and print them.
-```r
+
+``` r
 # TODO: Insert Exercise chunk with error messages and solutions.
 ```
+
 **Exercise 2:** Write an `if-else` statement that checks if a number is even or odd.
-```r
+
+``` r
 # TODO: Insert Exercise chunk with error messages and solutions.
 ```
+
 **Exercise 3:** Write a for loop that calculates the factorial of a number.
-```r
+
+``` r
 # TODO: Insert Exercise chunk with error messages and solutions.
 ```
+
 **Exercise 4:** Write a function that takes a vector and returns its mean, handling any NA values.
-```r
+
+``` r
 # TODO: Insert Exercise chunk with error messages and solutions.
 ```
+
 **Exercise 5:** Implement error handling for a division function that prints an error message when trying to divide by zero.
-```r
+
+``` r
 # TODO: Insert Exercise chunk with error messages and solutions.
 ```
 
 These exercises are designed to solidify your understanding of R's fundamental programming concepts and get you hands-on experience writing and debugging R code. They serve as a practical way to apply what you've learned and prepare you for more complex data analysis tasks.
-
 
 # Efficient Programming Practices
 
 Adopting efficient programming practices is essential for writing clean, fast, and reliable R code. This section covers key aspects that every R programmer should know to enhance their coding efficiency.
 
 ## Code Organization and Readability
+
 Organizing your code properly and ensuring it is easy to read are fundamental for both solo and collaborative projects. This involves:
 
-- **Commenting generously**: Write comments that explain the "why" behind the code, not just the "what".
-- **Consistent naming conventions**: Use clear and descriptive names for variables and functions. Stick to a naming convention such as snake_case or camelCase.
-- **Logical structuring**: Group related code blocks together, and separate sections by functionality.
-- **Modularity**: Break down code into reusable functions to reduce redundancy and improve maintainability.
+-   **Commenting generously**: Write comments that explain the "why" behind the code, not just the "what".
+-   **Consistent naming conventions**: Use clear and descriptive names for variables and functions. Stick to a naming convention such as snake_case or camelCase.
+-   **Logical structuring**: Group related code blocks together, and separate sections by functionality.
+-   **Modularity**: Break down code into reusable functions to reduce redundancy and improve maintainability.
 
-```r
+``` r
 # Example of well-organized code
 calculate_mean <- function(numbers) {
   # This function calculates the mean of a numeric vector, handling NA values
@@ -125,12 +134,13 @@ calculate_mean <- function(numbers) {
 ```
 
 ## Introduction to R's Vectorized Operations
+
 Vectorized operations are one of the most powerful features of R, allowing you to operate on entire vectors of data without the need for explicit loops. This not only makes the code cleaner but also significantly faster.
 
-- **Use vectorized functions**: Functions like `sum()`, `mean()`, `min()`, and `max()` are inherently vectorized.
-- **Avoid loops when possible**: Replace loops with vectorized operations to leverage R's internal optimizations.
+-   **Use vectorized functions**: Functions like `sum()`, `mean()`, `min()`, and `max()` are inherently vectorized.
+-   **Avoid loops when possible**: Replace loops with vectorized operations to leverage R's internal optimizations.
 
-```r
+``` r
 # Non-vectorized vs vectorized approach
 # Calculate the square of each number in a vector
 numbers <- 1:10
@@ -146,13 +156,14 @@ squares_vectorized <- numbers^2
 ```
 
 ## Best Practices for Speed and Performance
+
 Improving the speed and performance of your R scripts can be crucial, especially when dealing with large datasets.
 
-- **Pre-allocate vectors**: Growing a vector inside a loop can be costly. Pre-allocate the vector to its full required length before the loop starts.
-- **Use efficient data structures**: Utilize data structures like `data.table` or `tibble` for large data sets.
-- **Simplify expressions**: Reduce the complexity of your calculations by simplifying expressions and removing redundant calculations.
+-   **Pre-allocate vectors**: Growing a vector inside a loop can be costly. Pre-allocate the vector to its full required length before the loop starts.
+-   **Use efficient data structures**: Utilize data structures like `data.table` or `tibble` for large data sets.
+-   **Simplify expressions**: Reduce the complexity of your calculations by simplifying expressions and removing redundant calculations.
 
-```r
+``` r
 # Pre-allocating a vector
 results <- vector("numeric", length = 100)
 for(i in 1:100) {
@@ -161,129 +172,16 @@ for(i in 1:100) {
 ```
 
 ## Using R Profiler for Code Optimization
+
 R provides profiling tools to help identify bottlenecks in your code. `Rprof()` starts the profiler, and `summaryRprof()` helps analyze the profiler's output.
 
-- **Identify slow functions**: Use the profiler to see which functions are taking up most of the execution time.
-- **Optimize those functions**: Focus your optimization efforts on those parts of the code that consume the most time.
+-   **Identify slow functions**: Use the profiler to see which functions are taking up most of the execution time.
+-   **Optimize those functions**: Focus your optimization efforts on those parts of the code that consume the most time.
 
-```r
+``` r
 # Example of using R profiler
 Rprof()
 source("your_script.R")  # replace 'your_script.R' with the path to your R script
 Rprof(NULL)
 summaryRprof()
-```
-
-```{r setup, include=FALSE}
-library(learnr)
-library(gradethis)
-```
-
-## Code Exercises
-
-Exercise 1: Refactor a provided piece of poorly organized R code to improve its readability and structure.
-
-```{r refactor, exercise=TRUE, exercise.eval=TRUE}
-# Initial code: Computes the mean of positive numbers in a vector
-numbers <- c(1, -1, 2, -2, 3, -3)
-result <- 0
-count <- 0
-for (i in numbers) {
-  if (i > 0) {
-    result <- result + i
-    count <- count + 1
-  }
-}
-mean <- result / count
-
-# Refactor the above code to improve readability and structure.
-# Hint: Use vectorized operations and create a function to calculate the mean.
-```
-
-```{r refactor-check}
-grade_code(
-  correct_code = {
-    positive_mean <- function(numbers) {
-      positive_numbers <- numbers[numbers > 0]
-      mean(positive_numbers)
-    }
-    positive_mean(c(1, -1, 2, -2, 3, -3))
-  }
-)
-```
-
-Exercise 2: Convert a loop that calculates the logarithm of each element in a large vector into a vectorized expression.
-
-```{r vectorize, exercise=TRUE, exercise.eval=TRUE}
-# Loop version: Calculate the logarithm base 10 of each element
-numbers <- seq(1, 1000, by = 1)
-log_values <- vector("numeric", length(numbers))
-for (i in seq_along(numbers)) {
-  log_values[i] <- log10(numbers[i])
-}
-
-# Rewrite the above loop as a vectorized expression.
-# Hint: Use a vectorized log10() function.
-```
-
-```{r vectorize-check}
-grade_code(
-  correct_code = {
-    log_values <- log10(seq(1, 1000, by = 1))
-  }
-)
-```
-
-Exercise 3: Write a script that calculates the mean of 1 million randomly generated numbers, first using a loop and then using a vectorized function. Compare the time taken for both methods.
-
-```{r mean-calculation, exercise=TRUE, exercise.eval=TRUE}
-# Generating random numbers
-set.seed(123)
-random_numbers <- runif(1e6)
-
-# Loop version
-system.time({
-  total <- 0
-  for (i in random_numbers) {
-    total <- total + i
-  }
-  mean_loop <- total / length(random_numbers)
-})
-
-# Calculate the mean using a vectorized method and compare the time.
-# Hint: Use the mean() function.
-```
-
-```{r mean-calculation-check}
-grade_code(
-  correct_code = {
-    system.time({
-      mean_vectorized <- mean(random_numbers)
-    })
-  }
-)
-```
-
-Exercise 4: Use `Rprof()` to profile the script from Exercise 3 and identify any potential bottlenecks.
-
-```{r profiling, exercise=TRUE, exercise.eval=TRUE}
-# Assume vectorized mean calculation from Exercise 3 is saved in `mean_vectorized`
-Rprof(tmp <- tempfile())
-mean_vectorized <- mean(random_numbers)
-Rprof(NULL)
-
-# Analyze the profiling data to identify potential bottlenecks.
-# Hint: Use summaryRprof() to see the profiling summary.
-summaryRprof(tmp)
-```
-
-```{r profiling-check}
-grade_code(
-  correct_code = {
-    Rprof(tmp <- tempfile())
-    mean_vectorized <- mean(random_numbers)
-    Rprof(NULL)
-    summaryRprof(tmp)
-  }
-)
 ```

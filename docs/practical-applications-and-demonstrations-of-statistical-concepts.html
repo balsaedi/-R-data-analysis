@@ -23,7 +23,7 @@
 <meta name="author" content="Basim Alsaedi" />
 
 
-<meta name="date" content="2024-05-23" />
+<meta name="date" content="2024-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,7 +173,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#introduction-to-rs-vectorized-operations"><i class="fa fa-check"></i><b>3.2</b> Introduction to R’s Vectorized Operations</a></li>
 <li class="chapter" data-level="3.3" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#best-practices-for-speed-and-performance"><i class="fa fa-check"></i><b>3.3</b> Best Practices for Speed and Performance</a></li>
 <li class="chapter" data-level="3.4" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#using-r-profiler-for-code-optimization"><i class="fa fa-check"></i><b>3.4</b> Using R Profiler for Code Optimization</a></li>
-<li class="chapter" data-level="3.5" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#code-exercises-2"><i class="fa fa-check"></i><b>3.5</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-structures-and-data-handling-in-r-light-focus.html"><a href="data-structures-and-data-handling-in-r-light-focus.html"><i class="fa fa-check"></i><b>4</b> Data Structures and Data Handling in R (Light Focus)</a>
 <ul>
@@ -225,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#annotations"><i class="fa fa-check"></i><b>7.3.1</b> Annotations</a></li>
 <li class="chapter" data-level="7.3.2" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#custom-geometries"><i class="fa fa-check"></i><b>7.3.2</b> Custom Geometries</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2-1"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="working-with-different-types-of-data-light-focus.html"><a href="working-with-different-types-of-data-light-focus.html"><i class="fa fa-check"></i><b>8</b> Working with Different Types of Data (Light Focus)</a>
 <ul>
@@ -254,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3.1" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#detecting-outliers"><i class="fa fa-check"></i><b>9.3.1</b> Detecting Outliers</a></li>
 <li class="chapter" data-level="9.3.2" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#handling-outliers"><i class="fa fa-check"></i><b>9.3.2</b> Handling Outliers</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-2"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-1"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>10</b> Descriptive Statistics</a>
 <ul>
@@ -486,14 +485,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Analyze the shape and spread of these distributions under various parameters to observe theoretical properties in practice.</li>
 </ul>
 <p><strong>Example: Simulating a Normal Distribution</strong></p>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb140-1" tabindex="-1"></a><span class="co"># Generate a sample from a normal distribution</span></span>
-<span id="cb140-2"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb140-2" tabindex="-1"></a>sample_normal <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">10</span>)</span>
-<span id="cb140-3"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb140-3" tabindex="-1"></a></span>
-<span id="cb140-4"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb140-4" tabindex="-1"></a><span class="co"># Visualize the distribution</span></span>
-<span id="cb140-5"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb140-5" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb140-6"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb140-6" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">Value =</span> sample_normal), <span class="fu">aes</span>(<span class="at">x =</span> Value)) <span class="sc">+</span></span>
-<span id="cb140-7"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb140-7" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">&#39;steelblue&#39;</span>, <span class="at">color =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
-<span id="cb140-8"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb140-8" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Visualization of a Normal Distribution&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Values&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div></li>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb132-1" tabindex="-1"></a><span class="co"># Generate a sample from a normal distribution</span></span>
+<span id="cb132-2"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb132-2" tabindex="-1"></a>sample_normal <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb132-3"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb132-3" tabindex="-1"></a></span>
+<span id="cb132-4"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb132-4" tabindex="-1"></a><span class="co"># Visualize the distribution</span></span>
+<span id="cb132-5"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb132-5" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb132-6"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb132-6" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">Value =</span> sample_normal), <span class="fu">aes</span>(<span class="at">x =</span> Value)) <span class="sc">+</span></span>
+<span id="cb132-7"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb132-7" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">&#39;steelblue&#39;</span>, <span class="at">color =</span> <span class="st">&#39;black&#39;</span>) <span class="sc">+</span></span>
+<span id="cb132-8"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb132-8" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Visualization of a Normal Distribution&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Values&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div></li>
 </ul>
 </div>
 <div id="visual-insights-plotting-distributions" class="section level3 hasAnchor" number="14.2.2">
@@ -520,25 +519,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Interpret the results to make decisions or predictions based on data.</li>
 </ul>
 <p><strong>Example: Sales Data Analysis</strong></p>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-1" tabindex="-1"></a><span class="co"># Dataset preparation</span></span>
-<span id="cb141-2"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-2" tabindex="-1"></a>sales_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb141-3"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-3" tabindex="-1"></a>    <span class="at">Region =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;North&quot;</span>, <span class="st">&quot;South&quot;</span>, <span class="st">&quot;East&quot;</span>, <span class="st">&quot;West&quot;</span>), <span class="at">each =</span> <span class="dv">250</span>),</span>
-<span id="cb141-4"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-4" tabindex="-1"></a>    <span class="at">Sales =</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">250</span>, <span class="at">mean =</span> <span class="dv">200</span>, <span class="at">sd =</span> <span class="dv">50</span>), <span class="fu">rnorm</span>(<span class="dv">250</span>, <span class="at">mean =</span> <span class="dv">150</span>, <span class="at">sd =</span> <span class="dv">30</span>),</span>
-<span id="cb141-5"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-5" tabindex="-1"></a>              <span class="fu">rnorm</span>(<span class="dv">250</span>, <span class="at">mean =</span> <span class="dv">300</span>, <span class="at">sd =</span> <span class="dv">70</span>), <span class="fu">rnorm</span>(<span class="dv">250</span>, <span class="at">mean =</span> <span class="dv">250</span>, <span class="at">sd =</span> <span class="dv">40</span>))</span>
-<span id="cb141-6"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-6" tabindex="-1"></a>)</span>
-<span id="cb141-7"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-7" tabindex="-1"></a></span>
-<span id="cb141-8"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-8" tabindex="-1"></a><span class="co"># Analysis with ggplot2</span></span>
-<span id="cb141-9"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-9" tabindex="-1"></a><span class="fu">ggplot</span>(sales_data, <span class="fu">aes</span>(<span class="at">x =</span> Sales, <span class="at">fill =</span> Region)) <span class="sc">+</span></span>
-<span id="cb141-10"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-10" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb141-11"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-11" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>Region) <span class="sc">+</span></span>
-<span id="cb141-12"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-12" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Comparative Sales Analysis by Region&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Sales Figures&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>)</span>
-<span id="cb141-13"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-13" tabindex="-1"></a></span>
-<span id="cb141-14"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-14" tabindex="-1"></a><span class="co"># Descriptive statistics</span></span>
-<span id="cb141-15"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-15" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb141-16"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-16" tabindex="-1"></a>summary_stats <span class="ot">&lt;-</span> sales_data <span class="sc">%&gt;%</span></span>
-<span id="cb141-17"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-17" tabindex="-1"></a>    <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span></span>
-<span id="cb141-18"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-18" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">Mean =</span> <span class="fu">mean</span>(Sales), <span class="at">SD =</span> <span class="fu">sd</span>(Sales), <span class="at">.groups =</span> <span class="st">&#39;drop&#39;</span>)</span>
-<span id="cb141-19"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb141-19" tabindex="-1"></a><span class="fu">print</span>(summary_stats)</span></code></pre></div></li>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-1" tabindex="-1"></a><span class="co"># Dataset preparation</span></span>
+<span id="cb133-2"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-2" tabindex="-1"></a>sales_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb133-3"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-3" tabindex="-1"></a>    <span class="at">Region =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;North&quot;</span>, <span class="st">&quot;South&quot;</span>, <span class="st">&quot;East&quot;</span>, <span class="st">&quot;West&quot;</span>), <span class="at">each =</span> <span class="dv">250</span>),</span>
+<span id="cb133-4"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-4" tabindex="-1"></a>    <span class="at">Sales =</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">250</span>, <span class="at">mean =</span> <span class="dv">200</span>, <span class="at">sd =</span> <span class="dv">50</span>), <span class="fu">rnorm</span>(<span class="dv">250</span>, <span class="at">mean =</span> <span class="dv">150</span>, <span class="at">sd =</span> <span class="dv">30</span>),</span>
+<span id="cb133-5"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-5" tabindex="-1"></a>              <span class="fu">rnorm</span>(<span class="dv">250</span>, <span class="at">mean =</span> <span class="dv">300</span>, <span class="at">sd =</span> <span class="dv">70</span>), <span class="fu">rnorm</span>(<span class="dv">250</span>, <span class="at">mean =</span> <span class="dv">250</span>, <span class="at">sd =</span> <span class="dv">40</span>))</span>
+<span id="cb133-6"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-6" tabindex="-1"></a>)</span>
+<span id="cb133-7"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-7" tabindex="-1"></a></span>
+<span id="cb133-8"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-8" tabindex="-1"></a><span class="co"># Analysis with ggplot2</span></span>
+<span id="cb133-9"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-9" tabindex="-1"></a><span class="fu">ggplot</span>(sales_data, <span class="fu">aes</span>(<span class="at">x =</span> Sales, <span class="at">fill =</span> Region)) <span class="sc">+</span></span>
+<span id="cb133-10"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-10" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb133-11"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-11" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>Region) <span class="sc">+</span></span>
+<span id="cb133-12"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-12" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Comparative Sales Analysis by Region&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Sales Figures&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>)</span>
+<span id="cb133-13"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-13" tabindex="-1"></a></span>
+<span id="cb133-14"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-14" tabindex="-1"></a><span class="co"># Descriptive statistics</span></span>
+<span id="cb133-15"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-15" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb133-16"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-16" tabindex="-1"></a>summary_stats <span class="ot">&lt;-</span> sales_data <span class="sc">%&gt;%</span></span>
+<span id="cb133-17"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-17" tabindex="-1"></a>    <span class="fu">group_by</span>(Region) <span class="sc">%&gt;%</span></span>
+<span id="cb133-18"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-18" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">Mean =</span> <span class="fu">mean</span>(Sales), <span class="at">SD =</span> <span class="fu">sd</span>(Sales), <span class="at">.groups =</span> <span class="st">&#39;drop&#39;</span>)</span>
+<span id="cb133-19"><a href="practical-applications-and-demonstrations-of-statistical-concepts.html#cb133-19" tabindex="-1"></a><span class="fu">print</span>(summary_stats)</span></code></pre></div></li>
 </ul>
 </div>
 </div>

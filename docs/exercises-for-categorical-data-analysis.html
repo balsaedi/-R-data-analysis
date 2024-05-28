@@ -23,7 +23,7 @@
 <meta name="author" content="Basim Alsaedi" />
 
 
-<meta name="date" content="2024-05-23" />
+<meta name="date" content="2024-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,7 +173,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#introduction-to-rs-vectorized-operations"><i class="fa fa-check"></i><b>3.2</b> Introduction to R’s Vectorized Operations</a></li>
 <li class="chapter" data-level="3.3" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#best-practices-for-speed-and-performance"><i class="fa fa-check"></i><b>3.3</b> Best Practices for Speed and Performance</a></li>
 <li class="chapter" data-level="3.4" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#using-r-profiler-for-code-optimization"><i class="fa fa-check"></i><b>3.4</b> Using R Profiler for Code Optimization</a></li>
-<li class="chapter" data-level="3.5" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#code-exercises-2"><i class="fa fa-check"></i><b>3.5</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-structures-and-data-handling-in-r-light-focus.html"><a href="data-structures-and-data-handling-in-r-light-focus.html"><i class="fa fa-check"></i><b>4</b> Data Structures and Data Handling in R (Light Focus)</a>
 <ul>
@@ -225,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#annotations"><i class="fa fa-check"></i><b>7.3.1</b> Annotations</a></li>
 <li class="chapter" data-level="7.3.2" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#custom-geometries"><i class="fa fa-check"></i><b>7.3.2</b> Custom Geometries</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2-1"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="working-with-different-types-of-data-light-focus.html"><a href="working-with-different-types-of-data-light-focus.html"><i class="fa fa-check"></i><b>8</b> Working with Different Types of Data (Light Focus)</a>
 <ul>
@@ -254,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3.1" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#detecting-outliers"><i class="fa fa-check"></i><b>9.3.1</b> Detecting Outliers</a></li>
 <li class="chapter" data-level="9.3.2" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#handling-outliers"><i class="fa fa-check"></i><b>9.3.2</b> Handling Outliers</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-2"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-1"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>10</b> Descriptive Statistics</a>
 <ul>
@@ -477,20 +476,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><strong>Scenario</strong>: A researcher wants to study the effect of two variables on the likelihood of an event occurring.</p></li>
 <li><p><strong>Task</strong>: Perform a logistic regression with a binary outcome variable and two predictors.</p>
 <p><strong>Steps</strong>:</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="exercises-for-categorical-data-analysis.html#cb180-1" tabindex="-1"></a><span class="co"># Sample data</span></span>
-<span id="cb180-2"><a href="exercises-for-categorical-data-analysis.html#cb180-2" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
-<span id="cb180-3"><a href="exercises-for-categorical-data-analysis.html#cb180-3" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
-<span id="cb180-4"><a href="exercises-for-categorical-data-analysis.html#cb180-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>, <span class="dv">1</span>, <span class="at">prob =</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="sc">-</span>(<span class="fl">0.5</span> <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> x1 <span class="sc">-</span> <span class="dv">1</span> <span class="sc">*</span> x2))))</span>
-<span id="cb180-5"><a href="exercises-for-categorical-data-analysis.html#cb180-5" tabindex="-1"></a></span>
-<span id="cb180-6"><a href="exercises-for-categorical-data-analysis.html#cb180-6" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(y, x1, x2)</span>
-<span id="cb180-7"><a href="exercises-for-categorical-data-analysis.html#cb180-7" tabindex="-1"></a></span>
-<span id="cb180-8"><a href="exercises-for-categorical-data-analysis.html#cb180-8" tabindex="-1"></a><span class="co"># Fit Logistic Regression</span></span>
-<span id="cb180-9"><a href="exercises-for-categorical-data-analysis.html#cb180-9" tabindex="-1"></a>model_logit <span class="ot">&lt;-</span> <span class="fu">glm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2, <span class="at">data =</span> data, <span class="at">family =</span> binomial)</span>
-<span id="cb180-10"><a href="exercises-for-categorical-data-analysis.html#cb180-10" tabindex="-1"></a><span class="fu">summary</span>(model_logit)</span>
-<span id="cb180-11"><a href="exercises-for-categorical-data-analysis.html#cb180-11" tabindex="-1"></a></span>
-<span id="cb180-12"><a href="exercises-for-categorical-data-analysis.html#cb180-12" tabindex="-1"></a><span class="co"># Interpretation of coefficients</span></span>
-<span id="cb180-13"><a href="exercises-for-categorical-data-analysis.html#cb180-13" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(model_logit))</span></code></pre></div>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="exercises-for-categorical-data-analysis.html#cb181-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="exercises-for-categorical-data-analysis.html#cb172-1" tabindex="-1"></a><span class="co"># Sample data</span></span>
+<span id="cb172-2"><a href="exercises-for-categorical-data-analysis.html#cb172-2" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb172-3"><a href="exercises-for-categorical-data-analysis.html#cb172-3" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb172-4"><a href="exercises-for-categorical-data-analysis.html#cb172-4" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>, <span class="dv">1</span>, <span class="at">prob =</span> <span class="dv">1</span> <span class="sc">/</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">exp</span>(<span class="sc">-</span>(<span class="fl">0.5</span> <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> x1 <span class="sc">-</span> <span class="dv">1</span> <span class="sc">*</span> x2))))</span>
+<span id="cb172-5"><a href="exercises-for-categorical-data-analysis.html#cb172-5" tabindex="-1"></a></span>
+<span id="cb172-6"><a href="exercises-for-categorical-data-analysis.html#cb172-6" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(y, x1, x2)</span>
+<span id="cb172-7"><a href="exercises-for-categorical-data-analysis.html#cb172-7" tabindex="-1"></a></span>
+<span id="cb172-8"><a href="exercises-for-categorical-data-analysis.html#cb172-8" tabindex="-1"></a><span class="co"># Fit Logistic Regression</span></span>
+<span id="cb172-9"><a href="exercises-for-categorical-data-analysis.html#cb172-9" tabindex="-1"></a>model_logit <span class="ot">&lt;-</span> <span class="fu">glm</span>(y <span class="sc">~</span> x1 <span class="sc">+</span> x2, <span class="at">data =</span> data, <span class="at">family =</span> binomial)</span>
+<span id="cb172-10"><a href="exercises-for-categorical-data-analysis.html#cb172-10" tabindex="-1"></a><span class="fu">summary</span>(model_logit)</span>
+<span id="cb172-11"><a href="exercises-for-categorical-data-analysis.html#cb172-11" tabindex="-1"></a></span>
+<span id="cb172-12"><a href="exercises-for-categorical-data-analysis.html#cb172-12" tabindex="-1"></a><span class="co"># Interpretation of coefficients</span></span>
+<span id="cb172-13"><a href="exercises-for-categorical-data-analysis.html#cb172-13" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(model_logit))</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="exercises-for-categorical-data-analysis.html#cb173-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
 </ul>
 </div>
 <div id="exercise-2-model-goodness-of-fit" class="section level2 hasAnchor" number="22.2">
@@ -500,10 +499,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><strong>Scenario</strong>: A researcher has fitted a logistic regression model and wants to validate its fit.</p></li>
 <li><p><strong>Task</strong>: Use the Hosmer-Lemeshow test to assess the model fit.</p>
 <p><strong>Steps</strong>:</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="exercises-for-categorical-data-analysis.html#cb182-1" tabindex="-1"></a><span class="co"># Assessing model goodness of fit</span></span>
-<span id="cb182-2"><a href="exercises-for-categorical-data-analysis.html#cb182-2" tabindex="-1"></a><span class="fu">library</span>(ResourceSelection)</span>
-<span id="cb182-3"><a href="exercises-for-categorical-data-analysis.html#cb182-3" tabindex="-1"></a><span class="fu">hoslem.test</span>(data<span class="sc">$</span>y, <span class="fu">fitted</span>(model_logit))</span></code></pre></div>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="exercises-for-categorical-data-analysis.html#cb183-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="exercises-for-categorical-data-analysis.html#cb174-1" tabindex="-1"></a><span class="co"># Assessing model goodness of fit</span></span>
+<span id="cb174-2"><a href="exercises-for-categorical-data-analysis.html#cb174-2" tabindex="-1"></a><span class="fu">library</span>(ResourceSelection)</span>
+<span id="cb174-3"><a href="exercises-for-categorical-data-analysis.html#cb174-3" tabindex="-1"></a><span class="fu">hoslem.test</span>(data<span class="sc">$</span>y, <span class="fu">fitted</span>(model_logit))</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="exercises-for-categorical-data-analysis.html#cb175-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
 </ul>
 </div>
 <div id="exercise-3-evaluating-model-performance" class="section level2 hasAnchor" number="22.3">
@@ -513,12 +512,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><strong>Scenario</strong>: A researcher wants to evaluate the performance of their logistic regression model.</p></li>
 <li><p><strong>Task</strong>: Plot the ROC curve and calculate the AUC for the logistic regression model.</p>
 <p><strong>Steps</strong>:</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="exercises-for-categorical-data-analysis.html#cb184-1" tabindex="-1"></a><span class="co"># ROC Curve and AUC</span></span>
-<span id="cb184-2"><a href="exercises-for-categorical-data-analysis.html#cb184-2" tabindex="-1"></a><span class="fu">library</span>(pROC)</span>
-<span id="cb184-3"><a href="exercises-for-categorical-data-analysis.html#cb184-3" tabindex="-1"></a>roc_curve <span class="ot">&lt;-</span> <span class="fu">roc</span>(data<span class="sc">$</span>y, <span class="fu">fitted</span>(model_logit))</span>
-<span id="cb184-4"><a href="exercises-for-categorical-data-analysis.html#cb184-4" tabindex="-1"></a><span class="fu">plot</span>(roc_curve)</span>
-<span id="cb184-5"><a href="exercises-for-categorical-data-analysis.html#cb184-5" tabindex="-1"></a><span class="fu">auc</span>(roc_curve)</span></code></pre></div>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="exercises-for-categorical-data-analysis.html#cb185-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="exercises-for-categorical-data-analysis.html#cb176-1" tabindex="-1"></a><span class="co"># ROC Curve and AUC</span></span>
+<span id="cb176-2"><a href="exercises-for-categorical-data-analysis.html#cb176-2" tabindex="-1"></a><span class="fu">library</span>(pROC)</span>
+<span id="cb176-3"><a href="exercises-for-categorical-data-analysis.html#cb176-3" tabindex="-1"></a>roc_curve <span class="ot">&lt;-</span> <span class="fu">roc</span>(data<span class="sc">$</span>y, <span class="fu">fitted</span>(model_logit))</span>
+<span id="cb176-4"><a href="exercises-for-categorical-data-analysis.html#cb176-4" tabindex="-1"></a><span class="fu">plot</span>(roc_curve)</span>
+<span id="cb176-5"><a href="exercises-for-categorical-data-analysis.html#cb176-5" tabindex="-1"></a><span class="fu">auc</span>(roc_curve)</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="exercises-for-categorical-data-analysis.html#cb177-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
 </ul>
 
 </div>

@@ -23,7 +23,7 @@
 <meta name="author" content="Basim Alsaedi" />
 
 
-<meta name="date" content="2024-05-23" />
+<meta name="date" content="2024-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,7 +173,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#introduction-to-rs-vectorized-operations"><i class="fa fa-check"></i><b>3.2</b> Introduction to R’s Vectorized Operations</a></li>
 <li class="chapter" data-level="3.3" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#best-practices-for-speed-and-performance"><i class="fa fa-check"></i><b>3.3</b> Best Practices for Speed and Performance</a></li>
 <li class="chapter" data-level="3.4" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#using-r-profiler-for-code-optimization"><i class="fa fa-check"></i><b>3.4</b> Using R Profiler for Code Optimization</a></li>
-<li class="chapter" data-level="3.5" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#code-exercises-2"><i class="fa fa-check"></i><b>3.5</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-structures-and-data-handling-in-r-light-focus.html"><a href="data-structures-and-data-handling-in-r-light-focus.html"><i class="fa fa-check"></i><b>4</b> Data Structures and Data Handling in R (Light Focus)</a>
 <ul>
@@ -225,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#annotations"><i class="fa fa-check"></i><b>7.3.1</b> Annotations</a></li>
 <li class="chapter" data-level="7.3.2" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#custom-geometries"><i class="fa fa-check"></i><b>7.3.2</b> Custom Geometries</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2-1"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="working-with-different-types-of-data-light-focus.html"><a href="working-with-different-types-of-data-light-focus.html"><i class="fa fa-check"></i><b>8</b> Working with Different Types of Data (Light Focus)</a>
 <ul>
@@ -254,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3.1" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#detecting-outliers"><i class="fa fa-check"></i><b>9.3.1</b> Detecting Outliers</a></li>
 <li class="chapter" data-level="9.3.2" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#handling-outliers"><i class="fa fa-check"></i><b>9.3.2</b> Handling Outliers</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-2"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-1"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>10</b> Descriptive Statistics</a>
 <ul>
@@ -535,64 +534,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb26-3"><a href="efficient-programming-practices.html#cb26-3" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;your_script.R&quot;</span>)  <span class="co"># replace &#39;your_script.R&#39; with the path to your R script</span></span>
 <span id="cb26-4"><a href="efficient-programming-practices.html#cb26-4" tabindex="-1"></a><span class="fu">Rprof</span>(<span class="cn">NULL</span>)</span>
 <span id="cb26-5"><a href="efficient-programming-practices.html#cb26-5" tabindex="-1"></a><span class="fu">summaryRprof</span>()</span></code></pre></div>
-</div>
-<div id="code-exercises-2" class="section level2 hasAnchor" number="3.5">
-<h2><span class="header-section-number">3.5</span> Code Exercises 2<a href="efficient-programming-practices.html#code-exercises-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Exercise 1: Refactor a provided piece of poorly organized R code to improve its readability and structure.</strong></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="efficient-programming-practices.html#cb27-1" tabindex="-1"></a><span class="co"># Initial code: Computes the mean of positive numbers in a vector</span></span>
-<span id="cb27-2"><a href="efficient-programming-practices.html#cb27-2" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="dv">3</span>, <span class="sc">-</span><span class="dv">3</span>)</span>
-<span id="cb27-3"><a href="efficient-programming-practices.html#cb27-3" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb27-4"><a href="efficient-programming-practices.html#cb27-4" tabindex="-1"></a>count <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb27-5"><a href="efficient-programming-practices.html#cb27-5" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> numbers) {</span>
-<span id="cb27-6"><a href="efficient-programming-practices.html#cb27-6" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb27-7"><a href="efficient-programming-practices.html#cb27-7" tabindex="-1"></a>    result <span class="ot">&lt;-</span> result <span class="sc">+</span> i</span>
-<span id="cb27-8"><a href="efficient-programming-practices.html#cb27-8" tabindex="-1"></a>    count <span class="ot">&lt;-</span> count <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb27-9"><a href="efficient-programming-practices.html#cb27-9" tabindex="-1"></a>  }</span>
-<span id="cb27-10"><a href="efficient-programming-practices.html#cb27-10" tabindex="-1"></a>}</span>
-<span id="cb27-11"><a href="efficient-programming-practices.html#cb27-11" tabindex="-1"></a>mean <span class="ot">&lt;-</span> result <span class="sc">/</span> count</span>
-<span id="cb27-12"><a href="efficient-programming-practices.html#cb27-12" tabindex="-1"></a></span>
-<span id="cb27-13"><a href="efficient-programming-practices.html#cb27-13" tabindex="-1"></a><span class="co"># Refactor the above code to improve readability and structure.</span></span>
-<span id="cb27-14"><a href="efficient-programming-practices.html#cb27-14" tabindex="-1"></a><span class="co"># Hint: Use vectorized operations and create a function to calculate the mean.</span></span></code></pre></div>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="efficient-programming-practices.html#cb28-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
-<p><strong>Exercise 2: Convert a loop that calculates the logarithm of each element in a large vector into a vectorized expression.</strong></p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="efficient-programming-practices.html#cb29-1" tabindex="-1"></a><span class="co"># Loop version: Calculate the logarithm base 10 of each element</span></span>
-<span id="cb29-2"><a href="efficient-programming-practices.html#cb29-2" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">1000</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
-<span id="cb29-3"><a href="efficient-programming-practices.html#cb29-3" tabindex="-1"></a>log_values <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="fu">length</span>(numbers))</span>
-<span id="cb29-4"><a href="efficient-programming-practices.html#cb29-4" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(numbers)) {</span>
-<span id="cb29-5"><a href="efficient-programming-practices.html#cb29-5" tabindex="-1"></a>  log_values[i] <span class="ot">&lt;-</span> <span class="fu">log10</span>(numbers[i])</span>
-<span id="cb29-6"><a href="efficient-programming-practices.html#cb29-6" tabindex="-1"></a>}</span>
-<span id="cb29-7"><a href="efficient-programming-practices.html#cb29-7" tabindex="-1"></a></span>
-<span id="cb29-8"><a href="efficient-programming-practices.html#cb29-8" tabindex="-1"></a><span class="co"># Rewrite the above loop as a vectorized expression.</span></span>
-<span id="cb29-9"><a href="efficient-programming-practices.html#cb29-9" tabindex="-1"></a><span class="co"># Hint: Use a vectorized log10() function.</span></span></code></pre></div>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="efficient-programming-practices.html#cb30-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
-<p><strong>Exercise 3: Write a script that calculates the mean of 1 million randomly generated numbers, first using a loop and then using a vectorized function. Compare the time taken for both methods.</strong></p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="efficient-programming-practices.html#cb31-1" tabindex="-1"></a><span class="co"># Generating random numbers</span></span>
-<span id="cb31-2"><a href="efficient-programming-practices.html#cb31-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb31-3"><a href="efficient-programming-practices.html#cb31-3" tabindex="-1"></a>random_numbers <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="fl">1e6</span>)</span>
-<span id="cb31-4"><a href="efficient-programming-practices.html#cb31-4" tabindex="-1"></a></span>
-<span id="cb31-5"><a href="efficient-programming-practices.html#cb31-5" tabindex="-1"></a><span class="co"># Loop version</span></span>
-<span id="cb31-6"><a href="efficient-programming-practices.html#cb31-6" tabindex="-1"></a><span class="fu">system.time</span>({</span>
-<span id="cb31-7"><a href="efficient-programming-practices.html#cb31-7" tabindex="-1"></a>  total <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb31-8"><a href="efficient-programming-practices.html#cb31-8" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> random_numbers) {</span>
-<span id="cb31-9"><a href="efficient-programming-practices.html#cb31-9" tabindex="-1"></a>    total <span class="ot">&lt;-</span> total <span class="sc">+</span> i</span>
-<span id="cb31-10"><a href="efficient-programming-practices.html#cb31-10" tabindex="-1"></a>  }</span>
-<span id="cb31-11"><a href="efficient-programming-practices.html#cb31-11" tabindex="-1"></a>  mean_loop <span class="ot">&lt;-</span> total <span class="sc">/</span> <span class="fu">length</span>(random_numbers)</span>
-<span id="cb31-12"><a href="efficient-programming-practices.html#cb31-12" tabindex="-1"></a>})</span>
-<span id="cb31-13"><a href="efficient-programming-practices.html#cb31-13" tabindex="-1"></a></span>
-<span id="cb31-14"><a href="efficient-programming-practices.html#cb31-14" tabindex="-1"></a><span class="co"># Calculate the mean using a vectorized method and compare the time.</span></span>
-<span id="cb31-15"><a href="efficient-programming-practices.html#cb31-15" tabindex="-1"></a><span class="co"># Hint: Use the mean() function.</span></span></code></pre></div>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="efficient-programming-practices.html#cb32-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
-<p><strong>Exercise 4: Use <code>Rprof()</code> to profile the script from Exercise 3 and identify any potential bottlenecks.</strong></p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="efficient-programming-practices.html#cb33-1" tabindex="-1"></a><span class="co"># Assume vectorized mean calculation from Exercise 3 is saved in `mean_vectorized`</span></span>
-<span id="cb33-2"><a href="efficient-programming-practices.html#cb33-2" tabindex="-1"></a><span class="fu">Rprof</span>(tmp <span class="ot">&lt;-</span> <span class="fu">tempfile</span>())</span>
-<span id="cb33-3"><a href="efficient-programming-practices.html#cb33-3" tabindex="-1"></a>mean_vectorized <span class="ot">&lt;-</span> <span class="fu">mean</span>(random_numbers)</span>
-<span id="cb33-4"><a href="efficient-programming-practices.html#cb33-4" tabindex="-1"></a><span class="fu">Rprof</span>(<span class="cn">NULL</span>)</span>
-<span id="cb33-5"><a href="efficient-programming-practices.html#cb33-5" tabindex="-1"></a></span>
-<span id="cb33-6"><a href="efficient-programming-practices.html#cb33-6" tabindex="-1"></a><span class="co"># Analyze the profiling data to identify potential bottlenecks.</span></span>
-<span id="cb33-7"><a href="efficient-programming-practices.html#cb33-7" tabindex="-1"></a><span class="co"># Hint: Use summaryRprof() to see the profiling summary.</span></span>
-<span id="cb33-8"><a href="efficient-programming-practices.html#cb33-8" tabindex="-1"></a><span class="fu">summaryRprof</span>(tmp)</span></code></pre></div>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="efficient-programming-practices.html#cb34-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
-<p>These exercises provide an opportunity for students to apply their knowledge practically while giving them a structure to guide their coding efforts. They will refactor code for clarity, use vectorized operations for efficiency, and profile code to identify performance issues, building a solid foundation in R programming best practices.</p>
 
 </div>
 </div>

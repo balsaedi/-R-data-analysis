@@ -23,7 +23,7 @@
 <meta name="author" content="Basim Alsaedi" />
 
 
-<meta name="date" content="2024-05-23" />
+<meta name="date" content="2024-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,7 +173,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#introduction-to-rs-vectorized-operations"><i class="fa fa-check"></i><b>3.2</b> Introduction to R’s Vectorized Operations</a></li>
 <li class="chapter" data-level="3.3" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#best-practices-for-speed-and-performance"><i class="fa fa-check"></i><b>3.3</b> Best Practices for Speed and Performance</a></li>
 <li class="chapter" data-level="3.4" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#using-r-profiler-for-code-optimization"><i class="fa fa-check"></i><b>3.4</b> Using R Profiler for Code Optimization</a></li>
-<li class="chapter" data-level="3.5" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#code-exercises-2"><i class="fa fa-check"></i><b>3.5</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-structures-and-data-handling-in-r-light-focus.html"><a href="data-structures-and-data-handling-in-r-light-focus.html"><i class="fa fa-check"></i><b>4</b> Data Structures and Data Handling in R (Light Focus)</a>
 <ul>
@@ -225,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#annotations"><i class="fa fa-check"></i><b>7.3.1</b> Annotations</a></li>
 <li class="chapter" data-level="7.3.2" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#custom-geometries"><i class="fa fa-check"></i><b>7.3.2</b> Custom Geometries</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2-1"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="working-with-different-types-of-data-light-focus.html"><a href="working-with-different-types-of-data-light-focus.html"><i class="fa fa-check"></i><b>8</b> Working with Different Types of Data (Light Focus)</a>
 <ul>
@@ -254,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3.1" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#detecting-outliers"><i class="fa fa-check"></i><b>9.3.1</b> Detecting Outliers</a></li>
 <li class="chapter" data-level="9.3.2" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#handling-outliers"><i class="fa fa-check"></i><b>9.3.2</b> Handling Outliers</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-2"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-1"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>10</b> Descriptive Statistics</a>
 <ul>
@@ -477,16 +476,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><strong>Scenario</strong>: A researcher wants to study the relationship between advertising spend and sales.</p></li>
 <li><p><strong>Task</strong>: Perform a simple linear regression with sales as the dependent variable and advertising spend as the independent variable.</p>
 <p><strong>Steps</strong>:</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="exercises-for-regression-analysis.html#cb169-1" tabindex="-1"></a><span class="co"># Sample data: Advertising spend and sales</span></span>
-<span id="cb169-2"><a href="exercises-for-regression-analysis.html#cb169-2" tabindex="-1"></a>advertising <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">230</span>, <span class="dv">150</span>, <span class="dv">300</span>, <span class="dv">290</span>, <span class="dv">180</span>, <span class="dv">270</span>, <span class="dv">320</span>, <span class="dv">210</span>, <span class="dv">250</span>, <span class="dv">190</span>)</span>
-<span id="cb169-3"><a href="exercises-for-regression-analysis.html#cb169-3" tabindex="-1"></a>sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">480</span>, <span class="dv">340</span>, <span class="dv">600</span>, <span class="dv">590</span>, <span class="dv">380</span>, <span class="dv">540</span>, <span class="dv">640</span>, <span class="dv">410</span>, <span class="dv">500</span>, <span class="dv">430</span>)</span>
-<span id="cb169-4"><a href="exercises-for-regression-analysis.html#cb169-4" tabindex="-1"></a></span>
-<span id="cb169-5"><a href="exercises-for-regression-analysis.html#cb169-5" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(sales, advertising)</span>
-<span id="cb169-6"><a href="exercises-for-regression-analysis.html#cb169-6" tabindex="-1"></a></span>
-<span id="cb169-7"><a href="exercises-for-regression-analysis.html#cb169-7" tabindex="-1"></a><span class="co"># Fit Simple Linear Regression</span></span>
-<span id="cb169-8"><a href="exercises-for-regression-analysis.html#cb169-8" tabindex="-1"></a>model_simple <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> advertising, <span class="at">data =</span> data)</span>
-<span id="cb169-9"><a href="exercises-for-regression-analysis.html#cb169-9" tabindex="-1"></a><span class="fu">summary</span>(model_simple)</span></code></pre></div>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="exercises-for-regression-analysis.html#cb170-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="exercises-for-regression-analysis.html#cb161-1" tabindex="-1"></a><span class="co"># Sample data: Advertising spend and sales</span></span>
+<span id="cb161-2"><a href="exercises-for-regression-analysis.html#cb161-2" tabindex="-1"></a>advertising <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">230</span>, <span class="dv">150</span>, <span class="dv">300</span>, <span class="dv">290</span>, <span class="dv">180</span>, <span class="dv">270</span>, <span class="dv">320</span>, <span class="dv">210</span>, <span class="dv">250</span>, <span class="dv">190</span>)</span>
+<span id="cb161-3"><a href="exercises-for-regression-analysis.html#cb161-3" tabindex="-1"></a>sales <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">480</span>, <span class="dv">340</span>, <span class="dv">600</span>, <span class="dv">590</span>, <span class="dv">380</span>, <span class="dv">540</span>, <span class="dv">640</span>, <span class="dv">410</span>, <span class="dv">500</span>, <span class="dv">430</span>)</span>
+<span id="cb161-4"><a href="exercises-for-regression-analysis.html#cb161-4" tabindex="-1"></a></span>
+<span id="cb161-5"><a href="exercises-for-regression-analysis.html#cb161-5" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(sales, advertising)</span>
+<span id="cb161-6"><a href="exercises-for-regression-analysis.html#cb161-6" tabindex="-1"></a></span>
+<span id="cb161-7"><a href="exercises-for-regression-analysis.html#cb161-7" tabindex="-1"></a><span class="co"># Fit Simple Linear Regression</span></span>
+<span id="cb161-8"><a href="exercises-for-regression-analysis.html#cb161-8" tabindex="-1"></a>model_simple <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales <span class="sc">~</span> advertising, <span class="at">data =</span> data)</span>
+<span id="cb161-9"><a href="exercises-for-regression-analysis.html#cb161-9" tabindex="-1"></a><span class="fu">summary</span>(model_simple)</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="exercises-for-regression-analysis.html#cb162-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
 </ul>
 </div>
 <div id="exercise-2-multiple-linear-regression" class="section level2 hasAnchor" number="20.2">
@@ -496,17 +495,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><strong>Scenario</strong>: A researcher wants to predict house prices based on square footage and number of bedrooms.</p></li>
 <li><p><strong>Task</strong>: Perform a multiple linear regression with house prices as the dependent variable and square footage and number of bedrooms as independent variables.</p>
 <p><strong>Steps</strong>:</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="exercises-for-regression-analysis.html#cb171-1" tabindex="-1"></a><span class="co"># Sample data: House prices, square footage, and number of bedrooms</span></span>
-<span id="cb171-2"><a href="exercises-for-regression-analysis.html#cb171-2" tabindex="-1"></a>prices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">300000</span>, <span class="dv">350000</span>, <span class="dv">400000</span>, <span class="dv">250000</span>, <span class="dv">450000</span>, <span class="dv">500000</span>)</span>
-<span id="cb171-3"><a href="exercises-for-regression-analysis.html#cb171-3" tabindex="-1"></a>sqft <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1500</span>, <span class="dv">1600</span>, <span class="dv">1700</span>, <span class="dv">1400</span>, <span class="dv">1800</span>, <span class="dv">2000</span>)</span>
-<span id="cb171-4"><a href="exercises-for-regression-analysis.html#cb171-4" tabindex="-1"></a>bedrooms <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb171-5"><a href="exercises-for-regression-analysis.html#cb171-5" tabindex="-1"></a></span>
-<span id="cb171-6"><a href="exercises-for-regression-analysis.html#cb171-6" tabindex="-1"></a>house_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(prices, sqft, bedrooms)</span>
-<span id="cb171-7"><a href="exercises-for-regression-analysis.html#cb171-7" tabindex="-1"></a></span>
-<span id="cb171-8"><a href="exercises-for-regression-analysis.html#cb171-8" tabindex="-1"></a><span class="co"># Fit Multiple Linear Regression</span></span>
-<span id="cb171-9"><a href="exercises-for-regression-analysis.html#cb171-9" tabindex="-1"></a>model_multiple <span class="ot">&lt;-</span> <span class="fu">lm</span>(prices <span class="sc">~</span> sqft <span class="sc">+</span> bedrooms, <span class="at">data =</span> house_data)</span>
-<span id="cb171-10"><a href="exercises-for-regression-analysis.html#cb171-10" tabindex="-1"></a><span class="fu">summary</span>(model_multiple)</span></code></pre></div>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="exercises-for-regression-analysis.html#cb172-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="exercises-for-regression-analysis.html#cb163-1" tabindex="-1"></a><span class="co"># Sample data: House prices, square footage, and number of bedrooms</span></span>
+<span id="cb163-2"><a href="exercises-for-regression-analysis.html#cb163-2" tabindex="-1"></a>prices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">300000</span>, <span class="dv">350000</span>, <span class="dv">400000</span>, <span class="dv">250000</span>, <span class="dv">450000</span>, <span class="dv">500000</span>)</span>
+<span id="cb163-3"><a href="exercises-for-regression-analysis.html#cb163-3" tabindex="-1"></a>sqft <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1500</span>, <span class="dv">1600</span>, <span class="dv">1700</span>, <span class="dv">1400</span>, <span class="dv">1800</span>, <span class="dv">2000</span>)</span>
+<span id="cb163-4"><a href="exercises-for-regression-analysis.html#cb163-4" tabindex="-1"></a>bedrooms <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb163-5"><a href="exercises-for-regression-analysis.html#cb163-5" tabindex="-1"></a></span>
+<span id="cb163-6"><a href="exercises-for-regression-analysis.html#cb163-6" tabindex="-1"></a>house_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(prices, sqft, bedrooms)</span>
+<span id="cb163-7"><a href="exercises-for-regression-analysis.html#cb163-7" tabindex="-1"></a></span>
+<span id="cb163-8"><a href="exercises-for-regression-analysis.html#cb163-8" tabindex="-1"></a><span class="co"># Fit Multiple Linear Regression</span></span>
+<span id="cb163-9"><a href="exercises-for-regression-analysis.html#cb163-9" tabindex="-1"></a>model_multiple <span class="ot">&lt;-</span> <span class="fu">lm</span>(prices <span class="sc">~</span> sqft <span class="sc">+</span> bedrooms, <span class="at">data =</span> house_data)</span>
+<span id="cb163-10"><a href="exercises-for-regression-analysis.html#cb163-10" tabindex="-1"></a><span class="fu">summary</span>(model_multiple)</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="exercises-for-regression-analysis.html#cb164-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
 </ul>
 </div>
 <div id="exercise-3-residual-analysis" class="section level2 hasAnchor" number="20.3">
@@ -516,17 +515,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><strong>Scenario</strong>: A researcher has fitted a multiple linear regression model and wants to validate its assumptions.</p></li>
 <li><p><strong>Task</strong>: Analyze the residuals of the model and check for heteroscedasticity and multicollinearity.</p>
 <p><strong>Steps</strong>:</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="exercises-for-regression-analysis.html#cb173-1" tabindex="-1"></a><span class="co"># Residual analysis</span></span>
-<span id="cb173-2"><a href="exercises-for-regression-analysis.html#cb173-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
-<span id="cb173-3"><a href="exercises-for-regression-analysis.html#cb173-3" tabindex="-1"></a><span class="fu">plot</span>(model_multiple)</span>
-<span id="cb173-4"><a href="exercises-for-regression-analysis.html#cb173-4" tabindex="-1"></a></span>
-<span id="cb173-5"><a href="exercises-for-regression-analysis.html#cb173-5" tabindex="-1"></a><span class="co"># Check for heteroscedasticity</span></span>
-<span id="cb173-6"><a href="exercises-for-regression-analysis.html#cb173-6" tabindex="-1"></a><span class="fu">library</span>(car)</span>
-<span id="cb173-7"><a href="exercises-for-regression-analysis.html#cb173-7" tabindex="-1"></a><span class="fu">ncvTest</span>(model_multiple)</span>
-<span id="cb173-8"><a href="exercises-for-regression-analysis.html#cb173-8" tabindex="-1"></a></span>
-<span id="cb173-9"><a href="exercises-for-regression-analysis.html#cb173-9" tabindex="-1"></a><span class="co"># Check for multicollinearity</span></span>
-<span id="cb173-10"><a href="exercises-for-regression-analysis.html#cb173-10" tabindex="-1"></a><span class="fu">vif</span>(model_multiple)</span></code></pre></div>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="exercises-for-regression-analysis.html#cb174-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="exercises-for-regression-analysis.html#cb165-1" tabindex="-1"></a><span class="co"># Residual analysis</span></span>
+<span id="cb165-2"><a href="exercises-for-regression-analysis.html#cb165-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb165-3"><a href="exercises-for-regression-analysis.html#cb165-3" tabindex="-1"></a><span class="fu">plot</span>(model_multiple)</span>
+<span id="cb165-4"><a href="exercises-for-regression-analysis.html#cb165-4" tabindex="-1"></a></span>
+<span id="cb165-5"><a href="exercises-for-regression-analysis.html#cb165-5" tabindex="-1"></a><span class="co"># Check for heteroscedasticity</span></span>
+<span id="cb165-6"><a href="exercises-for-regression-analysis.html#cb165-6" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb165-7"><a href="exercises-for-regression-analysis.html#cb165-7" tabindex="-1"></a><span class="fu">ncvTest</span>(model_multiple)</span>
+<span id="cb165-8"><a href="exercises-for-regression-analysis.html#cb165-8" tabindex="-1"></a></span>
+<span id="cb165-9"><a href="exercises-for-regression-analysis.html#cb165-9" tabindex="-1"></a><span class="co"># Check for multicollinearity</span></span>
+<span id="cb165-10"><a href="exercises-for-regression-analysis.html#cb165-10" tabindex="-1"></a><span class="fu">vif</span>(model_multiple)</span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="exercises-for-regression-analysis.html#cb166-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
 </ul>
 </div>
 <div id="exercise-4-model-selection-criteria" class="section level2 hasAnchor" number="20.4">
@@ -536,16 +535,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><strong>Scenario</strong>: A researcher has two different regression models and wants to determine which one is better.</p></li>
 <li><p><strong>Task</strong>: Calculate and compare the AIC and BIC values for both models.</p>
 <p><strong>Steps</strong>:</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="exercises-for-regression-analysis.html#cb175-1" tabindex="-1"></a><span class="co"># Model 1: Simple linear regression</span></span>
-<span id="cb175-2"><a href="exercises-for-regression-analysis.html#cb175-2" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(prices <span class="sc">~</span> sqft, <span class="at">data =</span> house_data)</span>
-<span id="cb175-3"><a href="exercises-for-regression-analysis.html#cb175-3" tabindex="-1"></a></span>
-<span id="cb175-4"><a href="exercises-for-regression-analysis.html#cb175-4" tabindex="-1"></a><span class="co"># Model 2: Multiple linear regression</span></span>
-<span id="cb175-5"><a href="exercises-for-regression-analysis.html#cb175-5" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(prices <span class="sc">~</span> sqft <span class="sc">+</span> bedrooms, <span class="at">data =</span> house_data)</span>
-<span id="cb175-6"><a href="exercises-for-regression-analysis.html#cb175-6" tabindex="-1"></a></span>
-<span id="cb175-7"><a href="exercises-for-regression-analysis.html#cb175-7" tabindex="-1"></a><span class="co"># Compare AIC and BIC</span></span>
-<span id="cb175-8"><a href="exercises-for-regression-analysis.html#cb175-8" tabindex="-1"></a><span class="fu">AIC</span>(model1, model2)</span>
-<span id="cb175-9"><a href="exercises-for-regression-analysis.html#cb175-9" tabindex="-1"></a><span class="fu">BIC</span>(model1, model2)</span></code></pre></div>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="exercises-for-regression-analysis.html#cb176-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="exercises-for-regression-analysis.html#cb167-1" tabindex="-1"></a><span class="co"># Model 1: Simple linear regression</span></span>
+<span id="cb167-2"><a href="exercises-for-regression-analysis.html#cb167-2" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(prices <span class="sc">~</span> sqft, <span class="at">data =</span> house_data)</span>
+<span id="cb167-3"><a href="exercises-for-regression-analysis.html#cb167-3" tabindex="-1"></a></span>
+<span id="cb167-4"><a href="exercises-for-regression-analysis.html#cb167-4" tabindex="-1"></a><span class="co"># Model 2: Multiple linear regression</span></span>
+<span id="cb167-5"><a href="exercises-for-regression-analysis.html#cb167-5" tabindex="-1"></a>model2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(prices <span class="sc">~</span> sqft <span class="sc">+</span> bedrooms, <span class="at">data =</span> house_data)</span>
+<span id="cb167-6"><a href="exercises-for-regression-analysis.html#cb167-6" tabindex="-1"></a></span>
+<span id="cb167-7"><a href="exercises-for-regression-analysis.html#cb167-7" tabindex="-1"></a><span class="co"># Compare AIC and BIC</span></span>
+<span id="cb167-8"><a href="exercises-for-regression-analysis.html#cb167-8" tabindex="-1"></a><span class="fu">AIC</span>(model1, model2)</span>
+<span id="cb167-9"><a href="exercises-for-regression-analysis.html#cb167-9" tabindex="-1"></a><span class="fu">BIC</span>(model1, model2)</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="exercises-for-regression-analysis.html#cb168-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
 </ul>
 
 </div>

@@ -23,7 +23,7 @@
 <meta name="author" content="Basim Alsaedi" />
 
 
-<meta name="date" content="2024-05-23" />
+<meta name="date" content="2024-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,7 +173,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#introduction-to-rs-vectorized-operations"><i class="fa fa-check"></i><b>3.2</b> Introduction to R’s Vectorized Operations</a></li>
 <li class="chapter" data-level="3.3" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#best-practices-for-speed-and-performance"><i class="fa fa-check"></i><b>3.3</b> Best Practices for Speed and Performance</a></li>
 <li class="chapter" data-level="3.4" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#using-r-profiler-for-code-optimization"><i class="fa fa-check"></i><b>3.4</b> Using R Profiler for Code Optimization</a></li>
-<li class="chapter" data-level="3.5" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#code-exercises-2"><i class="fa fa-check"></i><b>3.5</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-structures-and-data-handling-in-r-light-focus.html"><a href="data-structures-and-data-handling-in-r-light-focus.html"><i class="fa fa-check"></i><b>4</b> Data Structures and Data Handling in R (Light Focus)</a>
 <ul>
@@ -225,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#annotations"><i class="fa fa-check"></i><b>7.3.1</b> Annotations</a></li>
 <li class="chapter" data-level="7.3.2" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#custom-geometries"><i class="fa fa-check"></i><b>7.3.2</b> Custom Geometries</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2-1"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="working-with-different-types-of-data-light-focus.html"><a href="working-with-different-types-of-data-light-focus.html"><i class="fa fa-check"></i><b>8</b> Working with Different Types of Data (Light Focus)</a>
 <ul>
@@ -254,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3.1" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#detecting-outliers"><i class="fa fa-check"></i><b>9.3.1</b> Detecting Outliers</a></li>
 <li class="chapter" data-level="9.3.2" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#handling-outliers"><i class="fa fa-check"></i><b>9.3.2</b> Handling Outliers</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-2"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-1"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>10</b> Descriptive Statistics</a>
 <ul>
@@ -479,10 +478,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><strong>Objective</strong>: Apply different probability distributions to make informed decisions in hypothetical business scenarios.</p></li>
 <li><p><strong>Task</strong>: Assume you’re a manager at a retail company. Use the binomial distribution to determine the likelihood of at least 7 out of 10 customers purchasing a new product if the chance of one customer buying it is 30%. Discuss how this probability would influence a decision to increase product stock.</p>
 <p><strong>Example Solution</strong>:</p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="exercises-for-deepening-understanding.html#cb142-1" tabindex="-1"></a><span class="co"># Probability calculation using the binomial distribution</span></span>
-<span id="cb142-2"><a href="exercises-for-deepening-understanding.html#cb142-2" tabindex="-1"></a>success_prob <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(<span class="dv">6</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob=</span><span class="fl">0.3</span>, <span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span>
-<span id="cb142-3"><a href="exercises-for-deepening-understanding.html#cb142-3" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Probability of at least 7 purchases:&quot;</span>, success_prob))</span></code></pre></div>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="exercises-for-deepening-understanding.html#cb143-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="exercises-for-deepening-understanding.html#cb134-1" tabindex="-1"></a><span class="co"># Probability calculation using the binomial distribution</span></span>
+<span id="cb134-2"><a href="exercises-for-deepening-understanding.html#cb134-2" tabindex="-1"></a>success_prob <span class="ot">&lt;-</span> <span class="fu">pbinom</span>(<span class="dv">6</span>, <span class="at">size=</span><span class="dv">10</span>, <span class="at">prob=</span><span class="fl">0.3</span>, <span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span>
+<span id="cb134-3"><a href="exercises-for-deepening-understanding.html#cb134-3" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Probability of at least 7 purchases:&quot;</span>, success_prob))</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="exercises-for-deepening-understanding.html#cb135-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
 </ul>
 </div>
 <div id="exercise-2-demonstrating-the-central-limit-theorem" class="section level3 hasAnchor" number="15.1.2">
@@ -491,14 +490,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><strong>Objective</strong>: Visualize and understand the Central Limit Theorem through simulation.</p></li>
 <li><p><strong>Task</strong>: Simulate rolling a six-sided die 1000 times. Calculate the mean for each set of 50 rolls, and plot the distribution of these means. Analyze how the distribution changes with the number of rolls and discuss the implications of the CLT.</p>
 <p><strong>Example Solution</strong>:</p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="exercises-for-deepening-understanding.html#cb144-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
-<span id="cb144-2"><a href="exercises-for-deepening-understanding.html#cb144-2" tabindex="-1"></a>roll_means <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="fu">mean</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">50</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)))</span>
-<span id="cb144-3"><a href="exercises-for-deepening-understanding.html#cb144-3" tabindex="-1"></a></span>
-<span id="cb144-4"><a href="exercises-for-deepening-understanding.html#cb144-4" tabindex="-1"></a><span class="co"># Plotting the distribution of means</span></span>
-<span id="cb144-5"><a href="exercises-for-deepening-understanding.html#cb144-5" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">Means =</span> roll_means), <span class="fu">aes</span>(<span class="at">x =</span> Means)) <span class="sc">+</span></span>
-<span id="cb144-6"><a href="exercises-for-deepening-understanding.html#cb144-6" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">&quot;cornflowerblue&quot;</span>) <span class="sc">+</span></span>
-<span id="cb144-7"><a href="exercises-for-deepening-understanding.html#cb144-7" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">&quot;Distribution of Means (Central Limit Theorem)&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="exercises-for-deepening-understanding.html#cb145-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="exercises-for-deepening-understanding.html#cb136-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
+<span id="cb136-2"><a href="exercises-for-deepening-understanding.html#cb136-2" tabindex="-1"></a>roll_means <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="fu">mean</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">50</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)))</span>
+<span id="cb136-3"><a href="exercises-for-deepening-understanding.html#cb136-3" tabindex="-1"></a></span>
+<span id="cb136-4"><a href="exercises-for-deepening-understanding.html#cb136-4" tabindex="-1"></a><span class="co"># Plotting the distribution of means</span></span>
+<span id="cb136-5"><a href="exercises-for-deepening-understanding.html#cb136-5" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">Means =</span> roll_means), <span class="fu">aes</span>(<span class="at">x =</span> Means)) <span class="sc">+</span></span>
+<span id="cb136-6"><a href="exercises-for-deepening-understanding.html#cb136-6" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">&quot;cornflowerblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb136-7"><a href="exercises-for-deepening-understanding.html#cb136-7" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">&quot;Distribution of Means (Central Limit Theorem)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="exercises-for-deepening-understanding.html#cb137-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
 </ul>
 </div>
 <div id="exercise-3-calculating-expected-values-variance-and-applying-the-law-of-large-numbers" class="section level3 hasAnchor" number="15.1.3">
@@ -507,18 +506,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><strong>Objective</strong>: Calculate expected values and variance, and observe the Law of Large Numbers in action.</p></li>
 <li><p><strong>Task</strong>: Calculate the expected value and variance for the number of heads in 100 flips of a fair coin. Then simulate flipping the coin 1000 times and observe how the average number of heads stabilizes around the expected value.</p>
 <p><strong>Example Solution</strong>:</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="exercises-for-deepening-understanding.html#cb146-1" tabindex="-1"></a><span class="co"># Expected value and variance calculation</span></span>
-<span id="cb146-2"><a href="exercises-for-deepening-understanding.html#cb146-2" tabindex="-1"></a>expected_heads <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> <span class="fl">0.5</span></span>
-<span id="cb146-3"><a href="exercises-for-deepening-understanding.html#cb146-3" tabindex="-1"></a>variance_heads <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">*</span> <span class="fl">0.5</span></span>
-<span id="cb146-4"><a href="exercises-for-deepening-understanding.html#cb146-4" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Expected number of heads:&quot;</span>, expected_heads))</span>
-<span id="cb146-5"><a href="exercises-for-deepening-understanding.html#cb146-5" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Variance:&quot;</span>, variance_heads))</span>
-<span id="cb146-6"><a href="exercises-for-deepening-understanding.html#cb146-6" tabindex="-1"></a></span>
-<span id="cb146-7"><a href="exercises-for-deepening-understanding.html#cb146-7" tabindex="-1"></a><span class="co"># Simulation to demonstrate the Law of Large Numbers</span></span>
-<span id="cb146-8"><a href="exercises-for-deepening-understanding.html#cb146-8" tabindex="-1"></a>coin_flips <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1000</span>, <span class="dv">100</span>, <span class="fl">0.5</span>)</span>
-<span id="cb146-9"><a href="exercises-for-deepening-understanding.html#cb146-9" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">cumsum</span>(coin_flips) <span class="sc">/</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Law of Large Numbers Demonstration&quot;</span>,</span>
-<span id="cb146-10"><a href="exercises-for-deepening-understanding.html#cb146-10" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Number of Trials&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Cumulative Average of Heads&quot;</span>)</span>
-<span id="cb146-11"><a href="exercises-for-deepening-understanding.html#cb146-11" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> expected_heads <span class="sc">/</span> <span class="dv">100</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="exercises-for-deepening-understanding.html#cb147-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="exercises-for-deepening-understanding.html#cb138-1" tabindex="-1"></a><span class="co"># Expected value and variance calculation</span></span>
+<span id="cb138-2"><a href="exercises-for-deepening-understanding.html#cb138-2" tabindex="-1"></a>expected_heads <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> <span class="fl">0.5</span></span>
+<span id="cb138-3"><a href="exercises-for-deepening-understanding.html#cb138-3" tabindex="-1"></a>variance_heads <span class="ot">&lt;-</span> <span class="dv">100</span> <span class="sc">*</span> <span class="fl">0.5</span> <span class="sc">*</span> <span class="fl">0.5</span></span>
+<span id="cb138-4"><a href="exercises-for-deepening-understanding.html#cb138-4" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Expected number of heads:&quot;</span>, expected_heads))</span>
+<span id="cb138-5"><a href="exercises-for-deepening-understanding.html#cb138-5" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Variance:&quot;</span>, variance_heads))</span>
+<span id="cb138-6"><a href="exercises-for-deepening-understanding.html#cb138-6" tabindex="-1"></a></span>
+<span id="cb138-7"><a href="exercises-for-deepening-understanding.html#cb138-7" tabindex="-1"></a><span class="co"># Simulation to demonstrate the Law of Large Numbers</span></span>
+<span id="cb138-8"><a href="exercises-for-deepening-understanding.html#cb138-8" tabindex="-1"></a>coin_flips <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1000</span>, <span class="dv">100</span>, <span class="fl">0.5</span>)</span>
+<span id="cb138-9"><a href="exercises-for-deepening-understanding.html#cb138-9" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">cumsum</span>(coin_flips) <span class="sc">/</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">main =</span> <span class="st">&quot;Law of Large Numbers Demonstration&quot;</span>,</span>
+<span id="cb138-10"><a href="exercises-for-deepening-understanding.html#cb138-10" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Number of Trials&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Cumulative Average of Heads&quot;</span>)</span>
+<span id="cb138-11"><a href="exercises-for-deepening-understanding.html#cb138-11" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> expected_heads <span class="sc">/</span> <span class="dv">100</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="exercises-for-deepening-understanding.html#cb139-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div></li>
 </ul>
 </div>
 </div>

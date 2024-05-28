@@ -23,7 +23,7 @@
 <meta name="author" content="Basim Alsaedi" />
 
 
-<meta name="date" content="2024-05-23" />
+<meta name="date" content="2024-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,7 +173,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#introduction-to-rs-vectorized-operations"><i class="fa fa-check"></i><b>3.2</b> Introduction to R’s Vectorized Operations</a></li>
 <li class="chapter" data-level="3.3" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#best-practices-for-speed-and-performance"><i class="fa fa-check"></i><b>3.3</b> Best Practices for Speed and Performance</a></li>
 <li class="chapter" data-level="3.4" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#using-r-profiler-for-code-optimization"><i class="fa fa-check"></i><b>3.4</b> Using R Profiler for Code Optimization</a></li>
-<li class="chapter" data-level="3.5" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#code-exercises-2"><i class="fa fa-check"></i><b>3.5</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-structures-and-data-handling-in-r-light-focus.html"><a href="data-structures-and-data-handling-in-r-light-focus.html"><i class="fa fa-check"></i><b>4</b> Data Structures and Data Handling in R (Light Focus)</a>
 <ul>
@@ -225,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#annotations"><i class="fa fa-check"></i><b>7.3.1</b> Annotations</a></li>
 <li class="chapter" data-level="7.3.2" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#custom-geometries"><i class="fa fa-check"></i><b>7.3.2</b> Custom Geometries</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2-1"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="working-with-different-types-of-data-light-focus.html"><a href="working-with-different-types-of-data-light-focus.html"><i class="fa fa-check"></i><b>8</b> Working with Different Types of Data (Light Focus)</a>
 <ul>
@@ -254,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3.1" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#detecting-outliers"><i class="fa fa-check"></i><b>9.3.1</b> Detecting Outliers</a></li>
 <li class="chapter" data-level="9.3.2" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#handling-outliers"><i class="fa fa-check"></i><b>9.3.2</b> Handling Outliers</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-2"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-1"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>10</b> Descriptive Statistics</a>
 <ul>
@@ -481,14 +480,14 @@ Qualitative data, also known as categorical data, represents attributes, labels,
 <li><strong>Examples</strong>: Colors (red, blue, green), preferences (like, dislike), product types (household, industrial), or any labels categorizing data such as names of places or people.</li>
 </ul>
 <p><strong>Demonstration of Qualitative Data</strong>:</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="working-with-different-types-of-data-light-focus.html#cb88-1" tabindex="-1"></a><span class="co"># Sample qualitative data: Survey responses</span></span>
-<span id="cb88-2"><a href="working-with-different-types-of-data-light-focus.html#cb88-2" tabindex="-1"></a>survey_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb88-3"><a href="working-with-different-types-of-data-light-focus.html#cb88-3" tabindex="-1"></a>  <span class="at">respondent_id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
-<span id="cb88-4"><a href="working-with-different-types-of-data-light-focus.html#cb88-4" tabindex="-1"></a>  <span class="at">favorite_color =</span> <span class="fu">c</span>(<span class="st">&quot;Blue&quot;</span>, <span class="st">&quot;Red&quot;</span>, <span class="st">&quot;Green&quot;</span>),</span>
-<span id="cb88-5"><a href="working-with-different-types-of-data-light-focus.html#cb88-5" tabindex="-1"></a>  <span class="at">satisfaction_level =</span> <span class="fu">c</span>(<span class="st">&quot;High&quot;</span>, <span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;Low&quot;</span>)  <span class="co"># This could be converted to quantitative data for analysis.</span></span>
-<span id="cb88-6"><a href="working-with-different-types-of-data-light-focus.html#cb88-6" tabindex="-1"></a>)</span>
-<span id="cb88-7"><a href="working-with-different-types-of-data-light-focus.html#cb88-7" tabindex="-1"></a></span>
-<span id="cb88-8"><a href="working-with-different-types-of-data-light-focus.html#cb88-8" tabindex="-1"></a><span class="fu">print</span>(survey_data)</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="working-with-different-types-of-data-light-focus.html#cb80-1" tabindex="-1"></a><span class="co"># Sample qualitative data: Survey responses</span></span>
+<span id="cb80-2"><a href="working-with-different-types-of-data-light-focus.html#cb80-2" tabindex="-1"></a>survey_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb80-3"><a href="working-with-different-types-of-data-light-focus.html#cb80-3" tabindex="-1"></a>  <span class="at">respondent_id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
+<span id="cb80-4"><a href="working-with-different-types-of-data-light-focus.html#cb80-4" tabindex="-1"></a>  <span class="at">favorite_color =</span> <span class="fu">c</span>(<span class="st">&quot;Blue&quot;</span>, <span class="st">&quot;Red&quot;</span>, <span class="st">&quot;Green&quot;</span>),</span>
+<span id="cb80-5"><a href="working-with-different-types-of-data-light-focus.html#cb80-5" tabindex="-1"></a>  <span class="at">satisfaction_level =</span> <span class="fu">c</span>(<span class="st">&quot;High&quot;</span>, <span class="st">&quot;Medium&quot;</span>, <span class="st">&quot;Low&quot;</span>)  <span class="co"># This could be converted to quantitative data for analysis.</span></span>
+<span id="cb80-6"><a href="working-with-different-types-of-data-light-focus.html#cb80-6" tabindex="-1"></a>)</span>
+<span id="cb80-7"><a href="working-with-different-types-of-data-light-focus.html#cb80-7" tabindex="-1"></a></span>
+<span id="cb80-8"><a href="working-with-different-types-of-data-light-focus.html#cb80-8" tabindex="-1"></a><span class="fu">print</span>(survey_data)</span></code></pre></div>
 <p><strong>Quantitative Data</strong><br />
 Quantitative data involves numerical measurements or counts that can be quantified. This data type can be further classified as either discrete or continuous.</p>
 <ul>
@@ -502,14 +501,14 @@ Quantitative data involves numerical measurements or counts that can be quantifi
 </ul></li>
 </ul>
 <p><strong>Demonstration of Quantitative Data</strong>:</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="working-with-different-types-of-data-light-focus.html#cb89-1" tabindex="-1"></a><span class="co"># Sample quantitative data: Company sales data</span></span>
-<span id="cb89-2"><a href="working-with-different-types-of-data-light-focus.html#cb89-2" tabindex="-1"></a>sales_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb89-3"><a href="working-with-different-types-of-data-light-focus.html#cb89-3" tabindex="-1"></a>  <span class="at">month =</span> <span class="fu">c</span>(<span class="st">&quot;January&quot;</span>, <span class="st">&quot;February&quot;</span>, <span class="st">&quot;March&quot;</span>),</span>
-<span id="cb89-4"><a href="working-with-different-types-of-data-light-focus.html#cb89-4" tabindex="-1"></a>  <span class="at">revenue =</span> <span class="fu">c</span>(<span class="dv">10000</span>, <span class="dv">15000</span>, <span class="dv">13000</span>),  <span class="co"># Continuous data</span></span>
-<span id="cb89-5"><a href="working-with-different-types-of-data-light-focus.html#cb89-5" tabindex="-1"></a>  <span class="at">units_sold =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">13</span>)         <span class="co"># Discrete data</span></span>
-<span id="cb89-6"><a href="working-with-different-types-of-data-light-focus.html#cb89-6" tabindex="-1"></a>)</span>
-<span id="cb89-7"><a href="working-with-different-types-of-data-light-focus.html#cb89-7" tabindex="-1"></a></span>
-<span id="cb89-8"><a href="working-with-different-types-of-data-light-focus.html#cb89-8" tabindex="-1"></a><span class="fu">print</span>(sales_data)</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="working-with-different-types-of-data-light-focus.html#cb81-1" tabindex="-1"></a><span class="co"># Sample quantitative data: Company sales data</span></span>
+<span id="cb81-2"><a href="working-with-different-types-of-data-light-focus.html#cb81-2" tabindex="-1"></a>sales_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb81-3"><a href="working-with-different-types-of-data-light-focus.html#cb81-3" tabindex="-1"></a>  <span class="at">month =</span> <span class="fu">c</span>(<span class="st">&quot;January&quot;</span>, <span class="st">&quot;February&quot;</span>, <span class="st">&quot;March&quot;</span>),</span>
+<span id="cb81-4"><a href="working-with-different-types-of-data-light-focus.html#cb81-4" tabindex="-1"></a>  <span class="at">revenue =</span> <span class="fu">c</span>(<span class="dv">10000</span>, <span class="dv">15000</span>, <span class="dv">13000</span>),  <span class="co"># Continuous data</span></span>
+<span id="cb81-5"><a href="working-with-different-types-of-data-light-focus.html#cb81-5" tabindex="-1"></a>  <span class="at">units_sold =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">13</span>)         <span class="co"># Discrete data</span></span>
+<span id="cb81-6"><a href="working-with-different-types-of-data-light-focus.html#cb81-6" tabindex="-1"></a>)</span>
+<span id="cb81-7"><a href="working-with-different-types-of-data-light-focus.html#cb81-7" tabindex="-1"></a></span>
+<span id="cb81-8"><a href="working-with-different-types-of-data-light-focus.html#cb81-8" tabindex="-1"></a><span class="fu">print</span>(sales_data)</span></code></pre></div>
 </div>
 <div id="sampling-strategies-and-data-collection-methods" class="section level3 hasAnchor" number="8.1.2">
 <h3><span class="header-section-number">8.1.2</span> Sampling Strategies and Data Collection Methods<a href="working-with-different-types-of-data-light-focus.html#sampling-strategies-and-data-collection-methods" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -519,18 +518,18 @@ Quantitative data involves numerical measurements or counts that can be quantifi
 <li><strong>Stratified Sampling</strong>: Divides the population into smaller groups, or strata, based on shared characteristics before sampling. This is useful when the population is heterogeneous.</li>
 </ul>
 <p><strong>Demonstration of Sampling Strategies</strong>:</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="working-with-different-types-of-data-light-focus.html#cb90-1" tabindex="-1"></a><span class="co"># Assuming a larger dataset with multiple categories</span></span>
-<span id="cb90-2"><a href="working-with-different-types-of-data-light-focus.html#cb90-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb90-3"><a href="working-with-different-types-of-data-light-focus.html#cb90-3" tabindex="-1"></a>  <span class="at">category =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>), <span class="at">times =</span> <span class="dv">100</span>),</span>
-<span id="cb90-4"><a href="working-with-different-types-of-data-light-focus.html#cb90-4" tabindex="-1"></a>  <span class="at">value =</span> <span class="fu">rnorm</span>(<span class="dv">300</span>)</span>
-<span id="cb90-5"><a href="working-with-different-types-of-data-light-focus.html#cb90-5" tabindex="-1"></a>)</span>
-<span id="cb90-6"><a href="working-with-different-types-of-data-light-focus.html#cb90-6" tabindex="-1"></a></span>
-<span id="cb90-7"><a href="working-with-different-types-of-data-light-focus.html#cb90-7" tabindex="-1"></a><span class="co"># Stratified sampling: Sample 10 from each category</span></span>
-<span id="cb90-8"><a href="working-with-different-types-of-data-light-focus.html#cb90-8" tabindex="-1"></a>sampled_data <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, <span class="fu">lapply</span>(<span class="fu">split</span>(data, data<span class="sc">$</span>category), <span class="cf">function</span>(subdata) {</span>
-<span id="cb90-9"><a href="working-with-different-types-of-data-light-focus.html#cb90-9" tabindex="-1"></a>  subdata[<span class="fu">sample</span>(<span class="fu">nrow</span>(subdata), <span class="dv">10</span>), ]</span>
-<span id="cb90-10"><a href="working-with-different-types-of-data-light-focus.html#cb90-10" tabindex="-1"></a>}))</span>
-<span id="cb90-11"><a href="working-with-different-types-of-data-light-focus.html#cb90-11" tabindex="-1"></a></span>
-<span id="cb90-12"><a href="working-with-different-types-of-data-light-focus.html#cb90-12" tabindex="-1"></a><span class="fu">print</span>(sampled_data)</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="working-with-different-types-of-data-light-focus.html#cb82-1" tabindex="-1"></a><span class="co"># Assuming a larger dataset with multiple categories</span></span>
+<span id="cb82-2"><a href="working-with-different-types-of-data-light-focus.html#cb82-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb82-3"><a href="working-with-different-types-of-data-light-focus.html#cb82-3" tabindex="-1"></a>  <span class="at">category =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;A&quot;</span>, <span class="st">&quot;B&quot;</span>, <span class="st">&quot;C&quot;</span>), <span class="at">times =</span> <span class="dv">100</span>),</span>
+<span id="cb82-4"><a href="working-with-different-types-of-data-light-focus.html#cb82-4" tabindex="-1"></a>  <span class="at">value =</span> <span class="fu">rnorm</span>(<span class="dv">300</span>)</span>
+<span id="cb82-5"><a href="working-with-different-types-of-data-light-focus.html#cb82-5" tabindex="-1"></a>)</span>
+<span id="cb82-6"><a href="working-with-different-types-of-data-light-focus.html#cb82-6" tabindex="-1"></a></span>
+<span id="cb82-7"><a href="working-with-different-types-of-data-light-focus.html#cb82-7" tabindex="-1"></a><span class="co"># Stratified sampling: Sample 10 from each category</span></span>
+<span id="cb82-8"><a href="working-with-different-types-of-data-light-focus.html#cb82-8" tabindex="-1"></a>sampled_data <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind, <span class="fu">lapply</span>(<span class="fu">split</span>(data, data<span class="sc">$</span>category), <span class="cf">function</span>(subdata) {</span>
+<span id="cb82-9"><a href="working-with-different-types-of-data-light-focus.html#cb82-9" tabindex="-1"></a>  subdata[<span class="fu">sample</span>(<span class="fu">nrow</span>(subdata), <span class="dv">10</span>), ]</span>
+<span id="cb82-10"><a href="working-with-different-types-of-data-light-focus.html#cb82-10" tabindex="-1"></a>}))</span>
+<span id="cb82-11"><a href="working-with-different-types-of-data-light-focus.html#cb82-11" tabindex="-1"></a></span>
+<span id="cb82-12"><a href="working-with-different-types-of-data-light-focus.html#cb82-12" tabindex="-1"></a><span class="fu">print</span>(sampled_data)</span></code></pre></div>
 </div>
 <div id="structuring-data-sets-for-analysis" class="section level3 hasAnchor" number="8.1.3">
 <h3><span class="header-section-number">8.1.3</span> Structuring Data Sets for Analysis<a href="working-with-different-types-of-data-light-focus.html#structuring-data-sets-for-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -540,15 +539,15 @@ Quantitative data involves numerical measurements or counts that can be quantifi
 <li><strong>Matrix</strong>: Suitable for numerical data where operations like matrix multiplication are needed.</li>
 </ul>
 <p><strong>Demonstration of Data Structuring</strong>:</p>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="working-with-different-types-of-data-light-focus.html#cb91-1" tabindex="-1"></a><span class="co"># Creating a structured data frame</span></span>
-<span id="cb91-2"><a href="working-with-different-types-of-data-light-focus.html#cb91-2" tabindex="-1"></a>structured_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb91-3"><a href="working-with-different-types-of-data-light-focus.html#cb91-3" tabindex="-1"></a>  <span class="at">ID =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
-<span id="cb91-4"><a href="working-with-different-types-of-data-light-focus.html#cb91-4" tabindex="-1"></a>  <span class="at">Name =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Carol&quot;</span>, <span class="st">&quot;David&quot;</span>, <span class="st">&quot;Eve&quot;</span>),</span>
-<span id="cb91-5"><a href="working-with-different-types-of-data-light-focus.html#cb91-5" tabindex="-1"></a>  <span class="at">Age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>, <span class="dv">45</span>),</span>
-<span id="cb91-6"><a href="working-with-different-types-of-data-light-focus.html#cb91-6" tabindex="-1"></a>  <span class="at">Salary =</span> <span class="fu">c</span>(<span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">55000</span>, <span class="dv">58000</span>, <span class="dv">62000</span>)</span>
-<span id="cb91-7"><a href="working-with-different-types-of-data-light-focus.html#cb91-7" tabindex="-1"></a>)</span>
-<span id="cb91-8"><a href="working-with-different-types-of-data-light-focus.html#cb91-8" tabindex="-1"></a></span>
-<span id="cb91-9"><a href="working-with-different-types-of-data-light-focus.html#cb91-9" tabindex="-1"></a><span class="fu">print</span>(structured_data)</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="working-with-different-types-of-data-light-focus.html#cb83-1" tabindex="-1"></a><span class="co"># Creating a structured data frame</span></span>
+<span id="cb83-2"><a href="working-with-different-types-of-data-light-focus.html#cb83-2" tabindex="-1"></a>structured_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb83-3"><a href="working-with-different-types-of-data-light-focus.html#cb83-3" tabindex="-1"></a>  <span class="at">ID =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb83-4"><a href="working-with-different-types-of-data-light-focus.html#cb83-4" tabindex="-1"></a>  <span class="at">Name =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Carol&quot;</span>, <span class="st">&quot;David&quot;</span>, <span class="st">&quot;Eve&quot;</span>),</span>
+<span id="cb83-5"><a href="working-with-different-types-of-data-light-focus.html#cb83-5" tabindex="-1"></a>  <span class="at">Age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>, <span class="dv">45</span>),</span>
+<span id="cb83-6"><a href="working-with-different-types-of-data-light-focus.html#cb83-6" tabindex="-1"></a>  <span class="at">Salary =</span> <span class="fu">c</span>(<span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">55000</span>, <span class="dv">58000</span>, <span class="dv">62000</span>)</span>
+<span id="cb83-7"><a href="working-with-different-types-of-data-light-focus.html#cb83-7" tabindex="-1"></a>)</span>
+<span id="cb83-8"><a href="working-with-different-types-of-data-light-focus.html#cb83-8" tabindex="-1"></a></span>
+<span id="cb83-9"><a href="working-with-different-types-of-data-light-focus.html#cb83-9" tabindex="-1"></a><span class="fu">print</span>(structured_data)</span></code></pre></div>
 <p>This section has introduced the foundational concepts of qualitative and quantitative data, illustrated with R examples. Understanding these distinctions and how to work with different data types prepares you for more effective data analysis and interpretation.</p>
 </div>
 </div>
@@ -556,67 +555,67 @@ Quantitative data involves numerical measurements or counts that can be quantifi
 <h2><span class="header-section-number">8.2</span> Code Exercises 1<a href="working-with-different-types-of-data-light-focus.html#code-exercises-1-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Exercise 1: Identify Data Types</strong>
 Task: Given a data frame, identify which columns contain qualitative data and which contain quantitative data. Provide a brief explanation for each identification.</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="working-with-different-types-of-data-light-focus.html#cb92-1" tabindex="-1"></a><span class="co"># Sample data frame for identification</span></span>
-<span id="cb92-2"><a href="working-with-different-types-of-data-light-focus.html#cb92-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb92-3"><a href="working-with-different-types-of-data-light-focus.html#cb92-3" tabindex="-1"></a>  <span class="at">employee_id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,</span>
-<span id="cb92-4"><a href="working-with-different-types-of-data-light-focus.html#cb92-4" tabindex="-1"></a>  <span class="at">department =</span> <span class="fu">c</span>(<span class="st">&quot;Marketing&quot;</span>, <span class="st">&quot;Finance&quot;</span>, <span class="st">&quot;HR&quot;</span>, <span class="st">&quot;IT&quot;</span>),</span>
-<span id="cb92-5"><a href="working-with-different-types-of-data-light-focus.html#cb92-5" tabindex="-1"></a>  <span class="at">years_of_experience =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">2</span>),</span>
-<span id="cb92-6"><a href="working-with-different-types-of-data-light-focus.html#cb92-6" tabindex="-1"></a>  <span class="at">gender =</span> <span class="fu">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)</span>
-<span id="cb92-7"><a href="working-with-different-types-of-data-light-focus.html#cb92-7" tabindex="-1"></a>)</span>
-<span id="cb92-8"><a href="working-with-different-types-of-data-light-focus.html#cb92-8" tabindex="-1"></a></span>
-<span id="cb92-9"><a href="working-with-different-types-of-data-light-focus.html#cb92-9" tabindex="-1"></a><span class="co"># Task: Identify the type of data in each column and print your results</span></span>
-<span id="cb92-10"><a href="working-with-different-types-of-data-light-focus.html#cb92-10" tabindex="-1"></a><span class="co"># Print commands for students to fill out</span></span>
-<span id="cb92-11"><a href="working-with-different-types-of-data-light-focus.html#cb92-11" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;employee_id: Quantitative - Discrete (counts the number of employees)&quot;</span>)</span>
-<span id="cb92-12"><a href="working-with-different-types-of-data-light-focus.html#cb92-12" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;department: Qualitative - Categorical (labels representing departments)&quot;</span>)</span>
-<span id="cb92-13"><a href="working-with-different-types-of-data-light-focus.html#cb92-13" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;years_of_experience: Quantitative - Discrete (counts years)&quot;</span>)</span>
-<span id="cb92-14"><a href="working-with-different-types-of-data-light-focus.html#cb92-14" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;gender: Qualitative - Categorical (labels representing genders)&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="working-with-different-types-of-data-light-focus.html#cb93-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="working-with-different-types-of-data-light-focus.html#cb84-1" tabindex="-1"></a><span class="co"># Sample data frame for identification</span></span>
+<span id="cb84-2"><a href="working-with-different-types-of-data-light-focus.html#cb84-2" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb84-3"><a href="working-with-different-types-of-data-light-focus.html#cb84-3" tabindex="-1"></a>  <span class="at">employee_id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,</span>
+<span id="cb84-4"><a href="working-with-different-types-of-data-light-focus.html#cb84-4" tabindex="-1"></a>  <span class="at">department =</span> <span class="fu">c</span>(<span class="st">&quot;Marketing&quot;</span>, <span class="st">&quot;Finance&quot;</span>, <span class="st">&quot;HR&quot;</span>, <span class="st">&quot;IT&quot;</span>),</span>
+<span id="cb84-5"><a href="working-with-different-types-of-data-light-focus.html#cb84-5" tabindex="-1"></a>  <span class="at">years_of_experience =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">2</span>),</span>
+<span id="cb84-6"><a href="working-with-different-types-of-data-light-focus.html#cb84-6" tabindex="-1"></a>  <span class="at">gender =</span> <span class="fu">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>)</span>
+<span id="cb84-7"><a href="working-with-different-types-of-data-light-focus.html#cb84-7" tabindex="-1"></a>)</span>
+<span id="cb84-8"><a href="working-with-different-types-of-data-light-focus.html#cb84-8" tabindex="-1"></a></span>
+<span id="cb84-9"><a href="working-with-different-types-of-data-light-focus.html#cb84-9" tabindex="-1"></a><span class="co"># Task: Identify the type of data in each column and print your results</span></span>
+<span id="cb84-10"><a href="working-with-different-types-of-data-light-focus.html#cb84-10" tabindex="-1"></a><span class="co"># Print commands for students to fill out</span></span>
+<span id="cb84-11"><a href="working-with-different-types-of-data-light-focus.html#cb84-11" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;employee_id: Quantitative - Discrete (counts the number of employees)&quot;</span>)</span>
+<span id="cb84-12"><a href="working-with-different-types-of-data-light-focus.html#cb84-12" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;department: Qualitative - Categorical (labels representing departments)&quot;</span>)</span>
+<span id="cb84-13"><a href="working-with-different-types-of-data-light-focus.html#cb84-13" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;years_of_experience: Quantitative - Discrete (counts years)&quot;</span>)</span>
+<span id="cb84-14"><a href="working-with-different-types-of-data-light-focus.html#cb84-14" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;gender: Qualitative - Categorical (labels representing genders)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="working-with-different-types-of-data-light-focus.html#cb85-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 <p><strong>Exercise 2: Implement Random Sampling</strong>
 Task: From a given vector of 100 integers, perform a simple random sampling to select 10 integers.</p>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="working-with-different-types-of-data-light-focus.html#cb94-1" tabindex="-1"></a><span class="co"># Generating a vector of 100 integers</span></span>
-<span id="cb94-2"><a href="working-with-different-types-of-data-light-focus.html#cb94-2" tabindex="-1"></a>integers <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span></span>
-<span id="cb94-3"><a href="working-with-different-types-of-data-light-focus.html#cb94-3" tabindex="-1"></a></span>
-<span id="cb94-4"><a href="working-with-different-types-of-data-light-focus.html#cb94-4" tabindex="-1"></a><span class="co"># Task: Perform random sampling to select 10 integers</span></span>
-<span id="cb94-5"><a href="working-with-different-types-of-data-light-focus.html#cb94-5" tabindex="-1"></a>sampled_integers <span class="ot">&lt;-</span> <span class="fu">sample</span>(integers, <span class="dv">10</span>)</span>
-<span id="cb94-6"><a href="working-with-different-types-of-data-light-focus.html#cb94-6" tabindex="-1"></a></span>
-<span id="cb94-7"><a href="working-with-different-types-of-data-light-focus.html#cb94-7" tabindex="-1"></a><span class="co"># Print the sampled integers</span></span>
-<span id="cb94-8"><a href="working-with-different-types-of-data-light-focus.html#cb94-8" tabindex="-1"></a><span class="fu">print</span>(sampled_integers)</span></code></pre></div>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="working-with-different-types-of-data-light-focus.html#cb95-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="working-with-different-types-of-data-light-focus.html#cb86-1" tabindex="-1"></a><span class="co"># Generating a vector of 100 integers</span></span>
+<span id="cb86-2"><a href="working-with-different-types-of-data-light-focus.html#cb86-2" tabindex="-1"></a>integers <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span></span>
+<span id="cb86-3"><a href="working-with-different-types-of-data-light-focus.html#cb86-3" tabindex="-1"></a></span>
+<span id="cb86-4"><a href="working-with-different-types-of-data-light-focus.html#cb86-4" tabindex="-1"></a><span class="co"># Task: Perform random sampling to select 10 integers</span></span>
+<span id="cb86-5"><a href="working-with-different-types-of-data-light-focus.html#cb86-5" tabindex="-1"></a>sampled_integers <span class="ot">&lt;-</span> <span class="fu">sample</span>(integers, <span class="dv">10</span>)</span>
+<span id="cb86-6"><a href="working-with-different-types-of-data-light-focus.html#cb86-6" tabindex="-1"></a></span>
+<span id="cb86-7"><a href="working-with-different-types-of-data-light-focus.html#cb86-7" tabindex="-1"></a><span class="co"># Print the sampled integers</span></span>
+<span id="cb86-8"><a href="working-with-different-types-of-data-light-focus.html#cb86-8" tabindex="-1"></a><span class="fu">print</span>(sampled_integers)</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="working-with-different-types-of-data-light-focus.html#cb87-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 <p><strong>Exercise 3: Create a Stratified Sample</strong>
 Given a data frame with student data including their major and GPA, create a stratified sample where you sample 5 students from each major.</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="working-with-different-types-of-data-light-focus.html#cb96-1" tabindex="-1"></a><span class="co"># Sample student data</span></span>
-<span id="cb96-2"><a href="working-with-different-types-of-data-light-focus.html#cb96-2" tabindex="-1"></a>students <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb96-3"><a href="working-with-different-types-of-data-light-focus.html#cb96-3" tabindex="-1"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>,</span>
-<span id="cb96-4"><a href="working-with-different-types-of-data-light-focus.html#cb96-4" tabindex="-1"></a>  <span class="at">major =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Biology&quot;</span>, <span class="st">&quot;Chemistry&quot;</span>, <span class="st">&quot;Physics&quot;</span>), <span class="at">length.out =</span> <span class="dv">50</span>),</span>
-<span id="cb96-5"><a href="working-with-different-types-of-data-light-focus.html#cb96-5" tabindex="-1"></a>  <span class="at">gpa =</span> <span class="fu">runif</span>(<span class="dv">50</span>, <span class="fl">2.0</span>, <span class="fl">4.0</span>)</span>
-<span id="cb96-6"><a href="working-with-different-types-of-data-light-focus.html#cb96-6" tabindex="-1"></a>)</span>
-<span id="cb96-7"><a href="working-with-different-types-of-data-light-focus.html#cb96-7" tabindex="-1"></a></span>
-<span id="cb96-8"><a href="working-with-different-types-of-data-light-focus.html#cb96-8" tabindex="-1"></a><span class="co"># Task: Create a stratified sample where you sample 5 students from each major</span></span>
-<span id="cb96-9"><a href="working-with-different-types-of-data-light-focus.html#cb96-9" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb96-10"><a href="working-with-different-types-of-data-light-focus.html#cb96-10" tabindex="-1"></a>stratified_sample <span class="ot">&lt;-</span> students <span class="sc">%&gt;%</span></span>
-<span id="cb96-11"><a href="working-with-different-types-of-data-light-focus.html#cb96-11" tabindex="-1"></a>  <span class="fu">group_by</span>(major) <span class="sc">%&gt;%</span></span>
-<span id="cb96-12"><a href="working-with-different-types-of-data-light-focus.html#cb96-12" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">5</span>)</span>
-<span id="cb96-13"><a href="working-with-different-types-of-data-light-focus.html#cb96-13" tabindex="-1"></a></span>
-<span id="cb96-14"><a href="working-with-different-types-of-data-light-focus.html#cb96-14" tabindex="-1"></a><span class="co"># Print the stratified sample</span></span>
-<span id="cb96-15"><a href="working-with-different-types-of-data-light-focus.html#cb96-15" tabindex="-1"></a><span class="fu">print</span>(stratified_sample)</span></code></pre></div>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="working-with-different-types-of-data-light-focus.html#cb97-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="working-with-different-types-of-data-light-focus.html#cb88-1" tabindex="-1"></a><span class="co"># Sample student data</span></span>
+<span id="cb88-2"><a href="working-with-different-types-of-data-light-focus.html#cb88-2" tabindex="-1"></a>students <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb88-3"><a href="working-with-different-types-of-data-light-focus.html#cb88-3" tabindex="-1"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>,</span>
+<span id="cb88-4"><a href="working-with-different-types-of-data-light-focus.html#cb88-4" tabindex="-1"></a>  <span class="at">major =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Biology&quot;</span>, <span class="st">&quot;Chemistry&quot;</span>, <span class="st">&quot;Physics&quot;</span>), <span class="at">length.out =</span> <span class="dv">50</span>),</span>
+<span id="cb88-5"><a href="working-with-different-types-of-data-light-focus.html#cb88-5" tabindex="-1"></a>  <span class="at">gpa =</span> <span class="fu">runif</span>(<span class="dv">50</span>, <span class="fl">2.0</span>, <span class="fl">4.0</span>)</span>
+<span id="cb88-6"><a href="working-with-different-types-of-data-light-focus.html#cb88-6" tabindex="-1"></a>)</span>
+<span id="cb88-7"><a href="working-with-different-types-of-data-light-focus.html#cb88-7" tabindex="-1"></a></span>
+<span id="cb88-8"><a href="working-with-different-types-of-data-light-focus.html#cb88-8" tabindex="-1"></a><span class="co"># Task: Create a stratified sample where you sample 5 students from each major</span></span>
+<span id="cb88-9"><a href="working-with-different-types-of-data-light-focus.html#cb88-9" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb88-10"><a href="working-with-different-types-of-data-light-focus.html#cb88-10" tabindex="-1"></a>stratified_sample <span class="ot">&lt;-</span> students <span class="sc">%&gt;%</span></span>
+<span id="cb88-11"><a href="working-with-different-types-of-data-light-focus.html#cb88-11" tabindex="-1"></a>  <span class="fu">group_by</span>(major) <span class="sc">%&gt;%</span></span>
+<span id="cb88-12"><a href="working-with-different-types-of-data-light-focus.html#cb88-12" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">5</span>)</span>
+<span id="cb88-13"><a href="working-with-different-types-of-data-light-focus.html#cb88-13" tabindex="-1"></a></span>
+<span id="cb88-14"><a href="working-with-different-types-of-data-light-focus.html#cb88-14" tabindex="-1"></a><span class="co"># Print the stratified sample</span></span>
+<span id="cb88-15"><a href="working-with-different-types-of-data-light-focus.html#cb88-15" tabindex="-1"></a><span class="fu">print</span>(stratified_sample)</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="working-with-different-types-of-data-light-focus.html#cb89-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 <p><strong>Exercise 4: Structuring Data Sets for Analysis</strong>
 Task: Convert the provided list of vectors into a data frame, then add a new column that categorizes the ‘age’ into ‘Youth’, ‘Adult’, or ‘Senior’.</p>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="working-with-different-types-of-data-light-focus.html#cb98-1" tabindex="-1"></a><span class="co"># Provided list of vectors</span></span>
-<span id="cb98-2"><a href="working-with-different-types-of-data-light-focus.html#cb98-2" tabindex="-1"></a>person_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb98-3"><a href="working-with-different-types-of-data-light-focus.html#cb98-3" tabindex="-1"></a>  <span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Carol&quot;</span>),</span>
-<span id="cb98-4"><a href="working-with-different-types-of-data-light-focus.html#cb98-4" tabindex="-1"></a>  <span class="at">ages =</span> <span class="fu">c</span>(<span class="dv">22</span>, <span class="dv">35</span>, <span class="dv">77</span>),</span>
-<span id="cb98-5"><a href="working-with-different-types-of-data-light-focus.html#cb98-5" tabindex="-1"></a>  <span class="at">salaries =</span> <span class="fu">c</span>(<span class="dv">45000</span>, <span class="dv">55000</span>, <span class="dv">67000</span>)</span>
-<span id="cb98-6"><a href="working-with-different-types-of-data-light-focus.html#cb98-6" tabindex="-1"></a>)</span>
-<span id="cb98-7"><a href="working-with-different-types-of-data-light-focus.html#cb98-7" tabindex="-1"></a></span>
-<span id="cb98-8"><a href="working-with-different-types-of-data-light-focus.html#cb98-8" tabindex="-1"></a><span class="co"># Task: Convert list to data frame and categorize age</span></span>
-<span id="cb98-9"><a href="working-with-different-types-of-data-light-focus.html#cb98-9" tabindex="-1"></a>person_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(person_list)</span>
-<span id="cb98-10"><a href="working-with-different-types-of-data-light-focus.html#cb98-10" tabindex="-1"></a>person_df<span class="sc">$</span>category <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(person_df<span class="sc">$</span>ages <span class="sc">&lt;</span> <span class="dv">30</span>, <span class="st">&quot;Youth&quot;</span>,</span>
-<span id="cb98-11"><a href="working-with-different-types-of-data-light-focus.html#cb98-11" tabindex="-1"></a>                             <span class="fu">ifelse</span>(person_df<span class="sc">$</span>ages <span class="sc">&lt;</span> <span class="dv">60</span>, <span class="st">&quot;Adult&quot;</span>, <span class="st">&quot;Senior&quot;</span>))</span>
-<span id="cb98-12"><a href="working-with-different-types-of-data-light-focus.html#cb98-12" tabindex="-1"></a></span>
-<span id="cb98-13"><a href="working-with-different-types-of-data-light-focus.html#cb98-13" tabindex="-1"></a><span class="co"># Print the resulting data frame</span></span>
-<span id="cb98-14"><a href="working-with-different-types-of-data-light-focus.html#cb98-14" tabindex="-1"></a><span class="fu">print</span>(person_df)</span></code></pre></div>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="working-with-different-types-of-data-light-focus.html#cb99-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="working-with-different-types-of-data-light-focus.html#cb90-1" tabindex="-1"></a><span class="co"># Provided list of vectors</span></span>
+<span id="cb90-2"><a href="working-with-different-types-of-data-light-focus.html#cb90-2" tabindex="-1"></a>person_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb90-3"><a href="working-with-different-types-of-data-light-focus.html#cb90-3" tabindex="-1"></a>  <span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Bob&quot;</span>, <span class="st">&quot;Carol&quot;</span>),</span>
+<span id="cb90-4"><a href="working-with-different-types-of-data-light-focus.html#cb90-4" tabindex="-1"></a>  <span class="at">ages =</span> <span class="fu">c</span>(<span class="dv">22</span>, <span class="dv">35</span>, <span class="dv">77</span>),</span>
+<span id="cb90-5"><a href="working-with-different-types-of-data-light-focus.html#cb90-5" tabindex="-1"></a>  <span class="at">salaries =</span> <span class="fu">c</span>(<span class="dv">45000</span>, <span class="dv">55000</span>, <span class="dv">67000</span>)</span>
+<span id="cb90-6"><a href="working-with-different-types-of-data-light-focus.html#cb90-6" tabindex="-1"></a>)</span>
+<span id="cb90-7"><a href="working-with-different-types-of-data-light-focus.html#cb90-7" tabindex="-1"></a></span>
+<span id="cb90-8"><a href="working-with-different-types-of-data-light-focus.html#cb90-8" tabindex="-1"></a><span class="co"># Task: Convert list to data frame and categorize age</span></span>
+<span id="cb90-9"><a href="working-with-different-types-of-data-light-focus.html#cb90-9" tabindex="-1"></a>person_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(person_list)</span>
+<span id="cb90-10"><a href="working-with-different-types-of-data-light-focus.html#cb90-10" tabindex="-1"></a>person_df<span class="sc">$</span>category <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(person_df<span class="sc">$</span>ages <span class="sc">&lt;</span> <span class="dv">30</span>, <span class="st">&quot;Youth&quot;</span>,</span>
+<span id="cb90-11"><a href="working-with-different-types-of-data-light-focus.html#cb90-11" tabindex="-1"></a>                             <span class="fu">ifelse</span>(person_df<span class="sc">$</span>ages <span class="sc">&lt;</span> <span class="dv">60</span>, <span class="st">&quot;Adult&quot;</span>, <span class="st">&quot;Senior&quot;</span>))</span>
+<span id="cb90-12"><a href="working-with-different-types-of-data-light-focus.html#cb90-12" tabindex="-1"></a></span>
+<span id="cb90-13"><a href="working-with-different-types-of-data-light-focus.html#cb90-13" tabindex="-1"></a><span class="co"># Print the resulting data frame</span></span>
+<span id="cb90-14"><a href="working-with-different-types-of-data-light-focus.html#cb90-14" tabindex="-1"></a><span class="fu">print</span>(person_df)</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="working-with-different-types-of-data-light-focus.html#cb91-1" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Insert Exercise chunk with error messages and solutions.</span></span></code></pre></div>
 </div>
 </div>
             </section>

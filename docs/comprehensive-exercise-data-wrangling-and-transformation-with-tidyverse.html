@@ -23,7 +23,7 @@
 <meta name="author" content="Basim Alsaedi" />
 
 
-<meta name="date" content="2024-05-23" />
+<meta name="date" content="2024-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,7 +173,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#introduction-to-rs-vectorized-operations"><i class="fa fa-check"></i><b>3.2</b> Introduction to R’s Vectorized Operations</a></li>
 <li class="chapter" data-level="3.3" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#best-practices-for-speed-and-performance"><i class="fa fa-check"></i><b>3.3</b> Best Practices for Speed and Performance</a></li>
 <li class="chapter" data-level="3.4" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#using-r-profiler-for-code-optimization"><i class="fa fa-check"></i><b>3.4</b> Using R Profiler for Code Optimization</a></li>
-<li class="chapter" data-level="3.5" data-path="efficient-programming-practices.html"><a href="efficient-programming-practices.html#code-exercises-2"><i class="fa fa-check"></i><b>3.5</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-structures-and-data-handling-in-r-light-focus.html"><a href="data-structures-and-data-handling-in-r-light-focus.html"><i class="fa fa-check"></i><b>4</b> Data Structures and Data Handling in R (Light Focus)</a>
 <ul>
@@ -225,7 +224,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#annotations"><i class="fa fa-check"></i><b>7.3.1</b> Annotations</a></li>
 <li class="chapter" data-level="7.3.2" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#custom-geometries"><i class="fa fa-check"></i><b>7.3.2</b> Custom Geometries</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2-1"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="7.4" data-path="customizing-graphs-for-data-presentation.html"><a href="customizing-graphs-for-data-presentation.html#code-exercises-2"><i class="fa fa-check"></i><b>7.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="working-with-different-types-of-data-light-focus.html"><a href="working-with-different-types-of-data-light-focus.html"><i class="fa fa-check"></i><b>8</b> Working with Different Types of Data (Light Focus)</a>
 <ul>
@@ -254,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3.1" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#detecting-outliers"><i class="fa fa-check"></i><b>9.3.1</b> Detecting Outliers</a></li>
 <li class="chapter" data-level="9.3.2" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#handling-outliers"><i class="fa fa-check"></i><b>9.3.2</b> Handling Outliers</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-2"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
+<li class="chapter" data-level="9.4" data-path="best-practices-in-data-collection-and-cleaning.html"><a href="best-practices-in-data-collection-and-cleaning.html#code-exercises-2-1"><i class="fa fa-check"></i><b>9.4</b> Code Exercises 2</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="descriptive-statistics.html"><a href="descriptive-statistics.html"><i class="fa fa-check"></i><b>10</b> Descriptive Statistics</a>
 <ul>
@@ -483,107 +482,107 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="detailed-steps" class="section level2 hasAnchor" number="27.2">
 <h2><span class="header-section-number">27.2</span> Detailed Steps<a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#detailed-steps" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-1" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
-<span id="cb192-2"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb192-3"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-3" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb192-4"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-4" tabindex="-1"></a></span>
-<span id="cb192-5"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-5" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
-<span id="cb192-6"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-6" tabindex="-1"></a>data <span class="ot">&lt;-</span> mtcars</span>
-<span id="cb192-7"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-7" tabindex="-1"></a></span>
-<span id="cb192-8"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-8" tabindex="-1"></a><span class="co"># 1. Select and rename columns</span></span>
-<span id="cb192-9"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-9" tabindex="-1"></a>selected_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb192-10"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-10" tabindex="-1"></a>  <span class="fu">select</span>(mpg, cyl, hp, wt) <span class="sc">%&gt;%</span></span>
-<span id="cb192-11"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-11" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Miles_Per_Gallon =</span> mpg, </span>
-<span id="cb192-12"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-12" tabindex="-1"></a>         <span class="at">Cylinders =</span> cyl, </span>
-<span id="cb192-13"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-13" tabindex="-1"></a>         <span class="at">Horsepower =</span> hp, </span>
-<span id="cb192-14"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-14" tabindex="-1"></a>         <span class="at">Weight =</span> wt)</span>
-<span id="cb192-15"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-15" tabindex="-1"></a></span>
-<span id="cb192-16"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-16" tabindex="-1"></a><span class="co"># 2. Filter rows based on multiple conditions</span></span>
-<span id="cb192-17"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-17" tabindex="-1"></a>filtered_data <span class="ot">&lt;-</span> selected_data <span class="sc">%&gt;%</span></span>
-<span id="cb192-18"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-18" tabindex="-1"></a>  <span class="fu">filter</span>(Miles_Per_Gallon <span class="sc">&gt;</span> <span class="dv">20</span>, Cylinders <span class="sc">==</span> <span class="dv">4</span>)</span>
-<span id="cb192-19"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-19" tabindex="-1"></a></span>
-<span id="cb192-20"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-20" tabindex="-1"></a><span class="co"># 3. Create new columns and modify existing ones</span></span>
-<span id="cb192-21"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-21" tabindex="-1"></a>mutated_data <span class="ot">&lt;-</span> filtered_data <span class="sc">%&gt;%</span></span>
-<span id="cb192-22"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-22" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Horsepower_per_Weight =</span> Horsepower <span class="sc">/</span> Weight,</span>
-<span id="cb192-23"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-23" tabindex="-1"></a>         <span class="at">Weight_Category =</span> <span class="fu">ifelse</span>(Weight <span class="sc">&gt;</span> <span class="dv">3</span>, <span class="st">&quot;Heavy&quot;</span>, <span class="st">&quot;Light&quot;</span>))</span>
-<span id="cb192-24"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-24" tabindex="-1"></a></span>
-<span id="cb192-25"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-25" tabindex="-1"></a><span class="co"># 4. Group data and calculate summary statistics</span></span>
-<span id="cb192-26"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-26" tabindex="-1"></a>summary_data <span class="ot">&lt;-</span> mutated_data <span class="sc">%&gt;%</span></span>
-<span id="cb192-27"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-27" tabindex="-1"></a>  <span class="fu">group_by</span>(Weight_Category) <span class="sc">%&gt;%</span></span>
-<span id="cb192-28"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-28" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Mean_Horsepower_per_Weight =</span> <span class="fu">mean</span>(Horsepower_per_Weight),</span>
-<span id="cb192-29"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-29" tabindex="-1"></a>            <span class="at">Count =</span> <span class="fu">n</span>())</span>
-<span id="cb192-30"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-30" tabindex="-1"></a></span>
-<span id="cb192-31"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-31" tabindex="-1"></a><span class="co"># 5. Handle categorical data and perform string manipulations</span></span>
-<span id="cb192-32"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-32" tabindex="-1"></a><span class="co"># Create a factor variable</span></span>
-<span id="cb192-33"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-33" tabindex="-1"></a>mutated_data<span class="sc">$</span>Weight_Category <span class="ot">&lt;-</span> <span class="fu">factor</span>(mutated_data<span class="sc">$</span>Weight_Category)</span>
-<span id="cb192-34"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-34" tabindex="-1"></a></span>
-<span id="cb192-35"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-35" tabindex="-1"></a><span class="co"># String manipulation example</span></span>
-<span id="cb192-36"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-36" tabindex="-1"></a>car_names <span class="ot">&lt;-</span> <span class="fu">rownames</span>(data)</span>
-<span id="cb192-37"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-37" tabindex="-1"></a>car_name_lengths <span class="ot">&lt;-</span> <span class="fu">str_length</span>(car_names)</span>
-<span id="cb192-38"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-38" tabindex="-1"></a>car_name_upper <span class="ot">&lt;-</span> <span class="fu">str_to_upper</span>(car_names)</span>
-<span id="cb192-39"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-39" tabindex="-1"></a></span>
-<span id="cb192-40"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-40" tabindex="-1"></a><span class="co"># 6. Work with date-time data</span></span>
-<span id="cb192-41"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-41" tabindex="-1"></a><span class="co"># Create a sample date column</span></span>
-<span id="cb192-42"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-42" tabindex="-1"></a>mutated_data <span class="ot">&lt;-</span> mutated_data <span class="sc">%&gt;%</span></span>
-<span id="cb192-43"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-43" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sample_Date =</span> <span class="fu">ymd</span>(<span class="st">&quot;2023-05-01&quot;</span>) <span class="sc">+</span> <span class="fu">days</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">n</span>()))</span>
-<span id="cb192-44"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-44" tabindex="-1"></a></span>
-<span id="cb192-45"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-45" tabindex="-1"></a><span class="co"># Extract components of dates</span></span>
-<span id="cb192-46"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-46" tabindex="-1"></a>mutated_data <span class="ot">&lt;-</span> mutated_data <span class="sc">%&gt;%</span></span>
-<span id="cb192-47"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-47" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Year =</span> <span class="fu">year</span>(Sample_Date),</span>
-<span id="cb192-48"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-48" tabindex="-1"></a>         <span class="at">Month =</span> <span class="fu">month</span>(Sample_Date),</span>
-<span id="cb192-49"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-49" tabindex="-1"></a>         <span class="at">Day =</span> <span class="fu">day</span>(Sample_Date))</span>
-<span id="cb192-50"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-50" tabindex="-1"></a></span>
-<span id="cb192-51"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-51" tabindex="-1"></a><span class="co"># Comprehensive script</span></span>
-<span id="cb192-52"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-52" tabindex="-1"></a>mtcars_analysis <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb192-53"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-53" tabindex="-1"></a>  <span class="co"># Load and manipulate data</span></span>
-<span id="cb192-54"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-54" tabindex="-1"></a>  data <span class="ot">&lt;-</span> mtcars</span>
-<span id="cb192-55"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-55" tabindex="-1"></a>  </span>
-<span id="cb192-56"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-56" tabindex="-1"></a>  <span class="co"># Select and rename columns</span></span>
-<span id="cb192-57"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-57" tabindex="-1"></a>  selected_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb192-58"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-58" tabindex="-1"></a>    <span class="fu">select</span>(mpg, cyl, hp, wt) <span class="sc">%&gt;%</span></span>
-<span id="cb192-59"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-59" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">Miles_Per_Gallon =</span> mpg, </span>
-<span id="cb192-60"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-60" tabindex="-1"></a>           <span class="at">Cylinders =</span> cyl, </span>
-<span id="cb192-61"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-61" tabindex="-1"></a>           <span class="at">Horsepower =</span> hp, </span>
-<span id="cb192-62"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-62" tabindex="-1"></a>           <span class="at">Weight =</span> wt)</span>
-<span id="cb192-63"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-63" tabindex="-1"></a></span>
-<span id="cb192-64"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-64" tabindex="-1"></a>  <span class="co"># Filter rows based on conditions</span></span>
-<span id="cb192-65"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-65" tabindex="-1"></a>  filtered_data <span class="ot">&lt;-</span> selected_data <span class="sc">%&gt;%</span></span>
-<span id="cb192-66"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-66" tabindex="-1"></a>    <span class="fu">filter</span>(Miles_Per_Gallon <span class="sc">&gt;</span> <span class="dv">20</span>, Cylinders <span class="sc">==</span> <span class="dv">4</span>)</span>
-<span id="cb192-67"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-67" tabindex="-1"></a></span>
-<span id="cb192-68"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-68" tabindex="-1"></a>  <span class="co"># Create and modify columns</span></span>
-<span id="cb192-69"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-69" tabindex="-1"></a>  mutated_data <span class="ot">&lt;-</span> filtered_data <span class="sc">%&gt;%</span></span>
-<span id="cb192-70"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-70" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Horsepower_per_Weight =</span> Horsepower <span class="sc">/</span> Weight,</span>
-<span id="cb192-71"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-71" tabindex="-1"></a>           <span class="at">Weight_Category =</span> <span class="fu">ifelse</span>(Weight <span class="sc">&gt;</span> <span class="dv">3</span>, <span class="st">&quot;Heavy&quot;</span>, <span class="st">&quot;Light&quot;</span>))</span>
-<span id="cb192-72"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-72" tabindex="-1"></a></span>
-<span id="cb192-73"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-73" tabindex="-1"></a>  <span class="co"># Group and summarize data</span></span>
-<span id="cb192-74"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-74" tabindex="-1"></a>  summary_data <span class="ot">&lt;-</span> mutated_data <span class="sc">%&gt;%</span></span>
-<span id="cb192-75"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-75" tabindex="-1"></a>    <span class="fu">group_by</span>(Weight_Category) <span class="sc">%&gt;%</span></span>
-<span id="cb192-76"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-76" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">Mean_Horsepower_per_Weight =</span> <span class="fu">mean</span>(Horsepower_per_Weight),</span>
-<span id="cb192-77"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-77" tabindex="-1"></a>              <span class="at">Count =</span> <span class="fu">n</span>())</span>
-<span id="cb192-78"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-78" tabindex="-1"></a></span>
-<span id="cb192-79"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-79" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Summary Data:&quot;</span>)</span>
-<span id="cb192-80"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-80" tabindex="-1"></a>  <span class="fu">print</span>(summary_data)</span>
-<span id="cb192-81"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-81" tabindex="-1"></a></span>
-<span id="cb192-82"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-82" tabindex="-1"></a>  <span class="co"># String manipulation</span></span>
-<span id="cb192-83"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-83" tabindex="-1"></a>  car_names <span class="ot">&lt;-</span> <span class="fu">rownames</span>(data)</span>
-<span id="cb192-84"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-84" tabindex="-1"></a>  car_name_lengths <span class="ot">&lt;-</span> <span class="fu">str_length</span>(car_names)</span>
-<span id="cb192-85"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-85" tabindex="-1"></a>  car_name_upper <span class="ot">&lt;-</span> <span class="fu">str_to_upper</span>(car_names)</span>
-<span id="cb192-86"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-86" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Car Names in Upper Case:&quot;</span>)</span>
-<span id="cb192-87"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-87" tabindex="-1"></a>  <span class="fu">print</span>(car_name_upper)</span>
-<span id="cb192-88"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-88" tabindex="-1"></a></span>
-<span id="cb192-89"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-89" tabindex="-1"></a>  <span class="co"># Work with date-time data</span></span>
-<span id="cb192-90"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-90" tabindex="-1"></a>  mutated_data <span class="ot">&lt;-</span> mutated_data <span class="sc">%&gt;%</span></span>
-<span id="cb192-91"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-91" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Sample_Date =</span> <span class="fu">ymd</span>(<span class="st">&quot;2023-05-01&quot;</span>) <span class="sc">+</span> <span class="fu">days</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">n</span>()),</span>
-<span id="cb192-92"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-92" tabindex="-1"></a>           <span class="at">Year =</span> <span class="fu">year</span>(Sample_Date),</span>
-<span id="cb192-93"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-93" tabindex="-1"></a>           <span class="at">Month =</span> <span class="fu">month</span>(Sample_Date),</span>
-<span id="cb192-94"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-94" tabindex="-1"></a>           <span class="at">Day =</span> <span class="fu">day</span>(Sample_Date))</span>
-<span id="cb192-95"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-95" tabindex="-1"></a>  </span>
-<span id="cb192-96"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-96" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Mutated Data with Dates:&quot;</span>)</span>
-<span id="cb192-97"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-97" tabindex="-1"></a>  <span class="fu">print</span>(mutated_data)</span>
-<span id="cb192-98"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-98" tabindex="-1"></a>}</span>
-<span id="cb192-99"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-99" tabindex="-1"></a></span>
-<span id="cb192-100"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-100" tabindex="-1"></a><span class="co"># Run the comprehensive analysis</span></span>
-<span id="cb192-101"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb192-101" tabindex="-1"></a><span class="fu">mtcars_analysis</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-1" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb184-2"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb184-3"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-3" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb184-4"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-4" tabindex="-1"></a></span>
+<span id="cb184-5"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-5" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb184-6"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-6" tabindex="-1"></a>data <span class="ot">&lt;-</span> mtcars</span>
+<span id="cb184-7"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-7" tabindex="-1"></a></span>
+<span id="cb184-8"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-8" tabindex="-1"></a><span class="co"># 1. Select and rename columns</span></span>
+<span id="cb184-9"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-9" tabindex="-1"></a>selected_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb184-10"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-10" tabindex="-1"></a>  <span class="fu">select</span>(mpg, cyl, hp, wt) <span class="sc">%&gt;%</span></span>
+<span id="cb184-11"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-11" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Miles_Per_Gallon =</span> mpg, </span>
+<span id="cb184-12"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-12" tabindex="-1"></a>         <span class="at">Cylinders =</span> cyl, </span>
+<span id="cb184-13"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-13" tabindex="-1"></a>         <span class="at">Horsepower =</span> hp, </span>
+<span id="cb184-14"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-14" tabindex="-1"></a>         <span class="at">Weight =</span> wt)</span>
+<span id="cb184-15"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-15" tabindex="-1"></a></span>
+<span id="cb184-16"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-16" tabindex="-1"></a><span class="co"># 2. Filter rows based on multiple conditions</span></span>
+<span id="cb184-17"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-17" tabindex="-1"></a>filtered_data <span class="ot">&lt;-</span> selected_data <span class="sc">%&gt;%</span></span>
+<span id="cb184-18"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-18" tabindex="-1"></a>  <span class="fu">filter</span>(Miles_Per_Gallon <span class="sc">&gt;</span> <span class="dv">20</span>, Cylinders <span class="sc">==</span> <span class="dv">4</span>)</span>
+<span id="cb184-19"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-19" tabindex="-1"></a></span>
+<span id="cb184-20"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-20" tabindex="-1"></a><span class="co"># 3. Create new columns and modify existing ones</span></span>
+<span id="cb184-21"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-21" tabindex="-1"></a>mutated_data <span class="ot">&lt;-</span> filtered_data <span class="sc">%&gt;%</span></span>
+<span id="cb184-22"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-22" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Horsepower_per_Weight =</span> Horsepower <span class="sc">/</span> Weight,</span>
+<span id="cb184-23"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-23" tabindex="-1"></a>         <span class="at">Weight_Category =</span> <span class="fu">ifelse</span>(Weight <span class="sc">&gt;</span> <span class="dv">3</span>, <span class="st">&quot;Heavy&quot;</span>, <span class="st">&quot;Light&quot;</span>))</span>
+<span id="cb184-24"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-24" tabindex="-1"></a></span>
+<span id="cb184-25"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-25" tabindex="-1"></a><span class="co"># 4. Group data and calculate summary statistics</span></span>
+<span id="cb184-26"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-26" tabindex="-1"></a>summary_data <span class="ot">&lt;-</span> mutated_data <span class="sc">%&gt;%</span></span>
+<span id="cb184-27"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-27" tabindex="-1"></a>  <span class="fu">group_by</span>(Weight_Category) <span class="sc">%&gt;%</span></span>
+<span id="cb184-28"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-28" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Mean_Horsepower_per_Weight =</span> <span class="fu">mean</span>(Horsepower_per_Weight),</span>
+<span id="cb184-29"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-29" tabindex="-1"></a>            <span class="at">Count =</span> <span class="fu">n</span>())</span>
+<span id="cb184-30"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-30" tabindex="-1"></a></span>
+<span id="cb184-31"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-31" tabindex="-1"></a><span class="co"># 5. Handle categorical data and perform string manipulations</span></span>
+<span id="cb184-32"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-32" tabindex="-1"></a><span class="co"># Create a factor variable</span></span>
+<span id="cb184-33"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-33" tabindex="-1"></a>mutated_data<span class="sc">$</span>Weight_Category <span class="ot">&lt;-</span> <span class="fu">factor</span>(mutated_data<span class="sc">$</span>Weight_Category)</span>
+<span id="cb184-34"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-34" tabindex="-1"></a></span>
+<span id="cb184-35"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-35" tabindex="-1"></a><span class="co"># String manipulation example</span></span>
+<span id="cb184-36"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-36" tabindex="-1"></a>car_names <span class="ot">&lt;-</span> <span class="fu">rownames</span>(data)</span>
+<span id="cb184-37"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-37" tabindex="-1"></a>car_name_lengths <span class="ot">&lt;-</span> <span class="fu">str_length</span>(car_names)</span>
+<span id="cb184-38"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-38" tabindex="-1"></a>car_name_upper <span class="ot">&lt;-</span> <span class="fu">str_to_upper</span>(car_names)</span>
+<span id="cb184-39"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-39" tabindex="-1"></a></span>
+<span id="cb184-40"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-40" tabindex="-1"></a><span class="co"># 6. Work with date-time data</span></span>
+<span id="cb184-41"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-41" tabindex="-1"></a><span class="co"># Create a sample date column</span></span>
+<span id="cb184-42"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-42" tabindex="-1"></a>mutated_data <span class="ot">&lt;-</span> mutated_data <span class="sc">%&gt;%</span></span>
+<span id="cb184-43"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-43" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Sample_Date =</span> <span class="fu">ymd</span>(<span class="st">&quot;2023-05-01&quot;</span>) <span class="sc">+</span> <span class="fu">days</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">n</span>()))</span>
+<span id="cb184-44"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-44" tabindex="-1"></a></span>
+<span id="cb184-45"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-45" tabindex="-1"></a><span class="co"># Extract components of dates</span></span>
+<span id="cb184-46"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-46" tabindex="-1"></a>mutated_data <span class="ot">&lt;-</span> mutated_data <span class="sc">%&gt;%</span></span>
+<span id="cb184-47"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-47" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Year =</span> <span class="fu">year</span>(Sample_Date),</span>
+<span id="cb184-48"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-48" tabindex="-1"></a>         <span class="at">Month =</span> <span class="fu">month</span>(Sample_Date),</span>
+<span id="cb184-49"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-49" tabindex="-1"></a>         <span class="at">Day =</span> <span class="fu">day</span>(Sample_Date))</span>
+<span id="cb184-50"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-50" tabindex="-1"></a></span>
+<span id="cb184-51"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-51" tabindex="-1"></a><span class="co"># Comprehensive script</span></span>
+<span id="cb184-52"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-52" tabindex="-1"></a>mtcars_analysis <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb184-53"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-53" tabindex="-1"></a>  <span class="co"># Load and manipulate data</span></span>
+<span id="cb184-54"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-54" tabindex="-1"></a>  data <span class="ot">&lt;-</span> mtcars</span>
+<span id="cb184-55"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-55" tabindex="-1"></a>  </span>
+<span id="cb184-56"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-56" tabindex="-1"></a>  <span class="co"># Select and rename columns</span></span>
+<span id="cb184-57"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-57" tabindex="-1"></a>  selected_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb184-58"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-58" tabindex="-1"></a>    <span class="fu">select</span>(mpg, cyl, hp, wt) <span class="sc">%&gt;%</span></span>
+<span id="cb184-59"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-59" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">Miles_Per_Gallon =</span> mpg, </span>
+<span id="cb184-60"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-60" tabindex="-1"></a>           <span class="at">Cylinders =</span> cyl, </span>
+<span id="cb184-61"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-61" tabindex="-1"></a>           <span class="at">Horsepower =</span> hp, </span>
+<span id="cb184-62"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-62" tabindex="-1"></a>           <span class="at">Weight =</span> wt)</span>
+<span id="cb184-63"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-63" tabindex="-1"></a></span>
+<span id="cb184-64"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-64" tabindex="-1"></a>  <span class="co"># Filter rows based on conditions</span></span>
+<span id="cb184-65"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-65" tabindex="-1"></a>  filtered_data <span class="ot">&lt;-</span> selected_data <span class="sc">%&gt;%</span></span>
+<span id="cb184-66"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-66" tabindex="-1"></a>    <span class="fu">filter</span>(Miles_Per_Gallon <span class="sc">&gt;</span> <span class="dv">20</span>, Cylinders <span class="sc">==</span> <span class="dv">4</span>)</span>
+<span id="cb184-67"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-67" tabindex="-1"></a></span>
+<span id="cb184-68"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-68" tabindex="-1"></a>  <span class="co"># Create and modify columns</span></span>
+<span id="cb184-69"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-69" tabindex="-1"></a>  mutated_data <span class="ot">&lt;-</span> filtered_data <span class="sc">%&gt;%</span></span>
+<span id="cb184-70"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-70" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Horsepower_per_Weight =</span> Horsepower <span class="sc">/</span> Weight,</span>
+<span id="cb184-71"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-71" tabindex="-1"></a>           <span class="at">Weight_Category =</span> <span class="fu">ifelse</span>(Weight <span class="sc">&gt;</span> <span class="dv">3</span>, <span class="st">&quot;Heavy&quot;</span>, <span class="st">&quot;Light&quot;</span>))</span>
+<span id="cb184-72"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-72" tabindex="-1"></a></span>
+<span id="cb184-73"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-73" tabindex="-1"></a>  <span class="co"># Group and summarize data</span></span>
+<span id="cb184-74"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-74" tabindex="-1"></a>  summary_data <span class="ot">&lt;-</span> mutated_data <span class="sc">%&gt;%</span></span>
+<span id="cb184-75"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-75" tabindex="-1"></a>    <span class="fu">group_by</span>(Weight_Category) <span class="sc">%&gt;%</span></span>
+<span id="cb184-76"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-76" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">Mean_Horsepower_per_Weight =</span> <span class="fu">mean</span>(Horsepower_per_Weight),</span>
+<span id="cb184-77"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-77" tabindex="-1"></a>              <span class="at">Count =</span> <span class="fu">n</span>())</span>
+<span id="cb184-78"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-78" tabindex="-1"></a></span>
+<span id="cb184-79"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-79" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Summary Data:&quot;</span>)</span>
+<span id="cb184-80"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-80" tabindex="-1"></a>  <span class="fu">print</span>(summary_data)</span>
+<span id="cb184-81"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-81" tabindex="-1"></a></span>
+<span id="cb184-82"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-82" tabindex="-1"></a>  <span class="co"># String manipulation</span></span>
+<span id="cb184-83"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-83" tabindex="-1"></a>  car_names <span class="ot">&lt;-</span> <span class="fu">rownames</span>(data)</span>
+<span id="cb184-84"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-84" tabindex="-1"></a>  car_name_lengths <span class="ot">&lt;-</span> <span class="fu">str_length</span>(car_names)</span>
+<span id="cb184-85"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-85" tabindex="-1"></a>  car_name_upper <span class="ot">&lt;-</span> <span class="fu">str_to_upper</span>(car_names)</span>
+<span id="cb184-86"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-86" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Car Names in Upper Case:&quot;</span>)</span>
+<span id="cb184-87"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-87" tabindex="-1"></a>  <span class="fu">print</span>(car_name_upper)</span>
+<span id="cb184-88"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-88" tabindex="-1"></a></span>
+<span id="cb184-89"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-89" tabindex="-1"></a>  <span class="co"># Work with date-time data</span></span>
+<span id="cb184-90"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-90" tabindex="-1"></a>  mutated_data <span class="ot">&lt;-</span> mutated_data <span class="sc">%&gt;%</span></span>
+<span id="cb184-91"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-91" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Sample_Date =</span> <span class="fu">ymd</span>(<span class="st">&quot;2023-05-01&quot;</span>) <span class="sc">+</span> <span class="fu">days</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">n</span>()),</span>
+<span id="cb184-92"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-92" tabindex="-1"></a>           <span class="at">Year =</span> <span class="fu">year</span>(Sample_Date),</span>
+<span id="cb184-93"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-93" tabindex="-1"></a>           <span class="at">Month =</span> <span class="fu">month</span>(Sample_Date),</span>
+<span id="cb184-94"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-94" tabindex="-1"></a>           <span class="at">Day =</span> <span class="fu">day</span>(Sample_Date))</span>
+<span id="cb184-95"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-95" tabindex="-1"></a>  </span>
+<span id="cb184-96"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-96" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Mutated Data with Dates:&quot;</span>)</span>
+<span id="cb184-97"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-97" tabindex="-1"></a>  <span class="fu">print</span>(mutated_data)</span>
+<span id="cb184-98"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-98" tabindex="-1"></a>}</span>
+<span id="cb184-99"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-99" tabindex="-1"></a></span>
+<span id="cb184-100"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-100" tabindex="-1"></a><span class="co"># Run the comprehensive analysis</span></span>
+<span id="cb184-101"><a href="comprehensive-exercise-data-wrangling-and-transformation-with-tidyverse.html#cb184-101" tabindex="-1"></a><span class="fu">mtcars_analysis</span>()</span></code></pre></div>
 
 </div>
 </div>
